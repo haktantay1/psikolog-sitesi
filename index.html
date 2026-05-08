@@ -1,0 +1,2103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Haktan Tay — Psikolog, Psikanalitik Yönelimli Terapist, La Nouvelle École Lacanienne Üyesi">
+<title>Haktan Tay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,300&family=EB+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════════════════ */
+:root {
+  --bg:    #07070e;
+  --bg2:   #0b0b16;
+  --bg3:   #10101c;
+  --bg4:   #15152a;
+  --text:  #ede8e0;
+  --mid:   #9a9490;
+  --dim:   #4a4550;
+  --gold:  #c8a96e;
+  --gold2: #e0c080;
+  --goldd: rgba(200,169,110,.15);
+  --blue:  #8b9dc3;
+  --mauve: #9c7a8b;
+  --red:   #b55;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
+  --ease:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease2: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+html { font-size:16px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.75;
+  overflow-x: hidden;
+  cursor: none;
+}
+a { color:inherit; text-decoration:none; }
+img { display:block; max-width:100%; }
+ul  { list-style:none; }
+::selection { background: var(--goldd); }
+
+/* ═══════════════════════════════════════════════════
+   NOISE + GRAIN
+═══════════════════════════════════════════════════ */
+.noise {
+  position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.038;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:220px;
+}
+
+/* ═══════════════════════════════════════════════════
+   PSI CURSOR
+═══════════════════════════════════════════════════ */
+#cursor-psi {
+  position:fixed; pointer-events:none; z-index:9999;
+  transform:translate(-50%,-62%);
+  font-family: var(--serif);
+  font-size:1.35rem;
+  color: var(--gold);
+  line-height:1;
+  mix-blend-mode: normal;
+  will-change: transform, left, top;
+  transition: transform .15s;
+  user-select:none;
+  text-shadow: 0 0 20px rgba(200,169,110,.6);
+}
+#cursor-ring {
+  position:fixed; pointer-events:none; z-index:9998;
+  width:42px; height:42px;
+  border:1px solid rgba(200,169,110,.35);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  will-change:left,top;
+  transition: width .35s var(--ease), height .35s var(--ease), border-color .3s;
+}
+.cursor-big  { width:64px !important; height:64px !important; border-color:rgba(200,169,110,.7) !important; }
+
+/* ═══════════════════════════════════════════════════
+   PRELOADER
+═══════════════════════════════════════════════════ */
+#preloader {
+  position:fixed; inset:0; background:var(--bg);
+  z-index:10000; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:2rem;
+}
+.pl-psi {
+  font-family:var(--serif); font-size:4rem; color:var(--gold);
+  opacity:0; transform:scale(.4) rotate(-20deg);
+  animation: psi-pop 1s var(--ease) .2s forwards;
+  text-shadow: 0 0 60px rgba(200,169,110,.5);
+}
+@keyframes psi-pop { to { opacity:.8; transform:scale(1) rotate(0deg); } }
+.pl-name {
+  font-family:var(--serif); font-weight:300;
+  font-size:clamp(1.8rem,4vw,3rem);
+  letter-spacing:.35em; overflow:hidden; display:flex;
+}
+.pl-name span {
+  display:inline-block;
+  animation:pl-up .9s var(--ease) both;
+  opacity:0; transform:translateY(100%);
+}
+.pl-bar {
+  width:0; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  animation:pl-bar 1.4s var(--ease) .5s forwards;
+}
+.pl-sub {
+  font-size:.62rem; letter-spacing:.45em; text-transform:uppercase;
+  color:var(--gold); opacity:0;
+  animation:fadein .7s ease 1.3s forwards;
+}
+@keyframes pl-up  { to { opacity:1; transform:translateY(0); } }
+@keyframes pl-bar { to { width:200px; } }
+@keyframes fadein { to { opacity:1; } }
+
+/* ═══════════════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════════════ */
+nav {
+  position:fixed; inset:0 0 auto;
+  z-index:1000; padding:2.2rem 5rem;
+  display:flex; align-items:center; justify-content:space-between;
+  transition:padding .4s, background .4s, border-color .4s;
+  border-bottom:1px solid transparent;
+}
+nav.scrolled {
+  padding:1.1rem 5rem;
+  background:rgba(7,7,14,.92);
+  backdrop-filter:blur(24px) saturate(1.5);
+  border-color:rgba(200,169,110,.1);
+}
+.nav-logo {
+  font-family:var(--serif); font-weight:400;
+  font-size:1.2rem; letter-spacing:.18em;
+  display:flex; align-items:center; gap:.6rem;
+}
+.nav-logo-psi { color:var(--gold); }
+.nav-links { display:flex; gap:3rem; }
+.nav-links a {
+  font-size:.65rem; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--mid); transition:color .3s; position:relative;
+}
+.nav-links a::after {
+  content:''; position:absolute; bottom:-5px; left:0;
+  width:0; height:1px; background:var(--gold);
+  transition:width .35s var(--ease);
+}
+.nav-links a:hover { color:var(--text); }
+.nav-links a:hover::after { width:100%; }
+.nav-cta {
+  font-size:.65rem; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--gold); border:1px solid var(--goldd);
+  padding:.65rem 1.6rem; transition:background .3s, color .3s, border-color .3s;
+}
+.nav-cta:hover { background:var(--gold); color:var(--bg); border-color:var(--gold); }
+
+.burger {
+  display:none; flex-direction:column; gap:5px;
+  cursor:none; background:none; border:none; padding:4px;
+}
+.burger span {
+  display:block; width:24px; height:1px; background:var(--text);
+  transition:transform .3s, opacity .3s;
+}
+.burger.open span:nth-child(1){ transform:rotate(45deg) translate(4px,4px); }
+.burger.open span:nth-child(2){ opacity:0; }
+.burger.open span:nth-child(3){ transform:rotate(-45deg) translate(4px,-4px); }
+
+.nav-mob {
+  display:none; position:fixed; inset:0; background:var(--bg);
+  z-index:999; flex-direction:column; align-items:center; justify-content:center; gap:2.5rem;
+}
+.nav-mob.open { display:flex; }
+.nav-mob a {
+  font-family:var(--serif); font-size:2.8rem; font-weight:300;
+  letter-spacing:.06em;
+  opacity:0; transform:translateY(20px);
+  transition:opacity .4s, transform .4s;
+}
+.nav-mob.open a { opacity:1; transform:translateY(0); }
+.nav-mob.open a:nth-child(1){ transition-delay:.05s; }
+.nav-mob.open a:nth-child(2){ transition-delay:.1s; }
+.nav-mob.open a:nth-child(3){ transition-delay:.15s; }
+.nav-mob.open a:nth-child(4){ transition-delay:.2s; }
+.nav-mob.open a:nth-child(5){ transition-delay:.25s; }
+.nav-mob.open a:nth-child(6){ transition-delay:.3s; }
+
+/* ═══════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════ */
+#hero {
+  height:100vh; min-height:700px;
+  position:relative; overflow:hidden;
+  display:grid; grid-template-columns:1fr 1fr;
+}
+
+/* WebGL smoke fills the entire hero */
+#smoke-canvas {
+  position:absolute; inset:0; z-index:0; pointer-events:none;
+  opacity:.7;
+}
+
+/* particle layer on top of smoke */
+#hero-canvas {
+  position:absolute; inset:0; z-index:1; pointer-events:none; opacity:.6;
+}
+
+.hero-left {
+  position:relative; z-index:3;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:10rem 4rem 5rem 8rem;
+}
+.hero-eyebrow {
+  font-size:.6rem; letter-spacing:.45em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:2.5rem;
+  opacity:0; animation:h-up 1s var(--ease) 1.6s forwards;
+  display:flex; align-items:center; gap:1rem;
+}
+.hero-eyebrow::before {
+  content:''; width:24px; height:1px; background:var(--gold); flex-shrink:0;
+}
+.hero-name {
+  font-family:var(--serif); font-weight:300;
+  line-height:.9; letter-spacing:.015em;
+}
+.hero-name .ln { display:block; overflow:hidden; }
+.hero-name .wd {
+  display:inline-block;
+  opacity:0; transform:translateY(110%);
+  animation:h-up 1.1s var(--ease) forwards;
+}
+.hero-first { font-size:clamp(4.5rem,9vw,9.5rem); }
+.hero-last  { font-size:clamp(4.5rem,9vw,9.5rem); color:var(--gold); }
+
+.hero-rule {
+  width:50px; height:1px; background:var(--gold);
+  margin:2.5rem 0;
+  transform:scaleX(0); transform-origin:left; opacity:0;
+  animation:h-expand 1s var(--ease) 2.2s forwards;
+}
+@keyframes h-expand { to { transform:scaleX(1); opacity:1; } }
+
+.hero-tagline {
+  font-family:var(--serif); font-style:italic;
+  font-size:clamp(1.1rem,1.8vw,1.45rem); font-weight:300;
+  color:var(--mid); line-height:1.65; max-width:400px;
+  opacity:0; animation:h-up 1s var(--ease) 2.35s forwards;
+}
+.hero-tagline strong { color:var(--text); font-style:normal; font-weight:400; }
+
+.hero-meta {
+  display:flex; gap:3rem; margin-top:3.5rem;
+  opacity:0; animation:h-up 1s var(--ease) 2.5s forwards;
+  padding-top:3rem; border-top:1px solid rgba(200,169,110,.12);
+}
+.hero-meta-item { display:flex; flex-direction:column; gap:.35rem; }
+.hero-meta-lbl  { font-size:.56rem; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); }
+.hero-meta-val  { font-size:.8rem; color:var(--mid); }
+
+.hero-scroll {
+  position:absolute; bottom:4rem; left:8rem;
+  display:flex; align-items:center; gap:1.2rem;
+  opacity:0; animation:h-up 1s var(--ease) 2.7s forwards;
+}
+.hero-scroll-line {
+  width:44px; height:1px; background:var(--dim); overflow:hidden; position:relative;
+}
+.hero-scroll-line::after {
+  content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
+  background:var(--gold); animation:run 2.5s ease-in-out infinite;
+}
+@keyframes run { 0%{left:-100%} 50%{left:0} 100%{left:100%} }
+.hero-scroll-txt { font-size:.56rem; letter-spacing:.32em; text-transform:uppercase; color:var(--dim); }
+
+@keyframes h-up { to { opacity:1; transform:translateY(0); } }
+
+.hero-right {
+  position:relative; z-index:2; overflow:hidden;
+}
+.hero-img {
+  position:absolute; inset:0;
+  opacity:0; animation:fadein 1.8s ease .8s forwards;
+}
+.hero-img img {
+  width:100%; height:100%; object-fit:cover; object-position:center 15%;
+  filter:saturate(.3) contrast(1.15) brightness(.85);
+  transform:scale(1.06);
+}
+.hero-grad-l { position:absolute; inset:0; background:linear-gradient(90deg,var(--bg) 0%,rgba(7,7,14,.5) 40%,transparent 100%); }
+.hero-grad-b { position:absolute; inset:0; background:linear-gradient(180deg,transparent 50%,var(--bg) 100%); }
+.hero-grad-r { position:absolute; inset:0; background:linear-gradient(270deg,rgba(7,7,14,.4) 0%,transparent 50%); }
+
+.hero-frag {
+  position:absolute; font-family:var(--serif); font-style:italic;
+  color:var(--gold); opacity:.1; pointer-events:none;
+  animation:flt 10s ease-in-out infinite;
+  letter-spacing:.15em; font-size:.7rem;
+}
+@keyframes flt {
+  0%,100%{ transform:translateY(0); opacity:.08; }
+  50%    { transform:translateY(-14px); opacity:.18; }
+}
+
+/* ═══════════════════════════════════════════════════
+   MARQUEE
+═══════════════════════════════════════════════════ */
+.marquee {
+  position:relative; z-index:2; overflow:hidden;
+  padding:1.5rem 0;
+  border-top:1px solid rgba(200,169,110,.08);
+  border-bottom:1px solid rgba(200,169,110,.08);
+}
+.mq-track {
+  display:flex; white-space:nowrap;
+  animation:mq 24s linear infinite;
+}
+.mq-track.r { animation-direction:reverse; animation-duration:30s; }
+.mi { font-family:var(--serif); font-style:italic; font-size:.92rem; color:var(--dim); padding:0 2rem; }
+.ms { color:var(--gold); font-style:normal; }
+
+@keyframes mq { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ═══════════════════════════════════════════════════
+   SHARED LAYOUT
+═══════════════════════════════════════════════════ */
+section { position:relative; z-index:2; }
+.wrap   { max-width:1360px; margin:0 auto; padding:0 5rem; }
+.pad    { padding:9rem 0; }
+
+.sec-label {
+  font-size:.58rem; letter-spacing:.45em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:1.5rem;
+  display:flex; align-items:center; gap:1rem;
+}
+.sec-label::before { content:''; width:26px; height:1px; background:var(--gold); flex-shrink:0; }
+
+.sec-title {
+  font-family:var(--serif); font-weight:300;
+  font-size:clamp(2.8rem,5vw,4.5rem);
+  line-height:1.05; letter-spacing:.02em;
+  margin-bottom:4rem;
+}
+
+/* Reveal */
+.rv {
+  opacity:0; transform:translateY(42px);
+  transition:opacity 1s var(--ease), transform 1s var(--ease);
+}
+.rv.in { opacity:1; transform:translateY(0); }
+.d1{transition-delay:.1s} .d2{transition-delay:.2s}
+.d3{transition-delay:.3s} .d4{transition-delay:.4s}
+.d5{transition-delay:.5s} .d6{transition-delay:.6s}
+
+/* Spotlight cards (mouse-tracking radial highlight) */
+.spot {
+  --mx:50%; --my:50%; position:relative; isolation:isolate;
+}
+.spot::before {
+  content:''; position:absolute; inset:0;
+  background: radial-gradient(circle 220px at var(--mx) var(--my), rgba(200,169,110,.07), transparent 70%);
+  opacity:0; transition:opacity .4s; pointer-events:none; z-index:0;
+}
+.spot:hover::before { opacity:1; }
+
+/* Section separators */
+.sep {
+  width:100%; height:1px;
+  background:linear-gradient(90deg,transparent,rgba(200,169,110,.2),transparent);
+  position:relative; z-index:2;
+}
+
+/* Big watermark */
+.wm {
+  position:absolute; font-family:var(--serif); font-weight:300;
+  color:transparent; pointer-events:none; user-select:none;
+  -webkit-text-stroke:1px rgba(200,169,110,.04);
+  letter-spacing:.1em; z-index:0;
+  white-space:nowrap;
+}
+
+/* ═══════════════════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════════════════ */
+#about { background:var(--bg); }
+
+.about-wrap {
+  display:grid; grid-template-columns:400px 1fr;
+  gap:8rem; align-items:start;
+}
+.about-stick { position:sticky; top:9rem; }
+.about-photo { position:relative; }
+.about-photo img {
+  width:100%; aspect-ratio:3/4;
+  object-fit:cover; object-position:center 15%;
+  filter:saturate(.4) contrast(1.1);
+  display:block;
+}
+.about-photo-border {
+  position:absolute; top:18px; left:18px; right:-18px; bottom:-18px;
+  border:1px solid rgba(200,169,110,.18); z-index:-1; pointer-events:none;
+}
+.about-photo-cap {
+  margin-top:1.5rem; display:flex; justify-content:space-between;
+  font-size:.58rem; letter-spacing:.3em; text-transform:uppercase; color:var(--dim);
+}
+
+.about-body { padding-top:.5rem; }
+.about-p {
+  font-family:var(--serif); font-size:clamp(1.05rem,1.5vw,1.28rem);
+  font-weight:300; line-height:1.9; color:var(--mid); margin-bottom:1.8rem;
+}
+.about-p em { color:var(--text); font-style:italic; }
+.about-p a  { color:var(--gold); border-bottom:1px solid var(--goldd); }
+
+.bq {
+  border-left:2px solid var(--gold);
+  padding:.2rem 0 .2rem 2rem; margin:3.5rem 0;
+}
+.bq p {
+  font-family:var(--serif); font-style:italic;
+  font-size:1.35rem; line-height:1.65; color:var(--text); margin-bottom:.8rem;
+}
+.bq cite {
+  font-size:.6rem; letter-spacing:.3em; text-transform:uppercase;
+  color:var(--gold); font-style:normal;
+}
+
+.about-stats {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:2rem; margin-top:5rem;
+  padding-top:3.5rem; border-top:1px solid rgba(200,169,110,.1);
+}
+.stat-n {
+  font-family:var(--serif); font-size:3.5rem; font-weight:300;
+  color:var(--gold); line-height:1; margin-bottom:.5rem;
+}
+.stat-l {
+  font-size:.6rem; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--dim); line-height:1.5;
+}
+
+/* ═══════════════════════════════════════════════════
+   APPROACH
+═══════════════════════════════════════════════════ */
+#approach { background:var(--bg2); overflow:hidden; }
+
+.approach-lead {
+  max-width:700px;
+  font-family:var(--serif); font-size:clamp(1.1rem,1.6vw,1.3rem);
+  font-weight:300; line-height:1.9; color:var(--mid); margin-bottom:7rem;
+}
+
+/* Borromean */
+.borr-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:7rem; align-items:center; margin-bottom:7rem;
+}
+.borr-c { display:flex; justify-content:center; align-items:center; }
+.borr-svg { width:320px; height:320px; }
+
+.borr-info h3 {
+  font-family:var(--serif); font-size:clamp(1.8rem,3vw,2.8rem);
+  font-weight:300; letter-spacing:.03em; margin-bottom:1.6rem;
+}
+.borr-info p {
+  font-family:var(--serif); font-size:1.08rem;
+  line-height:1.9; color:var(--mid); margin-bottom:1.4rem;
+}
+.rsi { display:flex; gap:2.5rem; margin-top:2rem; }
+.rsi-i { display:flex; flex-direction:column; align-items:center; gap:.5rem; }
+.rsi-d { width:10px; height:10px; border-radius:50%; }
+.rsi-d.r{ background:var(--gold); box-shadow:0 0 10px rgba(200,169,110,.4); }
+.rsi-d.s{ background:var(--blue);  box-shadow:0 0 10px rgba(139,157,195,.4); }
+.rsi-d.i{ background:var(--mauve); box-shadow:0 0 10px rgba(156,122,139,.4); }
+.rsi-l { font-size:.58rem; letter-spacing:.25em; text-transform:uppercase; color:var(--dim); }
+
+/* Pillars */
+.pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+.pillar {
+  background:var(--bg3); padding:3.5rem 3rem;
+  position:relative; overflow:hidden;
+  transition:background .4s;
+}
+.pillar::after {
+  content:''; position:absolute; top:0; left:0;
+  width:100%; height:2px; background:var(--gold);
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .5s var(--ease); z-index:1;
+}
+.pillar:hover::after  { transform:scaleX(1); }
+.pillar:hover { background:rgba(10,10,22,.95); }
+.pnum {
+  font-family:var(--serif); font-size:5rem; font-weight:300;
+  color:rgba(200,169,110,.08); line-height:1; margin-bottom:2rem;
+  transition:color .4s;
+}
+.pillar:hover .pnum { color:rgba(200,169,110,.15); }
+.ptitle {
+  font-family:var(--serif); font-size:1.6rem; font-weight:400;
+  letter-spacing:.04em; margin-bottom:.5rem;
+}
+.psub {
+  font-size:.6rem; letter-spacing:.32em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:1.8rem;
+}
+.pbody { font-size:.88rem; line-height:1.85; color:var(--mid); }
+
+/* ═══════════════════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════════════════ */
+#services { background:var(--bg); }
+
+.svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+
+.svc {
+  border:1px solid rgba(200,169,110,.1); padding:3.5rem 3rem;
+  position:relative; overflow:hidden;
+  transition:border-color .4s; cursor:none;
+}
+.svc:hover { border-color:rgba(200,169,110,.3); }
+
+.svc-n {
+  position:absolute; top:2.2rem; right:2.8rem;
+  font-family:var(--serif); font-size:.72rem;
+  color:var(--dim); letter-spacing:.1em;
+}
+.svc-icon { width:46px; height:46px; margin-bottom:2.2rem; opacity:.5; }
+.svc-title {
+  font-family:var(--serif); font-size:1.8rem; font-weight:400;
+  letter-spacing:.03em; margin-bottom:1.6rem;
+}
+.svc-body { font-size:.88rem; line-height:1.85; color:var(--mid); margin-bottom:2.2rem; }
+.tags { display:flex; flex-wrap:wrap; gap:.5rem; }
+.tag {
+  font-size:.55rem; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--gold); border:1px solid var(--goldd); padding:.28rem .75rem;
+  transition:background .3s, color .3s;
+}
+.tag:hover { background:var(--goldd); }
+
+/* ═══════════════════════════════════════════════════
+   ÇEKIÇLE FELSEFE
+═══════════════════════════════════════════════════ */
+#journal {
+  background:var(--bg2); overflow:hidden;
+}
+.journal-inner {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:7rem; align-items:center;
+}
+.journal-left { position:relative; }
+.journal-big {
+  font-family:var(--serif); font-weight:300;
+  font-size:clamp(3rem,6vw,6rem); line-height:1;
+  letter-spacing:.02em; margin-bottom:2rem;
+}
+.journal-big em { font-style:italic; color:var(--gold); display:block; font-size:.7em; }
+.journal-sub {
+  font-size:.6rem; letter-spacing:.4em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:2.5rem;
+}
+.journal-desc {
+  font-family:var(--serif); font-size:1.1rem;
+  line-height:1.9; color:var(--mid); margin-bottom:3rem;
+}
+.journal-cta {
+  display:inline-flex; align-items:center; gap:1.2rem;
+  font-size:.65rem; letter-spacing:.25em; text-transform:uppercase;
+  color:var(--text); border:1px solid rgba(200,169,110,.2);
+  padding:1rem 2.5rem; cursor:none;
+  transition:background .3s, border-color .3s, color .3s;
+}
+.journal-cta:hover { background:var(--gold); border-color:var(--gold); color:var(--bg); }
+.journal-arrow {
+  width:16px; height:1px; background:currentColor; position:relative;
+  transition:width .3s;
+}
+.journal-cta:hover .journal-arrow { width:26px; }
+
+.journal-right { position:relative; }
+.journal-quote-wrap {
+  position:relative; padding:3.5rem;
+  border:1px solid rgba(200,169,110,.12);
+}
+.journal-quote-wrap::before {
+  content:'"'; position:absolute; top:-1.5rem; left:2rem;
+  font-family:var(--serif); font-size:8rem; font-weight:300;
+  color:var(--gold); opacity:.15; line-height:1;
+}
+.journal-quote {
+  font-family:var(--serif); font-style:italic;
+  font-size:1.2rem; line-height:1.75; color:var(--text);
+  margin-bottom:2rem;
+}
+.journal-issues {
+  display:grid; grid-template-columns:repeat(2,1fr);
+  gap:1px; margin-top:2rem;
+}
+.ji {
+  background:var(--bg3); padding:1.5rem 1.8rem;
+  transition:background .3s;
+}
+.ji:hover { background:var(--bg4); }
+.ji-num  { font-size:.55rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:.4rem; }
+.ji-name { font-family:var(--serif); font-size:.95rem; font-weight:400; color:var(--text); }
+.ji-mail { font-size:.75rem; color:var(--dim); margin-top:.3rem; }
+
+/* ═══════════════════════════════════════════════════
+   ACADEMIC — horizontal scroll
+═══════════════════════════════════════════════════ */
+#academic { background:var(--bg); overflow:hidden; }
+
+.pub-scroll-wrap {
+  overflow-x:auto; overflow-y:visible;
+  cursor:grab; user-select:none;
+  padding-bottom:2rem; scrollbar-width:none;
+}
+.pub-scroll-wrap::-webkit-scrollbar { display:none; }
+.pub-scroll-wrap:active { cursor:grabbing; }
+
+.pub-row {
+  display:flex; gap:2px;
+  width:max-content; padding:0;
+}
+
+.pub-card {
+  width:360px; flex-shrink:0;
+  background:var(--bg2); border:1px solid transparent;
+  padding:3rem 2.8rem;
+  position:relative; overflow:hidden;
+  transition:border-color .4s, background .4s;
+}
+.pub-card:hover { border-color:rgba(200,169,110,.2); background:var(--bg3); }
+.pub-yr {
+  font-size:.58rem; letter-spacing:.35em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:1rem;
+}
+.pub-type {
+  display:inline-block; font-size:.52rem; letter-spacing:.2em; text-transform:uppercase;
+  background:var(--goldd); color:var(--gold); padding:.22rem .65rem;
+  margin-bottom:1.5rem;
+}
+.pub-title {
+  font-family:var(--serif); font-style:italic;
+  font-size:1.15rem; line-height:1.6; margin-bottom:.8rem; color:var(--text);
+}
+.pub-venue { font-size:.8rem; color:var(--dim); line-height:1.5; }
+
+.pub-scroll-hint {
+  font-size:.6rem; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--dim); margin-top:2rem;
+  display:flex; align-items:center; gap:1.2rem;
+}
+.pub-scroll-hint::after {
+  content:''; width:60px; height:1px; background:var(--dim);
+}
+
+/* Conferences list */
+.conf-list { display:flex; flex-direction:column; gap:0; margin-top:5rem; }
+.conf-item {
+  display:grid; grid-template-columns:100px 1fr auto;
+  gap:2rem; align-items:baseline;
+  padding:1.8rem 0; border-bottom:1px solid rgba(200,169,110,.07);
+  transition:background .3s;
+}
+.conf-item:hover { background:rgba(200,169,110,.02); padding-left:1rem; transition:padding .3s,background .3s; }
+.conf-yr  { font-size:.62rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); }
+.conf-t   { font-family:var(--serif); font-style:italic; font-size:1.05rem; line-height:1.5; }
+.conf-v   { font-size:.75rem; color:var(--dim); text-align:right; max-width:220px; line-height:1.4; }
+
+/* ═══════════════════════════════════════════════════
+   EXPERIENCE
+═══════════════════════════════════════════════════ */
+#experience { background:var(--bg2); }
+
+.tl { position:relative; padding-left:5rem; }
+.tl::before {
+  content:''; position:absolute; left:0; top:0;
+  width:1px; height:100%;
+  background:linear-gradient(180deg,var(--gold),rgba(200,169,110,.05));
+}
+.ti { position:relative; padding-bottom:4.5rem; }
+.ti:last-child { padding-bottom:0; }
+.ti-dot {
+  position:absolute; left:-5.5rem; top:.5rem;
+  width:9px; height:9px; border-radius:50%;
+  background:var(--bg2); border:1px solid var(--dim);
+  transition:background .3s, border-color .3s, box-shadow .3s;
+}
+.ti-dot.on {
+  background:var(--gold); border-color:var(--gold);
+  box-shadow:0 0 18px rgba(200,169,110,.5);
+}
+.ti-date  { font-size:.6rem; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); margin-bottom:.8rem; }
+.ti-title { font-family:var(--serif); font-size:1.35rem; font-weight:400; margin-bottom:.4rem; }
+.ti-org   { font-size:.82rem; color:var(--mid); margin-bottom:1rem; }
+.ti-desc  { font-size:.87rem; line-height:1.8; color:var(--dim); max-width:580px; }
+
+/* ═══════════════════════════════════════════════════
+   MEMBERSHIPS
+═══════════════════════════════════════════════════ */
+#memberships { background:var(--bg); }
+
+.mem-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+.mem {
+  background:var(--bg2); padding:3rem 3.5rem;
+  border-bottom:2px solid transparent;
+  transition:border-color .35s, background .35s;
+  position:relative; overflow:hidden;
+}
+.mem::before {
+  content:attr(data-index);
+  position:absolute; top:-1rem; right:2rem;
+  font-family:var(--serif); font-size:6rem; font-weight:300;
+  color:rgba(200,169,110,.04); line-height:1;
+  pointer-events:none;
+}
+.mem:hover { border-color:var(--gold); background:var(--bg3); }
+.mem-flag { font-size:.58rem; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); margin-bottom:1.2rem; }
+.mem-name { font-family:var(--serif); font-size:1.25rem; font-weight:400; letter-spacing:.03em; margin-bottom:.5rem; }
+.mem-role { font-size:.8rem; color:var(--dim); line-height:1.5; }
+
+/* ═══════════════════════════════════════════════════
+   SKILLS (tag cloud, no bars)
+═══════════════════════════════════════════════════ */
+#skills { background:var(--bg2); }
+
+.skills-wrap {
+  display:grid; grid-template-columns:repeat(2,1fr);
+  gap:5rem;
+}
+.sgrp h4 {
+  font-size:.6rem; letter-spacing:.35em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:2rem;
+  padding-bottom:1rem; border-bottom:1px solid rgba(200,169,110,.1);
+}
+.skill-tags { display:flex; flex-wrap:wrap; gap:.6rem; }
+.skill-tag {
+  font-family:var(--serif); font-style:italic;
+  font-size:.95rem; color:var(--mid);
+  border:1px solid rgba(200,169,110,.1);
+  padding:.45rem 1rem;
+  transition:color .3s, border-color .3s, background .3s;
+}
+.skill-tag:hover { color:var(--text); border-color:rgba(200,169,110,.3); background:rgba(200,169,110,.04); }
+
+/* ═══════════════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════════════ */
+#contact { background:var(--bg); }
+
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:9rem; }
+
+.contact-left h2 {
+  font-family:var(--serif); font-weight:300;
+  font-size:clamp(2.5rem,4.5vw,4rem);
+  line-height:1.1; margin-bottom:2rem;
+}
+.contact-left > p {
+  font-family:var(--serif); font-size:1.1rem;
+  line-height:1.9; color:var(--mid); margin-bottom:3.5rem;
+}
+.cdetails { display:flex; flex-direction:column; gap:1.6rem; }
+.cd { display:flex; gap:2rem; align-items:baseline; }
+.cdl { font-size:.57rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); min-width:80px; }
+.cdv { font-size:.88rem; color:var(--text); }
+.cdv a { color:var(--gold); border-bottom:1px solid var(--goldd); transition:border-color .3s; }
+.cdv a:hover { border-color:var(--gold); }
+
+.cform { display:flex; flex-direction:column; gap:1.8rem; }
+.fgrp label {
+  display:block; font-size:.58rem; letter-spacing:.28em;
+  text-transform:uppercase; color:var(--gold); margin-bottom:.8rem;
+}
+.fgrp input,.fgrp textarea {
+  width:100%; background:transparent; border:none;
+  border-bottom:1px solid rgba(200,169,110,.15);
+  padding:.8rem 0; color:var(--text);
+  font-family:var(--sans); font-size:.93rem; font-weight:300;
+  outline:none; transition:border-color .35s;
+}
+.fgrp input::placeholder,.fgrp textarea::placeholder { color:var(--dim); }
+.fgrp input:focus,.fgrp textarea:focus { border-color:var(--gold); }
+.fgrp textarea { resize:none; min-height:120px; }
+
+.btn-sub {
+  display:inline-flex; align-items:center; gap:1.5rem;
+  background:transparent; border:1px solid var(--goldd);
+  color:var(--text); font-family:var(--sans);
+  font-size:.65rem; letter-spacing:.28em; text-transform:uppercase;
+  padding:1.2rem 3rem; cursor:none; margin-top:.5rem;
+  transition:background .3s, border-color .3s, color .3s;
+}
+.btn-sub:hover { background:var(--gold); border-color:var(--gold); color:var(--bg); }
+.btn-arr {
+  width:18px; height:1px; background:currentColor; position:relative;
+  transition:width .3s;
+}
+.btn-sub:hover .btn-arr { width:30px; }
+
+/* ═══════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════ */
+footer {
+  background:var(--bg); position:relative; z-index:2;
+  padding:4rem 0; border-top:1px solid rgba(200,169,110,.08);
+}
+.footer-inner {
+  display:flex; justify-content:space-between; align-items:center;
+}
+.footer-logo {
+  font-family:var(--serif); font-weight:300;
+  font-size:1.5rem; letter-spacing:.12em;
+  display:flex; align-items:center; gap:.5rem;
+}
+.footer-psi { color:var(--gold); }
+.footer-q { font-family:var(--serif); font-style:italic; font-size:.88rem; color:var(--dim); }
+.footer-copy { font-size:.6rem; color:var(--dim); letter-spacing:.1em; }
+
+/* ═══════════════════════════════════════════════════
+   WATER RIPPLE CANVAS (about photo)
+═══════════════════════════════════════════════════ */
+#ripple-canvas {
+  width:100%; aspect-ratio:3/4; display:block;
+  background:var(--bg3);
+}
+
+/* ═══════════════════════════════════════════════════
+   TEXT REVEAL SECTION
+═══════════════════════════════════════════════════ */
+#text-reveal { background:var(--bg2); padding:4rem 0; position:relative; z-index:2; }
+.tr-card {
+  background:var(--bg3); border:1px solid rgba(200,169,110,.1);
+  padding:4rem 5rem; position:relative; overflow:hidden;
+  cursor:none; user-select:none;
+}
+.tr-label {
+  font-size:.58rem; letter-spacing:.45em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:2.5rem;
+  display:flex; align-items:center; gap:1rem;
+}
+.tr-label::before { content:''; width:26px; height:1px; background:var(--gold); flex-shrink:0; }
+.tr-body { position:relative; padding:1.5rem 0; }
+.tr-base {
+  font-family:var(--serif); font-weight:300;
+  font-size:clamp(2rem,5vw,4.5rem); line-height:1.1;
+  color:rgba(200,169,110,.12); pointer-events:none; white-space:nowrap;
+}
+.tr-reveal-wrap {
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; justify-content:center;
+  clip-path:inset(0 100% 0 0);
+  will-change:clip-path;
+}
+.tr-reveal {
+  font-family:var(--serif); font-weight:300;
+  font-size:clamp(2rem,5vw,4.5rem); line-height:1.1;
+  color:var(--gold); white-space:nowrap;
+  text-shadow:0 0 40px rgba(200,169,110,.35);
+}
+.tr-divider {
+  position:absolute; top:0; height:100%; width:6px;
+  background:linear-gradient(180deg,transparent,rgba(200,169,110,.6),transparent);
+  z-index:10; pointer-events:none; left:0; will-change:left;
+}
+.tr-stars-c { position:absolute; inset:0; pointer-events:none; opacity:.7; }
+.tr-footer {
+  margin-top:2.5rem; padding-top:2rem;
+  border-top:1px solid rgba(200,169,110,.08);
+  display:flex; justify-content:space-between; align-items:baseline;
+}
+.tr-footer-txt {
+  font-family:var(--serif); font-style:italic;
+  font-size:.9rem; color:var(--dim);
+}
+.tr-hint {
+  font-size:.55rem; letter-spacing:.3em; text-transform:uppercase;
+  color:var(--dim); display:flex; align-items:center; gap:.8rem;
+}
+.tr-hint::before { content:'←'; font-style:normal; font-size:.7rem; color:var(--gold); animation:nudge 2s ease-in-out infinite; }
+.tr-hint::after  { content:'→'; font-style:normal; font-size:.7rem; color:var(--gold); animation:nudge 2s ease-in-out infinite reverse; }
+@keyframes nudge { 0%,100%{transform:translateX(0)} 50%{transform:translateX(4px)} }
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════ */
+@media(max-width:1200px){
+  .wrap{padding:0 3rem;}
+  .about-wrap{grid-template-columns:1fr;gap:4.5rem;}
+  .about-stick{position:relative;top:0;max-width:360px;}
+  .borr-grid{grid-template-columns:1fr;}
+  .journal-inner{grid-template-columns:1fr;gap:4rem;}
+}
+@media(max-width:960px){
+  nav{padding:1.4rem 2rem;}
+  nav.scrolled{padding:1rem 2rem;}
+  .nav-links,.nav-cta{display:none;}
+  .burger{display:flex;}
+  #hero{grid-template-columns:1fr;}
+  .hero-right{position:absolute;inset:0;z-index:0;opacity:.2;}
+  .hero-left{padding:7rem 2rem 4rem;}
+  .hero-scroll{left:2rem;}
+  .wrap{padding:0 1.8rem;}
+  .pad{padding:5.5rem 0;}
+  .svc-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;gap:4rem;}
+  .pillars{grid-template-columns:1fr;}
+  .mem-grid{grid-template-columns:1fr;}
+  .skills-wrap{grid-template-columns:1fr;}
+  .footer-inner{flex-direction:column;gap:1.2rem;text-align:center;}
+  .footer-q{display:none;}
+  .conf-item{grid-template-columns:70px 1fr;gap:1rem;}
+  .conf-v{display:none;}
+}
+</style>
+</head>
+<body>
+
+<div class="noise" aria-hidden="true"></div>
+
+<!-- ψ CURSOR -->
+<div id="cursor-psi" aria-hidden="true">ψ</div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<!-- PRELOADER -->
+<div id="preloader" aria-hidden="true">
+  <div class="pl-psi">ψ</div>
+  <div class="pl-name">
+    <span style="animation-delay:.1s">H</span><span style="animation-delay:.15s">A</span><span style="animation-delay:.2s">K</span><span style="animation-delay:.25s">T</span><span style="animation-delay:.3s">A</span><span style="animation-delay:.35s">N</span><span style="animation-delay:.4s">&thinsp;</span><span style="animation-delay:.45s">T</span><span style="animation-delay:.5s">A</span><span style="animation-delay:.55s">Y</span>
+  </div>
+  <div class="pl-bar"></div>
+  <div class="pl-sub">Psikolog &nbsp;·&nbsp; La Nouvelle École Lacanienne</div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo"><span class="nav-logo-psi">ψ</span>&thinsp;H.T.</a>
+  <ul class="nav-links">
+    <li><a href="#about">Hakkımda</a></li>
+    <li><a href="#approach">Yaklaşım</a></li>
+    <li><a href="#services">Hizmetler</a></li>
+    <li><a href="#journal">Dergi</a></li>
+    <li><a href="#academic">Akademik</a></li>
+    <li><a href="#experience">Deneyim</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">İletişim</a>
+  <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="nav-mob" id="nav-mob">
+  <a href="#about"      onclick="closeMob()">Hakkımda</a>
+  <a href="#approach"   onclick="closeMob()">Yaklaşım</a>
+  <a href="#services"   onclick="closeMob()">Hizmetler</a>
+  <a href="#journal"    onclick="closeMob()">Dergi</a>
+  <a href="#academic"   onclick="closeMob()">Akademik</a>
+  <a href="#experience" onclick="closeMob()">Deneyim</a>
+  <a href="#contact"    onclick="closeMob()">İletişim</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="smoke-canvas" aria-hidden="true"></canvas>
+  <canvas id="hero-canvas"  aria-hidden="true"></canvas>
+
+  <div class="hero-left">
+    <p class="hero-eyebrow">La Nouvelle École Lacanienne</p>
+    <h1 class="hero-name">
+      <span class="ln hero-first"><span class="wd" style="animation-delay:1.65s">Haktan</span></span>
+      <span class="ln hero-last"><span class="wd"  style="animation-delay:1.82s">Tay</span></span>
+    </h1>
+    <div class="hero-rule"></div>
+    <p class="hero-tagline">
+      Söylemin ardında ne var?<br>
+      <strong>Özneyi dinlemek, onu söz içinde bulmaktır.</strong>
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-lbl">Yönelim</span>
+        <span class="hero-meta-val">Psikanalitik</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-lbl">Çerçeve</span>
+        <span class="hero-meta-val">Lacancı</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-lbl">Dil</span>
+        <span class="hero-meta-val">TR / EN / FR</span>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      <span class="hero-scroll-txt">Aşağı Kaydır</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-img">
+      <img src="1735210893204.jpg" alt="Haktan Tay" id="parallax-img">
+      <div class="hero-grad-l"></div>
+      <div class="hero-grad-b"></div>
+      <div class="hero-grad-r"></div>
+    </div>
+    <span class="hero-frag" style="top:16%;right:6%">le sujet de l'inconscient</span>
+    <span class="hero-frag" style="top:45%;right:10%;animation-delay:3s">$ ◇ a</span>
+    <span class="hero-frag" style="top:74%;right:5%;animation-delay:6s">R · S · I</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track">
+    <span class="mi">Psikanaliz <span class="ms">·</span></span>
+    <span class="mi">Le Sujet <span class="ms">·</span></span>
+    <span class="mi">Söylem <span class="ms">·</span></span>
+    <span class="mi">La Parole <span class="ms">·</span></span>
+    <span class="mi">Öteki <span class="ms">·</span></span>
+    <span class="mi">Le Désir <span class="ms">·</span></span>
+    <span class="mi">Özne <span class="ms">·</span></span>
+    <span class="mi">L'Inconscient <span class="ms">·</span></span>
+    <span class="mi">Gerçek <span class="ms">·</span></span>
+    <span class="mi">Le Réel <span class="ms">·</span></span>
+    <span class="mi">Simgesel <span class="ms">·</span></span>
+    <span class="mi">Jouissance <span class="ms">·</span></span>
+    <span class="mi">Objet <em>a</em> <span class="ms">·</span></span>
+    <span class="mi">Le Signifiant <span class="ms">·</span></span>
+    <!-- repeat -->
+    <span class="mi">Psikanaliz <span class="ms">·</span></span>
+    <span class="mi">Le Sujet <span class="ms">·</span></span>
+    <span class="mi">Söylem <span class="ms">·</span></span>
+    <span class="mi">La Parole <span class="ms">·</span></span>
+    <span class="mi">Öteki <span class="ms">·</span></span>
+    <span class="mi">Le Désir <span class="ms">·</span></span>
+    <span class="mi">Özne <span class="ms">·</span></span>
+    <span class="mi">L'Inconscient <span class="ms">·</span></span>
+    <span class="mi">Gerçek <span class="ms">·</span></span>
+    <span class="mi">Le Réel <span class="ms">·</span></span>
+    <span class="mi">Simgesel <span class="ms">·</span></span>
+    <span class="mi">Jouissance <span class="ms">·</span></span>
+    <span class="mi">Objet <em>a</em> <span class="ms">·</span></span>
+    <span class="mi">Le Signifiant <span class="ms">·</span></span>
+  </div>
+</div>
+
+<!-- ══════════ TEXT REVEAL ══════════ -->
+<section id="text-reveal">
+  <div class="wrap">
+    <div class="tr-card rv" id="tr-card">
+      <canvas class="tr-stars-c" id="tr-stars"></canvas>
+      <p class="tr-label">Analitik Dinleyiş</p>
+      <div class="tr-body" id="tr-body">
+        <p class="tr-base">Sen ne söylüyorsun?</p>
+        <div class="tr-reveal-wrap" id="tr-rw">
+          <p class="tr-reveal">Ben ne duyuyorum.</p>
+        </div>
+        <div class="tr-divider" id="tr-div"></div>
+      </div>
+      <div class="tr-footer">
+        <span class="tr-footer-txt">— Söylemin ötesinde, arzunun sesi</span>
+        <span class="tr-hint">Fareyi sürükle</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section id="about" class="pad">
+  <div class="wrap">
+    <div class="about-wrap">
+
+      <div class="about-stick rv">
+        <div class="about-photo">
+          <canvas id="ripple-canvas" aria-label="Haktan Tay"></canvas>
+          <div class="about-photo-border"></div>
+        </div>
+        <div class="about-photo-cap">
+          <span>Haktan Tay</span>
+          <span>Psikolog</span>
+        </div>
+      </div>
+
+      <div class="about-body">
+        <p class="sec-label rv">Hakkımda</p>
+        <h2 class="sec-title rv d1">Söz, özneyi<br>var eder.</h2>
+
+        <p class="about-p rv d2">
+          Psikanalitik yönelimli bir psikolog ve araştırmacıyım. Çalışmalarımın merkezinde <em>özne</em>, <em>söylem</em> ve <em>arzu</em> kavramları yer alıyor. Bu üç kavramın Jacques Lacan'ın kuramsal çerçevesinde nasıl iç içe geçtiğini hem klinik pratiğimde hem de akademik yazımda izliyorum.
+        </p>
+
+        <p class="about-p rv d3">
+          Yalova Üniversitesi Psikoloji bölümünden <em>Onur Derecesi</em> ile mezun oldum. ODTÜ AYNA Klinik Psikoloji Birimi'nde psikanalitik oryantasyonlu klinik staj tamamladım; Viyana Üniversitesi'nde nöropsikoloji alanında çalıştım. <em>La Nouvelle École Lacanienne</em> üyesi olarak Lacancı psikanaliz pratiğini hem Türkiye'de hem uluslararası arenada takip ediyorum.
+        </p>
+
+        <div class="bq rv d4">
+          <p>"L'inconscient est structuré comme un langage."</p>
+          <cite>— Jacques Lacan, Écrits</cite>
+        </div>
+
+        <p class="about-p rv d5">
+          <em>Çekiçle Felsefe</em> dergisinin genel yayın yönetmeniyim; Londra merkezli <em>Psychology Times</em>'ta psikoanaliz üzerine yazıyorum. Yakında yayımlanacak kitap bölümümde Lacan'ın bakış ve metonimi kavramlarıyla Frankenstein'ı okuyor, arzu ile yaratmanın sınır deneyimini inceliyorum.
+        </p>
+
+        <div class="about-stats rv">
+          <div>
+            <div class="stat-n" data-count="5">0</div>
+            <div class="stat-l">Yıllık Klinik<br>Deneyim</div>
+          </div>
+          <div>
+            <div class="stat-n" data-count="4">0</div>
+            <div class="stat-l">Staj<br>Kurumu</div>
+          </div>
+          <div>
+            <div class="stat-n" data-count="3">0</div>
+            <div class="stat-l">Aktif Uluslararası<br>Üyelik</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════ APPROACH ══════════ -->
+<section id="approach" class="pad">
+  <div class="wrap" style="position:relative;">
+    <div class="wm" style="font-size:16vw;top:40%;left:50%;transform:translate(-50%,-50%);" aria-hidden="true">RSI</div>
+
+    <p class="sec-label rv">Yaklaşım</p>
+    <h2 class="sec-title rv d1">Lacancı<br>Psikanaliz</h2>
+
+    <p class="approach-lead rv d2">
+      Terapi bir çözüm sunmaz — bir alan açar. Konuşmanın, sessizliğin ve anlam kaymaların içinde özne kendi arzusunun izini sürer. Analitik dinleyiş söylemin ötesinde neyin söylendiğine kulak verir.
+    </p>
+
+    <!-- Borromean -->
+    <div class="borr-grid">
+      <div class="borr-c rv">
+        <svg class="borr-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-label="Borromean Düğümü — RSI">
+          <defs>
+            <filter id="gw">
+              <feGaussianBlur stdDeviation="4" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <circle cx="150" cy="105" r="74" fill="none" stroke="#c8a96e" stroke-width="1.3" opacity=".85" filter="url(#gw)">
+            <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="24s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="105" cy="180" r="74" fill="none" stroke="#8b9dc3" stroke-width="1.3" opacity=".85" filter="url(#gw)">
+            <animateTransform attributeName="transform" type="rotate" from="360 150 150" to="0 150 150" dur="30s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="195" cy="180" r="74" fill="none" stroke="#9c7a8b" stroke-width="1.3" opacity=".85" filter="url(#gw)">
+            <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="38s" repeatCount="indefinite"/>
+          </circle>
+          <text x="150" y="50"  fill="#c8a96e" font-family="Cormorant Garamond,serif" font-size="11" text-anchor="middle" font-style="italic" opacity=".9">Réel</text>
+          <text x="46"  y="212" fill="#8b9dc3" font-family="Cormorant Garamond,serif" font-size="11" text-anchor="middle" font-style="italic" opacity=".9">Symbolique</text>
+          <text x="254" y="212" fill="#9c7a8b" font-family="Cormorant Garamond,serif" font-size="11" text-anchor="middle" font-style="italic" opacity=".9">Imaginaire</text>
+          <circle cx="150" cy="154" r="3.5" fill="#ede8e0" opacity=".45"/>
+          <circle cx="150" cy="154" r="8"   fill="none"   stroke="rgba(237,232,224,.1)" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="borr-info">
+        <h3 class="rv">Borromean<br>Düğüm</h3>
+        <p class="rv d1">
+          Lacan'ın kuramının yapıtaşında üç halka yatar: <span style="color:var(--gold);font-style:italic">Gerçek (Réel)</span>, <span style="color:var(--blue);font-style:italic">Simgesel (Symbolique)</span> ve <span style="color:var(--mauve);font-style:italic">Düşsel (Imaginaire)</span>. Bir Borromean düğümü gibi birbirini taşırlar — biri koparsa diğerleri de çözülür.
+        </p>
+        <p class="rv d2">Klinik pratik bu üç boyuttaki kırılmaları dinler. Analist öznenin söylemine eşlik ederek simgesel düzenin dışarıda bıraktıklarını, gerçeğin izlerini tanır.</p>
+        <div class="rsi rv d3">
+          <div class="rsi-i"><div class="rsi-d r"></div><span class="rsi-l">Réel</span></div>
+          <div class="rsi-i"><div class="rsi-d s"></div><span class="rsi-l">Symbolique</span></div>
+          <div class="rsi-i"><div class="rsi-d i"></div><span class="rsi-l">Imaginaire</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar spot rv">
+        <div class="pnum">01</div>
+        <div class="ptitle">Gerçek</div>
+        <div class="psub">Le Réel</div>
+        <p class="pbody">Sembolize edilemeyen, dil öncesi alan. Travma, tekrar eden semptomlar, yoğun heyecan — Gerçek simgeselin deliklerinden sızar. Klinik çalışma bu sızıntılarla nasıl yaşanacağını araştırır.</p>
+      </div>
+      <div class="pillar spot rv d2">
+        <div class="pnum">02</div>
+        <div class="ptitle">Simgesel</div>
+        <div class="psub">Le Symbolique</div>
+        <p class="pbody">Dil, yasa, Büyük Öteki. Özne simgeselin içine doğar; anlamlayan zincirinde sürekli kayar. Söylem analizi bu kayışın izini sürerek öznenin arzu yapısını açığa çıkarır.</p>
+      </div>
+      <div class="pillar spot rv d4">
+        <div class="pnum">03</div>
+        <div class="ptitle">Düşsel</div>
+        <div class="psub">L'Imaginaire</div>
+        <p class="pbody">Ayna evresi, ego, tanıma ve yanlış tanıma. Analitik ilişki imge tuzağından çıkışın mümkün olduğu nadir alanlardandır — öznenin kendini farklı görebildiği bir an.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════ SERVICES ══════════ -->
+<section id="services" class="pad">
+  <div class="wrap">
+    <p class="sec-label rv">Hizmetler</p>
+    <h2 class="sec-title rv d1">Birlikte<br>Çalışalım</h2>
+    <div class="svc-grid">
+
+      <div class="svc spot rv">
+        <span class="svc-n">01</span>
+        <svg class="svc-icon" viewBox="0 0 46 46" fill="none">
+          <circle cx="23" cy="23" r="19" stroke="#c8a96e" stroke-width=".8"/>
+          <circle cx="23" cy="23" r="7.5" stroke="#c8a96e" stroke-width=".8"/>
+          <line x1="23" y1="4"  x2="23" y2="15.5" stroke="#c8a96e" stroke-width=".8"/>
+          <line x1="23" y1="30.5" x2="23" y2="42" stroke="#c8a96e" stroke-width=".8"/>
+          <line x1="4"  y1="23" x2="15.5" y2="23" stroke="#c8a96e" stroke-width=".8"/>
+          <line x1="30.5" y1="23" x2="42" y2="23" stroke="#c8a96e" stroke-width=".8"/>
+        </svg>
+        <h3 class="svc-title">Bireysel Terapi</h3>
+        <p class="svc-body">Psikanalitik oryantasyonlu bireysel terapi seansları. Anlam arayışında olan, semptomlarıyla başa çıkmak isteyen, söylemin içinde kaybolan bireylerle çalışıyorum. Her seans öznenin kendi gerçeğiyle yüzleştiği özgün bir alan.</p>
+        <div class="tags">
+          <span class="tag">Psikanaliz</span>
+          <span class="tag">Bireysel</span>
+          <span class="tag">Lacancı</span>
+          <span class="tag">Türkçe · İngilizce</span>
+        </div>
+      </div>
+
+      <div class="svc spot rv d2">
+        <span class="svc-n">02</span>
+        <svg class="svc-icon" viewBox="0 0 46 46" fill="none">
+          <path d="M6 34 L6 12 Q6 5 13 5 L33 5 Q40 5 40 12 L40 28 Q40 35 33 35 L14 35 Z" stroke="#c8a96e" stroke-width=".8"/>
+          <line x1="13" y1="16" x2="33" y2="16" stroke="#c8a96e" stroke-width=".8"/>
+          <line x1="13" y1="22" x2="27" y2="22" stroke="#c8a96e" stroke-width=".8"/>
+        </svg>
+        <h3 class="svc-title">Süpervizyon</h3>
+        <p class="svc-body">Psikanalitik yönelimli süpervizyon. Klinik vakalar üzerine analitik okumalar, kurumsal baskı altında analitik tutumun korunması. Türkçe, İngilizce ve Fransızca süpervizyon seçeneği mevcuttur.</p>
+        <div class="tags">
+          <span class="tag">Süpervizyon</span>
+          <span class="tag">Vaka</span>
+          <span class="tag">TR · EN · FR</span>
+        </div>
+      </div>
+
+      <div class="svc spot rv d4">
+        <span class="svc-n">03</span>
+        <svg class="svc-icon" viewBox="0 0 46 46" fill="none">
+          <rect x="5" y="5" width="36" height="36" rx="2" stroke="#c8a96e" stroke-width=".8"/>
+          <line x1="12" y1="16" x2="34" y2="16" stroke="#c8a96e" stroke-width=".8"/>
+          <line x1="12" y1="22" x2="28" y2="22" stroke="#c8a96e" stroke-width=".8"/>
+          <line x1="12" y1="28" x2="22" y2="28" stroke="#c8a96e" stroke-width=".8"/>
+          <circle cx="34" cy="34" r="6" fill="var(--bg)" stroke="#c8a96e" stroke-width=".8"/>
+          <line x1="32" y1="34" x2="36" y2="34" stroke="#c8a96e" stroke-width=".8"/>
+          <line x1="34" y1="32" x2="34" y2="36" stroke="#c8a96e" stroke-width=".8"/>
+        </svg>
+        <h3 class="svc-title">Akademik Danışmanlık</h3>
+        <p class="svc-body">Lacancı söylem analizi, psikanalitik kuram ve nitel araştırma yöntemleri üzerine akademik danışmanlık. Tez çalışmaları, makale yazımı ve konferans sunumları için metodoloji ve teorik çerçeve desteği.</p>
+        <div class="tags">
+          <span class="tag">Söylem Analizi</span>
+          <span class="tag">Tez</span>
+          <span class="tag">Akademik</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════ ÇEKİÇLE FELSEFE ══════════ -->
+<section id="journal" class="pad">
+  <div class="wrap">
+    <div class="journal-inner">
+      <div class="journal-left">
+        <p class="journal-sub rv">Dergi</p>
+        <h2 class="journal-big rv d1">Çekiçle<br><em>Felsefe</em></h2>
+        <p class="journal-desc rv d2">
+          Felsefe, psikoloji ve edebiyatın kesiştiği bir dergi. Nietzsche'nin çekiciyle yapılan o ilk hamleden ilham alan <em>Çekiçle Felsefe</em>, düşünceyi yıkıp inşa etmeyi amaçlar. Psikanalitik okumalar, eleştirel teoriler ve özgün metinlerden oluşan her sayı yeni bir soruyla açılır.
+        </p>
+        <a href="mailto:dergi@cekiclefelsefe.com" class="journal-cta rv d3">
+          Dergiye Ulaş <span class="journal-arrow"></span>
+        </a>
+      </div>
+      <div class="journal-right">
+        <div class="journal-quote-wrap rv">
+          <p class="journal-quote">
+            "Felsefe yapmak, kavramların altını oymak ve içlerindeki varsayımları gün ışığına çıkarmak demektir."
+          </p>
+          <div class="journal-issues">
+            <div class="ji">
+              <div class="ji-num">Genel Yayın Yönetmeni</div>
+              <div class="ji-name">Haktan Tay</div>
+              <div class="ji-mail">Destek Yayınları</div>
+            </div>
+            <div class="ji">
+              <div class="ji-num">İletişim</div>
+              <div class="ji-name">Dergi</div>
+              <div class="ji-mail">dergi@cekiclefelsefe.com</div>
+            </div>
+            <div class="ji">
+              <div class="ji-num">Odak</div>
+              <div class="ji-name">Psikanaliz · Felsefe · Edebiyat</div>
+            </div>
+            <div class="ji">
+              <div class="ji-num">Yayıncı</div>
+              <div class="ji-name">Destek Yayınları</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════ ACADEMIC ══════════ -->
+<section id="academic" class="pad">
+  <div class="wrap">
+    <p class="sec-label rv">Akademik Çalışmalar</p>
+    <h2 class="sec-title rv d1">Yayınlar</h2>
+
+    <div class="pub-scroll-wrap" id="pub-scroll">
+      <div class="pub-row">
+        <div class="pub-card spot">
+          <div class="pub-yr">2026</div>
+          <span class="pub-type">Kitap Bölümü</span>
+          <div class="pub-title">Lacan'ın Bakış ve Metonimi Kavramlarıyla Mary Shelley'nin Frankenstein Romanının Modern Bir Okuması</div>
+          <div class="pub-venue">Freud'dan Lacan'a Vaka İncelemeleri içinde</div>
+        </div>
+        <div class="pub-card spot">
+          <div class="pub-yr">2025</div>
+          <span class="pub-type">Makale</span>
+          <div class="pub-title">Psikanalizin Dili / Dilin Psikanalizi</div>
+          <div class="pub-venue">Psychology Times, Londra</div>
+        </div>
+        <div class="pub-card spot">
+          <div class="pub-yr">2025</div>
+          <span class="pub-type">Tez · Kongre Sunumu</span>
+          <div class="pub-title">İdealize Edilmiş Partner İmajının Yansıması: Bir Söylem Analizi</div>
+          <div class="pub-venue">Ulusal Psikoloji Kongresi, Türkiye</div>
+        </div>
+        <div class="pub-card spot">
+          <div class="pub-yr">Devam Ediyor</div>
+          <span class="pub-type">Editörlük</span>
+          <div class="pub-title">Çekiçle Felsefe</div>
+          <div class="pub-venue">Destek Yayınları — Genel Yayın Yönetmeni</div>
+        </div>
+        <div class="pub-card spot">
+          <div class="pub-yr">2025</div>
+          <span class="pub-type">Yazarlık</span>
+          <div class="pub-title">Psychology Times</div>
+          <div class="pub-venue">Londra — Psikoanaliz üzerine yazılar</div>
+        </div>
+      </div>
+    </div>
+    <p class="pub-scroll-hint rv">Kaydır</p>
+
+    <h2 class="sec-title rv" style="margin-top:6rem;margin-bottom:2rem;">Konferans &amp;<br>Sunumlar</h2>
+
+    <div class="conf-list rv">
+      <div class="conf-item">
+        <span class="conf-yr">2025</span>
+        <span class="conf-t">İdealize Edilmiş Partner İmajının Yansıması: Bir Söylem Analizi</span>
+        <span class="conf-v">Ulusal Psikoloji Kongresi, Türkiye</span>
+      </div>
+      <div class="conf-item">
+        <span class="conf-yr">2024</span>
+        <span class="conf-t">Qu'est-ce que le Réel?</span>
+        <span class="conf-v">Groupe de Psychanalyse Lacanienne des Lycées et Universités Françaises — Davetli Konuşmacı</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════ EXPERIENCE ══════════ -->
+<section id="experience" class="pad">
+  <div class="wrap">
+    <p class="sec-label rv">Deneyim</p>
+    <h2 class="sec-title rv d1">Klinik &amp;<br>Akademik Yolculuk</h2>
+    <div class="tl">
+      <div class="ti rv">
+        <div class="ti-dot on"></div>
+        <div class="ti-date">Eylül 2024 – Devam Ediyor</div>
+        <div class="ti-title">Klinik Psikoloji Stajyeri (Psikanalitik)</div>
+        <div class="ti-org">AYNA Klinik Psikoloji Birimi · Orta Doğu Teknik Üniversitesi</div>
+        <p class="ti-desc">3 bireysel vaka ile psikanalitik yönelimli psikoterapi; analitik yönelimli klinisyenden haftalık süpervizyon.</p>
+      </div>
+      <div class="ti rv d1">
+        <div class="ti-dot on"></div>
+        <div class="ti-date">Nisan 2023 – Devam Ediyor</div>
+        <div class="ti-title">Discutant Psychanalytique</div>
+        <div class="ti-org">La Nouvelle École Lacanienne</div>
+        <p class="ti-desc">Lacancı psikanaliz pratiği ve teorisi üzerine tartışma seminerlerine katılım ve katkı.</p>
+      </div>
+      <div class="ti rv d2">
+        <div class="ti-dot"></div>
+        <div class="ti-date">2024</div>
+        <div class="ti-title">Psikoloji Stajyeri</div>
+        <div class="ti-org">T.C. Sağlık Bakanlığı, Türkiye</div>
+        <p class="ti-desc">Psikolojik test uygulama, klinik görüşme, vaka formülasyonu, psikopatoloji değerlendirmesi.</p>
+      </div>
+      <div class="ti rv d3">
+        <div class="ti-dot"></div>
+        <div class="ti-date">Mart – Nisan 2023</div>
+        <div class="ti-title">Nöropsikoloji Stajyeri</div>
+        <div class="ti-org">Universität Wien, Viyana, Avusturya</div>
+        <p class="ti-desc">Nöropsikolojik test bataryası uygulama ve araştırma çalışmaları.</p>
+      </div>
+      <div class="ti rv d4">
+        <div class="ti-dot"></div>
+        <div class="ti-date">2023</div>
+        <div class="ti-title">Psikoloji Stajyeri</div>
+        <div class="ti-org">T.C. Aile ve Sosyal Politikalar Bakanlığı</div>
+        <p class="ti-desc">Nörogelişimsel bozukluklar, rehabilitasyon, nöropsikolojik test uygulama.</p>
+      </div>
+      <div class="ti rv d5">
+        <div class="ti-dot"></div>
+        <div class="ti-date">Eylül 2023 – Eylül 2024</div>
+        <div class="ti-title">Geçici Yürütme Kurulu Üyesi</div>
+        <div class="ti-org">Türk Psikologlar Derneği · Nöropsikoloji Komisyonu</div>
+        <p class="ti-desc">Komisyon faaliyetleri ve mesleki gelişim etkinliklerinin organizasyonu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════ MEMBERSHIPS ══════════ -->
+<section id="memberships" class="pad">
+  <div class="wrap">
+    <p class="sec-label rv">Üyelikler</p>
+    <h2 class="sec-title rv d1">Mesleki<br>Topluluklar</h2>
+    <div class="mem-grid">
+      <div class="mem rv" data-index="01">
+        <div class="mem-flag">Uluslararası · 2021 – Devam</div>
+        <div class="mem-name">Nouvelle École Lacanienne</div>
+        <div class="mem-role">Üye &amp; Discutant Psychanalytique</div>
+      </div>
+      <div class="mem rv d2" data-index="02">
+        <div class="mem-flag">Uluslararası · 2020 – Devam</div>
+        <div class="mem-name">École de Psychanalyse des Forums du Champ Lacanien</div>
+        <div class="mem-role">Düzenli Katılımcı</div>
+      </div>
+      <div class="mem rv d4" data-index="03">
+        <div class="mem-flag">Türkiye · 2022 – Devam</div>
+        <div class="mem-name">Türk Psikologlar Derneği</div>
+        <div class="mem-role">Üye — Nöropsikoloji Komisyonu Eski Yürütme Kurulu</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════ SKILLS ══════════ -->
+<section id="skills" class="pad">
+  <div class="wrap">
+    <p class="sec-label rv">Beceriler</p>
+    <h2 class="sec-title rv d1">Klinik &amp;<br>Araştırma Araçları</h2>
+    <div class="skills-wrap">
+      <div class="sgrp rv">
+        <h4>Klinik Testler</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">WAIS</span>
+          <span class="skill-tag">WISC</span>
+          <span class="skill-tag">Rorschach</span>
+          <span class="skill-tag">TAT</span>
+          <span class="skill-tag">MMPI</span>
+          <span class="skill-tag">Bender-Gestalt</span>
+          <span class="skill-tag">Stroop</span>
+          <span class="skill-tag">WCST</span>
+        </div>
+      </div>
+      <div class="sgrp rv d2">
+        <h4>Araştırma Yöntemleri</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Lacancı Söylem Analizi</span>
+          <span class="skill-tag">Yansıtıcı Tematik Analiz</span>
+          <span class="skill-tag">Fenomenolojik Analiz</span>
+          <span class="skill-tag">Nitel Araştırma Tasarımı</span>
+          <span class="skill-tag">Yarı-Yapılandırılmış Görüşme</span>
+          <span class="skill-tag">SPSS</span>
+          <span class="skill-tag">ATLAS.ti</span>
+          <span class="skill-tag">NVivo</span>
+          <span class="skill-tag">MAXQDA</span>
+        </div>
+      </div>
+      <div class="sgrp rv d1">
+        <h4>Diller</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Türkçe</span>
+          <span class="skill-tag">İngilizce</span>
+          <span class="skill-tag">Fransızca</span>
+          <span class="skill-tag">Kürtçe</span>
+          <span class="skill-tag">Farsça</span>
+        </div>
+      </div>
+      <div class="sgrp rv d3">
+        <h4>Mesleki Gelişim</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Hamlet Semineri 48 hafta — NEL</span>
+          <span class="skill-tag">Lacan XVIII. Seminer Kartel</span>
+          <span class="skill-tag">Colloque: Résister — SPP 2025</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section id="contact" class="pad">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <p class="sec-label rv">İletişim</p>
+        <h2 class="rv d1">Bir Söyleşi<br>Başlatalım.</h2>
+        <p class="rv d2">Psikanalitik terapi, süpervizyon veya akademik işbirliği hakkında bilgi almak için ulaşabilirsiniz. İlk görüşme ücretsizdir.</p>
+        <div class="cdetails rv d3">
+          <div class="cd">
+            <span class="cdl">Psikolog</span>
+            <span class="cdv"><a href="mailto:psikologhaktantay@gmail.com">psikologhaktantay@gmail.com</a></span>
+          </div>
+          <div class="cd">
+            <span class="cdl">Dergi</span>
+            <span class="cdv"><a href="mailto:dergi@cekiclefelsefe.com">dergi@cekiclefelsefe.com</a></span>
+          </div>
+          <div class="cd">
+            <span class="cdl">Dil</span>
+            <span class="cdv">Türkçe · İngilizce · Fransızca</span>
+          </div>
+          <div class="cd">
+            <span class="cdl">Format</span>
+            <span class="cdv">Yüz yüze &amp; Online</span>
+          </div>
+        </div>
+      </div>
+      <form class="cform rv d2" onsubmit="return false;">
+        <div class="fgrp">
+          <label>Adınız</label>
+          <input type="text" placeholder="Ad Soyad" autocomplete="name">
+        </div>
+        <div class="fgrp">
+          <label>E-posta</label>
+          <input type="email" placeholder="ornek@mail.com" autocomplete="email">
+        </div>
+        <div class="fgrp">
+          <label>Konu</label>
+          <input type="text" placeholder="Bireysel Terapi / Süpervizyon / Dergi / Diğer">
+        </div>
+        <div class="fgrp">
+          <label>Mesajınız</label>
+          <textarea placeholder="Merhaba, ..."></textarea>
+        </div>
+        <button type="submit" class="btn-sub">
+          Gönder <span class="btn-arr"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-logo"><span class="footer-psi">ψ</span> Haktan Tay</div>
+      <div class="footer-q">"Le désir de l'homme, c'est le désir de l'Autre."</div>
+      <div class="footer-copy">© 2025 Haktan Tay · Psikolog</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════ -->
+<script>
+/* ── PRELOADER ────────────────────────────── */
+window.addEventListener('load', () => {
+  const pl = document.getElementById('preloader');
+  setTimeout(() => {
+    pl.style.transition = 'opacity .9s ease, transform .9s ease';
+    pl.style.opacity = '0';
+    pl.style.transform = 'translateY(-20px)';
+    setTimeout(() => pl.remove(), 920);
+  }, 2400);
+});
+
+/* ── PSI CURSOR ───────────────────────────── */
+const psi  = document.getElementById('cursor-psi');
+const ring = document.getElementById('cursor-ring');
+let mx=0, my=0, rx=0, ry=0;
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  psi.style.left = mx + 'px';
+  psi.style.top  = my + 'px';
+});
+
+(function lerpRing(){
+  rx += (mx-rx)*.1;
+  ry += (my-ry)*.1;
+  ring.style.left = rx+'px';
+  ring.style.top  = ry+'px';
+  requestAnimationFrame(lerpRing);
+})();
+
+document.querySelectorAll('a,button,.svc,.pillar,.mem,.ti,.pub-card,.ji').forEach(el => {
+  el.addEventListener('mouseenter', () => ring.classList.add('cursor-big'));
+  el.addEventListener('mouseleave', () => ring.classList.remove('cursor-big'));
+});
+
+/* ── NAV ──────────────────────────────────── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), {passive:true});
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t) t.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+/* mobile */
+const burger = document.getElementById('burger');
+const mob    = document.getElementById('nav-mob');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  mob.classList.toggle('open');
+});
+function closeMob(){ burger.classList.remove('open'); mob.classList.remove('open'); }
+
+/* ── WEBGL SMOKE ──────────────────────────── */
+(function initSmoke(){
+  const canvas = document.getElementById('smoke-canvas');
+  const gl = canvas.getContext('webgl2');
+  if(!gl) return;
+
+  const hero = document.getElementById('hero');
+  function resize(){
+    const dpr = Math.min(window.devicePixelRatio, 1.5);
+    canvas.width  = hero.offsetWidth  * dpr;
+    canvas.height = hero.offsetHeight * dpr;
+    gl.viewport(0,0,canvas.width,canvas.height);
+  }
+  resize();
+  window.addEventListener('resize', resize, {passive:true});
+
+  const VS = `#version 300 es
+    in vec4 position;
+    void main(){ gl_Position = position; }`;
+
+  const FS = `#version 300 es
+    precision highp float;
+    out vec4 O;
+    uniform float time;
+    uniform vec2  resolution;
+    uniform vec3  u_color;
+    #define FC gl_FragCoord.xy
+    #define R  resolution
+    #define T  (time+660.)
+    float rnd(vec2 p){p=fract(p*vec2(12.9898,78.233));p+=dot(p,p+34.56);return fract(p.x*p.y);}
+    float noise(vec2 p){vec2 i=floor(p),f=fract(p),u=f*f*(3.-2.*f);return mix(mix(rnd(i),rnd(i+vec2(1,0)),u.x),mix(rnd(i+vec2(0,1)),rnd(i+1.),u.x),u.y);}
+    float fbm(vec2 p){float t=.0,a=1.;for(int i=0;i<5;i++){t+=a*noise(p);p*=mat2(1,-1.2,.2,1.2)*2.;a*=.5;}return t;}
+    void main(){
+      vec2 uv=(FC-.5*R)/R.y;
+      vec3 col=vec3(1);
+      uv.x+=.25; uv*=vec2(2,1);
+      float n=fbm(uv*.28-vec2(T*.01,0));
+      n=noise(uv*3.+n*2.);
+      col.r-=fbm(uv+vec2(0,T*.015)+n);
+      col.g-=fbm(uv*1.003+vec2(0,T*.015)+n+.003);
+      col.b-=fbm(uv*1.006+vec2(0,T*.015)+n+.006);
+      col=mix(col,u_color,dot(col,vec3(.21,.71,.07)));
+      col=mix(vec3(.07),col,min(time*.12,1.));
+      col=clamp(col,.07,1.);
+      O=vec4(col,1);
+    }`;
+
+  function mkShader(type, src){
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, mkShader(gl.VERTEX_SHADER,   VS));
+  gl.attachShader(prog, mkShader(gl.FRAGMENT_SHADER, FS));
+  gl.linkProgram(prog);
+
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,1,-1,-1,1,1,1,-1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog,'position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos,2,gl.FLOAT,false,0,0);
+
+  const uTime  = gl.getUniformLocation(prog,'time');
+  const uRes   = gl.getUniformLocation(prog,'resolution');
+  const uColor = gl.getUniformLocation(prog,'u_color');
+
+  // dark amber-gold smoke tinted with deep purple
+  const smokeColor = [0.22, 0.15, 0.32];
+
+  let start = null;
+  function loop(ts){
+    if(!start) start = ts;
+    const t = (ts - start) * .001;
+    gl.useProgram(prog);
+    gl.uniform1f(uTime, t);
+    gl.uniform2f(uRes, canvas.width, canvas.height);
+    gl.uniform3fv(uColor, smokeColor);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+
+/* ── HERO PARTICLE OVERLAY ────────────────── */
+(function initPts(){
+  const c   = document.getElementById('hero-canvas');
+  const ctx = c.getContext('2d');
+  const hero= document.getElementById('hero');
+
+  function resize(){
+    c.width  = hero.offsetWidth;
+    c.height = hero.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize, {passive:true});
+
+  const N = 40;
+  const pts = Array.from({length:N}, ()=>({
+    x: Math.random()*c.width, y: Math.random()*c.height,
+    vx:(Math.random()-.5)*.2, vy:(Math.random()-.5)*.2,
+    r: Math.random()*1.2+.3,  o: Math.random()*.2+.03,
+  }));
+
+  (function draw(){
+    ctx.clearRect(0,0,c.width,c.height);
+    pts.forEach(p=>{
+      p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0||p.x>c.width)  p.vx*=-1;
+      if(p.y<0||p.y>c.height) p.vy*=-1;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(200,169,110,${p.o})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  })();
+})();
+
+/* ── HERO PARALLAX ────────────────────────── */
+const pimg = document.getElementById('parallax-img');
+const hero = document.getElementById('hero');
+
+window.addEventListener('scroll', ()=>{
+  if(!pimg) return;
+  const s = window.scrollY;
+  if(s < window.innerHeight*1.5) pimg.style.transform = `scale(1.06) translateY(${s*.2}px)`;
+},{passive:true});
+
+hero.addEventListener('mousemove', e=>{
+  const r = hero.getBoundingClientRect();
+  const x = (e.clientX-r.left)/r.width  - .5;
+  const y = (e.clientY-r.top) /r.height - .5;
+  if(pimg) pimg.style.transform = `scale(1.06) translate(${x*16}px,${y*16}px)`;
+});
+
+/* ── SCROLL REVEAL ────────────────────────── */
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+},{threshold:.08, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+/* ── COUNTERS ─────────────────────────────── */
+const cobs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting) return;
+    const target = +e.target.dataset.count;
+    let cur=0; const step=target/48;
+    const id=setInterval(()=>{
+      cur+=step; if(cur>=target){cur=target;clearInterval(id);}
+      e.target.textContent=Math.floor(cur)+'+';
+    },28);
+    cobs.unobserve(e.target);
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cobs.observe(el));
+
+/* ── SPOTLIGHT EFFECT on .spot ────────────── */
+document.querySelectorAll('.spot').forEach(el=>{
+  el.addEventListener('mousemove', e=>{
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--mx', (e.clientX-r.left)+'px');
+    el.style.setProperty('--my', (e.clientY-r.top )+'px');
+  });
+});
+
+/* ── DRAG-SCROLL publications ─────────────── */
+const ps = document.getElementById('pub-scroll');
+if(ps){
+  let down=false, startX, sl;
+  ps.addEventListener('mousedown', e=>{down=true; startX=e.pageX-ps.offsetLeft; sl=ps.scrollLeft;});
+  ps.addEventListener('mouseleave',  ()=>down=false);
+  ps.addEventListener('mouseup',     ()=>down=false);
+  ps.addEventListener('mousemove', e=>{
+    if(!down) return;
+    e.preventDefault();
+    ps.scrollLeft = sl-(e.pageX-ps.offsetLeft-startX);
+  });
+}
+
+/* ── TEXT REVEAL CARD ─────────────────────── */
+(function initTextReveal(){
+  const card  = document.getElementById('tr-card');
+  const body  = document.getElementById('tr-body');
+  const rw    = document.getElementById('tr-rw');
+  const divEl = document.getElementById('tr-div');
+  if(!card||!rw||!divEl) return;
+
+  card.addEventListener('mousemove', e => {
+    const rect = body.getBoundingClientRect();
+    const x    = e.clientX - rect.left;
+    const pct  = Math.max(0, Math.min(100, (x / rect.width) * 100));
+    const rot  = (pct - 50) * 0.06;
+    rw.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+    divEl.style.left      = pct + '%';
+    divEl.style.transform = `translateX(-50%) rotate(${rot}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    rw.style.clipPath = 'inset(0 100% 0 0)';
+    divEl.style.left  = '0%';
+  });
+  card.addEventListener('mouseenter', () => {
+    divEl.style.opacity = '1';
+  });
+})();
+
+/* ── STARS in text reveal ─────────────────── */
+(function initTrStars(){
+  const c = document.getElementById('tr-stars');
+  if(!c) return;
+  const ctx = c.getContext('2d');
+
+  function sz(){
+    c.width  = c.parentElement.offsetWidth;
+    c.height = c.parentElement.offsetHeight;
+  }
+  sz();
+  window.addEventListener('resize', sz, {passive:true});
+
+  const stars = Array.from({length:90}, () => ({
+    x: Math.random(),
+    y: Math.random(),
+    r: Math.random() * .9 + .2,
+    phase: Math.random() * Math.PI * 2,
+    speed: Math.random() * .008 + .003,
+  }));
+
+  (function draw(t){
+    ctx.clearRect(0,0,c.width,c.height);
+    stars.forEach(s => {
+      const o = Math.abs(Math.sin(t * s.speed + s.phase)) * .35;
+      ctx.beginPath();
+      ctx.arc(s.x * c.width, s.y * c.height, s.r, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(200,169,110,${o})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  })(0);
+})();
+
+/* ── WATER RIPPLE — about photo ───────────── */
+(function initRipple(){
+  const canvas = document.getElementById('ripple-canvas');
+  if(!canvas) return;
+
+  const gl = canvas.getContext('webgl') ||
+             canvas.getContext('experimental-webgl');
+  if(!gl){ console.warn('WebGL1 not supported for ripple'); return; }
+
+  /* ── shaders (ported from WaterRippleImage component) ── */
+  const VS = `
+    precision mediump float;
+    varying vec2 vUv;
+    attribute vec2 a_position;
+    void main(){
+      vUv = .5 * (a_position + 1.);
+      gl_Position = vec4(a_position, 0.0, 1.0);
+    }`;
+
+  const FS = `
+    precision mediump float;
+    varying vec2 vUv;
+    uniform sampler2D u_image_texture;
+    uniform float u_time;
+    uniform float u_ratio;
+    uniform float u_img_ratio;
+    uniform float u_blueish;
+    uniform float u_scale;
+    uniform float u_illumination;
+    uniform float u_surface_distortion;
+    uniform float u_water_distortion;
+
+    #define TWO_PI 6.28318530718
+
+    vec3 mod289(vec3 x){ return x - floor(x*(1./289.))*289.; }
+    vec2 mod289(vec2 x){ return x - floor(x*(1./289.))*289.; }
+    vec3 permute(vec3 x){ return mod289(((x*34.)+1.)*x); }
+
+    float snoise(vec2 v){
+      const vec4 C = vec4(0.211324865405187,0.366025403784439,-0.577350269189626,0.024390243902439);
+      vec2 i = floor(v + dot(v,C.yy));
+      vec2 x0 = v - i + dot(i,C.xx);
+      vec2 i1 = (x0.x > x0.y) ? vec2(1.,0.) : vec2(0.,1.);
+      vec4 x12 = x0.xyxy + C.xxzz;
+      x12.xy -= i1;
+      i = mod289(i);
+      vec3 p = permute(permute(i.y + vec3(0.,i1.y,1.)) + i.x + vec3(0.,i1.x,1.));
+      vec3 m = max(0.5 - vec3(dot(x0,x0),dot(x12.xy,x12.xy),dot(x12.zw,x12.zw)),0.);
+      m = m*m; m = m*m;
+      vec3 x = 2.*fract(p*C.www) - 1.;
+      vec3 h = abs(x) - 0.5;
+      vec3 ox = floor(x+0.5);
+      vec3 a0 = x - ox;
+      m *= 1.79284291400159 - 0.85373472095314*(a0*a0+h*h);
+      vec3 g;
+      g.x  = a0.x *x0.x  + h.x *x0.y;
+      g.yz = a0.yz*x12.xz + h.yz*x12.yw;
+      return 130. * dot(m,g);
+    }
+
+    mat2 rotate2D(float r){ return mat2(cos(r),sin(r),-sin(r),cos(r)); }
+
+    float surface_noise(vec2 uv, float t, float scale){
+      vec2 n=vec2(.1), N=vec2(.1);
+      mat2 m = rotate2D(.5);
+      for(int j=0; j<10; j++){
+        uv*=m; n*=m;
+        vec2 q = uv*scale + float(j) + n + (.5+.5*float(j))*(mod(float(j),2.)-1.)*t;
+        n += sin(q);
+        N += cos(q)/scale;
+        scale *= 1.2;
+      }
+      return (N.x+N.y+.1);
+    }
+
+    void main(){
+      vec2 uv = vUv;
+      uv.y = 1. - uv.y;
+      uv.x *= u_ratio;
+
+      float t = .002 * u_time;
+      vec3 color = vec3(0.);
+      float opacity = 0.;
+
+      float outer_noise = snoise((.3+.1*sin(t))*uv + vec2(0.,.2*t));
+      vec2 surface_noise_uv = 2.*uv + (outer_noise*.2);
+
+      float surf = surface_noise(surface_noise_uv, t, u_scale);
+      surf *= pow(uv.y, .3);
+      surf  = pow(surf, 2.);
+
+      vec2 img_uv = vUv;
+      img_uv -= .5;
+      if(u_ratio > u_img_ratio){
+        img_uv.x = img_uv.x * u_ratio / u_img_ratio;
+      } else {
+        img_uv.y = img_uv.y * u_img_ratio / u_ratio;
+      }
+      img_uv *= 1.4;
+      img_uv += .5;
+      img_uv.y = 1. - img_uv.y;
+
+      img_uv += (u_water_distortion * outer_noise);
+      img_uv += (u_surface_distortion * surf);
+
+      vec4 img = texture2D(u_image_texture, img_uv);
+      img *= (1. + u_illumination * surf);
+
+      color += img.rgb;
+      color += u_illumination * vec3(1.-u_blueish, 1., 1.) * surf;
+      opacity += img.a;
+
+      float ew = .02;
+      float ea = smoothstep(0.,ew,img_uv.x)*smoothstep(1.,1.-ew,img_uv.x);
+      ea *= smoothstep(0.,ew,img_uv.y)*smoothstep(1.,1.-ew,img_uv.y);
+      color *= ea;
+      opacity *= ea;
+
+      gl_FragColor = vec4(color, opacity);
+    }`;
+
+  function mkSh(type, src){
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)){
+      console.error('Ripple shader error:', gl.getShaderInfoLog(s));
+      gl.deleteShader(s); return null;
+    }
+    return s;
+  }
+
+  const vs = mkSh(gl.VERTEX_SHADER, VS);
+  const fs = mkSh(gl.FRAGMENT_SHADER, FS);
+  if(!vs||!fs) return;
+
+  const prog = gl.createProgram();
+  gl.attachShader(prog, vs);
+  gl.attachShader(prog, fs);
+  gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog, gl.LINK_STATUS)){
+    console.error('Ripple link error:', gl.getProgramInfoLog(prog));
+    return;
+  }
+  gl.useProgram(prog);
+
+  const vbo = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, vbo);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,1,1]), gl.STATIC_DRAW);
+
+  const posLoc = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(posLoc);
+  gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
+
+  const U = {};
+  const nU = gl.getProgramParameter(prog, gl.ACTIVE_UNIFORMS);
+  for(let i=0; i<nU; i++){
+    const info = gl.getActiveUniform(prog, i);
+    if(info) U[info.name] = gl.getUniformLocation(prog, info.name);
+  }
+
+  /* defaults matching WaterRippleImage props */
+  gl.uniform1f(U['u_blueish'],           0.5);
+  gl.uniform1f(U['u_scale'],             7.0);
+  gl.uniform1f(U['u_illumination'],      0.18);
+  gl.uniform1f(U['u_surface_distortion'],0.06);
+  gl.uniform1f(U['u_water_distortion'],  0.025);
+
+  /* size the canvas */
+  function resize(){
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+    canvas.width  = w;
+    canvas.height = h;
+    gl.viewport(0,0,w,h);
+    gl.uniform1f(U['u_ratio'], w/h);
+  }
+  resize();
+  window.addEventListener('resize', resize, {passive:true});
+
+  /* load photo into texture */
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.onload = () => {
+    const tex = gl.createTexture();
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 0);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+    gl.uniform1i(U['u_image_texture'], 0);
+    gl.uniform1f(U['u_img_ratio'], img.naturalWidth/img.naturalHeight);
+  };
+  img.src = '1735210893204.jpg';
+
+  /* render loop */
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+  (function draw(){
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.uniform1f(U['u_time'], performance.now());
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(draw);
+  })();
+})();
+</script>
+</body>
+</html>
