@@ -217,15 +217,18 @@ nav.scrolled {
   opacity:0; animation:fadein 1.8s ease .8s forwards;
 }
 .hero-portrait {
-  width:260px; height:330px; overflow:hidden; position:relative;
+  width:260px; height:330px; position:relative;
 }
 .hero-portrait img {
   width:100%; height:100%; object-fit:cover; object-position:center 12%;
-  filter:saturate(.35) contrast(1.12) brightness(.8); display:block;
+  filter:saturate(.3) contrast(1.08) brightness(.75); display:block;
+  -webkit-mask-image:radial-gradient(ellipse 88% 92% at 50% 42%, black 38%, transparent 80%);
+  mask-image:radial-gradient(ellipse 88% 92% at 50% 42%, black 38%, transparent 80%);
 }
 .hero-portrait-veil {
   position:absolute; inset:0;
-  background:linear-gradient(180deg,rgba(9,9,15,.3) 0%,transparent 22%,transparent 62%,rgba(9,9,15,.75) 100%);
+  background:radial-gradient(ellipse 88% 92% at 50% 42%, transparent 30%, rgba(9,9,15,.55) 65%, rgba(9,9,15,.95) 85%);
+  pointer-events:none;
 }
 .hero-text-scrim {
   position:absolute; inset:-1.2rem -1.5rem;
@@ -1561,7 +1564,7 @@ footer {
         </p>
 
         <p class="about-p rv d3">
-          Yalova Üniversitesi Psikoloji bölümünden <em>Onur Derecesi</em> ile mezun oldum. ODTÜ AYNA Klinik Psikoloji Birimi'nde psikanalitik oryantasyonlu klinik staj tamamladım; Viyana Üniversitesi'nde nöropsikoloji alanında çalıştım. Lacanyen psikanaliz pratiğini hem Türkiye'de hem uluslararası arenada takip ediyorum.
+          Yalova Üniversitesi Psikoloji bölümünden <em>Onur Derecesi</em> ile mezun oldum. ODTÜ AYNA Klinik Psikoloji Birimi'nde psikanalitik oryantasyonlu klinik staj tamamladım. Lacanyen psikanaliz pratiğini hem Türkiye'de hem uluslararası arenada takip ediyorum.
         </p>
 
         <div class="bq rv d4">
@@ -1570,23 +1573,9 @@ footer {
         </div>
 
         <p class="about-p rv d5">
-          <em>Çekiçle Felsefe</em> dergisinin genel yayın yönetmeniyim; Londra merkezli <em>Psychology Times</em>'ta psikoanaliz üzerine yazıyorum. Yakında yayımlanacak kitap bölümümde Lacan'ın bakış ve metonimi kavramlarıyla Frankenstein'ı okuyor, arzu ile yaratmanın sınır deneyimini inceliyorum.
+          <em>Çekiçle Felsefe</em> dergisinin genel yayın yönetmeniyim; Londra merkezli <em>Psychology Times</em>'ta psikoanaliz üzerine yazıyorum. 2026'da yayımlanan kitap bölümümde Lacan'ın bakış ve metonimi kavramlarıyla Frankenstein'ı okuyor, arzu ile yaratmanın sınır deneyimini inceliyorum.
         </p>
 
-        <div class="about-stats rv">
-          <div>
-            <div class="stat-n" data-count="5" data-suffix="+">0</div>
-            <div class="stat-l">Yıllık Klinik<br>Deneyim</div>
-          </div>
-          <div>
-            <div class="stat-n" data-count="4">0</div>
-            <div class="stat-l">Staj<br>Kurumu</div>
-          </div>
-          <div>
-            <div class="stat-n" data-count="3">0</div>
-            <div class="stat-l">Aktif Uluslararası<br>Üyelik</div>
-          </div>
-        </div>
       </div>
 
     </div>
@@ -1973,8 +1962,8 @@ footer {
       <div class="ti rv d1">
         <div class="ti-dot on"></div>
         <div class="ti-date">2022 – Devam Ediyor</div>
-        <div class="ti-title">Üye / Kartel Çalışanı</div>
-        <div class="ti-org">Nouvelle École Lacanienne (NEL)</div>
+        <div class="ti-title">Discutant Psychanalytique</div>
+        <div class="ti-org">Nouvelle École Lacanienne</div>
         <p class="ti-desc">Hamlet Semineri (48 hafta), Lacan XVIII. Seminer Kartel çalışmaları; psikanalitik oluşum ve kartel dinamiklerine aktif katılım.</p>
       </div>
       <div class="ti rv d2">
@@ -2057,7 +2046,7 @@ footer {
       <div class="sgrp rv d3">
         <h4>Mesleki Gelişim</h4>
         <div class="skill-tags">
-          <span class="skill-tag">Hamlet Semineri 48 hafta — NEL</span>
+          <span class="skill-tag">Hamlet Semineri 48 hafta — Nouvelle École Lacanienne</span>
           <span class="skill-tag">Lacan XVIII. Seminer Kartel</span>
           <span class="skill-tag">Colloque: Résister — SPP 2025</span>
         </div>
