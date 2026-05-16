@@ -895,15 +895,16 @@ footer {
 /* ═══════════════════════════════════════════════════
    GOOEY TEXT MORPH
 ═══════════════════════════════════════════════════ */
-.gooey-wrap { height:3rem; position:relative; margin:1.8rem 0 2.2rem; }
-.gooey-svg  { position:absolute; width:0; height:0; overflow:hidden; }
+.gooey-wrap { height:3.5rem; position:relative; margin:1.8rem 0 2.4rem; }
+.gooey-svg  { position:absolute; width:0; height:0; }
 .gooey-stage {
-  display:flex; align-items:center; height:100%;
+  position:absolute; inset:0;
+  display:flex; align-items:center;
   filter:url(#gooey-filter);
 }
 .gooey-stage span {
-  position:absolute; left:0;
-  font-family:var(--serif); font-size:1.9rem; font-weight:300; font-style:italic;
+  position:absolute; left:0; top:50%; transform:translateY(-50%);
+  font-family:var(--serif); font-size:2rem; font-weight:300; font-style:italic;
   color:var(--gold); letter-spacing:.06em; white-space:nowrap;
   will-change:filter,opacity;
 }
@@ -942,7 +943,7 @@ footer {
 }
 .divan-wrap img {
   width:100%; height:100%; object-fit:cover; object-position:center 45%;
-  filter:saturate(.22) contrast(1.15) brightness(.65);
+  filter:saturate(.45) contrast(1.05) brightness(.82);
   display:block;
 }
 .divan-overlay {
@@ -1005,6 +1006,13 @@ footer {
 </head>
 <body>
 
+<svg style="position:absolute;width:0;height:0;overflow:visible" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="gooey-filter">
+      <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 255 -140"/>
+    </filter>
+  </defs>
+</svg>
 <div class="noise" aria-hidden="true"></div>
 
 <!-- ψ CURSOR -->
@@ -1062,13 +1070,6 @@ footer {
       Söylemin ardında ne var?<br>
       <strong>Özneyi dinlemek, onu söz içinde bulmaktır.</strong>
     </p>
-    <svg class="gooey-svg" aria-hidden="true">
-      <defs>
-        <filter id="gooey-filter">
-          <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 255 -140"/>
-        </filter>
-      </defs>
-    </svg>
     <div class="gooey-wrap" aria-hidden="true">
       <div class="gooey-stage">
         <span id="gt1"></span>
@@ -1309,7 +1310,7 @@ footer {
       </div>
     </div>
 
-    <div class="divan-wrap rv">
+    <div class="divan-wrap">
       <img src="a.png" alt="Analitik Alan" loading="lazy">
       <div class="divan-overlay">
         <div class="divan-quote">
