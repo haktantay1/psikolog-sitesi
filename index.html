@@ -976,6 +976,63 @@ footer {
   .journal-inner{grid-template-columns:1fr;gap:4rem;}
 }
 /* ═══════════════════════════════════════════════════
+   OBJET PETIT A SECTION
+═══════════════════════════════════════════════════ */
+#objeta { position:relative; background:var(--bg); }
+.objeta-canvas-wrap {
+  position:relative; width:100%; height:80vh; min-height:520px;
+  overflow:hidden;
+}
+#objeta-canvas {
+  position:absolute; inset:0; width:100%; height:100%; display:block;
+}
+.objeta-overlay {
+  position:absolute; inset:0; z-index:2;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:0 8rem;
+  background:linear-gradient(90deg,rgba(7,7,14,.82) 0%,rgba(7,7,14,.4) 50%,transparent 100%);
+}
+.objeta-label {
+  font-size:.58rem; letter-spacing:.45em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:1.5rem;
+  display:flex; align-items:center; gap:1rem;
+}
+.objeta-label::before { content:''; width:26px; height:1px; background:var(--gold); flex-shrink:0; }
+.objeta-title {
+  font-family:var(--serif); font-weight:300;
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  line-height:1.05; letter-spacing:.02em; margin-bottom:1.5rem;
+}
+.objeta-title em { color:var(--gold); font-style:italic; }
+.objeta-body {
+  font-family:var(--serif); font-size:clamp(1rem,1.4vw,1.15rem);
+  color:var(--mid); max-width:460px; line-height:1.85; font-style:italic;
+}
+.objeta-matheme {
+  margin-top:2.2rem;
+  font-family:var(--serif); font-size:2.6rem; color:var(--gold);
+  opacity:.65; letter-spacing:.12em;
+}
+.objeta-slider {
+  position:relative; overflow:hidden;
+  padding:1.4rem 0;
+  border-top:1px solid rgba(200,169,110,.08);
+  background:var(--bg2);
+}
+.objeta-track {
+  display:flex; gap:0; will-change:transform; white-space:nowrap;
+}
+.objeta-item {
+  font-family:var(--serif); font-style:italic; font-size:.95rem;
+  color:var(--dim); padding:0 2.2rem; white-space:nowrap;
+}
+.objeta-sep { color:var(--gold); padding:0 .2rem; }
+@media(max-width:768px){
+  .objeta-overlay{ padding:0 2.5rem; }
+  .objeta-matheme{ font-size:1.8rem; }
+}
+
+/* ═══════════════════════════════════════════════════
    HERO VIDEO BACKGROUND
 ═══════════════════════════════════════════════════ */
 .hero-video {
@@ -1481,6 +1538,53 @@ footer {
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ OBJET PETIT A ══════════ -->
+<section id="objeta">
+  <div class="objeta-canvas-wrap">
+    <canvas id="objeta-canvas" aria-hidden="true"></canvas>
+    <div class="objeta-overlay">
+      <p class="objeta-label rv">Lacancı Kuram</p>
+      <h2 class="objeta-title rv d1">Arzunun <em>Nesnesi</em></h2>
+      <p class="objeta-body rv d2">
+        Objet petit a — arzunun nedeni-nesnesi. Hiçbir zaman tam olarak elde edilemeyen,
+        elde edildikçe kaçan, öznenin etrafında sürekli döndüğü boşluk.
+        Eksiklik, arzunun motoru değil; arzunun ta kendisidir.
+      </p>
+      <div class="objeta-matheme rv d3">$ ◇ a</div>
+    </div>
+  </div>
+  <div class="objeta-slider">
+    <div class="pblur pblur-left"></div>
+    <div class="pblur pblur-right"></div>
+    <div class="objeta-track" id="objeta-track">
+      <span class="objeta-item">Objet petit a</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">$ ◇ a</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Manque-à-être</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Das Ding</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Plus-de-jouir</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Le Fantasme</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Arzu Nesnesi</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Le Manque</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">L'Autre barré</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Jouissance</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">La Pulsion</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Le Réel</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Objet petit a</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">$ ◇ a</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Manque-à-être</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Das Ding</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Plus-de-jouir</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Le Fantasme</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Arzu Nesnesi</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Le Manque</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">L'Autre barré</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Jouissance</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">La Pulsion</span><span class="objeta-sep">·</span>
+      <span class="objeta-item">Le Réel</span><span class="objeta-sep">·</span>
     </div>
   </div>
 </section>
@@ -2414,6 +2518,148 @@ if(ps){
       el.appendChild(d);
     }
   });
+})();
+
+/* ── OBJET PETIT A SHADER ─────────────────── */
+(function initObjetA(){
+  const canvas = document.getElementById('objeta-canvas');
+  if(!canvas) return;
+  const gl = canvas.getContext('webgl2', {premultipliedAlpha:false});
+  if(!gl) return;
+
+  const VERT = `#version 300 es
+precision highp float;
+layout(location=0) in vec2 a_pos;
+void main(){ gl_Position=vec4(a_pos,0.0,1.0); }`;
+
+  const FRAG = `#version 300 es
+precision highp float;
+out vec4 fragColor;
+uniform vec3 iResolution;
+uniform float iTime;
+
+void main(){
+  vec2 r=iResolution.xy;
+  vec2 uv=(gl_FragCoord.xy-r*0.5)/min(r.x,r.y);
+  float t=iTime*0.2;
+  float rr=length(uv);
+  float ang=atan(uv.y,uv.x);
+
+  vec3 col=vec3(0.04,0.03,0.08);
+
+  /* 5 orbital rings with rotating gaps — the objet a always escapes */
+  for(float i=1.0;i<=5.0;i++){
+    float orbit=0.1*i+0.05;
+    float d=abs(rr-orbit);
+    float ring=exp(-d*d*600.0/i);
+
+    float gapCenter=t*0.4/i*6.28318+i*1.2;
+    float gapSize=0.55+0.12*sin(t*0.25+i);
+    float angDiff=mod(ang-gapCenter+3.14159,6.28318)-3.14159;
+    float arc=smoothstep(0.0,gapSize*0.5,abs(angDiff)-gapSize*0.5);
+
+    float voidMask=smoothstep(0.02,0.08,rr);
+
+    float cf=sin(i*0.9+t*0.15)*0.5+0.5;
+    vec3 ringCol=mix(
+      vec3(0.78,0.66,0.43),
+      vec3(0.50,0.40,0.65),
+      cf
+    );
+    col+=ring*arc*voidMask*ringCol*(1.6-i*0.2);
+  }
+
+  /* 8 particles orbiting the void */
+  for(float k=0.0;k<8.0;k++){
+    float orbitR=0.16+k*0.08;
+    float pAng=k*0.7854+t*(0.12-k*0.01)*6.28318;
+    vec2 pPos=vec2(cos(pAng),sin(pAng))*orbitR;
+    float d=length(uv-pPos);
+    float particle=exp(-d*d*7000.0);
+    float pc=sin(k*1.3+t*0.5)*0.5+0.5;
+    vec3 pCol=mix(vec3(0.9,0.75,0.5),vec3(0.7,0.55,0.8),pc);
+    col+=particle*pCol*2.2;
+  }
+
+  /* center void — manque */
+  col*=smoothstep(0.01,0.07,rr);
+  /* outer fade */
+  col*=1.0-smoothstep(0.45,0.75,rr)*0.8;
+  /* tone map */
+  col=tanh(col*1.4);
+
+  fragColor=vec4(col,1.0);
+}`;
+
+  function mkSh(type,src){
+    const s=gl.createShader(type);
+    gl.shaderSource(s,src); gl.compileShader(s);
+    if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)){
+      console.error('ObjetA shader:',gl.getShaderInfoLog(s)); return null;
+    }
+    return s;
+  }
+  const vs=mkSh(gl.VERTEX_SHADER,VERT);
+  const fs=mkSh(gl.FRAGMENT_SHADER,FRAG);
+  if(!vs||!fs) return;
+  const prog=gl.createProgram();
+  gl.attachShader(prog,vs); gl.attachShader(prog,fs); gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog,gl.LINK_STATUS)){
+    console.error('ObjetA link:',gl.getProgramInfoLog(prog)); return;
+  }
+
+  const vao=gl.createVertexArray(); gl.bindVertexArray(vao);
+  const vbo=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,vbo);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(0);
+  gl.vertexAttribPointer(0,2,gl.FLOAT,false,0,0);
+
+  const uRes =gl.getUniformLocation(prog,'iResolution');
+  const uTime=gl.getUniformLocation(prog,'iTime');
+
+  const wrap=canvas.parentElement;
+  let cw=0,ch=0;
+  function resize(){
+    const dpr=Math.min(window.devicePixelRatio||1,2);
+    cw=Math.max(1,(wrap.offsetWidth*dpr)|0);
+    ch=Math.max(1,(wrap.offsetHeight*dpr)|0);
+    canvas.width=cw; canvas.height=ch;
+    gl.viewport(0,0,cw,ch);
+  }
+  resize();
+  window.addEventListener('resize',resize,{passive:true});
+
+  const start=performance.now();
+  function tick(){
+    const t=(performance.now()-start)/1000;
+    gl.useProgram(prog);
+    gl.uniform3f(uRes,cw,ch,1.0);
+    gl.uniform1f(uTime,t);
+    gl.bindVertexArray(vao);
+    gl.drawArrays(gl.TRIANGLES,0,3);
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  /* slider */
+  const track=document.getElementById('objeta-track');
+  if(track){
+    const clone=track.cloneNode(true);
+    track.parentElement.insertBefore(clone,track.nextSibling);
+    let pos=0,paused=false;
+    track.parentElement.addEventListener('mouseenter',()=>paused=true);
+    track.parentElement.addEventListener('mouseleave',()=>paused=false);
+    (function slide(){
+      if(!paused){
+        pos+=0.35;
+        const w=track.offsetWidth;
+        if(pos>=w) pos-=w;
+        track.style.transform=`translateX(${-pos}px)`;
+        clone.style.transform=`translateX(${w-pos}px)`;
+      }
+      requestAnimationFrame(slide);
+    })();
+  }
 })();
 
 /* ── INFINITE SLIDERS ─────────────────────── */
