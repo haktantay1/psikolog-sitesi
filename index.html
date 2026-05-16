@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Haktan Tay — Psikolog, Psikanalitik Yönelimli Terapist, Lacancı Psikanalist">
+<meta name="description" content="Haktan Tay — Psikolog, Psikanalitik Yönelimli Psikolog, Lacancı Kuram Uygulayıcısı">
 <title>Haktan Tay</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -202,8 +202,38 @@ nav.scrolled {
 #hero {
   height:100vh; min-height:700px;
   position:relative; overflow:hidden;
-  display:grid; grid-template-columns:1fr 1fr;
+  display:flex; align-items:center; justify-content:center;
   background:var(--hero-bg);
+}
+
+.hero-center {
+  position:relative; z-index:3;
+  display:flex; flex-direction:column; align-items:center;
+  gap:1.8rem; padding:8rem 2rem 5rem;
+  text-align:center; width:100%;
+}
+.hero-portrait-wrap {
+  position:relative; width:260px; margin:0 auto;
+  opacity:0; animation:fadein 1.8s ease .8s forwards;
+}
+.hero-portrait {
+  width:260px; height:330px; overflow:hidden; position:relative;
+}
+.hero-portrait img {
+  width:100%; height:100%; object-fit:cover; object-position:center 12%;
+  filter:saturate(.35) contrast(1.12) brightness(.8); display:block;
+}
+.hero-portrait-veil {
+  position:absolute; inset:0;
+  background:linear-gradient(180deg,rgba(9,9,15,.3) 0%,transparent 22%,transparent 62%,rgba(9,9,15,.75) 100%);
+}
+.hero-portrait-border {
+  position:absolute; top:10px; left:10px; right:-10px; bottom:-10px;
+  border:1px solid rgba(200,169,110,.22); pointer-events:none; z-index:-1;
+}
+.hero-lower {
+  display:flex; flex-direction:column; align-items:center;
+  max-width:520px; width:100%;
 }
 
 /* Radial shader fills the entire hero */
@@ -224,11 +254,12 @@ nav.scrolled {
 }
 .hero-eyebrow {
   font-size:.6rem; letter-spacing:.45em; text-transform:uppercase;
-  color:var(--gold); margin-bottom:2.5rem;
+  color:var(--gold); margin-bottom:1.8rem;
   opacity:0; animation:h-up 1s var(--ease) 1.6s forwards;
-  display:flex; align-items:center; gap:1rem;
+  display:flex; align-items:center; justify-content:center; gap:1rem;
 }
-.hero-eyebrow::before {
+.hero-eyebrow::before,
+.hero-eyebrow::after {
   content:''; width:24px; height:1px; background:var(--gold); flex-shrink:0;
 }
 .hero-name {
@@ -246,31 +277,32 @@ nav.scrolled {
 
 .hero-rule {
   width:50px; height:1px; background:var(--gold);
-  margin:2.5rem 0;
-  transform:scaleX(0); transform-origin:left; opacity:0;
+  margin:0 auto 2rem;
+  transform:scaleX(0); transform-origin:center; opacity:0;
   animation:h-expand 1s var(--ease) 2.2s forwards;
 }
 @keyframes h-expand { to { transform:scaleX(1); opacity:1; } }
 
 .hero-tagline {
   font-family:var(--serif); font-style:italic;
-  font-size:clamp(1.1rem,1.8vw,1.45rem); font-weight:300;
-  color:var(--mid); line-height:1.65; max-width:400px;
+  font-size:clamp(1rem,1.6vw,1.3rem); font-weight:300;
+  color:var(--mid); line-height:1.65; max-width:420px; text-align:center;
   opacity:0; animation:h-up 1s var(--ease) 2.35s forwards;
 }
 .hero-tagline strong { color:var(--text); font-style:normal; font-weight:400; }
 
 .hero-meta {
-  display:flex; gap:3rem; margin-top:3.5rem;
+  display:flex; gap:2.5rem; justify-content:center; margin-top:1.8rem;
   opacity:0; animation:h-up 1s var(--ease) 2.5s forwards;
-  padding-top:3rem; border-top:1px solid rgba(200,169,110,.12);
+  padding-top:1.8rem; border-top:1px solid rgba(200,169,110,.12);
+  width:100%;
 }
 .hero-meta-item { display:flex; flex-direction:column; gap:.35rem; }
 .hero-meta-lbl  { font-size:.56rem; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); }
 .hero-meta-val  { font-size:.8rem; color:var(--mid); }
 
 .hero-scroll {
-  position:absolute; bottom:4rem; left:8rem;
+  position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%);
   display:flex; align-items:center; gap:1.2rem;
   opacity:0; animation:h-up 1s var(--ease) 2.7s forwards;
 }
@@ -900,7 +932,7 @@ footer {
   filter:url(#gooey-filter);
 }
 .gooey-stage span {
-  position:absolute; left:0; top:50%; transform:translateY(-50%);
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
   font-family:var(--serif); font-size:2.4rem; font-weight:300; font-style:italic;
   color:var(--gold); letter-spacing:.06em; white-space:nowrap;
   will-change:filter,opacity;
@@ -1323,7 +1355,7 @@ footer {
     <span style="animation-delay:.1s">H</span><span style="animation-delay:.15s">A</span><span style="animation-delay:.2s">K</span><span style="animation-delay:.25s">T</span><span style="animation-delay:.3s">A</span><span style="animation-delay:.35s">N</span><span style="animation-delay:.4s">&thinsp;</span><span style="animation-delay:.45s">T</span><span style="animation-delay:.5s">A</span><span style="animation-delay:.55s">Y</span>
   </div>
   <div class="pl-bar"></div>
-  <div class="pl-sub">Psikolog &nbsp;·&nbsp; Lacancı Psikanalist</div>
+  <div class="pl-sub">Psikolog &nbsp;·&nbsp; Psikanalitik Yönelimli</div>
 </div>
 
 <!-- NAV -->
@@ -1361,53 +1393,58 @@ footer {
     <source src="https://ik.imagekit.io/lrigu76hy/tailark/dna-video.mp4?updatedAt=1745736251477" type="video/mp4">
   </video>
 
-  <div class="hero-left">
-    <p class="hero-eyebrow">Psikanalitik Yönelimli Terapist</p>
-    <h1 class="hero-name">
-      <span class="ln hero-first"><span class="wd" style="animation-delay:1.65s">Haktan</span></span>
-      <span class="ln hero-last"><span class="wd"  style="animation-delay:1.82s">Tay</span></span>
-    </h1>
-    <div class="hero-rule"></div>
-    <p class="hero-tagline">
-      Söylemin ardında ne var?<br>
-      <strong>Özneyi dinlemek, onu söz içinde bulmaktır.</strong>
-    </p>
-    <div class="gooey-wrap" aria-hidden="true">
-      <div class="gooey-stage">
-        <span id="gt1"></span>
-        <span id="gt2"></span>
-      </div>
+  <div class="hero-center">
+    <div class="hero-upper">
+      <p class="hero-eyebrow">Psikanalitik Yönelimli Psikolog</p>
+      <h1 class="hero-name">
+        <span class="ln hero-first"><span class="wd" style="animation-delay:1.65s">Haktan</span></span>
+        <span class="ln hero-last"><span class="wd"  style="animation-delay:1.82s">Tay</span></span>
+      </h1>
     </div>
-    <div class="hero-meta">
-      <div class="hero-meta-item">
-        <span class="hero-meta-lbl">Yönelim</span>
-        <span class="hero-meta-val">Psikanalitik</span>
+
+    <div class="hero-portrait-wrap">
+      <div class="hero-portrait">
+        <img src="DOC-20260513-WA0002_" alt="Haktan Tay" id="parallax-img">
+        <div class="hero-portrait-veil"></div>
       </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-lbl">Çerçeve</span>
-        <span class="hero-meta-val">Lacancı</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-lbl">Dil</span>
-        <span class="hero-meta-val">TR / EN / FR</span>
-      </div>
+      <div class="hero-portrait-border" aria-hidden="true"></div>
+      <span class="hero-frag" style="top:18%;right:-58%;animation-delay:0s">le sujet de l'inconscient</span>
+      <span class="hero-frag" style="top:52%;left:-48%;animation-delay:3s">$ ◇ a</span>
+      <span class="hero-frag" style="bottom:12%;right:-44%;animation-delay:6s">R · S · I</span>
     </div>
-    <div class="hero-scroll">
-      <div class="hero-scroll-line"></div>
-      <span class="hero-scroll-txt">Aşağı Kaydır</span>
+
+    <div class="hero-lower">
+      <div class="hero-rule"></div>
+      <p class="hero-tagline">
+        Söylemin ardında ne var?<br>
+        <strong>Özneyi dinlemek, onu söz içinde bulmaktır.</strong>
+      </p>
+      <div class="gooey-wrap" aria-hidden="true">
+        <div class="gooey-stage">
+          <span id="gt1"></span>
+          <span id="gt2"></span>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-lbl">Yönelim</span>
+          <span class="hero-meta-val">Psikanalitik</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-lbl">Çerçeve</span>
+          <span class="hero-meta-val">Lacancı</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-lbl">Dil</span>
+          <span class="hero-meta-val">TR / EN / FR</span>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="hero-right">
-    <div class="hero-img">
-      <img src="DOC-20260513-WA0002_" alt="Haktan Tay" id="parallax-img">
-      <div class="hero-grad-l"></div>
-      <div class="hero-grad-b"></div>
-      <div class="hero-grad-r"></div>
-    </div>
-    <span class="hero-frag" style="top:16%;right:6%">le sujet de l'inconscient</span>
-    <span class="hero-frag" style="top:45%;right:10%;animation-delay:3s">$ ◇ a</span>
-    <span class="hero-frag" style="top:74%;right:5%;animation-delay:6s">R · S · I</span>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span class="hero-scroll-txt">Aşağı Kaydır</span>
   </div>
 </section>
 
@@ -1597,7 +1634,7 @@ footer {
     <h2 class="sec-title rv d1">Lacancı<br>Psikanaliz</h2>
 
     <p class="approach-lead rv d2">
-      Terapi bir çözüm sunmaz — bir alan açar. Konuşmanın, sessizliğin ve anlam kaymaların içinde özne kendi arzusunun izini sürer. Analitik dinleyiş söylemin ötesinde neyin söylendiğine kulak verir.
+      Görüşme bir çözüm sunmaz — bir alan açar. Konuşmanın, sessizliğin ve anlam kaymaların içinde özne kendi arzusunun izini sürer. Analitik dinleyiş söylemin ötesinde neyin söylendiğine kulak verir.
     </p>
 
     <!-- Borromean -->
@@ -1698,8 +1735,8 @@ footer {
           <line x1="4"  y1="23" x2="15.5" y2="23" stroke="#c8a96e" stroke-width=".8"/>
           <line x1="30.5" y1="23" x2="42" y2="23" stroke="#c8a96e" stroke-width=".8"/>
         </svg>
-        <h3 class="svc-title">Bireysel Terapi</h3>
-        <p class="svc-body">Psikanalitik oryantasyonlu bireysel terapi seansları. Anlam arayışında olan, semptomlarıyla başa çıkmak isteyen, söylemin içinde kaybolan bireylerle çalışıyorum. Her seans öznenin kendi gerçeğiyle yüzleştiği özgün bir alan.</p>
+        <h3 class="svc-title">Bireysel Görüşme</h3>
+        <p class="svc-body">Psikanalitik oryantasyonlu bireysel görüşmeler. Anlam arayışında olan, semptomlarıyla başa çıkmak isteyen, söylemin içinde kaybolan bireylerle çalışıyorum. Her görüşme öznenin kendi gerçeğiyle yüzleştiği özgün bir alan.</p>
         <div class="tags">
           <span class="tag">Psikanaliz</span>
           <span class="tag">Bireysel</span>
@@ -1916,7 +1953,7 @@ footer {
         <div class="ti-date">Eylül 2024 – Devam Ediyor</div>
         <div class="ti-title">Klinik Psikoloji Stajyeri (Psikanalitik)</div>
         <div class="ti-org">AYNA Klinik Psikoloji Birimi · Orta Doğu Teknik Üniversitesi</div>
-        <p class="ti-desc">3 bireysel vaka ile psikanalitik yönelimli psikoterapi; analitik yönelimli klinisyenden haftalık süpervizyon.</p>
+        <p class="ti-desc">3 bireysel vaka ile psikanalitik yönelimli klinik görüşmeler; analitik yönelimli klinisyenden haftalık süpervizyon.</p>
       </div>
       <div class="ti rv d1">
         <div class="ti-dot on"></div>
@@ -2031,7 +2068,7 @@ footer {
         <div class="testi-role">Bireysel Danışan, Ankara</div>
       </div>
       <div class="testi-card rv d3 spot">
-        <p class="testi-q">Çekiçle Felsefe dergisindeki yazıları aracılığıyla tanıştım; ardından terapi sürecine dahil oldum. Hem teorik derinliği hem de insani sıcaklığıyla nadir bir terapist profili.</p>
+        <p class="testi-q">Çekiçle Felsefe dergisindeki yazıları aracılığıyla tanıştım; ardından görüşme sürecine dahil oldum. Hem teorik derinliği hem de insani sıcaklığıyla nadir bir psikolog profili.</p>
         <div class="testi-name">M. Y.</div>
         <div class="testi-role">Okuyucu & Danışan</div>
       </div>
@@ -2061,7 +2098,7 @@ footer {
       <div class="contact-left">
         <p class="sec-label rv">İletişim</p>
         <h2 class="rv d1">Bir Söyleşi<br>Başlatalım.</h2>
-        <p class="rv d2">Psikanalitik terapi, süpervizyon veya akademik işbirliği hakkında bilgi almak için ulaşabilirsiniz. İlk görüşme ücretsizdir.</p>
+        <p class="rv d2">Psikanalitik görüşme, süpervizyon veya akademik işbirliği hakkında bilgi almak için ulaşabilirsiniz. İlk görüşme ücretsizdir.</p>
         <div class="cdetails rv d3">
           <div class="cd">
             <span class="cdl">Psikolog</span>
@@ -2092,7 +2129,7 @@ footer {
         </div>
         <div class="fgrp">
           <label>Konu</label>
-          <input type="text" placeholder="Bireysel Terapi / Süpervizyon / Dergi / Diğer">
+          <input type="text" placeholder="Bireysel Görüşme / Süpervizyon / Dergi / Diğer">
         </div>
         <div class="fgrp">
           <label>Tercih Ettiğiniz Tarih</label>
