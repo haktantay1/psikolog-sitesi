@@ -319,17 +319,11 @@ nav.scrolled {
   border-top:1px solid rgba(200,169,110,.08);
   border-bottom:1px solid rgba(200,169,110,.08);
 }
-.mq-track {
-  display:flex; white-space:nowrap;
-  animation:mq 24s linear infinite;
-}
-.mq-track.r { animation-direction:reverse; animation-duration:30s; }
+.mq-track { display:flex; gap:0; will-change:transform; }
 .mi { font-family:var(--serif); font-style:italic; font-size:.92rem; color:var(--dim); padding:0 2rem; }
 .ms { color:var(--gold); font-style:normal; }
 .mq-item { font-family:var(--serif); font-size:.82rem; color:var(--dim); padding:0 1.4rem; white-space:nowrap; }
 .mq-sep  { color:var(--gold); font-size:.82rem; padding:0 .2rem; }
-
-@keyframes mq { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
 /* ═══════════════════════════════════════════════════
    SHARED LAYOUT
@@ -895,7 +889,7 @@ footer {
 /* ═══════════════════════════════════════════════════
    GOOEY TEXT MORPH
 ═══════════════════════════════════════════════════ */
-.gooey-wrap { height:3.5rem; position:relative; margin:1.8rem 0 2.4rem; }
+.gooey-wrap { height:4.5rem; position:relative; margin:1.8rem 0 2.4rem; }
 .gooey-svg  { position:absolute; width:0; height:0; }
 .gooey-stage {
   position:absolute; inset:0;
@@ -904,7 +898,7 @@ footer {
 }
 .gooey-stage span {
   position:absolute; left:0; top:50%; transform:translateY(-50%);
-  font-family:var(--serif); font-size:2rem; font-weight:300; font-style:italic;
+  font-family:var(--serif); font-size:2.4rem; font-weight:300; font-style:italic;
   color:var(--gold); letter-spacing:.06em; white-space:nowrap;
   will-change:filter,opacity;
 }
@@ -913,15 +907,15 @@ footer {
    ANIMATED DOCK
 ═══════════════════════════════════════════════════ */
 .adock {
-  position:fixed; bottom:1.8rem; left:50%; transform:translateX(-50%);
+  position:fixed; bottom:2.5rem; left:50%; transform:translateX(-50%);
   display:flex; gap:.75rem; align-items:flex-end;
   background:rgba(7,7,14,.88); backdrop-filter:blur(28px) saturate(1.4);
   border:1px solid rgba(200,169,110,.2);
   border-radius:2rem; padding:.8rem 1.5rem;
-  z-index:800; box-shadow:0 8px 48px rgba(0,0,0,.55);
+  z-index:800; box-shadow:0 12px 60px rgba(0,0,0,.7);
 }
 .adock-item {
-  width:38px; height:38px;
+  width:44px; height:44px;
   background:rgba(200,169,110,.07);
   border:1px solid rgba(200,169,110,.13);
   border-radius:50%; display:flex; align-items:center; justify-content:center;
@@ -932,7 +926,7 @@ footer {
 .adock-item:hover { background:rgba(200,169,110,.2); }
 .adock-item svg { width:15px; height:15px; stroke-width:1.6; }
 .adock-sep { width:1px; height:22px; background:rgba(200,169,110,.18); align-self:center; margin:0 .2rem; }
-@media(max-width:540px){ .adock{ gap:.5rem; padding:.65rem 1rem; } .adock-item{width:34px;height:34px;} }
+@media(max-width:540px){ .adock{ gap:.5rem; padding:.65rem 1rem; } .adock-item{width:38px;height:38px;} }
 
 /* ═══════════════════════════════════════════════════
    DIVAN
@@ -981,6 +975,78 @@ footer {
   .borr-grid{grid-template-columns:1fr;}
   .journal-inner{grid-template-columns:1fr;gap:4rem;}
 }
+/* ═══════════════════════════════════════════════════
+   HERO VIDEO BACKGROUND
+═══════════════════════════════════════════════════ */
+.hero-video {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; opacity:.13; mix-blend-mode:screen;
+  z-index:0; pointer-events:none;
+}
+
+/* ═══════════════════════════════════════════════════
+   PROGRESSIVE BLUR
+═══════════════════════════════════════════════════ */
+.pblur {
+  pointer-events:none; position:absolute; top:0; bottom:0;
+  width:100px; z-index:3;
+}
+.pblur-left  { left:0; }
+.pblur-right { right:0; }
+.pblur > div {
+  position:absolute; inset:0; border-radius:inherit;
+}
+
+/* ═══════════════════════════════════════════════════
+   CALENDAR DATE PICKER
+═══════════════════════════════════════════════════ */
+.cal-wrap {
+  background:var(--bg2); border:1px solid rgba(200,169,110,.15);
+  border-radius:.4rem; padding:1.4rem; user-select:none;
+}
+.cal-head {
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom:1.2rem;
+}
+.cal-title {
+  font-family:var(--serif); font-size:1rem; color:var(--text); letter-spacing:.05em;
+}
+.cal-nav {
+  background:none; border:1px solid rgba(200,169,110,.2);
+  color:var(--gold); width:28px; height:28px; border-radius:50%;
+  cursor:none; display:flex; align-items:center; justify-content:center;
+  font-size:1rem; transition:background .2s;
+}
+.cal-nav:hover { background:rgba(200,169,110,.12); }
+.cal-days-head {
+  display:grid; grid-template-columns:repeat(7,1fr);
+  margin-bottom:.5rem;
+}
+.cal-days-head span {
+  text-align:center; font-size:.55rem; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--dim); padding:.3rem 0;
+}
+.cal-grid {
+  display:grid; grid-template-columns:repeat(7,1fr); gap:2px;
+}
+.cal-day {
+  aspect-ratio:1; display:flex; align-items:center; justify-content:center;
+  font-size:.8rem; color:var(--mid); border-radius:.25rem;
+  cursor:none; transition:background .2s, color .2s;
+  border:1px solid transparent;
+}
+.cal-day:hover { background:rgba(200,169,110,.1); color:var(--text); }
+.cal-day.today { border-color:rgba(200,169,110,.3); color:var(--gold); }
+.cal-day.selected { background:var(--gold); color:var(--bg); font-weight:500; }
+.cal-day.other-month { opacity:.3; }
+.cal-day.empty { pointer-events:none; }
+.cal-selected-display {
+  margin-top:1rem; padding-top:1rem;
+  border-top:1px solid rgba(200,169,110,.1);
+  font-size:.72rem; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--gold);
+}
+
 @media(max-width:960px){
   nav{padding:1.4rem 2rem;}
   nav.scrolled{padding:1rem 2rem;}
@@ -1058,6 +1124,9 @@ footer {
 <section id="hero">
   <canvas id="smoke-canvas" aria-hidden="true"></canvas>
   <canvas id="hero-canvas"  aria-hidden="true"></canvas>
+  <video class="hero-video" autoplay loop muted playsinline>
+    <source src="https://ik.imagekit.io/lrigu76hy/tailark/dna-video.mp4?updatedAt=1745736251477" type="video/mp4">
+  </video>
 
   <div class="hero-left">
     <p class="hero-eyebrow">La Nouvelle École Lacanienne</p>
@@ -1111,6 +1180,9 @@ footer {
 
 <!-- MARQUEE -->
 <div class="marquee" aria-hidden="true">
+  <div style="position:relative;overflow:hidden;">
+  <div class="pblur pblur-left"></div>
+  <div class="pblur pblur-right"></div>
   <div class="mq-track">
     <span class="mi">Psikanaliz <span class="ms">·</span></span>
     <span class="mi">Le Sujet <span class="ms">·</span></span>
@@ -1173,6 +1245,7 @@ footer {
       <span class="mq-item">ODTÜ AYNA Klinik Psikoloji</span>
       <span class="mq-sep">·</span>
     </div>
+  </div>
   </div>
 </div>
 
@@ -1672,6 +1745,23 @@ footer {
         <div class="fgrp">
           <label>Konu</label>
           <input type="text" placeholder="Bireysel Terapi / Süpervizyon / Dergi / Diğer">
+        </div>
+        <div class="fgrp">
+          <label>Tercih Ettiğiniz Tarih</label>
+          <div class="cal-wrap" id="cal-wrap">
+            <div class="cal-head">
+              <button type="button" class="cal-nav" id="cal-prev">‹</button>
+              <span class="cal-title" id="cal-title"></span>
+              <button type="button" class="cal-nav" id="cal-next">›</button>
+            </div>
+            <div class="cal-days-head">
+              <span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span>
+              <span>Cum</span><span>Cmt</span><span>Paz</span>
+            </div>
+            <div class="cal-grid" id="cal-grid"></div>
+            <div class="cal-selected-display" id="cal-display">Tarih seçilmedi</div>
+            <input type="hidden" id="cal-value" name="preferred_date">
+          </div>
         </div>
         <div class="fgrp">
           <label>Mesajınız</label>
@@ -2250,7 +2340,7 @@ if(ps){
   const t2=document.getElementById('gt2');
   if(!t1||!t2) return;
   const words=['Arzu','Bilinçdışı','Jouissance','Objet a','Söylem','Gerçek'];
-  const morphTime=1.2, coolTime=1.8;
+  const morphTime=1.0, coolTime=2.5;
   let idx=0, morph=0, cool=coolTime, prev=Date.now();
   t1.textContent=words[words.length-1];
   t2.textContent=words[0];
@@ -2289,6 +2379,103 @@ if(ps){
     });
   });
   dock.addEventListener('mouseleave',()=>items.forEach(it=>it.style.transform=''));
+})();
+
+/* ── PROGRESSIVE BLUR ─────────────────────── */
+(function initProgBlur(){
+  document.querySelectorAll('.pblur').forEach(el=>{
+    const isRight = el.classList.contains('pblur-right');
+    const layers = 8;
+    for(let i=0; i<layers; i++){
+      const d = document.createElement('div');
+      const seg = 1/(layers+1);
+      const stops = [i*seg,(i+1)*seg,(i+2)*seg,(i+3)*seg].map((p,pi)=>
+        `rgba(0,0,0,${pi===1||pi===2?1:0}) ${(p*100).toFixed(1)}%`
+      ).join(',');
+      const angle = isRight ? 270 : 90;
+      d.style.cssText = `
+        mask-image:linear-gradient(${angle}deg,${stops});
+        -webkit-mask-image:linear-gradient(${angle}deg,${stops});
+        backdrop-filter:blur(${i*0.8}px);
+        -webkit-backdrop-filter:blur(${i*0.8}px);
+      `;
+      el.appendChild(d);
+    }
+  });
+})();
+
+/* ── INFINITE SLIDERS ─────────────────────── */
+(function initSliders(){
+  document.querySelectorAll('.mq-track').forEach((track, i)=>{
+    const reverse = i % 2 === 1;
+    const speed = i === 0 ? 0.4 : 0.25;
+    let pos = 0;
+    let paused = false;
+    const wrap = track.parentElement;
+    wrap.addEventListener('mouseenter', ()=>paused=true);
+    wrap.addEventListener('mouseleave', ()=>paused=false);
+    const clone = track.cloneNode(true);
+    track.parentElement.insertBefore(clone, track.nextSibling);
+    function tick(){
+      if(!paused){
+        pos += reverse ? -speed : speed;
+        const w = track.offsetWidth;
+        if(!reverse && pos >= w) pos -= w;
+        if(reverse && pos <= -w) pos += w;
+        track.style.transform = `translateX(${-pos}px)`;
+        clone.style.transform = `translateX(${w - pos}px)`;
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+})();
+
+/* ── CALENDAR ─────────────────────────────── */
+(function initCal(){
+  const grid = document.getElementById('cal-grid');
+  const title = document.getElementById('cal-title');
+  const display = document.getElementById('cal-display');
+  const hiddenInput = document.getElementById('cal-value');
+  if(!grid) return;
+  const TR_MONTHS = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+  let cur = new Date(); cur.setDate(1);
+  let selected = null;
+  const today = new Date();
+  function render(){
+    const y = cur.getFullYear(), m = cur.getMonth();
+    title.textContent = TR_MONTHS[m] + ' ' + y;
+    grid.innerHTML = '';
+    const first = new Date(y,m,1).getDay();
+    const offset = (first + 6) % 7;
+    const days = new Date(y,m+1,0).getDate();
+    const prevDays = new Date(y,m,0).getDate();
+    for(let i=0;i<offset;i++){
+      const d=document.createElement('div');
+      d.className='cal-day other-month';
+      d.textContent=prevDays-offset+i+1;
+      grid.appendChild(d);
+    }
+    for(let i=1;i<=days;i++){
+      const d=document.createElement('div');
+      d.className='cal-day';
+      d.textContent=i;
+      const date=new Date(y,m,i);
+      if(date<new Date(today.getFullYear(),today.getMonth(),today.getDate())) d.classList.add('other-month');
+      if(today.getFullYear()===y&&today.getMonth()===m&&today.getDate()===i) d.classList.add('today');
+      if(selected&&selected.getFullYear()===y&&selected.getMonth()===m&&selected.getDate()===i) d.classList.add('selected');
+      d.addEventListener('click',()=>{
+        selected=date;
+        hiddenInput.value=`${y}-${String(m+1).padStart(2,'0')}-${String(i).padStart(2,'0')}`;
+        display.textContent=`${i} ${TR_MONTHS[m]} ${y}`;
+        render();
+      });
+      grid.appendChild(d);
+    }
+  }
+  document.getElementById('cal-prev').addEventListener('click',()=>{cur.setMonth(cur.getMonth()-1);render();});
+  document.getElementById('cal-next').addEventListener('click',()=>{cur.setMonth(cur.getMonth()+1);render();});
+  render();
 })();
 </script>
 </body>
