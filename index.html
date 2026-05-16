@@ -18,8 +18,8 @@
   --bg3:   #10101c;
   --bg4:   #15152a;
   --text:  #ede8e0;
-  --mid:   #9a9490;
-  --dim:   #4a4550;
+  --mid:   #b8b3ad;
+  --dim:   #7a7286;
   --gold:  #c8a96e;
   --gold2: #e0c080;
   --goldd: rgba(200,169,110,.15);
@@ -326,6 +326,8 @@ nav.scrolled {
 .mq-track.r { animation-direction:reverse; animation-duration:30s; }
 .mi { font-family:var(--serif); font-style:italic; font-size:.92rem; color:var(--dim); padding:0 2rem; }
 .ms { color:var(--gold); font-style:normal; }
+.mq-item { font-family:var(--serif); font-size:.82rem; color:var(--dim); padding:0 1.4rem; white-space:nowrap; }
+.mq-sep  { color:var(--gold); font-size:.82rem; padding:0 .2rem; }
 
 @keyframes mq { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
@@ -830,7 +832,7 @@ footer {
    WATER RIPPLE CANVAS (about photo)
 ═══════════════════════════════════════════════════ */
 #ripple-canvas {
-  width:100%; aspect-ratio:3/4; display:block;
+  width:100%; aspect-ratio:4/3; display:block;
   background:var(--bg3);
 }
 
@@ -889,6 +891,84 @@ footer {
 .tr-hint::before { content:'←'; font-style:normal; font-size:.7rem; color:var(--gold); animation:nudge 2s ease-in-out infinite; }
 .tr-hint::after  { content:'→'; font-style:normal; font-size:.7rem; color:var(--gold); animation:nudge 2s ease-in-out infinite reverse; }
 @keyframes nudge { 0%,100%{transform:translateX(0)} 50%{transform:translateX(4px)} }
+
+/* ═══════════════════════════════════════════════════
+   GOOEY TEXT MORPH
+═══════════════════════════════════════════════════ */
+.gooey-wrap { height:3rem; position:relative; margin:1.8rem 0 2.2rem; }
+.gooey-svg  { position:absolute; width:0; height:0; overflow:hidden; }
+.gooey-stage {
+  display:flex; align-items:center; height:100%;
+  filter:url(#gooey-filter);
+}
+.gooey-stage span {
+  position:absolute; left:0;
+  font-family:var(--serif); font-size:1.9rem; font-weight:300; font-style:italic;
+  color:var(--gold); letter-spacing:.06em; white-space:nowrap;
+  will-change:filter,opacity;
+}
+
+/* ═══════════════════════════════════════════════════
+   ANIMATED DOCK
+═══════════════════════════════════════════════════ */
+.adock {
+  position:fixed; bottom:1.8rem; left:50%; transform:translateX(-50%);
+  display:flex; gap:.75rem; align-items:flex-end;
+  background:rgba(7,7,14,.88); backdrop-filter:blur(28px) saturate(1.4);
+  border:1px solid rgba(200,169,110,.2);
+  border-radius:2rem; padding:.8rem 1.5rem;
+  z-index:800; box-shadow:0 8px 48px rgba(0,0,0,.55);
+}
+.adock-item {
+  width:38px; height:38px;
+  background:rgba(200,169,110,.07);
+  border:1px solid rgba(200,169,110,.13);
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
+  color:var(--gold); cursor:none;
+  transition:background .25s; transform-origin:bottom center;
+  will-change:transform;
+}
+.adock-item:hover { background:rgba(200,169,110,.2); }
+.adock-item svg { width:15px; height:15px; stroke-width:1.6; }
+.adock-sep { width:1px; height:22px; background:rgba(200,169,110,.18); align-self:center; margin:0 .2rem; }
+@media(max-width:540px){ .adock{ gap:.5rem; padding:.65rem 1rem; } .adock-item{width:34px;height:34px;} }
+
+/* ═══════════════════════════════════════════════════
+   DIVAN
+═══════════════════════════════════════════════════ */
+.divan-wrap {
+  width:100%; aspect-ratio:16/6; position:relative;
+  overflow:hidden; margin:5rem 0; border-radius:.4rem;
+}
+.divan-wrap img {
+  width:100%; height:100%; object-fit:cover; object-position:center 45%;
+  filter:saturate(.22) contrast(1.15) brightness(.65);
+  display:block;
+}
+.divan-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(105deg,rgba(7,7,14,.92) 30%,rgba(7,7,14,.15) 100%);
+  display:flex; align-items:center;
+}
+.divan-quote {
+  padding:0 5rem;
+}
+.divan-quote blockquote {
+  font-family:var(--serif); font-style:italic;
+  font-size:clamp(1.3rem,2.2vw,1.85rem);
+  color:var(--text); max-width:500px; line-height:1.55;
+  border:none; margin:0;
+}
+.divan-quote cite {
+  display:block; margin-top:1.2rem;
+  font-size:.62rem; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--gold); font-style:normal;
+}
+@media(max-width:960px){
+  .divan-wrap{aspect-ratio:4/3;}
+  .divan-quote{padding:0 2rem;}
+  .divan-quote blockquote{font-size:1.1rem;}
+}
 
 /* ═══════════════════════════════════════════════════
    RESPONSIVE
@@ -982,6 +1062,19 @@ footer {
       Söylemin ardında ne var?<br>
       <strong>Özneyi dinlemek, onu söz içinde bulmaktır.</strong>
     </p>
+    <svg class="gooey-svg" aria-hidden="true">
+      <defs>
+        <filter id="gooey-filter">
+          <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 255 -140"/>
+        </filter>
+      </defs>
+    </svg>
+    <div class="gooey-wrap" aria-hidden="true">
+      <div class="gooey-stage">
+        <span id="gt1"></span>
+        <span id="gt2"></span>
+      </div>
+    </div>
     <div class="hero-meta">
       <div class="hero-meta-item">
         <span class="hero-meta-lbl">Yönelim</span>
@@ -1004,7 +1097,7 @@ footer {
 
   <div class="hero-right">
     <div class="hero-img">
-      <img src="1735210893204.jpg" alt="Haktan Tay" id="parallax-img">
+      <img src="DOC-20260513-WA0002_" alt="Haktan Tay" id="parallax-img">
       <div class="hero-grad-l"></div>
       <div class="hero-grad-b"></div>
       <div class="hero-grad-r"></div>
@@ -1047,6 +1140,38 @@ footer {
     <span class="mi">Jouissance <span class="ms">·</span></span>
     <span class="mi">Objet <em>a</em> <span class="ms">·</span></span>
     <span class="mi">Le Signifiant <span class="ms">·</span></span>
+  </div>
+  <div class="mq-wrap" style="margin-top:.8rem;">
+    <div class="mq-track" style="animation-direction:reverse;animation-duration:55s;">
+      <span class="mq-item">La Nouvelle École Lacanienne</span>
+      <span class="mq-sep">·</span>
+      <span class="mq-item">École de Psychanalyse des Forums du Champ Lacanien</span>
+      <span class="mq-sep">·</span>
+      <span class="mq-item">Türk Psikologlar Derneği</span>
+      <span class="mq-sep">·</span>
+      <span class="mq-item">Psychology Times · Londres</span>
+      <span class="mq-sep">·</span>
+      <span class="mq-item">Çekiçle Felsefe Dergisi</span>
+      <span class="mq-sep">·</span>
+      <span class="mq-item">Universität Wien</span>
+      <span class="mq-sep">·</span>
+      <span class="mq-item">ODTÜ AYNA Klinik Psikoloji</span>
+      <span class="mq-sep">·</span>
+      <span class="mq-item">La Nouvelle École Lacanienne</span>
+      <span class="mq-sep">·</span>
+      <span class="mq-item">École de Psychanalyse des Forums du Champ Lacanien</span>
+      <span class="mq-sep">·</span>
+      <span class="mq-item">Türk Psikologlar Derneği</span>
+      <span class="mq-sep">·</span>
+      <span class="mq-item">Psychology Times · Londres</span>
+      <span class="mq-sep">·</span>
+      <span class="mq-item">Çekiçle Felsefe Dergisi</span>
+      <span class="mq-sep">·</span>
+      <span class="mq-item">Universität Wien</span>
+      <span class="mq-sep">·</span>
+      <span class="mq-item">ODTÜ AYNA Klinik Psikoloji</span>
+      <span class="mq-sep">·</span>
+    </div>
   </div>
 </div>
 
@@ -1180,6 +1305,16 @@ footer {
           <div class="rsi-i"><div class="rsi-d r"></div><span class="rsi-l">Réel</span></div>
           <div class="rsi-i"><div class="rsi-d s"></div><span class="rsi-l">Symbolique</span></div>
           <div class="rsi-i"><div class="rsi-d i"></div><span class="rsi-l">Imaginaire</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divan-wrap rv">
+      <img src="a.png" alt="Analitik Alan" loading="lazy">
+      <div class="divan-overlay">
+        <div class="divan-quote">
+          <blockquote>"L'analyste ne doit pas diriger le patient, mais diriger la cure."</blockquote>
+          <cite>— Jacques Lacan, Écrits</cite>
         </div>
       </div>
     </div>
@@ -1440,33 +1575,6 @@ footer {
 
 <div class="sep"></div>
 
-<!-- ══════════ MEMBERSHIPS ══════════ -->
-<section id="memberships" class="pad">
-  <div class="wrap">
-    <p class="sec-label rv">Üyelikler</p>
-    <h2 class="sec-title rv d1">Mesleki<br>Topluluklar</h2>
-    <div class="mem-grid">
-      <div class="mem rv" data-index="01">
-        <div class="mem-flag">Uluslararası · 2021 – Devam</div>
-        <div class="mem-name">Nouvelle École Lacanienne</div>
-        <div class="mem-role">Üye &amp; Discutant Psychanalytique</div>
-      </div>
-      <div class="mem rv d2" data-index="02">
-        <div class="mem-flag">Uluslararası · 2020 – Devam</div>
-        <div class="mem-name">École de Psychanalyse des Forums du Champ Lacanien</div>
-        <div class="mem-role">Düzenli Katılımcı</div>
-      </div>
-      <div class="mem rv d4" data-index="03">
-        <div class="mem-flag">Türkiye · 2022 – Devam</div>
-        <div class="mem-name">Türk Psikologlar Derneği</div>
-        <div class="mem-role">Üye — Nöropsikoloji Komisyonu Eski Yürütme Kurulu</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="sep"></div>
-
 <!-- ══════════ SKILLS ══════════ -->
 <section id="skills" class="pad">
   <div class="wrap">
@@ -1586,6 +1694,32 @@ footer {
     </div>
   </div>
 </footer>
+
+<!-- ANIMATED DOCK -->
+<div class="adock" id="adock" aria-label="Hızlı Erişim">
+  <a class="adock-item" href="#about" title="Hakkımda" aria-label="Hakkımda">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+  </a>
+  <a class="adock-item" href="#approach" title="Yaklaşım" aria-label="Yaklaşım">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8" stroke-dasharray="2 3"/></svg>
+  </a>
+  <a class="adock-item" href="#services" title="Hizmetler" aria-label="Hizmetler">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg>
+  </a>
+  <a class="adock-item" href="#academic" title="Akademik" aria-label="Akademik">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3L2 9l10 6 10-6-10-6zM2 17l10 6 10-6M2 13l10 6 10-6"/></svg>
+  </a>
+  <div class="adock-sep"></div>
+  <a class="adock-item" href="mailto:psikologhaktantay@gmail.com" title="E-posta" aria-label="E-posta">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+  </a>
+  <a class="adock-item" href="mailto:dergi@cekiclefelsefe.com" title="Dergi" aria-label="Dergi İletişim">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+  </a>
+  <a class="adock-item" href="#contact" title="İletişim" aria-label="İletişim">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+  </a>
+</div>
 
 <!-- ═══════════════════════════════════════════════════
      JAVASCRIPT
@@ -2095,7 +2229,7 @@ if(ps){
     gl.uniform1i(U['u_image_texture'], 0);
     gl.uniform1f(U['u_img_ratio'], img.naturalWidth/img.naturalHeight);
   };
-  img.src = '1735210893204.jpg';
+  img.src = 'DOC-20260513-WA0002_';
 
   /* render loop */
   gl.enable(gl.BLEND);
@@ -2107,6 +2241,53 @@ if(ps){
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     requestAnimationFrame(draw);
   })();
+})();
+
+/* ── GOOEY TEXT MORPH ─────────────────────── */
+(function initGooey(){
+  const t1=document.getElementById('gt1');
+  const t2=document.getElementById('gt2');
+  if(!t1||!t2) return;
+  const words=['Arzu','Bilinçdışı','Jouissance','Objet a','Söylem','Gerçek'];
+  const morphTime=1.2, coolTime=1.8;
+  let idx=0, morph=0, cool=coolTime, prev=Date.now();
+  t1.textContent=words[words.length-1];
+  t2.textContent=words[0];
+  function setM(f){
+    t2.style.filter=`blur(${Math.min(8/f-8,100)}px)`;
+    t2.style.opacity=(Math.pow(f,.4)*100)+'%';
+    f=1-f;
+    t1.style.filter=`blur(${Math.min(8/f-8,100)}px)`;
+    t1.style.opacity=(Math.pow(f,.4)*100)+'%';
+  }
+  (function loop(){
+    requestAnimationFrame(loop);
+    const now=Date.now(),dt=(now-prev)/1000; prev=now;
+    const was=cool>0; cool-=dt;
+    if(cool<=0){
+      if(was){idx=(idx+1)%words.length;t1.textContent=words[idx];t2.textContent=words[(idx+1)%words.length];}
+      morph-=cool; cool=0;
+      let f=morph/morphTime;
+      if(f>1){cool=coolTime;f=1;}
+      setM(f);
+    } else {morph=0;t2.style.filter='';t2.style.opacity='100%';t1.style.filter='';t1.style.opacity='0%';}
+  })();
+})();
+
+/* ── ANIMATED DOCK ────────────────────────── */
+(function initDock(){
+  const dock=document.getElementById('adock');
+  if(!dock) return;
+  const items=[...dock.querySelectorAll('.adock-item')];
+  dock.addEventListener('mousemove',e=>{
+    items.forEach(it=>{
+      const r=it.getBoundingClientRect();
+      const d=Math.abs(e.clientX-(r.left+r.width/2));
+      const s=Math.max(1,1.75-d/65);
+      it.style.transform=`scale(${s}) translateY(${-(s-1)*22}px)`;
+    });
+  });
+  dock.addEventListener('mouseleave',()=>items.forEach(it=>it.style.transform=''));
 })();
 </script>
 </body>
