@@ -1033,6 +1033,68 @@ footer {
 }
 
 /* ═══════════════════════════════════════════════════
+   HERO AMBIENT ORBS
+═══════════════════════════════════════════════════ */
+.hero-orb {
+  position:absolute; border-radius:50%;
+  pointer-events:none; z-index:0;
+  filter:blur(90px);
+}
+.hero-orb-1 {
+  width:520px; height:520px;
+  background:radial-gradient(circle,rgba(200,169,110,.16) 0%,transparent 70%);
+  top:-80px; left:5%;
+  animation:orb1 14s ease-in-out infinite;
+}
+.hero-orb-2 {
+  width:360px; height:360px;
+  background:radial-gradient(circle,rgba(156,122,139,.13) 0%,transparent 70%);
+  bottom:8%; right:8%;
+  animation:orb2 18s ease-in-out infinite;
+}
+@keyframes orb1{
+  0%,100%{transform:translate(0,0);}
+  33%{transform:translate(30px,-40px);}
+  66%{transform:translate(-20px,25px);}
+}
+@keyframes orb2{
+  0%,100%{transform:translate(0,0);}
+  50%{transform:translate(-35px,-30px);}
+}
+
+/* ═══════════════════════════════════════════════════
+   PHARMAKON QUOTE SECTION
+═══════════════════════════════════════════════════ */
+.pharmakon {
+  background:var(--bg2); padding:8rem 5rem;
+  text-align:center; position:relative; overflow:hidden;
+}
+.pharmakon::before,.pharmakon::after {
+  content:''; position:absolute; left:50%; transform:translateX(-50%);
+  width:1px; background:linear-gradient(180deg,transparent,rgba(200,169,110,.45),transparent);
+}
+.pharmakon::before { top:0; height:60px; }
+.pharmakon::after  { bottom:0; height:60px; }
+.pharmakon-q {
+  font-family:var(--serif); font-style:italic; font-weight:300;
+  font-size:clamp(1.9rem,4vw,3.6rem);
+  color:var(--text); max-width:880px; margin:0 auto 2.2rem;
+  line-height:1.45; letter-spacing:.02em;
+  border:none; padding:0;
+}
+.pharmakon-cite {
+  font-size:.6rem; letter-spacing:.38em; text-transform:uppercase;
+  color:var(--gold); font-style:normal;
+}
+.pharmakon-wm {
+  position:absolute; font-family:var(--serif); font-size:14rem;
+  font-weight:300; color:transparent; pointer-events:none; user-select:none;
+  -webkit-text-stroke:1px rgba(200,169,110,.04);
+  left:50%; top:50%; transform:translate(-50%,-50%);
+  white-space:nowrap; letter-spacing:.1em;
+}
+
+/* ═══════════════════════════════════════════════════
    HERO VIDEO BACKGROUND
 ═══════════════════════════════════════════════════ */
 .hero-video {
@@ -1179,6 +1241,8 @@ footer {
 
 <!-- HERO -->
 <section id="hero">
+  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
   <canvas id="smoke-canvas" aria-hidden="true"></canvas>
   <canvas id="hero-canvas"  aria-hidden="true"></canvas>
   <video class="hero-video" autoplay loop muted playsinline>
@@ -1353,7 +1417,7 @@ footer {
 
         <div class="about-stats rv">
           <div>
-            <div class="stat-n" data-count="5">0</div>
+            <div class="stat-n" data-count="5" data-suffix="+">0</div>
             <div class="stat-l">Yıllık Klinik<br>Deneyim</div>
           </div>
           <div>
@@ -1370,6 +1434,15 @@ footer {
     </div>
   </div>
 </section>
+
+<!-- PHARMAKON QUOTE -->
+<div class="pharmakon rv">
+  <div class="pharmakon-wm">ψ</div>
+  <blockquote class="pharmakon-q">
+    "Le désir de l'homme est le désir de l'Autre."
+  </blockquote>
+  <cite class="pharmakon-cite">— Jacques Lacan, Séminaire XI</cite>
+</div>
 
 <div class="sep"></div>
 
@@ -2634,6 +2707,30 @@ if(ps){
   showWord(WORDS[0]);
   requestAnimationFrame(animate);
   canvas.addEventListener('contextmenu',e=>e.preventDefault());
+})();
+
+/* ── ANIMATED STAT COUNTERS (Component) ───── */
+(function initCounters(){
+  const els = document.querySelectorAll('.stat-n[data-count]');
+  if(!els.length) return;
+  function run(el){
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    const dur = 1800;
+    const t0 = performance.now();
+    (function tick(now){
+      const p = Math.min((now-t0)/dur, 1);
+      const eased = 1 - Math.pow(1-p, 3);
+      el.textContent = Math.floor(eased*target) + (p>=1 ? suffix : '');
+      if(p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ run(e.target); io.unobserve(e.target); }
+    });
+  }, {threshold:0.6});
+  els.forEach(el=>io.observe(el));
 })();
 
 /* ── OBJET PETIT A SHADER ─────────────────── */
