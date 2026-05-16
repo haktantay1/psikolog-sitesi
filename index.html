@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Haktan Tay — Psikolog, Psikanalitik Yönelimli Psikolog, Lacancı Kuram Uygulayıcısı">
+<meta name="description" content="Haktan Tay — Psikolog, Psikanalitik Yönelimli Psikolog, Lacanyen Kuram Uygulayıcısı">
 <title>Haktan Tay</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -227,9 +227,10 @@ nav.scrolled {
   position:absolute; inset:0;
   background:linear-gradient(180deg,rgba(9,9,15,.3) 0%,transparent 22%,transparent 62%,rgba(9,9,15,.75) 100%);
 }
-.hero-portrait-border {
-  position:absolute; top:10px; left:10px; right:-10px; bottom:-10px;
-  border:1px solid rgba(200,169,110,.22); pointer-events:none; z-index:-1;
+.hero-text-scrim {
+  position:absolute; inset:-1.2rem -1.5rem;
+  background:radial-gradient(ellipse 90% 80% at 50% 50%, rgba(9,9,15,.55) 0%, transparent 100%);
+  pointer-events:none; z-index:0; border-radius:.4rem;
 }
 .hero-lower {
   display:flex; flex-direction:column; align-items:center;
@@ -341,9 +342,18 @@ nav.scrolled {
   letter-spacing:.15em; font-size:.7rem;
 }
 @keyframes flt {
-  0%,100%{ transform:translateY(0); opacity:.08; }
-  50%    { transform:translateY(-14px); opacity:.18; }
+  0%,100%{ transform:translateY(0); opacity:.06; }
+  50%    { transform:translateY(-14px); opacity:.13; }
 }
+
+/* Hero text must stay legible on dark animated background */
+.hero-name .wd { color:#EDE8DF; text-shadow:0 2px 24px rgba(0,0,0,.85); }
+.hero-last .wd { color:var(--gold2) !important; text-shadow:0 2px 24px rgba(0,0,0,.85); }
+.hero-eyebrow { text-shadow:0 1px 10px rgba(0,0,0,.7); }
+.hero-tagline { color:rgba(237,232,221,.75) !important; text-shadow:0 1px 12px rgba(0,0,0,.7); }
+.hero-tagline strong { color:#EDE8DF !important; font-style:normal; font-weight:400; }
+.hero-meta-val { color:rgba(220,212,200,.8) !important; }
+.hero-scroll-txt { color:rgba(180,168,150,.7) !important; }
 
 /* ═══════════════════════════════════════════════════
    MARQUEE
@@ -1407,7 +1417,6 @@ footer {
         <img src="DOC-20260513-WA0002_" alt="Haktan Tay" id="parallax-img">
         <div class="hero-portrait-veil"></div>
       </div>
-      <div class="hero-portrait-border" aria-hidden="true"></div>
       <span class="hero-frag" style="top:18%;right:-58%;animation-delay:0s">le sujet de l'inconscient</span>
       <span class="hero-frag" style="top:52%;left:-48%;animation-delay:3s">$ ◇ a</span>
       <span class="hero-frag" style="bottom:12%;right:-44%;animation-delay:6s">R · S · I</span>
@@ -1432,7 +1441,7 @@ footer {
         </div>
         <div class="hero-meta-item">
           <span class="hero-meta-lbl">Çerçeve</span>
-          <span class="hero-meta-val">Lacancı</span>
+          <span class="hero-meta-val">Lacanyen</span>
         </div>
         <div class="hero-meta-item">
           <span class="hero-meta-lbl">Dil</span>
@@ -1552,7 +1561,7 @@ footer {
         </p>
 
         <p class="about-p rv d3">
-          Yalova Üniversitesi Psikoloji bölümünden <em>Onur Derecesi</em> ile mezun oldum. ODTÜ AYNA Klinik Psikoloji Birimi'nde psikanalitik oryantasyonlu klinik staj tamamladım; Viyana Üniversitesi'nde nöropsikoloji alanında çalıştım. Lacancı psikanaliz pratiğini hem Türkiye'de hem uluslararası arenada takip ediyorum.
+          Yalova Üniversitesi Psikoloji bölümünden <em>Onur Derecesi</em> ile mezun oldum. ODTÜ AYNA Klinik Psikoloji Birimi'nde psikanalitik oryantasyonlu klinik staj tamamladım; Viyana Üniversitesi'nde nöropsikoloji alanında çalıştım. Lacanyen psikanaliz pratiğini hem Türkiye'de hem uluslararası arenada takip ediyorum.
         </p>
 
         <div class="bq rv d4">
@@ -1631,7 +1640,7 @@ footer {
     <div class="wm" style="font-size:16vw;top:40%;left:50%;transform:translate(-50%,-50%);" aria-hidden="true">RSI</div>
 
     <p class="sec-label rv">Yaklaşım</p>
-    <h2 class="sec-title rv d1">Lacancı<br>Psikanaliz</h2>
+    <h2 class="sec-title rv d1">Lacanyen<br>Psikanaliz</h2>
 
     <p class="approach-lead rv d2">
       Görüşme bir çözüm sunmaz — bir alan açar. Konuşmanın, sessizliğin ve anlam kaymaların içinde özne kendi arzusunun izini sürer. Analitik dinleyiş söylemin ötesinde neyin söylendiğine kulak verir.
@@ -1712,7 +1721,7 @@ footer {
 
 <!-- ══════════ PARTICLE KAVRAMLAR ══════════ -->
 <section id="kavramlar" style="background:#09090F;position:relative;overflow:hidden;">
-  <canvas id="particle-canvas" aria-label="Lacancı kavramlar" style="display:block;width:100%;height:auto;cursor:default;"></canvas>
+  <canvas id="particle-canvas" aria-label="Lacanyen kavramlar" style="display:block;width:100%;height:auto;cursor:default;"></canvas>
   <div style="position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%);font-size:.52rem;letter-spacing:.35em;text-transform:uppercase;color:var(--dim);text-align:center;pointer-events:none;white-space:nowrap;">Sözcükler 4 saniyede bir değişir</div>
 </section>
 
@@ -1740,7 +1749,7 @@ footer {
         <div class="tags">
           <span class="tag">Psikanaliz</span>
           <span class="tag">Bireysel</span>
-          <span class="tag">Lacancı</span>
+          <span class="tag">Lacanyen</span>
           <span class="tag">Türkçe · İngilizce</span>
         </div>
       </div>
@@ -1773,7 +1782,7 @@ footer {
           <line x1="34" y1="32" x2="34" y2="36" stroke="#c8a96e" stroke-width=".8"/>
         </svg>
         <h3 class="svc-title">Akademik Danışmanlık</h3>
-        <p class="svc-body">Lacancı söylem analizi, psikanalitik kuram ve nitel araştırma yöntemleri üzerine akademik danışmanlık. Tez çalışmaları, makale yazımı ve konferans sunumları için metodoloji ve teorik çerçeve desteği.</p>
+        <p class="svc-body">Lacanyen söylem analizi, psikanalitik kuram ve nitel araştırma yöntemleri üzerine akademik danışmanlık. Tez çalışmaları, makale yazımı ve konferans sunumları için metodoloji ve teorik çerçeve desteği.</p>
         <div class="tags">
           <span class="tag">Söylem Analizi</span>
           <span class="tag">Tez</span>
@@ -1790,7 +1799,7 @@ footer {
   <div class="objeta-canvas-wrap">
     <canvas id="objeta-canvas" aria-hidden="true"></canvas>
     <div class="objeta-overlay">
-      <p class="objeta-label rv">Lacancı Kuram</p>
+      <p class="objeta-label rv">Lacanyen Kuram</p>
       <h2 class="objeta-title rv d1">Arzunun <em>Nesnesi</em></h2>
       <p class="objeta-body rv d2">
         Objet petit a — arzunun nedeni-nesnesi. Hiçbir zaman tam olarak elde edilemeyen,
@@ -1857,7 +1866,6 @@ footer {
             <div class="ji">
               <div class="ji-num">Genel Yayın Yönetmeni</div>
               <div class="ji-name">Haktan Tay</div>
-              <div class="ji-mail">Destek Yayınları</div>
             </div>
             <div class="ji">
               <div class="ji-num">İletişim</div>
@@ -1866,7 +1874,7 @@ footer {
             </div>
             <div class="ji">
               <div class="ji-num">Odak</div>
-              <div class="ji-name">Psikanaliz · Felsefe · Edebiyat</div>
+              <div class="ji-name">Psikoloji · Felsefe · Edebiyat · Sosyoloji · Politika · Sinema</div>
             </div>
             <div class="ji">
               <div class="ji-num">Yayıncı</div>
@@ -1893,7 +1901,7 @@ footer {
           <div class="pub-yr">2026</div>
           <span class="pub-type">Kitap Bölümü</span>
           <div class="pub-title">Lacan'ın Bakış ve Metonimi Kavramlarıyla Mary Shelley'nin Frankenstein Romanının Modern Bir Okuması</div>
-          <div class="pub-venue">Freud'dan Lacan'a Vaka İncelemeleri içinde</div>
+          <div class="pub-venue">FREUD'DAN LACAN'A VAKA İNCELEMELERİ: Cilt 5 içinde</div>
         </div>
         <div class="pub-card spot">
           <div class="pub-yr">2025</div>
@@ -1959,8 +1967,15 @@ footer {
         <div class="ti-dot on"></div>
         <div class="ti-date">Nisan 2023 – Devam Ediyor</div>
         <div class="ti-title">Discutant Psychanalytique</div>
-        <div class="ti-org">École de Psychanalyse Lacanique</div>
-        <p class="ti-desc">Lacancı psikanaliz pratiği ve teorisi üzerine tartışma seminerlerine katılım ve katkı.</p>
+        <div class="ti-org">ÉCOLE DE PSYCHANALYSE DES FORUMS DU CHAMP LACANIEN FRANCE</div>
+        <p class="ti-desc">Lacanyen psikanaliz pratiği ve teorisi üzerine tartışma seminerlerine katılım ve katkı.</p>
+      </div>
+      <div class="ti rv d1">
+        <div class="ti-dot on"></div>
+        <div class="ti-date">2022 – Devam Ediyor</div>
+        <div class="ti-title">Üye / Kartel Çalışanı</div>
+        <div class="ti-org">Nouvelle École Lacanienne (NEL)</div>
+        <p class="ti-desc">Hamlet Semineri (48 hafta), Lacan XVIII. Seminer Kartel çalışmaları; psikanalitik oluşum ve kartel dinamiklerine aktif katılım.</p>
       </div>
       <div class="ti rv d2">
         <div class="ti-dot"></div>
@@ -2018,7 +2033,7 @@ footer {
       <div class="sgrp rv d2">
         <h4>Araştırma Yöntemleri</h4>
         <div class="skill-tags">
-          <span class="skill-tag">Lacancı Söylem Analizi</span>
+          <span class="skill-tag">Lacanyen Söylem Analizi</span>
           <span class="skill-tag">Yansıtıcı Tematik Analiz</span>
           <span class="skill-tag">Fenomenolojik Analiz</span>
           <span class="skill-tag">Nitel Araştırma Tasarımı</span>
