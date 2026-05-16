@@ -1704,6 +1704,9 @@ function closeMob(){ burger.classList.remove('open'); mob.classList.remove('open
   gl.attachShader(prog, mkShader(gl.VERTEX_SHADER,   VS));
   gl.attachShader(prog, mkShader(gl.FRAGMENT_SHADER, FS));
   gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog, gl.LINK_STATUS)){
+    console.error('Smoke link error:', gl.getProgramInfoLog(prog)); return;
+  }
 
   const buf = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, buf);
@@ -1876,17 +1879,23 @@ if(ps){
     speed: Math.random() * .008 + .003,
   }));
 
-  (function draw(t){
-    ctx.clearRect(0,0,c.width,c.height);
-    stars.forEach(s => {
-      const o = Math.abs(Math.sin(t * s.speed + s.phase)) * .35;
-      ctx.beginPath();
-      ctx.arc(s.x * c.width, s.y * c.height, s.r, 0, Math.PI*2);
-      ctx.fillStyle = `rgba(200,169,110,${o})`;
-      ctx.fill();
-    });
+  let _st = null;
+  function draw(ts){
+    if(!_st) _st = ts;
+    const t = (ts - _st) * 0.001;
+    if(c.width > 0 && c.height > 0){
+      ctx.clearRect(0,0,c.width,c.height);
+      stars.forEach(s => {
+        const o = Math.abs(Math.sin(t * s.speed + s.phase)) * .35;
+        ctx.beginPath();
+        ctx.arc(s.x * c.width, s.y * c.height, s.r, 0, Math.PI*2);
+        ctx.fillStyle = `rgba(200,169,110,${o})`;
+        ctx.fill();
+      });
+    }
     requestAnimationFrame(draw);
-  })(0);
+  }
+  requestAnimationFrame(draw);
 })();
 
 /* ── WATER RIPPLE — about photo ───────────── */
@@ -2059,8 +2068,9 @@ if(ps){
 
   /* size the canvas */
   function resize(){
-    const w = canvas.clientWidth;
-    const h = canvas.clientHeight;
+    const w = canvas.offsetWidth  || canvas.parentElement.offsetWidth;
+    const h = canvas.offsetHeight || Math.round(w * 4 / 3);
+    if(!w || !h) return;
     canvas.width  = w;
     canvas.height = h;
     gl.viewport(0,0,w,h);
@@ -2071,8 +2081,8 @@ if(ps){
 
   /* load photo into texture */
   const img = new Image();
-  img.crossOrigin = 'anonymous';
   img.onload = () => {
+    resize();
     const tex = gl.createTexture();
     gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D, tex);
