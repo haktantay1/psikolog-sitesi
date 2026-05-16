@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Haktan Tay — Psikolog, Psikanalitik Yönelimli Terapist, La Nouvelle École Lacanienne Üyesi">
+<meta name="description" content="Haktan Tay — Psikolog, Psikanalitik Yönelimli Terapist, Lacancı Psikanalist">
 <title>Haktan Tay</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -389,8 +389,8 @@ section { position:relative; z-index:2; }
 #about { background:var(--bg); }
 
 .about-wrap {
-  display:grid; grid-template-columns:400px 1fr;
-  gap:8rem; align-items:start;
+  display:grid; grid-template-columns:1fr;
+  gap:0; align-items:start; max-width:800px;
 }
 .about-stick { position:sticky; top:9rem; }
 .about-photo { position:relative; }
@@ -1149,7 +1149,7 @@ footer {
     <span style="animation-delay:.1s">H</span><span style="animation-delay:.15s">A</span><span style="animation-delay:.2s">K</span><span style="animation-delay:.25s">T</span><span style="animation-delay:.3s">A</span><span style="animation-delay:.35s">N</span><span style="animation-delay:.4s">&thinsp;</span><span style="animation-delay:.45s">T</span><span style="animation-delay:.5s">A</span><span style="animation-delay:.55s">Y</span>
   </div>
   <div class="pl-bar"></div>
-  <div class="pl-sub">Psikolog &nbsp;·&nbsp; La Nouvelle École Lacanienne</div>
+  <div class="pl-sub">Psikolog &nbsp;·&nbsp; Lacancı Psikanalist</div>
 </div>
 
 <!-- NAV -->
@@ -1186,7 +1186,7 @@ footer {
   </video>
 
   <div class="hero-left">
-    <p class="hero-eyebrow">La Nouvelle École Lacanienne</p>
+    <p class="hero-eyebrow">Psikanalitik Yönelimli Terapist</p>
     <h1 class="hero-name">
       <span class="ln hero-first"><span class="wd" style="animation-delay:1.65s">Haktan</span></span>
       <span class="ln hero-last"><span class="wd"  style="animation-delay:1.82s">Tay</span></span>
@@ -1273,8 +1273,6 @@ footer {
   </div>
   <div class="mq-wrap" style="margin-top:.8rem;">
     <div class="mq-track" style="animation-direction:reverse;animation-duration:55s;">
-      <span class="mq-item">La Nouvelle École Lacanienne</span>
-      <span class="mq-sep">·</span>
       <span class="mq-item">École de Psychanalyse des Forums du Champ Lacanien</span>
       <span class="mq-sep">·</span>
       <span class="mq-item">Türk Psikologlar Derneği</span>
@@ -1286,8 +1284,6 @@ footer {
       <span class="mq-item">Universität Wien</span>
       <span class="mq-sep">·</span>
       <span class="mq-item">ODTÜ AYNA Klinik Psikoloji</span>
-      <span class="mq-sep">·</span>
-      <span class="mq-item">La Nouvelle École Lacanienne</span>
       <span class="mq-sep">·</span>
       <span class="mq-item">École de Psychanalyse des Forums du Champ Lacanien</span>
       <span class="mq-sep">·</span>
@@ -1334,17 +1330,6 @@ footer {
   <div class="wrap">
     <div class="about-wrap">
 
-      <div class="about-stick rv">
-        <div class="about-photo">
-          <canvas id="ripple-canvas" aria-label="Haktan Tay"></canvas>
-          <div class="about-photo-border"></div>
-        </div>
-        <div class="about-photo-cap">
-          <span>Haktan Tay</span>
-          <span>Psikolog</span>
-        </div>
-      </div>
-
       <div class="about-body">
         <p class="sec-label rv">Hakkımda</p>
         <h2 class="sec-title rv d1">Söz, özneyi<br>var eder.</h2>
@@ -1354,7 +1339,7 @@ footer {
         </p>
 
         <p class="about-p rv d3">
-          Yalova Üniversitesi Psikoloji bölümünden <em>Onur Derecesi</em> ile mezun oldum. ODTÜ AYNA Klinik Psikoloji Birimi'nde psikanalitik oryantasyonlu klinik staj tamamladım; Viyana Üniversitesi'nde nöropsikoloji alanında çalıştım. <em>La Nouvelle École Lacanienne</em> üyesi olarak Lacancı psikanaliz pratiğini hem Türkiye'de hem uluslararası arenada takip ediyorum.
+          Yalova Üniversitesi Psikoloji bölümünden <em>Onur Derecesi</em> ile mezun oldum. ODTÜ AYNA Klinik Psikoloji Birimi'nde psikanalitik oryantasyonlu klinik staj tamamladım; Viyana Üniversitesi'nde nöropsikoloji alanında çalıştım. Lacancı psikanaliz pratiğini hem Türkiye'de hem uluslararası arenada takip ediyorum.
         </p>
 
         <div class="bq rv d4">
@@ -1471,6 +1456,12 @@ footer {
       </div>
     </div>
   </div>
+</section>
+
+<!-- ══════════ PARTICLE KAVRAMLAR ══════════ -->
+<section id="kavramlar" style="background:var(--bg);position:relative;overflow:hidden;">
+  <canvas id="particle-canvas" aria-label="Lacancı kavramlar" style="display:block;width:100%;height:auto;cursor:default;"></canvas>
+  <div style="position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%);font-size:.52rem;letter-spacing:.35em;text-transform:uppercase;color:var(--dim);text-align:center;pointer-events:none;white-space:nowrap;">Sözcükler 4 saniyede bir değişir</div>
 </section>
 
 <div class="sep"></div>
@@ -1716,7 +1707,7 @@ footer {
         <div class="ti-dot on"></div>
         <div class="ti-date">Nisan 2023 – Devam Ediyor</div>
         <div class="ti-title">Discutant Psychanalytique</div>
-        <div class="ti-org">La Nouvelle École Lacanienne</div>
+        <div class="ti-org">École de Psychanalyse Lacanique</div>
         <p class="ti-desc">Lacancı psikanaliz pratiği ve teorisi üzerine tartışma seminerlerine katılım ve katkı.</p>
       </div>
       <div class="ti rv d2">
@@ -2518,6 +2509,131 @@ if(ps){
       el.appendChild(d);
     }
   });
+})();
+
+/* ── PARTICLE TEXT EFFECT ─────────────────── */
+(function initParticleText(){
+  const canvas = document.getElementById('particle-canvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  const WORDS = ['ARZU','JOUISSANCE','SÖYLEM','GERÇEK','BİLİNÇDIŞI','ÖZNE','ÖTEKİ','LACAN'];
+  const PIXEL_STEPS = 6;
+  const COLORS = [
+    {r:200,g:169,b:110},
+    {r:224,g:192,b:128},
+    {r:156,g:122,b:139},
+    {r:139,g:157,b:195},
+    {r:232,g:232,b:220},
+  ];
+
+  function genPos(cx,cy,mag){
+    const rx=Math.random()*canvas.width, ry=Math.random()*canvas.height;
+    const dx=rx-cx, dy=ry-cy, m=Math.sqrt(dx*dx+dy*dy)||1;
+    return {x:cx+dx/m*mag, y:cy+dy/m*mag};
+  }
+
+  class P {
+    constructor(){
+      this.pos={x:0,y:0}; this.vel={x:0,y:0}; this.acc={x:0,y:0};
+      this.target={x:0,y:0}; this.closeEnough=100;
+      this.maxSpeed=1; this.maxForce=0.1;
+      this.isKilled=false;
+      this.sc={r:0,g:0,b:0}; this.tc={r:0,g:0,b:0}; this.cw=0; this.cbr=0.01;
+    }
+    move(){
+      const dx=this.target.x-this.pos.x, dy=this.target.y-this.pos.y;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      const pm=dist<this.closeEnough?dist/this.closeEnough:1;
+      const m=dist||1;
+      const tx=dx/m*this.maxSpeed*pm, ty=dy/m*this.maxSpeed*pm;
+      const sx=tx-this.vel.x, sy=ty-this.vel.y;
+      const sm=Math.sqrt(sx*sx+sy*sy)||1;
+      this.acc.x+=sx/sm*this.maxForce; this.acc.y+=sy/sm*this.maxForce;
+      this.vel.x+=this.acc.x; this.vel.y+=this.acc.y;
+      this.pos.x+=this.vel.x; this.pos.y+=this.vel.y;
+      this.acc.x=0; this.acc.y=0;
+    }
+    draw(){
+      if(this.cw<1) this.cw=Math.min(this.cw+this.cbr,1);
+      const r=Math.round(this.sc.r+(this.tc.r-this.sc.r)*this.cw);
+      const g=Math.round(this.sc.g+(this.tc.g-this.sc.g)*this.cw);
+      const b=Math.round(this.sc.b+(this.tc.b-this.sc.b)*this.cw);
+      ctx.fillStyle=`rgb(${r},${g},${b})`;
+      ctx.fillRect(this.pos.x,this.pos.y,2,2);
+    }
+    kill(){
+      if(!this.isKilled){
+        const rp=genPos(canvas.width/2,canvas.height/2,(canvas.width+canvas.height)/2);
+        this.target.x=rp.x; this.target.y=rp.y;
+        this.sc={r:this.sc.r+(this.tc.r-this.sc.r)*this.cw,g:this.sc.g+(this.tc.g-this.sc.g)*this.cw,b:this.sc.b+(this.tc.b-this.sc.b)*this.cw};
+        this.tc={r:0,g:0,b:0}; this.cw=0; this.isKilled=true;
+      }
+    }
+  }
+
+  let particles=[], frame=0, wIdx=0;
+
+  function setSize(){
+    const w=canvas.parentElement.clientWidth||window.innerWidth;
+    canvas.width=w; canvas.height=Math.round(w*0.38);
+    canvas.style.height=canvas.height+'px';
+  }
+  setSize();
+  window.addEventListener('resize',()=>{setSize();showWord(WORDS[wIdx]);},{passive:true});
+
+  function showWord(word){
+    const off=document.createElement('canvas');
+    off.width=canvas.width; off.height=canvas.height;
+    const oc=off.getContext('2d');
+    const fs=Math.min(Math.floor(canvas.width*0.14),130);
+    oc.fillStyle='white';
+    oc.font=`300 ${fs}px 'Cormorant Garamond',Georgia,serif`;
+    oc.textAlign='center'; oc.textBaseline='middle';
+    oc.fillText(word,canvas.width/2,canvas.height/2);
+
+    const id=oc.getImageData(0,0,canvas.width,canvas.height).data;
+    const nc=COLORS[Math.floor(Math.random()*COLORS.length)];
+    let pi=0;
+    const coords=[];
+    for(let i=0;i<id.length;i+=PIXEL_STEPS*4) coords.push(i);
+    for(let i=coords.length-1;i>0;i--){
+      const j=Math.floor(Math.random()*(i+1));[coords[i],coords[j]]=[coords[j],coords[i]];
+    }
+    for(const ci of coords){
+      if(id[ci+3]>0){
+        const x=(ci/4)%canvas.width, y=Math.floor(ci/4/canvas.width);
+        let p;
+        if(pi<particles.length){p=particles[pi];p.isKilled=false;pi++;}
+        else{
+          p=new P();
+          const rp=genPos(canvas.width/2,canvas.height/2,(canvas.width+canvas.height)/2);
+          p.pos.x=rp.x; p.pos.y=rp.y;
+          p.maxSpeed=Math.random()*6+4; p.maxForce=p.maxSpeed*0.05;
+          p.cbr=Math.random()*0.0275+0.0025; particles.push(p);
+        }
+        p.sc={r:p.sc.r+(p.tc.r-p.sc.r)*p.cw,g:p.sc.g+(p.tc.g-p.sc.g)*p.cw,b:p.sc.b+(p.tc.b-p.sc.b)*p.cw};
+        p.tc=nc; p.cw=0; p.target.x=x; p.target.y=y;
+      }
+    }
+    for(let i=pi;i<particles.length;i++) particles[i].kill();
+  }
+
+  function animate(){
+    ctx.fillStyle='rgba(7,7,14,0.12)';
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    for(let i=particles.length-1;i>=0;i--){
+      const p=particles[i]; p.move(); p.draw();
+      if(p.isKilled&&(p.pos.x<0||p.pos.x>canvas.width||p.pos.y<0||p.pos.y>canvas.height))
+        particles.splice(i,1);
+    }
+    if(++frame%240===0){wIdx=(wIdx+1)%WORDS.length;showWord(WORDS[wIdx]);}
+    requestAnimationFrame(animate);
+  }
+
+  showWord(WORDS[0]);
+  requestAnimationFrame(animate);
+  canvas.addEventListener('contextmenu',e=>e.preventDefault());
 })();
 
 /* ── OBJET PETIT A SHADER ─────────────────── */
