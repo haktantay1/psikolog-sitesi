@@ -2423,7 +2423,7 @@ if(ps){
         if(!reverse && pos >= w) pos -= w;
         if(reverse && pos <= -w) pos += w;
         track.style.transform = `translateX(${-pos}px)`;
-        clone.style.transform = `translateX(${w - pos}px)`;
+        clone.style.transform = `translateX(${(reverse ? -w : w) - pos}px)`;
       }
       requestAnimationFrame(tick);
     }
