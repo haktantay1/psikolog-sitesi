@@ -337,6 +337,159 @@ if(ps){
   requestAnimationFrame(draw);
 })();
 
+/* ── TUNNEL — Bilinçdışına Yolculuk (WebGL2) ─── */
+(function initTunnel(){
+  if(prefersReducedMotion || lowPerf) return;
+  const canvas = document.getElementById('tunnel-canvas');
+  if(!canvas) return;
+  const gl = canvas.getContext('webgl2', { antialias:true, premultipliedAlpha:false });
+  if(!gl) return;
+
+  const VERT = `#version 300 es
+in vec2 a_pos;
+void main(){ gl_Position = vec4(a_pos, 0.0, 1.0); }`;
+
+  const FRAG = `#version 300 es
+precision highp float;
+out vec4 fragColor;
+uniform float iTime;
+uniform vec3  iResolution;
+
+#define TAU 6.2831853071795865
+#define TUNNEL_LAYERS 72
+#define RING_POINTS 128
+#define POINT_SIZE 1.8
+#define POINT_COLOR_A vec3(1.0, 0.96, 0.88)
+#define POINT_COLOR_B vec3(0.78, 0.59, 0.25)
+#define SPEED 0.7
+
+float sq(float x){ return x*x; }
+
+vec2 AngRep(vec2 uv, float angle){
+  vec2 polar = vec2(atan(uv.y, uv.x), length(uv));
+  polar.x = mod(polar.x + angle*0.5, angle) - angle*0.5;
+  return polar.y * vec2(cos(polar.x), sin(polar.x));
+}
+
+float sdCircle(vec2 uv, float r){ return length(uv) - r; }
+
+vec3 MixShape(float sd, vec3 fill, vec3 target){
+  float blend = smoothstep(0.0, 1.0/iResolution.y, sd);
+  return mix(fill, target, blend);
+}
+
+vec2 TunnelPath(float x){
+  vec2 offs = vec2(
+    0.2 * sin(TAU * x * 0.5) + 0.4 * sin(TAU * x * 0.2 + 0.3),
+    0.3 * cos(TAU * x * 0.3) + 0.2 * cos(TAU * x * 0.1)
+  );
+  offs *= smoothstep(1.0, 4.0, x);
+  return offs;
+}
+
+void main(){
+  vec2 res = iResolution.xy / iResolution.y;
+  vec2 uv  = gl_FragCoord.xy / iResolution.y - res*0.5;
+  vec3 color = vec3(0.0);
+  float repAngle = TAU / float(RING_POINTS);
+  float pointSize = POINT_SIZE / (2.0 * iResolution.y);
+  float camZ = iTime * SPEED;
+  vec2 camOffs = TunnelPath(camZ);
+
+  for(int i = 1; i <= TUNNEL_LAYERS; i++){
+    float pz = 1.0 - (float(i) / float(TUNNEL_LAYERS));
+    pz -= mod(camZ, 4.0 / float(TUNNEL_LAYERS));
+    vec2 offs = TunnelPath(camZ + pz) - camOffs;
+    float ringRad = 0.15 * (1.0 / sq(pz * 0.8 + 0.4));
+    if(abs(length(uv + offs) - ringRad) < pointSize * 1.5){
+      vec2 aruv = AngRep(uv + offs, repAngle);
+      float pdist = sdCircle(aruv - vec2(ringRad, 0.0), pointSize);
+      vec3 ptColor = (mod(float(i/2), 2.0) == 0.0) ? POINT_COLOR_A : POINT_COLOR_B;
+      float shade = (1.0 - pz);
+      color = MixShape(pdist, ptColor * shade, color);
+    }
+  }
+  fragColor = vec4(color, 1.0);
+}`;
+
+  function compile(type, src){
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src); gl.compileShader(s);
+    if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)){
+      console.warn('tunnel shader:', gl.getShaderInfoLog(s)); return null;
+    }
+    return s;
+  }
+  const vs = compile(gl.VERTEX_SHADER, VERT);
+  const fs = compile(gl.FRAGMENT_SHADER, FRAG);
+  if(!vs || !fs) return;
+
+  const prog = gl.createProgram();
+  gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog, gl.LINK_STATUS)){
+    console.warn('tunnel link:', gl.getProgramInfoLog(prog)); return;
+  }
+  gl.useProgram(prog);
+
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const loc = gl.getAttribLocation(prog, 'a_pos');
+  gl.enableVertexAttribArray(loc);
+  gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+  const uTime = gl.getUniformLocation(prog, 'iTime');
+  const uRes  = gl.getUniformLocation(prog, 'iResolution');
+
+  let running = false, rafId = null, t0 = performance.now(), pageHidden = false;
+
+  function resize(){
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = Math.floor(canvas.clientWidth  * dpr);
+    const h = Math.floor(canvas.clientHeight * dpr);
+    if(canvas.width !== w || canvas.height !== h){
+      canvas.width = w; canvas.height = h;
+      gl.viewport(0, 0, w, h);
+      gl.uniform3f(uRes, w, h, 1);
+    }
+  }
+
+  function render(){
+    if(!running) return;
+    resize();
+    gl.uniform1f(uTime, (performance.now() - t0) * 0.001);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    rafId = requestAnimationFrame(render);
+  }
+
+  function start(){
+    if(running || pageHidden) return;
+    running = true;
+    rafId = requestAnimationFrame(render);
+  }
+  function stop(){
+    running = false;
+    if(rafId){ cancelAnimationFrame(rafId); rafId = null; }
+  }
+
+  // Görünür değilse render etme — boşa GPU kullanma
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver(entries => {
+      for(const e of entries){
+        if(e.isIntersecting) start(); else stop();
+      }
+    }, { rootMargin: '80px' });
+    io.observe(canvas);
+  } else {
+    start();
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    pageHidden = document.hidden;
+    if(pageHidden) stop();
+  });
+})();
+
 /* ── WATER RIPPLE — about photo ───────────── */
 (function initRipple(){
   if(prefersReducedMotion) return;
