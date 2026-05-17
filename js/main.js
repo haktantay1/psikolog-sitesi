@@ -989,7 +989,7 @@ void main(){
   render();
 })();
 
-/* ── CONTACT FORM (hCaptcha) ─────────────── */
+/* ── CONTACT FORM ─────────────── */
 (function initContactForm(){
   const form = document.getElementById('contact-form');
   const msg  = document.getElementById('cf-msg');
@@ -1011,14 +1011,6 @@ void main(){
       show('Lütfen ad, e-posta ve mesaj alanlarını doldurun.', 'err');
       return;
     }
-    let token = '';
-    try { token = (typeof hcaptcha !== 'undefined' && hcaptcha.getResponse) ? hcaptcha.getResponse() : ''; }
-    catch(err){ token = ''; }
-    if(!token){
-      show('Lütfen robot olmadığınızı doğrulayın.', 'err');
-      return;
-    }
-
     show('Gönderiliyor…', '');
     if(btn) btn.disabled = true;
 
@@ -1032,7 +1024,6 @@ void main(){
       .then(() => {
         show('Mesajınız alındı. En kısa sürede dönüş yapacağım.', 'ok');
         form.reset();
-        try { hcaptcha.reset(); } catch(err){}
         const disp = document.getElementById('cal-display');
         const hv   = document.getElementById('cal-value');
         if(disp) disp.textContent = 'Tarih seçilmedi';
