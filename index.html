@@ -17,19 +17,24 @@
 <meta property="og:url" content="https://haktantay1.github.io/psikolog-sitesi">
 <meta property="og:title" content="Haktan Tay | Psikolog · Psikanalitik Yönelimli">
 <meta property="og:description" content="Haktan Tay — Psikolog, Psikanalitik Yönelimli Psikolog, Lacanyen Kuram Uygulayıcısı.">
-<meta property="og:image" content="https://haktantay1.github.io/psikolog-sitesi/DOC-20260513-WA0002_">
+<meta property="og:image" content="https://haktantay1.github.io/psikolog-sitesi/haktan-tay.jpg">
+<meta property="og:locale" content="tr_TR">
 
 <!-- ─── TWITTER CARD ─── -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Haktan Tay | Psikolog · Psikanalitik Yönelimli">
 <meta name="twitter:description" content="Haktan Tay — Psikolog, Psikanalitik Yönelimli Psikolog, Lacanyen Kuram Uygulayıcısı.">
-<meta name="twitter:image" content="https://haktantay1.github.io/psikolog-sitesi/DOC-20260513-WA0002_">
+<meta name="twitter:image" content="https://haktantay1.github.io/psikolog-sitesi/haktan-tay.jpg">
 
 <!-- ─── SECURITY HEADERS ─── -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' https://ik.imagekit.io; connect-src 'self' https://docs.google.com; object-src 'none'; base-uri 'self';">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,6 +48,8 @@
 </head>
 <body>
 
+<a href="#main" class="skip-link">İçeriğe atla</a>
+
 <svg style="position:absolute;width:0;height:0;overflow:visible" aria-hidden="true" focusable="false">
   <defs>
     <filter id="gooey-filter">
@@ -55,16 +62,6 @@
 <!-- ψ CURSOR -->
 <div id="cursor-psi" aria-hidden="true">ψ</div>
 <div id="cursor-ring" aria-hidden="true"></div>
-
-<!-- PRELOADER -->
-<div id="preloader" aria-hidden="true">
-  <div class="pl-psi">ψ</div>
-  <div class="pl-name">
-    <span style="animation-delay:.1s">H</span><span style="animation-delay:.15s">A</span><span style="animation-delay:.2s">K</span><span style="animation-delay:.25s">T</span><span style="animation-delay:.3s">A</span><span style="animation-delay:.35s">N</span><span style="animation-delay:.4s">&thinsp;</span><span style="animation-delay:.45s">T</span><span style="animation-delay:.5s">A</span><span style="animation-delay:.55s">Y</span>
-  </div>
-  <div class="pl-bar"></div>
-  <div class="pl-sub">Psikolog &nbsp;·&nbsp; Psikanalitik Yönelimli</div>
-</div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -82,24 +79,22 @@
 </nav>
 
 <div class="nav-mob" id="nav-mob">
-  <a href="#about"      onclick="closeMob()">Hakkımda</a>
-  <a href="#approach"   onclick="closeMob()">Yaklaşım</a>
-  <a href="#services"   onclick="closeMob()">Hizmetler</a>
-  <a href="#journal"    onclick="closeMob()">Dergi</a>
-  <a href="#academic"   onclick="closeMob()">Akademik</a>
-  <a href="#experience" onclick="closeMob()">Deneyim</a>
-  <a href="#contact"    onclick="closeMob()">İletişim</a>
+  <a href="#about"      data-close-mob>Hakkımda</a>
+  <a href="#approach"   data-close-mob>Yaklaşım</a>
+  <a href="#services"   data-close-mob>Hizmetler</a>
+  <a href="#journal"    data-close-mob>Dergi</a>
+  <a href="#academic"   data-close-mob>Akademik</a>
+  <a href="#experience" data-close-mob>Deneyim</a>
+  <a href="#contact"    data-close-mob>İletişim</a>
 </div>
 
 <!-- HERO -->
+<main id="main">
 <section id="hero">
   <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
   <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
   <canvas id="smoke-canvas" aria-hidden="true"></canvas>
   <canvas id="hero-canvas"  aria-hidden="true"></canvas>
-  <video class="hero-video" autoplay loop muted playsinline>
-    <source src="https://ik.imagekit.io/lrigu76hy/tailark/dna-video.mp4?updatedAt=1745736251477" type="video/mp4">
-  </video>
 
   <div class="hero-center">
     <div class="hero-upper">
@@ -112,7 +107,7 @@
 
     <div class="hero-portrait-wrap">
       <div class="hero-portrait">
-        <img src="DOC-20260513-WA0002_" alt="Haktan Tay" id="parallax-img">
+        <img src="haktan-tay.jpg" alt="Haktan Tay — Psikanalitik yönelimli psikolog, profil fotoğrafı" id="parallax-img" width="600" height="800" fetchpriority="high">
         <div class="hero-portrait-veil"></div>
       </div>
       <span class="hero-frag" style="top:18%;right:-58%;animation-delay:0s">le sujet de l'inconscient</span>
@@ -144,6 +139,21 @@
         <div class="hero-meta-item">
           <span class="hero-meta-lbl">Dil</span>
           <span class="hero-meta-val">TR / EN / FR</span>
+        </div>
+      </div>
+
+      <div class="hero-quickinfo" aria-label="Hızlı bilgi">
+        <div class="qi-item">
+          <span class="qi-lbl">Format</span>
+          <span class="qi-val">Yüz yüze &amp; Online</span>
+        </div>
+        <div class="qi-item">
+          <span class="qi-lbl">İlk Görüşme</span>
+          <span class="qi-val">Ücretsiz</span>
+        </div>
+        <div class="qi-item">
+          <span class="qi-lbl">Randevu</span>
+          <span class="qi-val"><a href="#contact">İletişim →</a></span>
         </div>
       </div>
     </div>
@@ -263,7 +273,7 @@
         </p>
 
         <div class="bq rv d4">
-          <p>"L'inconscient est structuré comme un langage."</p>
+          <p lang="fr">"L'inconscient est structuré comme un langage."</p>
           <cite>— Jacques Lacan, Écrits</cite>
         </div>
 
@@ -280,7 +290,7 @@
 <!-- PHARMAKON QUOTE -->
 <div class="pharmakon rv">
   <div class="pharmakon-wm">ψ</div>
-  <blockquote class="pharmakon-q">
+  <blockquote class="pharmakon-q" lang="fr">
     "Le désir de l'homme est le désir de l'Autre."
   </blockquote>
   <cite class="pharmakon-cite">— Jacques Lacan, Séminaire XI</cite>
@@ -374,7 +384,7 @@
       <img src="a.png" alt="Analitik Alan" loading="lazy">
       <div class="divan-overlay">
         <div class="divan-quote">
-          <blockquote>"L'analyste ne doit pas diriger le patient, mais diriger la cure."</blockquote>
+          <blockquote lang="fr">"L'analyste ne doit pas diriger le patient, mais diriger la cure."</blockquote>
           <cite>— Jacques Lacan, Écrits</cite>
         </div>
       </div>
@@ -750,26 +760,27 @@
   </div>
 </section>
 
-<!-- ══════════ TESTIMONIALS ══════════ -->
-<section id="testimonials" class="pad">
+<!-- ══════════ MEMBERSHIPS / REFERANSLAR (etik uyum) ══════════ -->
+<section id="memberships" class="pad">
   <div class="wrap">
-    <p class="sec-label rv">Deneyimler</p>
-    <h2 class="sec-title rv d1">Seansa <em style="color:var(--gold);font-style:italic;">Gelenler</em> Anlatıyor</h2>
-    <div class="testi-grid">
-      <div class="testi-card rv d1 spot">
-        <p class="testi-q">Haktan Bey ile çalışmak, kendimi hem dinleniyor hem de anlaşılıyor hissetmemi sağladı. Söylediklerimin ardındaki şeyleri fark etmeye başladım; bu deneyim benim için gerçekten dönüştürücü oldu.</p>
-        <div class="testi-name">A. K.</div>
-        <div class="testi-role">Bireysel Danışan, İstanbul</div>
+    <p class="sec-label rv">Profesyonel Üyelikler</p>
+    <h2 class="sec-title rv d1">Kurumsal <em class="gold-italic">Bağlar</em></h2>
+    <div class="mem-grid">
+      <div class="mem-card rv d1 spot">
+        <div class="mem-title">Türk Psikologlar Derneği</div>
+        <div class="mem-role">Üye · Nöropsikoloji Komisyonu (Geçici Yürütme Kurulu)</div>
       </div>
-      <div class="testi-card rv d2 spot">
-        <p class="testi-q">Psikanalitik yöntemin bana uygun olduğunu baştan bilemezdim. Ama Haktan Bey'in titiz ve sabırlı yaklaşımıyla, kendi sesimi bulmak nasıl bir şeymiş, bunu öğrendim.</p>
-        <div class="testi-name">S. T.</div>
-        <div class="testi-role">Bireysel Danışan, Ankara</div>
+      <div class="mem-card rv d2 spot">
+        <div class="mem-title">École de Psychanalyse des Forums du Champ Lacanien</div>
+        <div class="mem-role">Discutant Psychanalytique — Fransa</div>
       </div>
-      <div class="testi-card rv d3 spot">
-        <p class="testi-q">Çekiçle Felsefe dergisindeki yazıları aracılığıyla tanıştım; ardından görüşme sürecine dahil oldum. Hem teorik derinliği hem de insani sıcaklığıyla nadir bir psikolog profili.</p>
-        <div class="testi-name">M. Y.</div>
-        <div class="testi-role">Okuyucu & Danışan</div>
+      <div class="mem-card rv d3 spot">
+        <div class="mem-title">Nouvelle École Lacanienne</div>
+        <div class="mem-role">Hamlet Semineri (48 hafta) · Lacan XVIII. Seminer Karteli</div>
+      </div>
+      <div class="mem-card rv d4 spot">
+        <div class="mem-title">ODTÜ AYNA Klinik Psikoloji Birimi</div>
+        <div class="mem-role">Psikanalitik yönelimli klinik staj</div>
       </div>
     </div>
   </div>
@@ -817,21 +828,21 @@
           </div>
         </div>
       </div>
-      <form class="cform rv d2" id="contact-form" onsubmit="return false;">
+      <form class="cform rv d2" id="contact-form" novalidate>
         <div class="fgrp">
-          <label>Adınız</label>
-          <input type="text" id="cf-name" placeholder="Ad Soyad" autocomplete="name" required>
+          <label for="cf-name">Adınız</label>
+          <input type="text" id="cf-name" name="name" placeholder="Ad Soyad" autocomplete="name" required>
         </div>
         <div class="fgrp">
-          <label>E-posta</label>
-          <input type="email" id="cf-email" placeholder="ornek@mail.com" autocomplete="email" required>
+          <label for="cf-email">E-posta</label>
+          <input type="email" id="cf-email" name="email" placeholder="ornek@mail.com" autocomplete="email" required>
         </div>
         <div class="fgrp">
-          <label>Konu</label>
-          <input type="text" id="cf-subject" placeholder="Bireysel Görüşme / Süpervizyon / Dergi / Diğer">
+          <label for="cf-subject">Konu</label>
+          <input type="text" id="cf-subject" name="subject" placeholder="Bireysel Görüşme / Süpervizyon / Dergi / Diğer">
         </div>
         <div class="fgrp">
-          <label>Tercih Ettiğiniz Tarih</label>
+          <label for="cal-value">Tercih Ettiğiniz Tarih</label>
           <div class="cal-wrap" id="cal-wrap">
             <div class="cal-head">
               <button type="button" class="cal-nav" id="cal-prev">‹</button>
@@ -848,9 +859,12 @@
           </div>
         </div>
         <div class="fgrp">
-          <label>Mesajınız</label>
-          <textarea id="cf-message" placeholder="Merhaba, ..." required></textarea>
+          <label for="cf-message">Mesajınız</label>
+          <textarea id="cf-message" name="message" placeholder="Merhaba, ..." required></textarea>
         </div>
+        <p class="cf-consent">
+          <label><input type="checkbox" id="cf-kvkk" required> <span>Aydınlatma Metni'ni okudum, formdaki kişisel verilerimin yalnızca iletişim amacıyla işlenmesini kabul ediyorum.</span></label>
+        </p>
         <p class="cf-msg" id="cf-msg" aria-live="polite"></p>
         <button type="submit" class="btn-sub" id="cf-submit">
           Gönder <span class="btn-arr"></span>
@@ -860,12 +874,14 @@
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="footer-inner">
       <div class="footer-logo"><span class="footer-psi">ψ</span> Haktan Tay</div>
-      <div class="footer-q">"Le désir de l'homme, c'est le désir de l'Autre."</div>
+      <div class="footer-q" lang="fr">"Le désir de l'homme, c'est le désir de l'Autre."</div>
       <div class="footer-social">
         <a href="https://tr.linkedin.com/in/haktan-tay" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer-soc-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -882,7 +898,14 @@
           </svg>
         </a>
       </div>
-      <div class="footer-copy">© 2025 Haktan Tay · Psikolog</div>
+      <nav class="footer-legal" aria-label="Yasal">
+        <a href="kvkk.html">KVKK</a>
+        <span>·</span>
+        <a href="aydinlatma.html">Aydınlatma Metni</a>
+        <span>·</span>
+        <a href="gizlilik.html">Gizlilik</a>
+      </nav>
+      <div class="footer-copy">© <span id="footer-year">2026</span> Haktan Tay · Psikolog</div>
     </div>
   </div>
 </footer>
@@ -943,7 +966,7 @@
       "description": "Psikanalitik yönelimli psikolog ve araştırmacı. Lacanyen kuram çerçevesinde klinik pratik.",
       "url": "https://haktantay1.github.io/psikolog-sitesi",
       "email": "psikologhaktantay@gmail.com",
-      "image": "https://haktantay1.github.io/psikolog-sitesi/DOC-20260513-WA0002_",
+      "image": "https://haktantay1.github.io/psikolog-sitesi/haktan-tay.jpg",
       "sameAs": [
         "https://tr.linkedin.com/in/haktan-tay",
         "https://www.instagram.com/haktan.tay/"
@@ -978,11 +1001,21 @@
       }
     },
     {
-      "@type": "Article",
+      "@type": "ScholarlyArticle",
       "headline": "Lacan'ın Bakış ve Metonimi Kavramlarıyla Mary Shelley'nin Frankenstein Romanının Modern Bir Okuması",
-      "datePublished": "2026",
+      "datePublished": "2026-01-01",
+      "inLanguage": "tr",
       "author": {"@id": "https://haktantay1.github.io/psikolog-sitesi/#person"},
-      "publisher": {"@type": "Organization", "name": "FREUD'DAN LACAN'A VAKA İNCELEMELERİ"}
+      "publisher": {"@type": "Organization", "name": "FREUD'DAN LACAN'A VAKA İNCELEMELERİ — Cilt 5"},
+      "isPartOf": {"@type": "Book", "name": "FREUD'DAN LACAN'A VAKA İNCELEMELERİ: Cilt 5"}
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://haktantay1.github.io/psikolog-sitesi/#website",
+      "url": "https://haktantay1.github.io/psikolog-sitesi",
+      "name": "Haktan Tay — Psikolog",
+      "inLanguage": "tr",
+      "publisher": {"@id": "https://haktantay1.github.io/psikolog-sitesi/#person"}
     }
   ]
 }
