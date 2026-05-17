@@ -994,3 +994,98 @@ void main(){
     if(footer)  io.observe(footer);
   }
 })();
+
+/* ── SPARKLES (CTA section) ─────────────── */
+(function initSparkles(){
+  if(prefersReducedMotion || lowPerf) return;
+  const canvas = document.getElementById('sparkles-canvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  if(!ctx) return;
+
+  const COLOR     = '#c8a96e';    // altın
+  const MIN_SIZE  = 0.6;
+  const MAX_SIZE  = 2.2;
+  const DENSITY   = 110;          // 400×400'lük alanda partikül sayısı
+  const MAX_SPEED = 0.35;
+
+  let particles = [], w = 0, h = 0, dpr = 1;
+  let running = false, rafId = null, pageHidden = false;
+
+  function makeParticle(){
+    return {
+      x: Math.random() * w,
+      y: Math.random() * h,
+      vx: (Math.random() - 0.5) * MAX_SPEED,
+      vy: (Math.random() - 0.5) * MAX_SPEED,
+      size: MIN_SIZE + Math.random() * (MAX_SIZE - MIN_SIZE),
+      op:  0.1 + Math.random() * 0.9,
+      dir: Math.random() > 0.5 ? 1 : -1,
+      step: 0.004 + Math.random() * 0.012
+    };
+  }
+
+  function resize(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth;
+    h = canvas.clientHeight;
+    if(!w || !h) return;
+    canvas.width  = Math.floor(w * dpr);
+    canvas.height = Math.floor(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const count = Math.max(40, Math.round((w * h) / (400 * 400) * DENSITY));
+    particles = [];
+    for(let i = 0; i < count; i++) particles.push(makeParticle());
+  }
+
+  function draw(){
+    if(!running) return;
+    ctx.clearRect(0, 0, w, h);
+    for(const p of particles){
+      p.x += p.vx; p.y += p.vy;
+      if(p.x < 0 || p.x > w) p.vx *= -1;
+      if(p.y < 0 || p.y > h) p.vy *= -1;
+      p.op += p.dir * p.step;
+      if(p.op <= 0.1){ p.op = 0.1; p.dir =  1; }
+      if(p.op >= 1.0){ p.op = 1.0; p.dir = -1; }
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fillStyle = COLOR;
+      ctx.globalAlpha = p.op;
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    rafId = requestAnimationFrame(draw);
+  }
+
+  function start(){
+    if(running || pageHidden) return;
+    running = true;
+    if(!w || !h) resize();
+    rafId = requestAnimationFrame(draw);
+  }
+  function stop(){
+    running = false;
+    if(rafId){ cancelAnimationFrame(rafId); rafId = null; }
+  }
+
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  // Sadece görünürken render et — boşa GPU/CPU kullanma
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver(entries => {
+      for(const e of entries){
+        if(e.isIntersecting) start(); else stop();
+      }
+    }, { rootMargin: '40px' });
+    io.observe(canvas);
+  } else {
+    start();
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    pageHidden = document.hidden;
+    if(pageHidden) stop();
+  });
+})();
