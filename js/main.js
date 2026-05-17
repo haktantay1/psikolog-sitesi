@@ -834,6 +834,11 @@ void main(){
   const btn  = document.getElementById('cf-submit');
   if(!form || !msg) return;
 
+  // Consent içindeki linke tıklayınca checkbox toggle olmasın
+  document.querySelectorAll('.cf-link').forEach(a => {
+    a.addEventListener('click', e => e.stopPropagation());
+  });
+
   function show(text, type){
     msg.textContent = text;
     msg.classList.remove('err','ok');
