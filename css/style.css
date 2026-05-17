@@ -181,25 +181,27 @@ textarea:focus-visible, [tabindex]:focus-visible {
 .hero-center {
   position:relative; z-index:3;
   display:flex; flex-direction:column; align-items:center;
-  gap:1.8rem; padding:8rem 2rem 5rem;
+  gap:1.6rem; padding:10rem 2rem 4rem;
   text-align:center; width:100%;
 }
 .hero-portrait-wrap {
-  position:relative; width:260px; margin:0 auto;
+  position:relative; width:280px; margin:0 auto;
   opacity:0; animation:fadein 1.8s ease .8s forwards;
 }
 .hero-portrait {
-  width:260px; height:330px; position:relative;
+  width:280px; height:360px; position:relative;
+  border-radius:8px; overflow:hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,.55), 0 4px 16px rgba(0,0,0,.35);
 }
 .hero-portrait img {
-  width:100%; height:100%; object-fit:cover; object-position:center 12%;
-  filter:saturate(.3) contrast(1.08) brightness(.75); display:block;
-  -webkit-mask-image:radial-gradient(ellipse 88% 92% at 50% 42%, black 38%, transparent 80%);
-  mask-image:radial-gradient(ellipse 88% 92% at 50% 42%, black 38%, transparent 80%);
+  width:100%; height:100%; object-fit:cover; object-position:center 25%;
+  filter:saturate(.85) contrast(1.04) brightness(.96); display:block;
+  -webkit-mask-image:linear-gradient(to bottom, black 0%, black 78%, transparent 100%);
+  mask-image:linear-gradient(to bottom, black 0%, black 78%, transparent 100%);
 }
 .hero-portrait-veil {
   position:absolute; inset:0;
-  background:radial-gradient(ellipse 88% 92% at 50% 42%, transparent 30%, rgba(9,9,15,.55) 65%, rgba(9,9,15,.95) 85%);
+  background:linear-gradient(to bottom, transparent 0%, transparent 65%, rgba(9,9,15,.4) 100%);
   pointer-events:none;
 }
 .hero-text-scrim {
@@ -277,20 +279,7 @@ textarea:focus-visible, [tabindex]:focus-visible {
 .hero-meta-lbl  { font-size:.56rem; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); }
 .hero-meta-val  { font-size:.8rem; color:var(--mid); }
 
-.hero-scroll {
-  position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%);
-  display:flex; align-items:center; gap:1.2rem;
-  opacity:0; animation:h-up 1s var(--ease) 2.7s forwards;
-}
-.hero-scroll-line {
-  width:44px; height:1px; background:var(--dim); overflow:hidden; position:relative;
-}
-.hero-scroll-line::after {
-  content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
-  background:var(--gold); animation:run 2.5s ease-in-out infinite;
-}
-@keyframes run { 0%{left:-100%} 50%{left:0} 100%{left:100%} }
-.hero-scroll-txt { font-size:.56rem; letter-spacing:.32em; text-transform:uppercase; color:var(--dim); }
+.hero-scroll { display:none; }
 
 @keyframes h-up { to { opacity:1; transform:translateY(0); } }
 
@@ -1477,7 +1466,6 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
   #hero{grid-template-columns:1fr;}
   .hero-right{position:absolute;inset:0;z-index:0;opacity:.2;}
   .hero-left{padding:7rem 2rem 4rem;}
-  .hero-scroll{left:2rem;}
   .wrap{padding:0 1.8rem;}
   .pad{padding:5.5rem 0;}
   .svc-grid{grid-template-columns:1fr;}
