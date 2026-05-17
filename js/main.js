@@ -688,7 +688,7 @@ void main(){
     gl.uniform1i(U['u_image_texture'], 0);
     gl.uniform1f(U['u_img_ratio'], img.naturalWidth/img.naturalHeight);
   };
-  img.src = 'haktan-tay.jpg';
+  img.src = 'haktan-tay.webp';
 
   /* render loop */
   gl.enable(gl.BLEND);
@@ -1028,25 +1028,6 @@ void main(){
   }
   requestAnimationFrame(tick);
 
-  /* slider */
-  const track=document.getElementById('objeta-track');
-  if(track){
-    const clone=track.cloneNode(true);
-    track.parentElement.insertBefore(clone,track.nextSibling);
-    let pos=0,paused=false;
-    track.parentElement.addEventListener('mouseenter',()=>paused=true);
-    track.parentElement.addEventListener('mouseleave',()=>paused=false);
-    (function slide(){
-      if(!paused){
-        pos+=0.35;
-        const w=track.offsetWidth;
-        if(pos>=w) pos-=w;
-        track.style.transform=`translateX(${-pos}px)`;
-        clone.style.transform=`translateX(${w-pos}px)`;
-      }
-      requestAnimationFrame(slide);
-    })();
-  }
 })();
 
 /* ── INFINITE SLIDERS ─────────────────────── */
