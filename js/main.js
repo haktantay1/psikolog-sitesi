@@ -1018,13 +1018,28 @@ void main(){
       show('Lütfen robot olmadığınızı doğrulayın.', 'err');
       return;
     }
-    show('Mesajınız alındı. En kısa sürede dönüş yapacağım.', 'ok');
-    form.reset();
-    try { hcaptcha.reset(); } catch(err){}
-    const disp = document.getElementById('cal-display');
-    const hv   = document.getElementById('cal-value');
-    if(disp) disp.textContent = 'Tarih seçilmedi';
-    if(hv)   hv.value = '';
+
+    show('Gönderiliyor…', '');
+    if(btn) btn.disabled = true;
+
+    const GFORM = 'https://docs.google.com/forms/d/e/1FAIpQLSevkdxVaWHnYinJFRdNLUoLzXkMtbN48IoEOALzF44mUjbFzQ/formResponse';
+    const data = new FormData();
+    data.append('entry.352433926', name);
+    data.append('entry.1721181518', email);
+    data.append('entry.643986528', message);
+
+    fetch(GFORM, { method:'POST', mode:'no-cors', body:data })
+      .then(() => {
+        show('Mesajınız alındı. En kısa sürede dönüş yapacağım.', 'ok');
+        form.reset();
+        try { hcaptcha.reset(); } catch(err){}
+        const disp = document.getElementById('cal-display');
+        const hv   = document.getElementById('cal-value');
+        if(disp) disp.textContent = 'Tarih seçilmedi';
+        if(hv)   hv.value = '';
+      })
+      .catch(() => show('Bir hata oluştu, lütfen tekrar deneyin.', 'err'))
+      .finally(() => { if(btn) btn.disabled = false; });
   });
 })();
 
