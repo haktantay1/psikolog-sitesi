@@ -291,21 +291,6 @@ textarea:focus-visible, [tabindex]:focus-visible {
 .hero-meta-val { color:rgba(220,212,200,.8) !important; }
 
 /* ═══════════════════════════════════════════════════
-   MARQUEE
-═══════════════════════════════════════════════════ */
-.marquee {
-  position:relative; z-index:2; overflow:hidden;
-  padding:1.5rem 0;
-  border-top:1px solid rgba(138,100,40,.12);
-  border-bottom:1px solid rgba(138,100,40,.12);
-}
-.mq-track { display:flex; gap:0; will-change:transform; }
-.mi { font-family:var(--serif); font-style:italic; font-size:.92rem; color:var(--dim); padding:0 2rem; }
-.ms { color:var(--gold); font-style:normal; }
-.mq-item { font-family:var(--serif); font-size:.82rem; color:var(--dim); padding:0 1.4rem; white-space:nowrap; }
-.mq-sep  { color:var(--gold); font-size:.82rem; padding:0 .2rem; }
-
-/* ═══════════════════════════════════════════════════
    SHARED LAYOUT
 ═══════════════════════════════════════════════════ */
 section { position:relative; z-index:2; }
