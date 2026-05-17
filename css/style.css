@@ -668,30 +668,6 @@ section { position:relative; z-index:2; }
 .ti-desc  { font-size:.87rem; line-height:1.8; color:var(--dim); max-width:580px; }
 
 /* ═══════════════════════════════════════════════════
-   SKILLS (tag cloud, no bars)
-═══════════════════════════════════════════════════ */
-#skills { background:var(--bg2); }
-
-.skills-wrap {
-  display:grid; grid-template-columns:repeat(2,1fr);
-  gap:5rem;
-}
-.sgrp h4 {
-  font-size:.6rem; letter-spacing:.35em; text-transform:uppercase;
-  color:var(--gold); margin-bottom:2rem;
-  padding-bottom:1rem; border-bottom:1px solid rgba(138,100,40,.15);
-}
-.skill-tags { display:flex; flex-wrap:wrap; gap:.6rem; }
-.skill-tag {
-  font-family:var(--serif); font-style:italic;
-  font-size:.95rem; color:var(--mid);
-  border:1px solid rgba(138,100,40,.15);
-  padding:.45rem 1rem;
-  transition:color .3s, border-color .3s, background .3s;
-}
-.skill-tag:hover { color:var(--text); border-color:rgba(138,100,40,.35); background:rgba(138,100,40,.06); }
-
-/* ═══════════════════════════════════════════════════
    CONTACT
 ═══════════════════════════════════════════════════ */
 #contact { background:var(--bg); }
@@ -1376,7 +1352,6 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
   .svc-grid{grid-template-columns:1fr;}
   .contact-grid{grid-template-columns:1fr;gap:4rem;}
   .pillars{grid-template-columns:1fr;}
-  .skills-wrap{grid-template-columns:1fr;}
   .footer-inner{flex-direction:column;gap:1.2rem;text-align:center;}
   .footer-q{display:none;}
   .conf-item{grid-template-columns:70px 1fr;gap:1rem;}
