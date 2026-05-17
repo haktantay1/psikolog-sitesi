@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gizlilik & Çerez Politikası · Haktan Tay</title>
-<meta name="description" content="Bu internet sitesinin çerez kullanımı, üçüncü taraf hizmetler ve gizlilik uygulamaları hakkında bilgilendirme.">
+<title>Gizlilik &amp; Çerez Politikası · Haktan Tay</title>
+<meta name="description" content="Online psikolojik danışmanlık hizmetine ilişkin internet sitesi gizlilik politikası, çerez bilgisi, üçüncü taraf hizmetler ve veri güvenliği yaklaşımı.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://haktantay1.github.io/psikolog-sitesi/gizlilik.html">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -15,24 +15,28 @@
   :root{ --bg:#F8F4EE; --bg2:#EFE9DF; --text:#1C1916; --mid:#4A4238; --dim:#8A7E72; --gold:#8A6428;
          --serif:'Cormorant Garamond',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif; }
   *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
-  body{ background:var(--bg); color:var(--text); font-family:var(--sans); font-weight:300; line-height:1.75; }
+  body{ background:var(--bg); color:var(--text); font-family:var(--sans); font-weight:300; line-height:1.78; }
   .legal-nav{ padding:1.6rem 2rem; border-bottom:1px solid rgba(138,100,40,.15); display:flex; justify-content:space-between; align-items:center; }
   .legal-nav a{ color:var(--text); text-decoration:none; font-family:var(--serif); letter-spacing:.18em; font-size:1rem; }
   .legal-nav a span{ color:var(--gold); }
   .legal-nav .back{ font-size:.75rem; letter-spacing:.18em; text-transform:uppercase; color:var(--dim); }
   .legal-nav .back:hover{ color:var(--gold); }
-  main{ max-width:780px; margin:0 auto; padding:5rem 2rem 6rem; }
+  main{ max-width:820px; margin:0 auto; padding:5rem 2rem 6rem; }
   .legal-label{ font-size:.6rem; letter-spacing:.35em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; }
   h1{ font-family:var(--serif); font-weight:400; font-size:clamp(2rem,4.5vw,3.4rem); line-height:1.15; margin-bottom:2.5rem; }
   h1 em{ color:var(--gold); font-style:italic; }
-  h2{ font-family:var(--serif); font-weight:500; font-size:1.6rem; margin:3rem 0 1.2rem; color:var(--text); }
+  h2{ font-family:var(--serif); font-weight:500; font-size:1.6rem; margin:3.2rem 0 1.2rem; color:var(--text); }
+  h3{ font-family:var(--sans); font-weight:500; font-size:1.02rem; letter-spacing:.04em; margin:2rem 0 .8rem; color:var(--text); }
   p, li{ font-size:.95rem; color:var(--mid); margin-bottom:1rem; }
-  ul{ padding-left:1.4rem; margin-bottom:1rem; }
+  ul, ol{ padding-left:1.4rem; margin-bottom:1rem; }
   li::marker{ color:var(--gold); }
   strong{ color:var(--text); font-weight:500; }
   a{ color:var(--gold); }
+  code{ background:var(--bg2); padding:.1rem .4rem; border-radius:2px; font-family:'Consolas',monospace; font-size:.85em; color:var(--text); }
+  .callout{ background:var(--bg2); border-left:3px solid var(--gold); padding:1.2rem 1.4rem; margin:1.5rem 0; font-size:.9rem; }
+  .callout strong{ display:block; margin-bottom:.4rem; letter-spacing:.04em; }
   table{ width:100%; border-collapse:collapse; margin:1rem 0 2rem; font-size:.88rem; }
-  th, td{ text-align:left; padding:.8rem 1rem; border-bottom:1px solid rgba(138,100,40,.15); color:var(--mid); }
+  th, td{ text-align:left; padding:.8rem 1rem; border-bottom:1px solid rgba(138,100,40,.15); color:var(--mid); vertical-align:top; }
   th{ font-weight:500; color:var(--text); letter-spacing:.05em; }
   .legal-meta{ margin-top:4rem; padding-top:2rem; border-top:1px solid rgba(138,100,40,.15); font-size:.78rem; color:var(--dim); }
   footer{ text-align:center; padding:2rem; font-size:.7rem; color:var(--dim); letter-spacing:.12em; text-transform:uppercase; }
@@ -49,41 +53,71 @@
   <p class="legal-label">Yasal</p>
   <h1>Gizlilik &amp; <em>Çerez</em></h1>
 
-  <p>Bu sayfa, internet sitesinin kullandığı çerezler, üçüncü taraf hizmetler ve gizlilik uygulamaları hakkında bilgi verir.</p>
+  <p>Bu sayfa <strong>haktantay1.github.io/psikolog-sitesi</strong> internet sitesinin kullandığı çerezler, üçüncü taraf hizmetler ve gizlilik uygulamaları hakkında bilgi verir. Online psikolojik danışmanlık hizmetinin yürütülmesine ilişkin kapsamlı KVKK politikası için <a href="kvkk.html">KVKK sayfasını</a> inceleyiniz.</p>
 
   <h2>1. Çerez Kullanımı</h2>
-  <p>Bu site <strong>analitik veya pazarlama çerezi kullanmaz</strong>. Yalnızca aşağıdaki teknik amaçlarla tarayıcınızın yerel depolaması (<code>localStorage</code>) kullanılır:</p>
+  <p>Bu site <strong>analitik veya pazarlama çerezi kullanmaz</strong>. Üçüncü taraf takip kodu, reklam pikseli, fingerprinting veya benzeri profilleme araçları yoktur.</p>
+
+  <p>Yalnızca aşağıdaki teknik amaç için tarayıcınızın <code>localStorage</code>'ı kullanılır:</p>
 
   <table>
-    <thead>
-      <tr><th>Anahtar</th><th>Amaç</th><th>Süre</th></tr>
-    </thead>
+    <thead><tr><th>Anahtar</th><th>Amaç</th><th>Süre</th></tr></thead>
     <tbody>
-      <tr><td>kvkk_consent</td><td>Çerez bildirim banner'ının tekrar gösterilmemesi</td><td>Kalıcı (siz silene kadar)</td></tr>
+      <tr><td><code>kvkk_consent</code></td><td>Çerez bildirim banner'ının tekrar gösterilmemesi</td><td>Siz silene kadar</td></tr>
     </tbody>
   </table>
 
   <h2>2. Üçüncü Taraf Hizmetler</h2>
-  <ul>
-    <li><strong>Google Fonts</strong> — Site tipografisi için. Tarayıcınızın IP adresi Google sunucularına ulaşır. (<a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Gizlilik Politikası</a>)</li>
-    <li><strong>Google Forms</strong> — İletişim formu gönderimi için. Form verileriniz Google sunucularında saklanır. (<a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Gizlilik Politikası</a>)</li>
-    <li><strong>GitHub Pages</strong> — Site barındırma altyapısı. Sunucu erişim logları GitHub tarafından tutulur. (<a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener noreferrer" target="_blank">GitHub Gizlilik Beyanı</a>)</li>
-  </ul>
+
+  <h3>Google Fonts (Tipografi)</h3>
+  <p>Site Cormorant Garamond ve DM Sans fontlarını <strong>fonts.googleapis.com</strong> üzerinden yükler. Bu nedenle ilk ziyarette tarayıcınızın IP adresi Google sunucularına ulaşır.<br>
+  Politika: <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">policies.google.com/privacy</a></p>
+
+  <h3>Google Forms (İletişim Formu)</h3>
+  <p>İletişim formundan gönderdiğiniz veriler <strong>docs.google.com</strong> üzerinden Google sunucularına iletilir ve ilişkilendirilmiş Google Sheet'te saklanır. Form verisi yalnızca size yanıt vermek için kullanılır.<br>
+  Detaylar: <a href="kvkk.html#aktarim">KVKK / Üçüncü Taraflara Aktarım</a></p>
+
+  <h3>GitHub Pages (Site Barındırma)</h3>
+  <p>Site <strong>GitHub Pages</strong> altyapısında barındırılmaktadır. Sunucu erişim kayıtları (IP, tarayıcı, talep edilen sayfa, zaman damgası) GitHub tarafından tutulur.<br>
+  Politika: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener noreferrer" target="_blank">GitHub Gizlilik Beyanı</a></p>
 
   <h2>3. Çerez Tercihinizi Sıfırlama</h2>
-  <p>Tarayıcınızın geliştirici araçlarından (F12 → Application/Storage → Local Storage) <code>kvkk_consent</code> anahtarını silerseniz çerez bildirimi yeniden görüntülenir.</p>
+  <p>Tarayıcınızın geliştirici araçları üzerinden çerez tercihinizi yeniden seçebilirsiniz:</p>
+  <ul>
+    <li>Klavye kısayolu: <code>F12</code> (veya <code>Cmd+Option+I</code>)</li>
+    <li>Sekme: <strong>Application → Storage → Local Storage</strong></li>
+    <li>Bulun: <code>kvkk_consent</code> anahtarını silin</li>
+    <li>Sayfayı yenileyin — çerez banner'ı yeniden görüntülenecektir</li>
+  </ul>
 
-  <h2>4. Çocukların Gizliliği</h2>
-  <p>Bu site 18 yaş altı kullanıcılara yönelik değildir. Reşit olmayan bireylerin görüşme talepleri ebeveyn/vasi onayıyla ele alınır.</p>
+  <h2>4. Güvenlik</h2>
+  <ul>
+    <li>Tüm bağlantılar <strong>HTTPS</strong> üzerinden şifrelidir</li>
+    <li>Sıkı bir <strong>Content Security Policy (CSP)</strong> uygulanır — sadece güvenilir kaynaklar yüklenebilir</li>
+    <li>Modern güvenlik başlıkları: HSTS, X-Content-Type-Options, Referrer-Policy, Permissions-Policy</li>
+    <li>İletişim formu Google'ın spam filtresinden geçer</li>
+  </ul>
 
-  <h2>5. Güvenlik</h2>
-  <p>Tüm bağlantılar HTTPS üzerinden şifreli olarak yapılır. Site sıkı bir Content Security Policy (CSP) ve modern güvenlik başlıkları kullanır.</p>
+  <h2>5. Site Üzerinde Görüşme / Hizmet Talebi</h2>
+  <p>İletişim formundan gönderdiğiniz verilerin işlenmesine ilişkin detaylı bilgi için <a href="aydinlatma.html">Aydınlatma Metni</a>'ne ve <a href="kvkk.html">KVKK Politikası</a>'na bakınız.</p>
 
-  <h2>6. İletişim</h2>
-  <p>Gizlilik uygulamaları hakkında sorularınız için: <a href="mailto:psikologhaktantay@gmail.com">psikologhaktantay@gmail.com</a></p>
+  <div class="callout">
+    <strong>Önemli — Hassas Bilgi Paylaşımı</strong>
+    İletişim formu üzerinden <strong>ayrıntılı klinik bilgi paylaşmamanız</strong> önerilir. Bu kanal yalnızca ön iletişim ve randevu planlaması içindir. Görüşme içerikleri için uçtan uca şifreli online görüşme platformu kullanılır.
+  </div>
+
+  <h2>6. Çocukların Gizliliği</h2>
+  <p>Site içeriği 18 yaş ve üzeri kullanıcılara yöneliktir. 18 yaş altı bireylerin görüşme talepleri yalnızca veli/vasi yazılı onayıyla değerlendirilir.</p>
+
+  <h2>7. Politika Güncellemeleri</h2>
+  <p>Bu politika gerektiğinde güncellenebilir. Önemli değişiklikler sitenin anasayfasında duyurulur. Güncel sürümü düzenli aralıklarla incelemenizi öneririz.</p>
+
+  <h2>8. İletişim</h2>
+  <p>Gizlilik veya çerez politikasına ilişkin sorular için: <a href="mailto:psikologhaktantay@gmail.com">psikologhaktantay@gmail.com</a></p>
 
   <div class="legal-meta">
-    Son güncelleme: <span id="upd">2026</span>
+    Son güncelleme: <span id="upd">2026</span><br>
+    Veri Sorumlusu: Haktan Tay
   </div>
 </main>
 <footer>
