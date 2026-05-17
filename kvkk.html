@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KVKK Politikası · Haktan Tay</title>
-<meta name="description" content="Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında veri sorumlusu, işleme amacı, haklarınız ve iletişim bilgileri.">
+<meta name="description" content="Online psikolojik danışmanlık hizmetleri kapsamında KVKK politikası: veri sorumlusu, özel nitelikli sağlık verisi, üçüncü taraf platform aktarımı ve danışan hakları.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://haktantay1.github.io/psikolog-sitesi/kvkk.html">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -15,22 +15,34 @@
   :root{ --bg:#F8F4EE; --bg2:#EFE9DF; --text:#1C1916; --mid:#4A4238; --dim:#8A7E72; --gold:#8A6428;
          --serif:'Cormorant Garamond',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif; }
   *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
-  body{ background:var(--bg); color:var(--text); font-family:var(--sans); font-weight:300; line-height:1.75; }
+  body{ background:var(--bg); color:var(--text); font-family:var(--sans); font-weight:300; line-height:1.78; }
   .legal-nav{ padding:1.6rem 2rem; border-bottom:1px solid rgba(138,100,40,.15); display:flex; justify-content:space-between; align-items:center; }
   .legal-nav a{ color:var(--text); text-decoration:none; font-family:var(--serif); letter-spacing:.18em; font-size:1rem; }
   .legal-nav a span{ color:var(--gold); }
   .legal-nav .back{ font-size:.75rem; letter-spacing:.18em; text-transform:uppercase; color:var(--dim); }
   .legal-nav .back:hover{ color:var(--gold); }
-  main{ max-width:780px; margin:0 auto; padding:5rem 2rem 6rem; }
+  main{ max-width:820px; margin:0 auto; padding:5rem 2rem 6rem; }
   .legal-label{ font-size:.6rem; letter-spacing:.35em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; }
   h1{ font-family:var(--serif); font-weight:400; font-size:clamp(2rem,4.5vw,3.4rem); line-height:1.15; margin-bottom:2.5rem; }
   h1 em{ color:var(--gold); font-style:italic; }
-  h2{ font-family:var(--serif); font-weight:500; font-size:1.6rem; margin:3rem 0 1.2rem; color:var(--text); }
+  h2{ font-family:var(--serif); font-weight:500; font-size:1.6rem; margin:3.2rem 0 1.2rem; color:var(--text); }
+  h3{ font-family:var(--sans); font-weight:500; font-size:1.02rem; letter-spacing:.04em; margin:2rem 0 .8rem; color:var(--text); }
   p, li{ font-size:.95rem; color:var(--mid); margin-bottom:1rem; }
-  ul{ padding-left:1.4rem; margin-bottom:1rem; }
+  ul, ol{ padding-left:1.4rem; margin-bottom:1rem; }
   li::marker{ color:var(--gold); }
   strong{ color:var(--text); font-weight:500; }
   a{ color:var(--gold); }
+  .callout{ background:var(--bg2); border-left:3px solid var(--gold); padding:1.2rem 1.4rem; margin:1.5rem 0; font-size:.9rem; }
+  .callout strong{ display:block; margin-bottom:.4rem; letter-spacing:.04em; }
+  table{ width:100%; border-collapse:collapse; margin:1rem 0 2rem; font-size:.88rem; }
+  th, td{ text-align:left; padding:.8rem 1rem; border-bottom:1px solid rgba(138,100,40,.15); color:var(--mid); vertical-align:top; }
+  th{ font-weight:500; color:var(--text); letter-spacing:.05em; }
+  .toc{ background:var(--bg2); padding:1.4rem 1.8rem; margin:0 0 3rem; border-left:3px solid var(--gold); }
+  .toc h4{ font-family:var(--sans); font-size:.65rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); font-weight:500; margin-bottom:.8rem; }
+  .toc ol{ padding-left:1.2rem; margin:0; }
+  .toc li{ margin-bottom:.3rem; font-size:.88rem; }
+  .toc a{ color:var(--mid); text-decoration:none; }
+  .toc a:hover{ color:var(--gold); }
   .legal-meta{ margin-top:4rem; padding-top:2rem; border-top:1px solid rgba(138,100,40,.15); font-size:.78rem; color:var(--dim); }
   footer{ text-align:center; padding:2rem; font-size:.7rem; color:var(--dim); letter-spacing:.12em; text-transform:uppercase; }
   footer a{ color:var(--dim); margin:0 .6rem; text-decoration:none; }
@@ -46,52 +58,161 @@
   <p class="legal-label">Yasal</p>
   <h1>Kişisel Verilerin <em>Korunması</em></h1>
 
-  <p>6698 sayılı Kişisel Verilerin Korunması Kanunu ("<strong>KVKK</strong>") uyarınca, kişisel verileriniz veri sorumlusu sıfatıyla <strong>Haktan Tay</strong> tarafından aşağıda açıklanan kapsamda işlenmektedir.</p>
+  <p>6698 sayılı Kişisel Verilerin Korunması Kanunu ("<strong>KVKK</strong>") uyarınca, online psikolojik danışmanlık hizmeti çerçevesinde işlenen kişisel verileriniz hakkında bilgilendirme aşağıdadır.</p>
 
-  <h2>1. Veri Sorumlusu</h2>
-  <p><strong>Haktan Tay</strong> — Psikolog<br>
-  E-posta: <a href="mailto:psikologhaktantay@gmail.com">psikologhaktantay@gmail.com</a></p>
+  <div class="callout">
+    <strong>Önemli — Sağlık Verisi</strong>
+    Psikolojik danışmanlık kapsamında işlenen tüm veriler, KVKK md. 6 uyarınca <strong>özel nitelikli kişisel veri (sağlık verisi)</strong> olarak değerlendirilir ve genel kişisel verilerden daha sıkı koruma rejimine tabidir.
+  </div>
 
-  <h2>2. İşlenen Kişisel Veriler</h2>
+  <div class="toc">
+    <h4>İçindekiler</h4>
+    <ol>
+      <li><a href="#vs">Veri Sorumlusu</a></li>
+      <li><a href="#kapsam">Hizmet Kapsamı (Online)</a></li>
+      <li><a href="#veriler">İşlenen Veriler</a></li>
+      <li><a href="#amac">İşleme Amaçları</a></li>
+      <li><a href="#hukuk">Hukuki Sebepler</a></li>
+      <li><a href="#aktarim">Üçüncü Taraflara Aktarım</a></li>
+      <li><a href="#saklama">Saklama Süreleri</a></li>
+      <li><a href="#guvenlik">Güvenlik Önlemleri</a></li>
+      <li><a href="#cocuk">Çocuk Danışanlar</a></li>
+      <li><a href="#ihlal">Veri İhlali Bildirimi</a></li>
+      <li><a href="#haklar">KVKK md. 11 — Haklarınız</a></li>
+      <li><a href="#basvuru">Başvuru Yöntemi</a></li>
+    </ol>
+  </div>
+
+  <h2 id="vs">1. Veri Sorumlusu</h2>
+  <p><strong>Haktan Tay</strong> — Psikolog, Psikanalitik Yönelimli<br>
+  E-posta: <a href="mailto:psikologhaktantay@gmail.com">psikologhaktantay@gmail.com</a><br>
+  Hizmet biçimi: <strong>Yalnızca online (uzaktan) görüşme</strong></p>
+
+  <p>Mesleki etik yükümlülükleri açısından <strong>Türk Psikologlar Derneği (TPD) Etik Yönetmeliği</strong> ve psikanalitik formasyon kurumlarının (ECF, NEL) etik çerçevesi esas alınır.</p>
+
+  <h2 id="kapsam">2. Hizmet Kapsamı (Online Görüşme)</h2>
+  <p>Hizmet yalnızca uzaktan (video/sesli görüşme) olarak sunulur. Yüz yüze klinik buluşma yapılmamaktadır. Bu nedenle:</p>
   <ul>
-    <li><strong>Kimlik bilgisi:</strong> Ad, soyad</li>
-    <li><strong>İletişim bilgisi:</strong> E-posta adresi</li>
-    <li><strong>İçerik bilgisi:</strong> İletişim formunda paylaşılan konu, tercih edilen tarih ve mesaj</li>
-    <li><strong>Teknik veri:</strong> Tarayıcınızın çerez tercihi (yalnızca yerel olarak saklanır)</li>
+    <li>Adres, fiziksel klinik kaydı, kapı kamerası vb. veriler işlenmez.</li>
+    <li>Görüşme görüntü/sesi <strong>kaydedilmez</strong> (aksi belirtilmedikçe).</li>
+    <li>Görüşme platformu olarak <strong>uçtan uca şifreli</strong> kanal kullanılması esastır.</li>
   </ul>
 
-  <h2>3. İşleme Amacı</h2>
+  <h2 id="veriler">3. İşlenen Kişisel Veriler</h2>
+  <table>
+    <thead><tr><th>Kategori</th><th>Veriler</th><th>Kaynak</th></tr></thead>
+    <tbody>
+      <tr><td>Kimlik</td><td>Ad, soyad</td><td>İletişim formu / e-posta</td></tr>
+      <tr><td>İletişim</td><td>E-posta, (isteğe bağlı) telefon</td><td>Danışanın bildirimi</td></tr>
+      <tr><td>İçerik</td><td>Görüşme talebi, konu, tercih edilen tarih, mesaj</td><td>İletişim formu</td></tr>
+      <tr><td><strong>Sağlık (Özel Nitelikli)</strong></td><td>Görüşme sırasında paylaşılan psikolojik içerik, klinik notlar</td><td>Danışan beyanı</td></tr>
+      <tr><td>Finansal</td><td>Ödeme dekontu / fatura bilgileri</td><td>Banka havalesi / ödeme aracı</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="amac">4. İşleme Amaçları</h2>
   <ul>
-    <li>İletişim talebinize yanıt vermek</li>
-    <li>Randevu ve görüşme süreçlerini yürütmek</li>
-    <li>Hizmet kalitesini artırmaya yönelik geri bildirim toplamak</li>
+    <li>İletişim taleplerinin yanıtlanması, randevu planlaması</li>
+    <li>Psikanalitik yönelimli online görüşmelerin yürütülmesi</li>
+    <li>TPD Etik Yönetmeliği kapsamında klinik kayıtların tutulması (asgari düzeyde)</li>
+    <li>Süpervizyon süreçlerinde — danışan kimliği anonimleştirilerek — vaka tartışması</li>
+    <li>Yasal yükümlülüklerin yerine getirilmesi (faturalandırma, defter tutma)</li>
+    <li>Mesleki gelişim (anonim vaka çalışmaları, kuramsal yazım)</li>
   </ul>
 
-  <h2>4. Hukuki Sebep</h2>
-  <p>Kişisel verileriniz, KVKK md. 5/2 uyarınca <strong>açık rızanız</strong> ile (iletişim formundaki onay kutusu) işlenir. Sağlık hizmeti niteliği taşıyan görüşmelere ilişkin veriler ayrıca KVKK md. 6/3 kapsamında özel nitelikli kişisel veri olarak işlenir.</p>
-
-  <h2>5. Aktarım</h2>
-  <p>Form gönderimi için <strong>Google LLC</strong>'nin Google Forms hizmeti kullanılmaktadır; bu kapsamda veriler Google sunucularına aktarılır. Bunun dışında kişisel verileriniz üçüncü kişilerle paylaşılmaz, yurt dışına aktarılmaz.</p>
-
-  <h2>6. Saklama Süresi</h2>
-  <p>İletişim verileri, talebinizin tamamlanmasından itibaren <strong>2 yıl</strong> süreyle saklanır. Klinik süreçle ilgili kayıtlar meslek mevzuatı (TPD Etik Yönetmeliği) uyarınca ilgili süre boyunca tutulur.</p>
-
-  <h2>7. Haklarınız</h2>
-  <p>KVKK md. 11 kapsamında veri sorumlusuna başvurarak şu haklarınızı kullanabilirsiniz:</p>
+  <h2 id="hukuk">5. Hukuki Sebepler</h2>
+  <p>Verileriniz şu hukuki sebeplere dayalı olarak işlenir:</p>
   <ul>
-    <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+    <li><strong>KVKK md. 5/2-c:</strong> Sözleşmenin kurulması ve ifası için zorunlu olduğu ölçüde (görüşme hizmetinin sunulması)</li>
+    <li><strong>KVKK md. 5/2-ç:</strong> Yasal yükümlülük (Vergi Usul Kanunu, faturalandırma vb.)</li>
+    <li><strong>KVKK md. 6/3:</strong> Sağlık verileri bakımından — sağlık hizmetlerinin yürütülmesi amacıyla, sır saklama yükümlülüğü altındaki kişi tarafından işlenmesi</li>
+    <li><strong>KVKK md. 5/1 ve 6/2:</strong> Bunların kapsamı dışında kalan işlemeler için <strong>açık rızanız</strong></li>
+  </ul>
+
+  <h2 id="aktarim">6. Üçüncü Taraflara Aktarım</h2>
+  <p>Hizmetin niteliği gereği aşağıdaki veri işleyicilerden faydalanılmaktadır:</p>
+
+  <h3>Online Görüşme Platformu</h3>
+  <p>Görüşmeler için <strong>uçtan uca şifreli</strong> veya muadili güvenlikte iletişim platformları kullanılır. Bu platformlar üçüncü taraf veri işleyici sıfatına sahiptir. Sunucularının bir kısmı yurt dışında (AB / ABD) bulunabilir; bu nedenle KVKK md. 9 kapsamında yurt dışı aktarım gündeme gelir.</p>
+
+  <h3>İletişim Formu Altyapısı</h3>
+  <p>Bu sitedeki iletişim formu <strong>Google Forms</strong> üzerinden çalışmaktadır. Form üzerinden iletilen veriler Google LLC sunucularına aktarılır. (<a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Gizlilik Politikası</a>)</p>
+
+  <h3>Diğer</h3>
+  <ul>
+    <li><strong>E-posta servisi (Gmail):</strong> İletişim için Google Mail kullanılır.</li>
+    <li><strong>Banka / ödeme:</strong> Görüşme ücretinin tahsili için banka kanalları kullanılır; ödeme bilgileri ilgili bankalar tarafından işlenir.</li>
+    <li><strong>Mali müşavir / muhasebe:</strong> Yasal yükümlülükler için sınırlı veri paylaşımı.</li>
+    <li><strong>Yetkili kamu kurumları:</strong> Mahkeme kararı veya yasal talep halinde, gerekli olduğu ölçüde.</li>
+  </ul>
+
+  <p>Bunların dışında veriniz <strong>üçüncü kişilerle paylaşılmaz, satılmaz, reklamcılık amacıyla kullanılmaz.</strong></p>
+
+  <h2 id="saklama">7. Saklama Süreleri</h2>
+  <table>
+    <thead><tr><th>Veri Türü</th><th>Süre</th><th>Dayanak</th></tr></thead>
+    <tbody>
+      <tr><td>İletişim formu (görüşmeye dönüşmemiş)</td><td>1 yıl</td><td>İlgili kişinin başvurusuna cevap için makul süre</td></tr>
+      <tr><td>Klinik kayıtlar (asgari notlar)</td><td>10 yıl</td><td>TPD önerisi + zamanaşımı süreleri</td></tr>
+      <tr><td>Faturalama / muhasebe</td><td>5 yıl (asgari)</td><td>Vergi Usul Kanunu</td></tr>
+      <tr><td>E-posta yazışmaları</td><td>2 yıl</td><td>İletişim sürekliliği</td></tr>
+    </tbody>
+  </table>
+  <p>Süre sonunda kayıtlar <strong>silinir, yok edilir veya anonim hâle getirilir</strong>.</p>
+
+  <h2 id="guvenlik">8. Güvenlik Önlemleri (KVKK md. 12)</h2>
+  <p><strong>Teknik önlemler:</strong></p>
+  <ul>
+    <li>Tüm görüşmelerde şifreli (TLS / E2EE) kanal kullanımı</li>
+    <li>Klinik notların erişimi sadece veri sorumlusunda; cihaz şifreli</li>
+    <li>Güçlü parola ve iki faktörlü kimlik doğrulama (2FA)</li>
+    <li>İnternet sitesi HTTPS + sıkı Content Security Policy (CSP)</li>
+    <li>Düzenli güvenlik güncellemeleri ve yedekleme</li>
+  </ul>
+  <p><strong>İdari önlemler:</strong></p>
+  <ul>
+    <li>Mesleki sır saklama yükümlülüğü (TPD Etik Yönetmeliği)</li>
+    <li>Veri minimizasyonu — yalnızca gerekli verinin işlenmesi</li>
+    <li>Açık rıza ve aydınlatma metni süreci</li>
+    <li>Veri işleyicilerle yazılı sözleşme (veri işleme şartlarının belirlenmesi)</li>
+  </ul>
+
+  <h2 id="cocuk">9. Çocuk ve Genç Danışanlar</h2>
+  <p>18 yaş altı bireylerle görüşme, <strong>veli/vasi yazılı onayı</strong> alınarak yapılır. Onay metninde işbu KVKK politikası açıkça referans gösterilir. Mahremiyet ile veli bilgilendirme yükümlülüğü arasındaki denge TPD Etik Yönetmeliği çerçevesinde yönetilir.</p>
+
+  <h2 id="ihlal">10. Veri İhlali Bildirimi</h2>
+  <p>Herhangi bir veri ihlali tespit edildiğinde:</p>
+  <ul>
+    <li><strong>72 saat içinde</strong> Kişisel Verileri Koruma Kurulu'na bildirim yapılır.</li>
+    <li>Etkilenebilecek danışanlar makul süre içinde <strong>doğrudan</strong> bilgilendirilir.</li>
+    <li>Olay kaydı tutulur ve sebep analizi yapılır.</li>
+  </ul>
+
+  <h2 id="haklar">11. Haklarınız (KVKK md. 11)</h2>
+  <p>Veri sahibi olarak:</p>
+  <ul>
+    <li>Kişisel verinizin işlenip işlenmediğini öğrenme</li>
     <li>İşlenmişse buna ilişkin bilgi talep etme</li>
     <li>İşleme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme</li>
-    <li>Eksik veya yanlış işlenmişse düzeltilmesini isteme</li>
-    <li>Silinmesini veya yok edilmesini isteme</li>
-    <li>Aktarıldığı üçüncü kişilere bildirilmesini isteme</li>
-    <li>İşleme sonucunda aleyhinize doğan bir sonuca itiraz etme</li>
+    <li>Yurt içinde / dışında aktarıldığı üçüncü kişileri bilme</li>
+    <li>Eksik / yanlış işlenmişse düzeltilmesini isteme</li>
+    <li>Silinmesini, yok edilmesini veya anonim hâle getirilmesini isteme</li>
+    <li>Otomatik sistemlerce analiz sonucu aleyhinize bir sonuç doğmuşsa itiraz etme</li>
+    <li>Kanuna aykırı işleme sebebiyle zarara uğramışsanız tazminat talep etme</li>
   </ul>
-  <p>Başvurularınızı <a href="mailto:psikologhaktantay@gmail.com">psikologhaktantay@gmail.com</a> adresine iletebilirsiniz.</p>
+
+  <h2 id="basvuru">12. Başvuru</h2>
+  <p>Haklarınızı kullanmak için <strong>Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ</strong> uyarınca <a href="mailto:psikologhaktantay@gmail.com">psikologhaktantay@gmail.com</a> adresine yazılı başvuru yapabilirsiniz. Başvurular en geç <strong>30 gün</strong> içinde ücretsiz olarak yanıtlanır.</p>
+  <p>Başvurunuzda mutlaka şu bilgileri belirtin: <strong>ad-soyad, T.C. kimlik numarası, ikametgâh, talebin konusu ve gerekli ise belgeler</strong>.</p>
+
+  <div class="callout">
+    <strong>Yasal Uyarı</strong>
+    Bu metin bilgilendirme amaçlıdır. Spesifik durumlarda KVKK, Kişisel Sağlık Verileri Yönetmeliği ve TPD Etik Yönetmeliği başta olmak üzere ilgili mevzuat esas alınır. Mevzuat güncellemelerini takip ediniz.
+  </div>
 
   <div class="legal-meta">
     Son güncelleme: <span id="upd">2026</span><br>
-    Bu metin bilgilendirme amaçlıdır; bağlayıcı hukuki değerlendirme için mevzuat ve resmi düzenlemeler esas alınır.
+    Veri Sorumlusu: Haktan Tay
   </div>
 </main>
 <footer>

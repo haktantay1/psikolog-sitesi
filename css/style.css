@@ -98,14 +98,14 @@ textarea:focus-visible, [tabindex]:focus-visible {
 /* ═══════════════════════════════════════════════════
    NAV
 ═══════════════════════════════════════════════════ */
-nav {
+#nav {
   position:fixed; inset:0 0 auto;
   z-index:1000; padding:2.2rem 5rem;
   display:flex; align-items:center; justify-content:space-between;
   transition:padding .4s, background .4s, border-color .4s;
   border-bottom:1px solid transparent;
 }
-nav.scrolled {
+#nav.scrolled {
   padding:1.1rem 5rem;
   background:rgba(248,244,238,.96);
   backdrop-filter:blur(24px) saturate(1.4);
@@ -1104,34 +1104,6 @@ footer {
 }
 
 /* ═══════════════════════════════════════════════════
-   MEMBERSHIPS (etik uyumlu)
-═══════════════════════════════════════════════════ */
-#memberships { background:var(--bg); }
-.mem-grid {
-  display:grid; grid-template-columns:repeat(2,1fr);
-  gap:1.6rem; margin-top:4rem;
-}
-.mem-card {
-  background:var(--bg2); padding:2.2rem 2.4rem;
-  border-left:2px solid var(--gold); position:relative;
-  transition: background .35s var(--ease), transform .35s var(--ease);
-}
-.mem-card:hover { background:var(--bg3); transform:translateY(-2px); }
-.mem-title {
-  font-family:var(--serif); font-weight:400;
-  font-size:1.35rem; line-height:1.35; color:var(--text);
-  margin-bottom:.6rem;
-}
-.mem-role {
-  font-size:.78rem; letter-spacing:.06em;
-  color:var(--mid); line-height:1.65;
-}
-.gold-italic { color:var(--gold); font-style:italic; }
-@media(max-width:768px){
-  .mem-grid{grid-template-columns:1fr;}
-}
-
-/* ═══════════════════════════════════════════════════
    HERO QUICK-INFO STRIP
 ═══════════════════════════════════════════════════ */
 .hero-quickinfo {
@@ -1410,8 +1382,8 @@ footer {
 }
 
 @media(max-width:960px){
-  nav{padding:1.4rem 2rem;}
-  nav.scrolled{padding:1rem 2rem;}
+  #nav{padding:1.4rem 2rem;}
+  #nav.scrolled{padding:1rem 2rem;}
   .nav-links,.nav-cta{display:none;}
   .burger{display:flex;}
   #hero{grid-template-columns:1fr;}

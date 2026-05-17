@@ -40,7 +40,7 @@ if(!isTouch && psi && ring){
     ring.style.top  = ry+'px';
     requestAnimationFrame(lerpRing);
   })();
-  document.querySelectorAll('a,button,.svc,.pillar,.mem-card,.ti,.pub-card,.ji').forEach(el => {
+  document.querySelectorAll('a,button,.svc,.pillar,.ti,.pub-card,.ji').forEach(el => {
     el.addEventListener('mouseenter', () => ring.classList.add('cursor-big'));
     el.addEventListener('mouseleave', () => ring.classList.remove('cursor-big'));
   });
