@@ -945,13 +945,15 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
 .divan-quote blockquote {
   font-family:var(--serif); font-style:italic;
   font-size:clamp(1.3rem,2.2vw,1.85rem);
-  color:var(--text); max-width:500px; line-height:1.55;
+  color:#F2E6CC; max-width:500px; line-height:1.55;
   border:none; margin:0;
+  text-shadow: 0 2px 24px rgba(0,0,0,.85), 0 1px 4px rgba(0,0,0,.6);
 }
 .divan-quote cite {
   display:block; margin-top:1.2rem;
   font-size:.62rem; letter-spacing:.28em; text-transform:uppercase;
-  color:var(--gold); font-style:normal;
+  color:#D4B777; font-style:normal;
+  text-shadow: 0 1px 8px rgba(0,0,0,.8);
 }
 @media(max-width:960px){
   .divan-wrap{aspect-ratio:4/3;}
