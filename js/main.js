@@ -1017,21 +1017,23 @@ void main(){
       return;
     }
 
-    // Konu + Tarih + Mesaj — tek mesaj olarak Google Forms'a gönder
-    const composed =
-      (subject ? `Konu: ${subject}\n` : '') +
-      (date    ? `Tercih edilen tarih: ${date}\n` : '') +
-      (subject || date ? '\n' : '') +
-      message;
-
     show('Gönderiliyor…', '');
     if(btn) btn.disabled = true;
 
     const GFORM = 'https://docs.google.com/forms/d/e/1FAIpQLSevkdxVaWHnYinJFRdNLUoLzXkMtbN48IoEOALzF44mUjbFzQ/formResponse';
     const data = new FormData();
-    data.append('entry.352433926', name);
-    data.append('entry.1721181518', email);
-    data.append('entry.643986528', composed);
+    data.append('entry.352433926', name);     // Ad Soyad
+    data.append('entry.1721181518', email);   // E-posta
+    data.append('entry.653947926', subject);  // Konu
+    data.append('entry.643986528', message);  // Mesaj
+
+    // Tarih (YYYY-MM-DD) → ayrı yıl/ay/gün alanlarına böl
+    if(date && /^\d{4}-\d{2}-\d{2}$/.test(date)){
+      const [y, m, d] = date.split('-');
+      data.append('entry.416434751_year',  y);
+      data.append('entry.416434751_month', m);
+      data.append('entry.416434751_day',   d);
+    }
 
     fetch(GFORM, { method:'POST', mode:'no-cors', body:data })
       .then(() => {
