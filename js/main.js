@@ -580,22 +580,6 @@ if(ps){
   })();
 })();
 
-/* ── ANIMATED DOCK ────────────────────────── */
-(function initDock(){
-  const dock=document.getElementById('adock');
-  if(!dock) return;
-  const items=[...dock.querySelectorAll('.adock-item')];
-  dock.addEventListener('mousemove',e=>{
-    items.forEach(it=>{
-      const r=it.getBoundingClientRect();
-      const d=Math.abs(e.clientX-(r.left+r.width/2));
-      const s=Math.max(1,1.75-d/65);
-      it.style.transform=`scale(${s}) translateY(${-(s-1)*22}px)`;
-    });
-  });
-  dock.addEventListener('mouseleave',()=>items.forEach(it=>it.style.transform=''));
-})();
-
 /* ── PROGRESSIVE BLUR ─────────────────────── */
 (function initProgBlur(){
   document.querySelectorAll('.pblur').forEach(el=>{
@@ -1111,5 +1095,40 @@ void main(){
     }, {once:true, passive:true});
   } else {
     start();
+  }
+})();
+
+/* ── SIDE RAIL ─────────────────────────────── */
+(function initSrail(){
+  const rail = document.getElementById('srail');
+  if(!rail) return;
+
+  // Yukarı butonu
+  const top = document.getElementById('srail-top');
+  if(top){
+    top.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // İlk scroll'dan sonra göster
+  const SHOW_AFTER = 240;
+  function onScroll(){
+    if(window.scrollY > SHOW_AFTER) rail.classList.add('show');
+    else rail.classList.remove('show');
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive:true });
+
+  // Contact veya footer görünüyorsa gizle (formu kapatmasın)
+  const contact = document.getElementById('contact');
+  const footer  = document.querySelector('footer');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver(entries => {
+      const anyVisible = entries.some(en => en.isIntersecting);
+      rail.classList.toggle('hide', anyVisible);
+    }, { threshold: 0.05 });
+    if(contact) io.observe(contact);
+    if(footer)  io.observe(footer);
   }
 })();
