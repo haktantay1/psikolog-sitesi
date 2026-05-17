@@ -513,7 +513,18 @@ section { position:relative; z-index:2; }
 .journal-big em { font-style:italic; color:var(--gold); display:block; font-size:.7em; }
 .journal-sub {
   font-size:.6rem; letter-spacing:.4em; text-transform:uppercase;
-  color:var(--gold); margin-bottom:2.5rem;
+  color:var(--gold); margin-bottom:1.6rem;
+}
+.journal-logo-link {
+  display:inline-block; margin-bottom:1.8rem;
+  transition: transform .35s var(--ease), opacity .25s;
+}
+.journal-logo-link:hover { transform: translateY(-2px); opacity:.88; }
+.journal-logo {
+  width:96px; height:96px;
+  border-radius:14px;
+  display:block; object-fit:cover;
+  box-shadow: 0 8px 28px rgba(28,25,22,.18), 0 1px 3px rgba(28,25,22,.08);
 }
 .journal-desc {
   font-family:var(--serif); font-size:1.1rem;
