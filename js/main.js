@@ -780,33 +780,6 @@ void main(){
 
 })();
 
-/* ── INFINITE SLIDERS ─────────────────────── */
-(function initSliders(){
-  document.querySelectorAll('.mq-track').forEach((track, i)=>{
-    const reverse = i % 2 === 1;
-    const speed = i === 0 ? 0.4 : 0.25;
-    let pos = 0;
-    let paused = false;
-    const wrap = track.parentElement;
-    wrap.addEventListener('mouseenter', ()=>paused=true);
-    wrap.addEventListener('mouseleave', ()=>paused=false);
-    const clone = track.cloneNode(true);
-    track.parentElement.insertBefore(clone, track.nextSibling);
-    function tick(){
-      if(!paused){
-        pos += reverse ? -speed : speed;
-        const w = track.offsetWidth;
-        if(!reverse && pos >= w) pos -= w;
-        if(reverse && pos <= -w) pos += w;
-        track.style.transform = `translateX(${-pos}px)`;
-        clone.style.transform = `translateX(${(reverse ? -w : w) - pos}px)`;
-      }
-      requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  });
-})();
-
 /* ── CALENDAR ─────────────────────────────── */
 (function initCal(){
   const grid = document.getElementById('cal-grid');
