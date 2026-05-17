@@ -16,40 +16,35 @@ if(lowPerf){
   });
 }
 
-/* ── PRELOADER ────────────────────────────── */
-window.addEventListener('load', () => {
-  const pl = document.getElementById('preloader');
-  setTimeout(() => {
-    pl.style.transition = 'opacity .9s ease, transform .9s ease';
-    pl.style.opacity = '0';
-    pl.style.transform = 'translateY(-20px)';
-    setTimeout(() => pl.remove(), 920);
-  }, 2400);
-});
-
-/* ── PSI CURSOR ───────────────────────────── */
-const psi  = document.getElementById('cursor-psi');
-const ring = document.getElementById('cursor-ring');
-let mx=0, my=0, rx=0, ry=0;
-
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  psi.style.left = mx + 'px';
-  psi.style.top  = my + 'px';
-});
-
-(function lerpRing(){
-  rx += (mx-rx)*.1;
-  ry += (my-ry)*.1;
-  ring.style.left = rx+'px';
-  ring.style.top  = ry+'px';
-  requestAnimationFrame(lerpRing);
+/* ── FOOTER YEAR ───────────────────────────── */
+(function(){
+  const y = document.getElementById('footer-year');
+  if(y) y.textContent = new Date().getFullYear();
 })();
 
-document.querySelectorAll('a,button,.svc,.pillar,.mem,.ti,.pub-card,.ji').forEach(el => {
-  el.addEventListener('mouseenter', () => ring.classList.add('cursor-big'));
-  el.addEventListener('mouseleave', () => ring.classList.remove('cursor-big'));
-});
+/* ── PSI CURSOR (sadece hover destekleyen cihazlar) ── */
+const isTouch = window.matchMedia('(hover:none), (pointer:coarse)').matches;
+const psi  = document.getElementById('cursor-psi');
+const ring = document.getElementById('cursor-ring');
+if(!isTouch && psi && ring){
+  let mx=0, my=0, rx=0, ry=0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    psi.style.left = mx + 'px';
+    psi.style.top  = my + 'px';
+  });
+  (function lerpRing(){
+    rx += (mx-rx)*.1;
+    ry += (my-ry)*.1;
+    ring.style.left = rx+'px';
+    ring.style.top  = ry+'px';
+    requestAnimationFrame(lerpRing);
+  })();
+  document.querySelectorAll('a,button,.svc,.pillar,.mem-card,.ti,.pub-card,.ji').forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('cursor-big'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('cursor-big'));
+  });
+}
 
 /* ── NAV ──────────────────────────────────── */
 const nav = document.getElementById('nav');
@@ -71,7 +66,9 @@ burger.addEventListener('click', () => {
   mob.classList.toggle('open');
 });
 function closeMob(){ burger.classList.remove('open'); mob.classList.remove('open'); }
-window.closeMob = closeMob;
+document.querySelectorAll('[data-close-mob]').forEach(a => {
+  a.addEventListener('click', closeMob);
+});
 
 /* ── RADIAL SHADER (hero background) ─────── */
 (function initRadialShader(){
@@ -538,7 +535,7 @@ if(ps){
     gl.uniform1i(U['u_image_texture'], 0);
     gl.uniform1f(U['u_img_ratio'], img.naturalWidth/img.naturalHeight);
   };
-  img.src = 'DOC-20260513-WA0002_';
+  img.src = 'haktan-tay.jpg';
 
   /* render loop */
   gl.enable(gl.BLEND);
@@ -1006,11 +1003,27 @@ void main(){
     e.preventDefault();
     const name    = document.getElementById('cf-name').value.trim();
     const email   = document.getElementById('cf-email').value.trim();
+    const subject = (document.getElementById('cf-subject')?.value || '').trim();
+    const date    = (document.getElementById('cal-value')?.value || '').trim();
     const message = document.getElementById('cf-message').value.trim();
+    const kvkk    = document.getElementById('cf-kvkk');
+
     if(!name || !email || !message){
       show('Lütfen ad, e-posta ve mesaj alanlarını doldurun.', 'err');
       return;
     }
+    if(kvkk && !kvkk.checked){
+      show('Devam etmek için aydınlatma metnini onaylayın.', 'err');
+      return;
+    }
+
+    // Konu + Tarih + Mesaj — tek mesaj olarak Google Forms'a gönder
+    const composed =
+      (subject ? `Konu: ${subject}\n` : '') +
+      (date    ? `Tercih edilen tarih: ${date}\n` : '') +
+      (subject || date ? '\n' : '') +
+      message;
+
     show('Gönderiliyor…', '');
     if(btn) btn.disabled = true;
 
@@ -1018,7 +1031,7 @@ void main(){
     const data = new FormData();
     data.append('entry.352433926', name);
     data.append('entry.1721181518', email);
-    data.append('entry.643986528', message);
+    data.append('entry.643986528', composed);
 
     fetch(GFORM, { method:'POST', mode:'no-cors', body:data })
       .then(() => {
@@ -1044,7 +1057,7 @@ void main(){
   banner.innerHTML = `
     <div class="kvkk-psi" aria-hidden="true">ψ</div>
     <h4 class="kvkk-title">Çerez Politikası</h4>
-    <p class="kvkk-body">Bu site deneyiminizi iyileştirmek için çerez kullanır. KVKK kapsamında verileriniz korunmaktadır.</p>
+    <p class="kvkk-body">Bu site yalnızca temel oturum bilgilerini tutar. Veri işleme süreciniz <a href="kvkk.html">KVKK</a> ve <a href="aydinlatma.html">Aydınlatma Metni</a> kapsamındadır.</p>
     <div class="kvkk-actions">
       <button type="button" class="kvkk-btn kvkk-accept">Kabul Et</button>
       <button type="button" class="kvkk-btn kvkk-reject">Reddet</button>
