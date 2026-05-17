@@ -840,8 +840,7 @@ section { position:relative; z-index:2; }
 }
 .btn-sub:hover .btn-arr { width:30px; }
 
-/* hCaptcha + form msg */
-.h-captcha { margin:.4rem 0 .2rem; min-height:78px; }
+/* form msg */
 .cf-msg {
   font-size:.78rem; letter-spacing:.04em;
   font-family:var(--sans); line-height:1.5;
