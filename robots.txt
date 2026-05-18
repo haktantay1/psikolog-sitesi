@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://haktantay1.github.io/psikolog-sitesi/sitemap.xml
+Sitemap: https://haktantay.com/sitemap.xml
