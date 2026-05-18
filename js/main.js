@@ -145,6 +145,8 @@ void main(){
   }
   resize();
   window.addEventListener('resize',resize,{passive:true});
+  // Zoom + container size değişikliklerini de yakala
+  if('ResizeObserver' in window){ new ResizeObserver(resize).observe(hero); }
 
   const mouse={x:0,y:0};
   hero.addEventListener('mousemove',e=>{
@@ -184,6 +186,7 @@ void main(){
   }
   resize();
   window.addEventListener('resize', resize, {passive:true});
+  if('ResizeObserver' in window){ new ResizeObserver(resize).observe(hero); }
 
   const N = 40;
   const pts = Array.from({length:N}, ()=>({
@@ -292,6 +295,7 @@ if(ps){
   }
   sz();
   window.addEventListener('resize', sz, {passive:true});
+  if('ResizeObserver' in window){ new ResizeObserver(sz).observe(c.parentElement); }
 
   const stars = Array.from({length:90}, () => ({
     x: Math.random(),
@@ -943,6 +947,7 @@ void main(){
 
   resize();
   window.addEventListener('resize', resize, { passive: true });
+  if('ResizeObserver' in window){ new ResizeObserver(resize).observe(canvas); }
 
   // Sadece görünürken render et — boşa GPU/CPU kullanma
   if('IntersectionObserver' in window){
@@ -1131,6 +1136,7 @@ void main(){
   }
   resize();
   window.addEventListener('resize', resize, { passive:true });
+  if('ResizeObserver' in window){ new ResizeObserver(resize).observe(canvas); }
 
   gl.enable(gl.BLEND);
   gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
@@ -1476,6 +1482,7 @@ void main(){
   }
   resize();
   window.addEventListener('resize', resize, {passive:true});
+  if('ResizeObserver' in window){ new ResizeObserver(resize).observe(canvas); }
 
   gl.enable(gl.BLEND);
   gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
