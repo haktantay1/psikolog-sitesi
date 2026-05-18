@@ -1097,6 +1097,132 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
 }
 
 /* ═══════════════════════════════════════════════════
+   LAPSUS — Freud'un dil sürçmesi efekti
+═══════════════════════════════════════════════════ */
+.lapsus { display:inline-block; position:relative; }
+.lapsus-active   { color:rgba(200,169,110,.55); letter-spacing:.08em; transition: color .25s, letter-spacing .25s; }
+.lapsus-correct  { animation: lapsus-flash .55s var(--ease) 1; }
+@keyframes lapsus-flash {
+  0%   { color:rgba(200,169,110,.55); letter-spacing:.08em; }
+  35%  { color:inherit; letter-spacing:.04em; }
+  100% { color:inherit; letter-spacing:inherit; }
+}
+
+/* ═══════════════════════════════════════════════════
+   MATHÈMELER
+═══════════════════════════════════════════════════ */
+#mathemes { background:var(--bg); }
+.mathemes-lead {
+  font-family:var(--serif); font-style:italic;
+  font-size:1.05rem; line-height:1.75; color:var(--mid);
+  max-width:620px; margin-bottom:4rem;
+}
+.matheme-grid {
+  display:grid; grid-template-columns:repeat(3, 1fr);
+  gap:2px; margin-top:2rem;
+  background:var(--goldd);
+}
+.matheme-card {
+  background:var(--bg2);
+  padding:2.8rem 2.4rem 2.2rem;
+  display:flex; flex-direction:column; align-items:flex-start;
+  transition: background .35s var(--ease);
+  position:relative;
+}
+.matheme-card:hover { background:var(--bg3); }
+.matheme-card::before {
+  content:""; position:absolute; top:0; left:0; height:2px; width:0;
+  background:var(--gold); transition: width .55s var(--ease);
+}
+.matheme-card:hover::before { width:100%; }
+.matheme-sym {
+  font-family:var(--serif); font-style:italic;
+  font-size:clamp(2.2rem, 3.6vw, 3rem);
+  color:var(--gold); line-height:1;
+  margin-bottom:1.4rem; letter-spacing:.02em;
+}
+.matheme-sym sub { font-size:.55em; vertical-align:baseline; position:relative; bottom:-.15em; }
+.matheme-sym .bar-A { position:relative; display:inline-block; }
+.matheme-sym .bar-A::after {
+  content:""; position:absolute; left:-2%; right:-2%; top:50%;
+  height:.08em; background:currentColor;
+  transform: rotate(-12deg);
+}
+.matheme-name {
+  font-size:.6rem; letter-spacing:.32em; text-transform:uppercase;
+  color:var(--text); margin-bottom:1rem;
+}
+.matheme-def {
+  font-size:.88rem; line-height:1.65; color:var(--mid);
+}
+.matheme-def em { color:var(--gold); font-style:italic; }
+@media (max-width:960px){
+  .matheme-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:600px){
+  .matheme-grid { grid-template-columns:1fr; }
+  .matheme-card { padding:2.2rem 1.8rem 1.8rem; }
+}
+
+/* ═══════════════════════════════════════════════════
+   GLOSSARY / Kavramlar
+═══════════════════════════════════════════════════ */
+#glossary { background:var(--bg2); }
+.glossary-lead {
+  font-family:var(--serif); font-style:italic;
+  font-size:1.02rem; line-height:1.75; color:var(--mid);
+  max-width:620px; margin-bottom:4rem;
+}
+.glossary-list {
+  display:grid; grid-template-columns:repeat(2, 1fr);
+  gap:.4rem 2.5rem;
+}
+.g-item {
+  border-bottom:1px solid rgba(138,100,40,.18);
+  padding:1rem 0 1.1rem;
+  transition: padding .25s var(--ease);
+}
+.g-item summary {
+  list-style:none; cursor:pointer;
+  display:flex; align-items:baseline; justify-content:space-between;
+  gap:1.2rem;
+  font-family:var(--serif);
+  transition: color .2s;
+  position:relative; padding-right:1.6rem;
+}
+.g-item summary::-webkit-details-marker { display:none; }
+.g-item summary::after {
+  content:"+"; position:absolute; right:0; top:50%;
+  transform: translateY(-50%);
+  font-family:var(--sans); font-size:1.1rem;
+  color:var(--gold);
+  transition: transform .3s var(--ease);
+}
+.g-item[open] summary::after { content:"−"; }
+.g-fr {
+  font-style:italic; font-size:1.08rem; color:var(--text);
+  font-weight:400;
+}
+.g-tr {
+  font-size:.62rem; letter-spacing:.32em; text-transform:uppercase;
+  color:var(--gold); font-style:normal;
+  flex-shrink:0;
+}
+.g-item p {
+  margin-top:.9rem;
+  font-size:.92rem; line-height:1.7; color:var(--mid);
+  font-family:var(--sans); font-weight:300;
+  max-width:36em;
+  animation: g-open .35s var(--ease);
+}
+@keyframes g-open { from { opacity:0; transform:translateY(-4px);} to { opacity:1; transform:translateY(0);} }
+.g-item:hover summary .g-fr { color:var(--gold); }
+@media (max-width:768px){
+  .glossary-list { grid-template-columns:1fr; gap:0; }
+  .g-item summary { flex-wrap:wrap; }
+}
+
+/* ═══════════════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════════════ */
 @media(max-width:1200px){

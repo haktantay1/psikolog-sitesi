@@ -1306,3 +1306,26 @@ void main(){
     if(pageHidden) stop();
   });
 })();
+
+/* ── LAPSUS — Freud'un dil sürçmesi efekti ── */
+(function initLapsus(){
+  if(prefersReducedMotion) return;
+  const els = document.querySelectorAll('.lapsus');
+  if(!els.length) return;
+  els.forEach(el => {
+    const correct = el.textContent;
+    const slip    = el.getAttribute('data-slip') || correct;
+    if(slip === correct) return;
+    // Eyebrow fade-in 1.6s, +700ms delay → lapsus başlasın
+    setTimeout(() => {
+      el.classList.add('lapsus-active');
+      el.textContent = slip;
+      setTimeout(() => {
+        el.classList.remove('lapsus-active');
+        el.classList.add('lapsus-correct');
+        el.textContent = correct;
+        setTimeout(() => el.classList.remove('lapsus-correct'), 600);
+      }, 750);
+    }, 2300);
+  });
+})();
