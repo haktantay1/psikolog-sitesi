@@ -312,7 +312,7 @@
         <div class="pnum">02</div>
         <div class="ptitle">Sembolik</div>
         <div class="psub">Le Symbolique</div>
-        <p class="pbody">Dil, yasa, Büyük Öteki. Özne sembolik düzenin içine doğar; anlamlayan zincirinde sürekli kayar. Söylem analizi bu kayışın izini sürerek öznenin arzu yapısını açığa çıkarır.</p>
+        <p class="pbody">Dil, yasa, Büyük Başka. Özne sembolik düzenin içine doğar; anlamlayan zincirinde sürekli kayar. Söylem analizi bu kayışın izini sürerek öznenin arzu yapısını açığa çıkarır.</p>
       </div>
       <div class="pillar spot rv d4">
         <div class="pnum">03</div>
@@ -422,36 +422,96 @@
       </ol>
     </div>
     <div class="sb-stage" id="sb-stage" data-stage="0" aria-hidden="true">
-      <svg class="sb-svg" viewBox="0 0 360 360">
+      <svg class="sb-svg" viewBox="0 0 560 560" preserveAspectRatio="xMidYMid meet">
         <defs>
-          <radialGradient id="sb-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%"   stop-color="#c8a96e" stop-opacity=".25"/>
+          <radialGradient id="sb-aura" cx="50%" cy="50%" r="55%">
+            <stop offset="0%"   stop-color="#c8a96e" stop-opacity=".35"/>
+            <stop offset="55%"  stop-color="#c8a96e" stop-opacity=".08"/>
             <stop offset="100%" stop-color="#c8a96e" stop-opacity="0"/>
           </radialGradient>
+          <radialGradient id="sb-dotgrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="#fff7e6"/>
+            <stop offset="35%"  stop-color="#d4b777"/>
+            <stop offset="100%" stop-color="#8a6428"/>
+          </radialGradient>
+          <filter id="sb-blur" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="2.5"/>
+          </filter>
+          <filter id="sb-glow-f" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="5" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
         </defs>
-        <!-- glow background -->
-        <circle class="sb-glow" cx="180" cy="180" r="170" fill="url(#sb-glow)"/>
+
+        <!-- ━━━━ Stage 0–1 : Background aura + the dot ━━━━ -->
+        <circle class="sb-aura" cx="280" cy="280" r="260" fill="url(#sb-aura)"/>
+        <!-- pulsing halo around dot -->
+        <circle class="sb-dot-halo" cx="280" cy="280" r="22"
+                fill="none" stroke="rgba(200,169,110,.4)" stroke-width="1"
+                filter="url(#sb-blur)"/>
         <!-- the dot (proto-subject) -->
-        <circle class="sb-dot" cx="180" cy="180" r="6" fill="#c8a96e"/>
-        <!-- signifier ring (dashed → solid) -->
-        <circle class="sb-ring" cx="180" cy="180" r="110" fill="none"
-                stroke="#c8a96e" stroke-width="1.4"
-                stroke-dasharray="691" stroke-dashoffset="691"
-                transform="rotate(-90 180 180)"/>
-        <!-- inner glow ring -->
-        <circle class="sb-ring-glow" cx="180" cy="180" r="110" fill="none"
-                stroke="rgba(200,169,110,.18)" stroke-width="10"/>
-        <!-- the bar (slashes through) -->
-        <line class="sb-bar" x1="142" y1="220" x2="218" y2="140"
-              stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round"/>
-        <!-- the S letter (forms $) -->
-        <text class="sb-S" x="180" y="207" text-anchor="middle"
-              font-family="Cormorant Garamond, serif" font-size="92"
-              font-style="italic" fill="#F2E6CC">S</text>
-        <!-- final label -->
-        <text class="sb-label-final" x="180" y="320" text-anchor="middle"
-              font-family="DM Sans, sans-serif" font-size="9"
-              fill="#c8a96e" letter-spacing="3">L'ETRE PARLANT</text>
+        <circle class="sb-dot" cx="280" cy="280" r="10" fill="url(#sb-dotgrad)"
+                filter="url(#sb-glow-f)"/>
+
+        <!-- ━━━━ Stage 2 : language closes in — 12 signifier particles + ring ━━━━ -->
+        <!-- Signifier particles fly in from beyond the ring -->
+        <g class="sb-particles">
+          <circle class="sb-p sb-p-0"  cx="280" cy="280" r="3" fill="#c8a96e"/>
+          <circle class="sb-p sb-p-1"  cx="280" cy="280" r="3" fill="#c8a96e"/>
+          <circle class="sb-p sb-p-2"  cx="280" cy="280" r="3" fill="#c8a96e"/>
+          <circle class="sb-p sb-p-3"  cx="280" cy="280" r="3" fill="#c8a96e"/>
+          <circle class="sb-p sb-p-4"  cx="280" cy="280" r="3" fill="#c8a96e"/>
+          <circle class="sb-p sb-p-5"  cx="280" cy="280" r="3" fill="#c8a96e"/>
+          <circle class="sb-p sb-p-6"  cx="280" cy="280" r="3" fill="#c8a96e"/>
+          <circle class="sb-p sb-p-7"  cx="280" cy="280" r="3" fill="#c8a96e"/>
+          <circle class="sb-p sb-p-8"  cx="280" cy="280" r="3" fill="#c8a96e"/>
+          <circle class="sb-p sb-p-9"  cx="280" cy="280" r="3" fill="#c8a96e"/>
+          <circle class="sb-p sb-p-10" cx="280" cy="280" r="3" fill="#c8a96e"/>
+          <circle class="sb-p sb-p-11" cx="280" cy="280" r="3" fill="#c8a96e"/>
+        </g>
+
+        <!-- Outer "soft" signifier ring (glow) -->
+        <circle class="sb-ring-glow" cx="280" cy="280" r="160" fill="none"
+                stroke="rgba(200,169,110,.15)" stroke-width="14"/>
+        <!-- Main signifier ring drawn in -->
+        <circle class="sb-ring" cx="280" cy="280" r="160" fill="none"
+                stroke="#c8a96e" stroke-width="1.6"
+                stroke-dasharray="1005" stroke-dashoffset="1005"
+                transform="rotate(-90 280 280)"/>
+        <!-- Tiny rotation tick marks around ring (signifier teeth) -->
+        <g class="sb-teeth" stroke="rgba(200,169,110,.6)" stroke-width="1">
+          <line x1="280" y1="112" x2="280" y2="124"/>
+          <line x1="280" y1="436" x2="280" y2="448"/>
+          <line x1="112" y1="280" x2="124" y2="280"/>
+          <line x1="436" y1="280" x2="448" y2="280"/>
+          <line x1="161.7" y1="161.7" x2="170.2" y2="170.2"/>
+          <line x1="389.8" y1="389.8" x2="398.3" y2="398.3"/>
+          <line x1="389.8" y1="170.2" x2="398.3" y2="161.7"/>
+          <line x1="161.7" y1="398.3" x2="170.2" y2="389.8"/>
+        </g>
+
+        <!-- ━━━━ Stage 3 : the bar drops, subject is split ━━━━ -->
+        <!-- bar shadow (subtle) -->
+        <line class="sb-bar-shadow" x1="218" y1="350" x2="342" y2="210"
+              stroke="rgba(0,0,0,.15)" stroke-width="5" stroke-linecap="round"
+              filter="url(#sb-blur)"/>
+        <!-- the bar itself -->
+        <line class="sb-bar" x1="218" y1="350" x2="342" y2="210"
+              stroke="#c8a96e" stroke-width="3.5" stroke-linecap="round"
+              filter="url(#sb-glow-f)"/>
+
+        <!-- ━━━━ Stage 4 : the $ emerges ━━━━ -->
+        <text class="sb-S" x="280" y="318" text-anchor="middle"
+              font-family="Cormorant Garamond, Georgia, serif"
+              font-size="170" font-weight="400" font-style="italic"
+              fill="#F2E6CC" filter="url(#sb-glow-f)">S</text>
+
+        <!-- Final label -->
+        <text class="sb-label-final" x="280" y="510" text-anchor="middle"
+              font-family="DM Sans, sans-serif" font-size="11"
+              fill="#c8a96e" letter-spacing="5">L'ÊTRE PARLANT</text>
+        <line class="sb-label-rule" x1="220" y1="525" x2="340" y2="525"
+              stroke="rgba(200,169,110,.5)" stroke-width=".8"/>
       </svg>
     </div>
   </div>
@@ -498,7 +558,7 @@
       <div class="matheme-card rv d2">
         <div class="matheme-sym" aria-hidden="true">S(<span class="bar-A">A</span>)</div>
         <div class="matheme-name">Barred Other</div>
-        <p class="matheme-def">Büyük Öteki bütün değildir; kendi gösterenler dizisi içinde bir eksik taşır.</p>
+        <p class="matheme-def">Büyük Başka bütün değildir; kendi gösterenler dizisi içinde bir eksik taşır.</p>
       </div>
       <div class="matheme-card rv d3">
         <div class="matheme-sym" aria-hidden="true">a</div>
@@ -526,11 +586,11 @@
   <div class="wrap">
     <p class="sec-label rv">Lacan · Seminer XVII</p>
     <h2 class="sec-title rv d1">Dört <em>Söylem</em></h2>
-    <p class="dw-intro rv d2">Lacan dört söylem teorisinde aynı dört matheme'i — <em>$</em>, <em>S<sub>1</sub></em>, <em>S<sub>2</sub></em>, <em>a</em> — dört pozisyonda döndürür. Etken kim, Öteki kim, hakikat ne, üretilen ne? Tıkla, çark dönsün.</p>
+    <p class="dw-intro rv d2">Lacan dört söylem teorisinde aynı dört matheme'i — <em>$</em>, <em>S<sub>1</sub></em>, <em>S<sub>2</sub></em>, <em>a</em> — dört pozisyonda döndürür. Etken kim, Başka kim, hakikat ne, üretilen ne? Tıkla, çark dönsün.</p>
     <div class="dw-stage rv d3">
       <div class="dw-wheel" id="dw-wheel">
         <div class="dw-corner dw-corner-tl">Etken</div>
-        <div class="dw-corner dw-corner-tr">Öteki</div>
+        <div class="dw-corner dw-corner-tr">Başka</div>
         <div class="dw-corner dw-corner-bl">Hakikat</div>
         <div class="dw-corner dw-corner-br">Üretim</div>
         <div class="dw-slot dw-slot-tl"><span class="dw-matheme" data-slot="tl">S<sub>1</sub></span></div>
@@ -887,7 +947,7 @@
       </details>
       <details class="g-item">
         <summary><span class="g-fr">Le Symbolique</span><span class="g-tr">Sembolik</span></summary>
-        <p>Dil, yasa, Büyük Öteki. Öznenin doğduğu ve kayan anlamlar zincirinde yer aldığı düzen.</p>
+        <p>Dil, yasa, Büyük Başka. Öznenin doğduğu ve kayan anlamlar zincirinde yer aldığı düzen.</p>
       </details>
       <details class="g-item">
         <summary><span class="g-fr">L'Imaginaire</span><span class="g-tr">Hayali</span></summary>
@@ -899,10 +959,10 @@
       </details>
       <details class="g-item">
         <summary><span class="g-fr">Le Désir</span><span class="g-tr">Arzu</span></summary>
-        <p>Talep ile ihtiyaç arasındaki kalan. Bir tatminin ardından bitmez; daima Öteki'nin arzusuna doğru gider.</p>
+        <p>Talep ile ihtiyaç arasındaki kalan. Bir tatminin ardından bitmez; daima Başka'nın arzusuna doğru gider.</p>
       </details>
       <details class="g-item">
-        <summary><span class="g-fr">Le Grand Autre (A)</span><span class="g-tr">Büyük Öteki</span></summary>
+        <summary><span class="g-fr">Le Grand Autre (A)</span><span class="g-tr">Büyük Başka</span></summary>
         <p>Dilin ve yasanın yapı taşı; özneyi konuşurken kuran simgesel düzen. Bir kişi değil, bir konum.</p>
       </details>
       <details class="g-item">

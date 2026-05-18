@@ -1333,20 +1333,23 @@ void main(){
 /* ── ÖZNENİN DOĞUŞU — scroll-driven 5-stage SVG ── */
 (function initSubjectBirth(){
   if(prefersReducedMotion) return;
-  const stage = document.getElementById('sb-stage');
-  if(!stage) return;
+  const stage   = document.getElementById('sb-stage');
+  const section = document.getElementById('subject-birth');
+  if(!stage || !section) return;
   let last = -1;
   function update(){
     const r = stage.getBoundingClientRect();
     const vh = window.innerHeight;
-    // 0 ↔ 1 oranı: stage'in alt yarısı ekrana girdikçe 0 → 1
     const passed = vh - r.top;
     const total  = r.height + vh * 0.7;
     const p = Math.max(0, Math.min(1, passed / total));
-    // 0 → 4 arası 5 sahne
     let s = Math.floor(p * 4.5);
     if(s > 4) s = 4;
-    if(s !== last){ stage.setAttribute('data-stage', String(s)); last = s; }
+    if(s !== last){
+      stage.setAttribute('data-stage', String(s));
+      section.setAttribute('data-step', String(s));
+      last = s;
+    }
   }
   update();
   window.addEventListener('scroll', update, { passive:true });
@@ -1370,7 +1373,7 @@ void main(){
     br: wheel.querySelector('[data-slot="br"]')
   };
 
-  // Lacan'ın 4 söylemi — pozisyon: TL=Etken, TR=Öteki, BL=Hakikat, BR=Üretim
+  // Lacan'ın 4 söylemi — pozisyon: TL=Etken, TR=Başka, BL=Hakikat, BR=Üretim
   const discourses = [
     {
       name: 'Efendi Söylemi',
@@ -1483,8 +1486,9 @@ void main(){
   gl.useProgram(prog);
 
   // Three rings, each tilted differently → Borromean configuration
-  const R = 0.92, r = 0.06;
-  const N_U = 220, N_V = 14;
+  // Yüksek çözünürlük: 400 × 28 × 3 = ~33 600 nokta
+  const R = 0.92, r = 0.055;
+  const N_U = 400, N_V = 28;
   const points  = N_U * N_V;
   const totalPts = points * 3;
   const positions = new Float32Array(totalPts * 3);
@@ -1551,7 +1555,7 @@ void main(){
   const uProj  = gl.getUniformLocation(prog, 'u_proj');
   const uSize  = gl.getUniformLocation(prog, 'u_size');
   const uDpr   = gl.getUniformLocation(prog, 'u_dpr');
-  gl.uniform1f(uSize, 3.6);
+  gl.uniform1f(uSize, 2.2);  // daha küçük noktalar — yüksek yoğunlukta keskinlik
 
   function mul(a, b){
     const out = new Float32Array(16);
@@ -1651,12 +1655,12 @@ void main(){
     },
     A: {
       symbol: 'A',
-      name: 'Le Grand Autre — Büyük Öteki',
+      name: 'Le Grand Autre — Büyük Başka',
       def: 'Dilin, yasanın ve gösterenler dizgesinin yeri. Bir kişi değil, bir <em>konum</em>. Özne dilin bu hazinesine doğar; konuşurken oradan ödünç alır.'
     },
     sA: {
       symbol: 's(A)',
-      name: 'Le Signifié — Öteki\'nin Gösterileni',
+      name: 'Le Signifié — Başka\'nin Gösterileni',
       def: 'Gösterenler zincirinin retroaktif olarak ürettiği anlam etkisi. Söz tamamlandıktan sonra geriye dönüp "şimdi bu demekmiş" diyebildiğimiz nokta.'
     },
     dollar: {
@@ -1671,13 +1675,13 @@ void main(){
     },
     ia: {
       symbol: 'i(a)',
-      name: 'image — Aynadaki Öteki\'nin İmgesi',
-      def: 'Ayna evresinde özdeşleşilen küçük öteki imgesi. <em>m</em> ile <em>i(a)</em> arasındaki kısa devre = imgesel düzenin dolaşımı.'
+      name: 'image — Aynadaki Başka\'nin İmgesi',
+      def: 'Ayna evresinde özdeşleşilen küçük başka imgesi. <em>m</em> ile <em>i(a)</em> arasındaki kısa devre = imgesel düzenin dolaşımı.'
     },
     IA: {
       symbol: 'I(A)',
       name: 'Idéal du moi — Ben İdeali',
-      def: 'Öteki\'nin (büyük A) öznede ürettiği gösteren konum. "Beni nasıl görmen gerektiğini söyle bana" — özne bu konumdan kendini değerlendirir.'
+      def: 'Başka\'nin (büyük A) öznede ürettiği gösteren konum. "Beni nasıl görmen gerektiğini söyle bana" — özne bu konumdan kendini değerlendirir.'
     }
   };
 
