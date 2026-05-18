@@ -119,20 +119,29 @@ textarea:focus-visible, [tabindex]:focus-visible {
 .nav-logo-psi { color:var(--gold); }
 .nav-links { display:flex; gap:3rem; }
 .nav-links a {
+  /* Default: koyu hero için açık ton */
   font-size:.65rem; letter-spacing:.28em; text-transform:uppercase;
-  color:var(--mid); transition:color .3s; position:relative;
-  mix-blend-mode:normal;
+  color:rgba(237,232,224,.72);
+  transition:color .3s; position:relative;
+  text-shadow: 0 1px 8px rgba(0,0,0,.4);
 }
 .nav-links a::after {
   content:''; position:absolute; bottom:-5px; left:0;
   width:0; height:1px; background:var(--gold);
   transition:width .35s var(--ease);
 }
-.nav-links a:hover { color:var(--text); }
+.nav-links a:hover { color:#fff; }
 .nav-links a:hover::after { width:100%; }
+
+/* Scrolled: nav krem zemine geçer → koyu metin */
+#nav.scrolled .nav-links a   { color:var(--mid); text-shadow:none; }
+#nav.scrolled .nav-links a:hover { color:var(--text); }
+#nav.scrolled .nav-logo      { color:var(--text); text-shadow:none; }
+
+.nav-logo { color:rgba(237,232,224,.85); text-shadow:0 1px 8px rgba(0,0,0,.4); transition: color .3s; }
 .nav-cta {
   font-size:.65rem; letter-spacing:.22em; text-transform:uppercase;
-  color:var(--gold); border:1px solid var(--goldd);
+  color:var(--gold); border:1px solid rgba(200,169,110,.45);
   padding:.65rem 1.6rem; transition:background .3s, color .3s, border-color .3s;
 }
 .nav-cta:hover { background:var(--gold); color:var(--bg); border-color:var(--gold); }
