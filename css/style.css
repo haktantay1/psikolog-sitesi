@@ -1045,52 +1045,55 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
 ═══════════════════════════════════════════════════ */
 .mesh-breath {
   position:relative; overflow:hidden;
-  height:30vh; min-height:240px; max-height:340px;
+  height:34vh; min-height:280px; max-height:380px;
   background:#0A0608;
   isolation:isolate;
 }
 .mesh-breath::before, .mesh-breath::after {
   content:""; position:absolute; left:0; right:0;
-  height:80px; pointer-events:none; z-index:2;
+  height:70px; pointer-events:none; z-index:2;
 }
 .mesh-breath::before { top:0;    background:linear-gradient(to bottom, var(--bg)  0%, transparent 100%); }
 .mesh-breath::after  { bottom:0; background:linear-gradient(to top,    var(--bg2) 0%, transparent 100%); }
 
 .mesh-breath .mesh-blob {
-  position:absolute; border-radius:50%;
-  filter: blur(70px) saturate(1.05);
+  position:absolute;
+  width:55vw; height:240%;
+  top:-70%;
+  filter: blur(55px) saturate(1.1);
   mix-blend-mode: screen;
   will-change: transform;
 }
 .mesh-breath .mb1 {
-  background:radial-gradient(circle, #C8A96E 0%, transparent 65%);
-  width:60vw; height:60vw; top:-25%; left:-10%; opacity:.55;
-  animation: mesh-1 24s ease-in-out infinite alternate;
+  background:radial-gradient(ellipse closest-side, #C8A96E 0%, transparent 70%);
+  left:-15vw; opacity:.85;
+  animation: mb-1 26s ease-in-out infinite alternate;
 }
 .mesh-breath .mb2 {
-  background:radial-gradient(circle, #8A6428 0%, transparent 65%);
-  width:55vw; height:55vw; bottom:-30%; right:-10%; opacity:.5;
-  animation: mesh-2 28s ease-in-out infinite alternate;
+  background:radial-gradient(ellipse closest-side, #8A6428 0%, transparent 70%);
+  right:-15vw; opacity:.8;
+  animation: mb-2 30s ease-in-out infinite alternate;
 }
 .mesh-breath .mb3 {
-  background:radial-gradient(circle, #6B4055 0%, transparent 70%);
-  width:38vw; height:38vw; top:10%; right:18%; opacity:.4;
-  animation: mesh-3 32s ease-in-out infinite alternate;
+  background:radial-gradient(ellipse closest-side, #6B4055 0%, transparent 75%);
+  width:42vw; left:25vw; opacity:.6;
+  animation: mb-3 34s ease-in-out infinite alternate;
 }
 .mesh-breath .mb4 {
-  background:radial-gradient(circle, #3B5068 0%, transparent 70%);
-  width:42vw; height:42vw; bottom:5%; left:22%; opacity:.35;
-  animation: mesh-4 30s ease-in-out infinite alternate;
+  background:radial-gradient(ellipse closest-side, #3B5068 0%, transparent 75%);
+  width:42vw; right:25vw; opacity:.55;
+  animation: mb-4 32s ease-in-out infinite alternate;
 }
 
-@keyframes mesh-1 { 0%{transform:translate(0,0) scale(1);} 100%{transform:translate(8vw,5vh) scale(1.15);} }
-@keyframes mesh-2 { 0%{transform:translate(0,0) scale(1.05);} 100%{transform:translate(-9vw,-6vh) scale(.95);} }
-@keyframes mesh-3 { 0%{transform:translate(0,0) scale(.9);}   100%{transform:translate(-6vw,4vh) scale(1.1);} }
-@keyframes mesh-4 { 0%{transform:translate(0,0) scale(1);}    100%{transform:translate(7vw,-4vh) scale(1.2);} }
+@keyframes mb-1 { 0%{transform:translate(0,0) scale(1);}   100%{transform:translate(10vw,2vh) scale(1.1);} }
+@keyframes mb-2 { 0%{transform:translate(0,0) scale(1.05);} 100%{transform:translate(-10vw,-2vh) scale(.95);} }
+@keyframes mb-3 { 0%{transform:translate(0,0) scale(.95);}  100%{transform:translate(-6vw,3vh) scale(1.15);} }
+@keyframes mb-4 { 0%{transform:translate(0,0) scale(1);}    100%{transform:translate(7vw,-3vh) scale(1.1);} }
 
 @media (max-width:768px){
-  .mesh-breath { height:24vh; }
-  .mesh-breath .mesh-blob { width:80vw; height:80vw; }
+  .mesh-breath { height:26vh; min-height:220px; }
+  .mesh-breath .mesh-blob { width:75vw; }
+  .mesh-breath .mb3, .mesh-breath .mb4 { width:60vw; }
 }
 
 /* ═══════════════════════════════════════════════════

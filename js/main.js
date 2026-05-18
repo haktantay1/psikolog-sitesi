@@ -1108,11 +1108,12 @@ in vec3 a_pos;
 uniform mat4 u_view;
 uniform mat4 u_proj;
 uniform float u_size;
+uniform float u_dpr;
 out float v_depth;
 void main(){
   vec4 mv = u_view * vec4(a_pos, 1.0);
   gl_Position = u_proj * mv;
-  gl_PointSize = u_size * (4.0 / max(0.1, -mv.z));
+  gl_PointSize = u_size * u_dpr * (5.0 / max(0.1, -mv.z));
   v_depth = -mv.z;
 }`;
 
@@ -1126,8 +1127,9 @@ void main(){
   float dist = length(d);
   if(dist > 0.5) discard;
   float alpha = smoothstep(0.5, 0.05, dist);
-  float fog = clamp(1.0 - (v_depth - 2.0) * 0.35, 0.25, 1.0);
-  fragColor = vec4(u_color * fog, alpha * fog);
+  // hafif derinlik solması, çok loşlaştırmasın
+  float fog = clamp(1.0 - (v_depth - 1.8) * 0.10, 0.7, 1.0);
+  fragColor = vec4(u_color * fog, alpha);
 }`;
 
   function compile(type, src){
@@ -1179,9 +1181,10 @@ void main(){
   const uView  = gl.getUniformLocation(prog, 'u_view');
   const uProj  = gl.getUniformLocation(prog, 'u_proj');
   const uSize  = gl.getUniformLocation(prog, 'u_size');
+  const uDpr   = gl.getUniformLocation(prog, 'u_dpr');
   const uColor = gl.getUniformLocation(prog, 'u_color');
-  gl.uniform1f(uSize, 3.2);
-  gl.uniform3f(uColor, 0.784, 0.663, 0.431); // #c8a96e
+  gl.uniform1f(uSize, 4.5);
+  gl.uniform3f(uColor, 0.85, 0.72, 0.48); // sıcak altın, biraz daha parlak
 
   // 4×4 matrix helpers (column-major)
   function mul(a, b){
@@ -1252,6 +1255,7 @@ void main(){
     canvas.width  = Math.floor(w * dpr);
     canvas.height = Math.floor(h * dpr);
     gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.uniform1f(uDpr, dpr);
   }
   resize();
   window.addEventListener('resize', resize, { passive:true });
@@ -1273,8 +1277,8 @@ void main(){
     curY += (tgtY - curY) * 0.09;
 
     const aspect = w / h;
-    const view = mul(translate(0, 0, -3.6), mul(rotX(curX), rotY(curY)));
-    const proj = perspective(Math.PI / 4, aspect, 0.1, 100);
+    const view = mul(translate(0, 0, -2.6), mul(rotX(curX), rotY(curY)));
+    const proj = perspective(Math.PI / 3.4, aspect, 0.1, 100);
 
     gl.uniformMatrix4fv(uView, false, view);
     gl.uniformMatrix4fv(uProj, false, proj);
