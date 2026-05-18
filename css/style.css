@@ -1974,6 +1974,148 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
 }
 
 /* ═══════════════════════════════════════════════════
+   TABLET (1024px ↓) — son ince ayarlar
+═══════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .pad { padding: 5rem 0; }
+  /* Mathèmeler: 3 → 2 sütun (zaten 960'te 2'ye düşüyor ama sınır geliştir) */
+  .matheme-grid { grid-template-columns: repeat(2, 1fr); }
+  /* Subject Birth ve Discourse Wheel zaten 960'te stack'lenir */
+  /* Graphe layout zaten 960'te 1col olur */
+  /* Hero quickinfo daraltma */
+  .hero-quickinfo { gap: 1.2rem; }
+}
+
+/* ═══════════════════════════════════════════════════
+   MOBILE (768px ↓) — büyük yapısal ayarlar
+═══════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  html { font-size: 15px; }
+  body { overflow-x: hidden; }
+  .wrap { padding: 0 1.4rem; }
+  .pad  { padding: 4.5rem 0; }
+
+  /* Hero — kompakt portre, fontlar */
+  .hero-center { padding: 9rem 1.4rem 4rem; gap: 1.2rem; }
+  .hero-first, .hero-last { font-size: clamp(3.4rem, 12vw, 5.4rem) !important; }
+  .hero-portrait-wrap, .hero-portrait { width: 220px; }
+  .hero-portrait { height: 280px; }
+  .hero-meta { gap: 1.4rem; flex-wrap: wrap; justify-content: center; }
+  .hero-meta-item { min-width: 5.5rem; }
+  .hero-quickinfo { gap: .8rem; padding-top: 1.1rem; }
+  .qi-item { min-width: 5rem; }
+  .qi-val { font-size: .82rem; }
+  /* hero-frag dekoratif Fr metinleri mobilde tıkıyor */
+  .hero-frag { display: none; }
+
+  /* Section eyebrows + titles */
+  .sec-label { font-size: .55rem; letter-spacing: .35em; }
+  .sec-title { font-size: clamp(1.9rem, 6.5vw, 2.6rem) !important; }
+
+  /* Mathèmeler: tek sütun, daha sıkı padding */
+  .matheme-grid { grid-template-columns: 1fr; gap: 1px; }
+  .matheme-card { padding: 1.8rem 1.4rem 1.6rem; }
+  .matheme-sym  { font-size: 2rem; margin-bottom: 1rem; }
+
+  /* Glossary: tek sütun, daha az iç boşluk */
+  .glossary-list { grid-template-columns: 1fr; gap: 0; }
+  .g-item summary { gap: .5rem; flex-wrap: wrap; padding-right: 1.4rem; }
+  .g-fr { font-size: .98rem; }
+  .g-tr { font-size: .55rem; }
+
+  /* Discourse wheel: ortala, kontrol satırı altta */
+  .dw-stage { grid-template-columns: 1fr; gap: 2.4rem; }
+  .dw-wheel { max-width: 360px; }
+  .dw-matheme { font-size: clamp(2.2rem, 9vw, 3rem) !important; }
+  .dw-corner  { font-size: .52rem; letter-spacing: .26em; padding: .4rem .55rem; }
+  .dw-controls { justify-content: center; }
+  .dw-name { font-size: clamp(1.5rem, 5.5vw, 2rem) !important; }
+
+  /* Graphe du désir: SVG küçült + info paneli alta */
+  .graphe-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .graphe-stage  { padding: .5rem; }
+  .graphe-info   { padding: 1.8rem 1.5rem; }
+  .gr-label { font-size: 13px; }
+
+  /* Subject Birth */
+  .sb-wrap  { grid-template-columns: 1fr; gap: 2.4rem; }
+  .sb-stage { max-width: 320px; }
+  .sb-step  { font-size: .98rem; gap: 1rem; }
+
+  /* Möbius / Topology */
+  #topology { min-height: 70vh; }
+  .topology-overlay { padding: 0 1.4rem; max-width: none; pointer-events: none; }
+  .topology-title { font-size: 2.4rem !important; }
+  .topology-body  { font-size: .98rem; }
+
+  /* Borromean — daha küçük + info alta */
+  .borr-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+  #borr3d-stage { width: 300px; height: 300px; }
+  .borr-info h3 { font-size: 2.4rem; }
+
+  /* Mirror Stage — daha kompakt */
+  #mirror { height: 28vh; min-height: 220px; }
+  .mirror-quote { font-size: 1.2rem !important; }
+
+  /* Tunnel + CTA — taşmasın */
+  #tunnel { min-height: 60vh; }
+  .tunnel-title { font-size: 2.2rem !important; }
+  #cta-section { padding: 6rem 1.4rem; }
+  .cta-title   { font-size: clamp(2rem, 8vw, 3rem) !important; }
+
+  /* Form — kompakt + iOS auto-zoom önle (input >= 16px) */
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .fgrp input, .fgrp textarea { font-size: 16px; }
+  .cf-consent label { font-size: .72rem; }
+  .cal-grid    { gap: 2px; }
+  .cal-day     { font-size: .8rem; }
+
+  /* Sağ taraftaki side-rail mobilde formu kapatmasın */
+  .srail { right: .8rem; padding: .35rem; gap: .35rem; }
+  .srail-item { width: 32px; height: 32px; }
+  .srail-item svg { width: 13px; height: 13px; }
+  .srail-tip { display: none; }
+
+  /* Buton ve link tap-target genişlet (44×44 minimum) */
+  a, button, .nav-mob a { min-height: 44px; }
+  .btn-sub, .cta-btn, .dw-btn { min-height: 48px; }
+
+  /* Footer */
+  .footer-legal { flex-direction: column; gap: .3rem; }
+  .footer-legal span { display: none; }
+
+  /* Process zaten 480'de 1col oluyor; süreç ara aşamada 2col */
+  .process-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════
+   SMALL MOBILE (480px ↓) — son rötuşlar
+═══════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .hero-first, .hero-last { font-size: clamp(3rem, 13vw, 4.2rem) !important; }
+  .hero-portrait-wrap, .hero-portrait { width: 200px; }
+  .hero-portrait { height: 250px; }
+  .hero-eyebrow { font-size: .55rem; letter-spacing: .35em; }
+  .hero-meta { gap: 1rem; }
+  .hero-meta-lbl, .hero-meta-val { font-size: .7rem; }
+  .qi-lbl { font-size: .5rem; }
+  .qi-val { font-size: .76rem; }
+
+  .sec-title { font-size: 1.7rem !important; }
+  .matheme-sym { font-size: 1.8rem; }
+  .dw-wheel { max-width: 300px; }
+  .dw-matheme { font-size: 2rem !important; }
+  .dw-corner  { font-size: .5rem; padding: .35rem .5rem; }
+  .graphe-svg { font-size: 11px; }
+  #borr3d-stage { width: 260px; height: 260px; }
+  .sb-stage { max-width: 280px; }
+  .mirror-quote { font-size: 1.05rem !important; line-height: 1.4 !important; }
+  .topology-title { font-size: 2rem !important; }
+  .tunnel-title   { font-size: 1.9rem !important; }
+  .cta-title      { font-size: 1.9rem !important; }
+}
+
+/* ═══════════════════════════════════════════════════
    REDUCED MOTION
 ═══════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
