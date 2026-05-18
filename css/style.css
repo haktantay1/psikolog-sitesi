@@ -1219,7 +1219,22 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
 /* ═══════════════════════════════════════════════════
    ÖZNENİN DOĞUŞU (subject birth — 5-stage SVG narrative)
 ═══════════════════════════════════════════════════ */
-#subject-birth { background:var(--bg); }
+#subject-birth {
+  position:relative; overflow:hidden;
+  background:#070710;
+  isolation:isolate;
+}
+#subject-birth::before, #subject-birth::after {
+  content:""; position:absolute; left:0; right:0; height:90px;
+  pointer-events:none; z-index:2;
+}
+#subject-birth::before { top:0;    background:linear-gradient(to bottom, var(--bg) 0%, transparent 100%); }
+#subject-birth::after  { bottom:0; background:linear-gradient(to top,    var(--bg) 0%, transparent 100%); }
+#subject-birth .wrap { position:relative; z-index:3; }
+#subject-birth .sec-label { color:rgba(200,169,110,.85); }
+#subject-birth .sec-title { color:#F2E6CC; text-shadow:0 2px 24px rgba(0,0,0,.5); }
+#subject-birth .sec-title em { color:#D4B777; font-style:italic; }
+
 .sb-wrap {
   display:grid; grid-template-columns:1fr 1fr;
   gap:5rem; align-items:center;
@@ -1231,12 +1246,13 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
 }
 .sb-step {
   font-family:var(--serif); font-size:1.12rem; line-height:1.65;
-  color:var(--mid); display:flex; gap:1.4rem; align-items:baseline;
-  opacity:.55; transition: opacity .55s var(--ease), color .4s var(--ease);
+  color:rgba(242,230,204,.45); display:flex; gap:1.4rem; align-items:baseline;
+  opacity:.7; transition: opacity .55s var(--ease), color .4s var(--ease);
+  text-shadow: 0 1px 14px rgba(0,0,0,.4);
 }
-.sb-step em { color:var(--gold); font-style:italic; font-weight:500; }
+.sb-step em { color:#D4B777; font-style:italic; font-weight:500; }
 .sb-num {
-  font-size:.6rem; letter-spacing:.32em; color:var(--gold);
+  font-size:.6rem; letter-spacing:.32em; color:rgba(200,169,110,.85);
   flex-shrink:0; padding-top:.2rem; min-width:1.8em;
   font-family:var(--sans);
 }
@@ -1343,14 +1359,13 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
 .sb-stage[data-stage="4"] .sb-label-rule { opacity:.8; transition-delay:.5s; }
 
 /* Active step highlighting in the side text */
-.sb-stage[data-stage="1"] ~ .sb-text .sb-s1,
-#subject-birth[data-step="1"] .sb-s1 { opacity:1; color:var(--text); }
+#subject-birth[data-step="1"] .sb-s1 { opacity:1; color:#F2E6CC; }
 #subject-birth[data-step="2"] .sb-s1,
-#subject-birth[data-step="2"] .sb-s2 { opacity:1; color:var(--text); }
+#subject-birth[data-step="2"] .sb-s2 { opacity:1; color:#F2E6CC; }
 #subject-birth[data-step="3"] .sb-s1,
 #subject-birth[data-step="3"] .sb-s2,
-#subject-birth[data-step="3"] .sb-s3 { opacity:1; color:var(--text); }
-#subject-birth[data-step="4"] .sb-step { opacity:1; color:var(--text); }
+#subject-birth[data-step="3"] .sb-s3 { opacity:1; color:#F2E6CC; }
+#subject-birth[data-step="4"] .sb-step { opacity:1; color:#F2E6CC; }
 
 @media (max-width:960px){
   .sb-wrap { grid-template-columns:1fr; gap:3rem; }
