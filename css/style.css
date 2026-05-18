@@ -1982,8 +1982,8 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  #smoke-canvas, #hero-canvas, #particle-canvas,
-  #objeta-canvas, #tunnel-canvas, #sparkles-canvas,
+  #smoke-canvas, #hero-canvas, #objeta-canvas,
+  #tunnel-canvas, #sparkles-canvas,
   #mobius-stage, #borr3d-stage { display: none !important; }
   #hero { background: var(--hero-bg) !important; }
   .hero-orb { display: none !important; }
