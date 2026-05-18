@@ -14,6 +14,29 @@ if(lowPerf){
   });
 }
 
+/* ── DEFER helpers — heavy WebGL inits idle time'a kaydır ── */
+function whenIdle(fn){
+  if('requestIdleCallback' in window){
+    requestIdleCallback(fn, { timeout: 2500 });
+  } else {
+    setTimeout(fn, 200);
+  }
+}
+// Bölüm görünüme yaklaşınca init et (gözlemci ile)
+function whenNear(target, doInit, rootMargin){
+  if(!target) return;
+  if(!('IntersectionObserver' in window)){ whenIdle(doInit); return; }
+  let done = false;
+  const io = new IntersectionObserver(es => {
+    if(es[0].isIntersecting && !done){
+      done = true;
+      io.disconnect();
+      whenIdle(doInit);
+    }
+  }, { rootMargin: rootMargin || '600px' });
+  io.observe(target);
+}
+
 /* ── FOOTER YEAR ───────────────────────────── */
 (function(){
   const y = document.getElementById('footer-year');
@@ -325,7 +348,7 @@ if(ps){
 })();
 
 /* ── TUNNEL — Bilinçdışına Yolculuk (WebGL2) ─── */
-(function initTunnel(){
+whenNear(document.getElementById('tunnel-canvas'), function initTunnel(){
   if(prefersReducedMotion || lowPerf) return;
   const canvas = document.getElementById('tunnel-canvas');
   if(!canvas) return;
@@ -475,7 +498,7 @@ void main(){
     pageHidden = document.hidden;
     if(pageHidden) stop();
   });
-})();
+});
 
 
 /* ── GOOEY TEXT MORPH ─────────────────────── */
@@ -533,7 +556,7 @@ void main(){
 })();
 
 /* ── OBJET PETIT A SHADER ─────────────────── */
-(function initObjetA(){
+whenNear(document.getElementById('objeta-canvas'), function initObjetA(){
   if(prefersReducedMotion || lowPerf) return;
   const canvas = document.getElementById('objeta-canvas');
   if(!canvas) return;
@@ -654,7 +677,7 @@ void main(){
   }
   requestAnimationFrame(tick);
 
-})();
+});
 
 /* ── CALENDAR ─────────────────────────────── */
 (function initCal(){
@@ -968,7 +991,7 @@ void main(){
 })();
 
 /* ── MÖBIUS 3D (WebGL2 particles) ─────── */
-(function initMobius(){
+whenNear(document.getElementById('mobius-stage'), function initMobius(){
   if(prefersReducedMotion || lowPerf) return;
   const stage = document.getElementById('mobius-stage');
   if(!stage) return;
@@ -1183,7 +1206,7 @@ void main(){
     pageHidden = document.hidden;
     if(pageHidden) stop();
   });
-})();
+});
 
 /* ── LAPSUS — Freud'un dil sürçmesi efekti ── */
 (function initLapsus(){
@@ -1303,7 +1326,7 @@ void main(){
 })();
 
 /* ── BORROMEAN 3D — three interlocked rings (WebGL2) ── */
-(function initBorromean3D(){
+whenNear(document.getElementById('borr3d-stage'), function initBorromean3D(){
   if(prefersReducedMotion || lowPerf) return;
   const stage = document.getElementById('borr3d-stage');
   if(!stage) return;
@@ -1517,7 +1540,7 @@ void main(){
     pageHidden = document.hidden;
     if(pageHidden) stop();
   });
-})();
+});
 
 /* ── LE GRAPHE DU DÉSIR — interactive node info ── */
 (function initGraphe(){
