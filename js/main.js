@@ -1707,3 +1707,38 @@ void main(){
   // İlk açılışta delta aktif
   setActive('delta');
 })();
+
+/* ── AYNA EVRESİ — mirror cursor inside .mirror-zone ── */
+(function initMirrorCursor(){
+  if(window.matchMedia('(hover:none), (pointer:coarse)').matches) return;
+  const mirror = document.getElementById('cursor-mirror');
+  const zone   = document.querySelector('.mirror-zone');
+  if(!mirror || !zone) return;
+  let tx = 0, ty = 0, cx = 0, cy = 0, inside = false;
+
+  zone.addEventListener('mouseenter', () => {
+    inside = true;
+    mirror.classList.add('show');
+  });
+  zone.addEventListener('mouseleave', () => {
+    inside = false;
+    mirror.classList.remove('show');
+  });
+  document.addEventListener('mousemove', e => {
+    if(!inside) return;
+    const r = zone.getBoundingClientRect();
+    const axis = r.left + r.width / 2;
+    tx = 2 * axis - e.clientX;
+    ty = e.clientY;
+  }, { passive:true });
+
+  (function tick(){
+    if(inside){
+      cx += (tx - cx) * 0.18;
+      cy += (ty - cy) * 0.18;
+      mirror.style.left = cx + 'px';
+      mirror.style.top  = cy + 'px';
+    }
+    requestAnimationFrame(tick);
+  })();
+})();
