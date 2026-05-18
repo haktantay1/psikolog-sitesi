@@ -8,7 +8,7 @@
   --bg4:   #D9D0C0;
   --text:  #1C1916;
   --mid:   #4A4238;
-  --dim:   #8A7E72;
+  --dim:   #6E6358;
   --gold:  #8A6428;
   --gold2: #A87E38;
   --goldd: rgba(138,100,40,.12);
@@ -1059,7 +1059,7 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
 }
 .topology-hint {
   font-size:.62rem; letter-spacing:.32em; text-transform:uppercase;
-  color:rgba(200,169,110,.55);
+  color:rgba(212,183,119,.85);
   display:flex; align-items:center; gap:.8rem;
 }
 .topology-hint::before { content:""; width:18px; height:1px; background:rgba(200,169,110,.4); }
@@ -1219,7 +1219,7 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
 .graphe-hint {
   margin-top:2rem;
   font-size:.6rem; letter-spacing:.32em; text-transform:uppercase;
-  color:rgba(200,169,110,.45);
+  color:rgba(212,183,119,.78);
 }
 
 @media (max-width:960px){
@@ -1747,7 +1747,7 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
 }
 .tunnel-cite {
   font-size:.7rem; letter-spacing:.22em; text-transform:uppercase;
-  color:rgba(200,169,110,.65); margin-top:.9rem;
+  color:rgba(212,183,119,.92); margin-top:.9rem;
 }
 @media (max-width:768px){
   #tunnel { height:70vh; min-height:460px; }
