@@ -1089,3 +1089,216 @@ void main(){
     if(pageHidden) stop();
   });
 })();
+
+/* ── MÖBIUS 3D (WebGL2 particles) ─────── */
+(function initMobius(){
+  if(prefersReducedMotion || lowPerf) return;
+  const stage = document.getElementById('mobius-stage');
+  if(!stage) return;
+
+  const canvas = document.createElement('canvas');
+  canvas.setAttribute('aria-hidden', 'true');
+  stage.appendChild(canvas);
+
+  const gl = canvas.getContext('webgl2', { antialias:true, premultipliedAlpha:false });
+  if(!gl){ stage.removeChild(canvas); return; }
+
+  const VERT = `#version 300 es
+in vec3 a_pos;
+uniform mat4 u_view;
+uniform mat4 u_proj;
+uniform float u_size;
+out float v_depth;
+void main(){
+  vec4 mv = u_view * vec4(a_pos, 1.0);
+  gl_Position = u_proj * mv;
+  gl_PointSize = u_size * (4.0 / max(0.1, -mv.z));
+  v_depth = -mv.z;
+}`;
+
+  const FRAG = `#version 300 es
+precision highp float;
+in float v_depth;
+uniform vec3 u_color;
+out vec4 fragColor;
+void main(){
+  vec2 d = gl_PointCoord - 0.5;
+  float dist = length(d);
+  if(dist > 0.5) discard;
+  float alpha = smoothstep(0.5, 0.05, dist);
+  float fog = clamp(1.0 - (v_depth - 2.0) * 0.35, 0.25, 1.0);
+  fragColor = vec4(u_color * fog, alpha * fog);
+}`;
+
+  function compile(type, src){
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src); gl.compileShader(s);
+    if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)){
+      console.warn('mobius shader:', gl.getShaderInfoLog(s)); return null;
+    }
+    return s;
+  }
+  const vs = compile(gl.VERTEX_SHADER, VERT);
+  const fs = compile(gl.FRAGMENT_SHADER, FRAG);
+  if(!vs || !fs) return;
+
+  const prog = gl.createProgram();
+  gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog, gl.LINK_STATUS)){
+    console.warn('mobius link:', gl.getProgramInfoLog(prog)); return;
+  }
+  gl.useProgram(prog);
+
+  // Möbius parametric surface — u in [0, 2π], v in [-0.4, 0.4]
+  // x = (1 + (v/2) cos(u/2)) cos(u)
+  // y = (v/2) sin(u/2)
+  // z = (1 + (v/2) cos(u/2)) sin(u)
+  const N_U = 260, N_V = 26;
+  const positions = new Float32Array(N_U * N_V * 3);
+  let idx = 0;
+  for(let i = 0; i < N_U; i++){
+    const u = (i / N_U) * Math.PI * 2;
+    const cu = Math.cos(u), su = Math.sin(u);
+    const ch = Math.cos(u / 2), sh = Math.sin(u / 2);
+    for(let j = 0; j < N_V; j++){
+      const v = (j / (N_V - 1) - 0.5) * 0.8;
+      const r = 1 + v * ch * 0.5;
+      positions[idx++] = r * cu;
+      positions[idx++] = v * sh * 0.5;
+      positions[idx++] = r * su;
+    }
+  }
+
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+  const aPos = gl.getAttribLocation(prog, 'a_pos');
+  gl.enableVertexAttribArray(aPos);
+  gl.vertexAttribPointer(aPos, 3, gl.FLOAT, false, 0, 0);
+
+  const uView  = gl.getUniformLocation(prog, 'u_view');
+  const uProj  = gl.getUniformLocation(prog, 'u_proj');
+  const uSize  = gl.getUniformLocation(prog, 'u_size');
+  const uColor = gl.getUniformLocation(prog, 'u_color');
+  gl.uniform1f(uSize, 3.2);
+  gl.uniform3f(uColor, 0.784, 0.663, 0.431); // #c8a96e
+
+  // 4×4 matrix helpers (column-major)
+  function mul(a, b){
+    const r = new Float32Array(16);
+    for(let i = 0; i < 4; i++)
+      for(let j = 0; j < 4; j++){
+        let s = 0;
+        for(let k = 0; k < 4; k++) s += a[k*4+i] * b[j*4+k];
+        r[j*4+i] = s;
+      }
+    return r;
+  }
+  function rotY(a){
+    const c = Math.cos(a), s = Math.sin(a);
+    return new Float32Array([c,0,-s,0, 0,1,0,0, s,0,c,0, 0,0,0,1]);
+  }
+  function rotX(a){
+    const c = Math.cos(a), s = Math.sin(a);
+    return new Float32Array([1,0,0,0, 0,c,s,0, 0,-s,c,0, 0,0,0,1]);
+  }
+  function translate(x, y, z){
+    return new Float32Array([1,0,0,0, 0,1,0,0, 0,0,1,0, x,y,z,1]);
+  }
+  function perspective(fov, aspect, near, far){
+    const f = 1 / Math.tan(fov / 2);
+    return new Float32Array([
+      f/aspect, 0, 0, 0,
+      0, f, 0, 0,
+      0, 0, (far+near)/(near-far), -1,
+      0, 0, (2*far*near)/(near-far), 0
+    ]);
+  }
+
+  let tgtX = 0.35, tgtY = 0.0;
+  let curX = 0.35, curY = 0.0;
+  let dragging = false, lastMx = 0, lastMy = 0;
+
+  function onDown(e){
+    dragging = true;
+    const p = e.touches ? e.touches[0] : e;
+    lastMx = p.clientX; lastMy = p.clientY;
+    if(e.preventDefault) e.preventDefault();
+  }
+  function onMove(e){
+    if(!dragging) return;
+    const p = e.touches ? e.touches[0] : e;
+    const dx = p.clientX - lastMx;
+    const dy = p.clientY - lastMy;
+    tgtY += dx * 0.007;
+    tgtX = Math.max(-1.3, Math.min(1.3, tgtX + dy * 0.007));
+    lastMx = p.clientX; lastMy = p.clientY;
+    if(e.preventDefault) e.preventDefault();
+  }
+  function onUp(){ dragging = false; }
+
+  canvas.addEventListener('pointerdown', onDown);
+  window.addEventListener('pointermove', onMove);
+  window.addEventListener('pointerup',   onUp);
+  canvas.addEventListener('touchstart', onDown, { passive:false });
+  window.addEventListener('touchmove',  onMove, { passive:false });
+  window.addEventListener('touchend',   onUp);
+
+  let w = 0, h = 0, dpr = 1;
+  function resize(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    if(!w || !h) return;
+    canvas.width  = Math.floor(w * dpr);
+    canvas.height = Math.floor(h * dpr);
+    gl.viewport(0, 0, canvas.width, canvas.height);
+  }
+  resize();
+  window.addEventListener('resize', resize, { passive:true });
+
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+  gl.clearColor(0, 0, 0, 0);
+
+  let running = false, rafId = null, pageHidden = false;
+
+  function render(){
+    if(!running) return;
+    resize();
+    if(!w || !h){ rafId = requestAnimationFrame(render); return; }
+    gl.clear(gl.COLOR_BUFFER_BIT);
+
+    if(!dragging) tgtY += 0.0028;
+    curX += (tgtX - curX) * 0.09;
+    curY += (tgtY - curY) * 0.09;
+
+    const aspect = w / h;
+    const view = mul(translate(0, 0, -3.6), mul(rotX(curX), rotY(curY)));
+    const proj = perspective(Math.PI / 4, aspect, 0.1, 100);
+
+    gl.uniformMatrix4fv(uView, false, view);
+    gl.uniformMatrix4fv(uProj, false, proj);
+
+    gl.drawArrays(gl.POINTS, 0, N_U * N_V);
+    rafId = requestAnimationFrame(render);
+  }
+
+  function start(){ if(running || pageHidden) return; running = true; rafId = requestAnimationFrame(render); }
+  function stop(){ running = false; if(rafId){ cancelAnimationFrame(rafId); rafId = null; } }
+
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver(entries => {
+      for(const e of entries){
+        if(e.isIntersecting) start(); else stop();
+      }
+    }, { rootMargin: '80px' });
+    io.observe(canvas);
+  } else {
+    start();
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    pageHidden = document.hidden;
+    if(pageHidden) stop();
+  });
+})();
