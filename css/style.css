@@ -587,6 +587,11 @@ section { position:relative; z-index:2; }
 .ji-num  { font-size:.55rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:.4rem; }
 .ji-name { font-family:var(--serif); font-size:.95rem; font-weight:400; color:var(--text); }
 .ji-mail { font-size:.75rem; color:var(--dim); margin-top:.3rem; }
+.ji-mail a, .ji-name a {
+  color:inherit; border-bottom:1px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+.ji-mail a:hover, .ji-name a:hover { color:var(--gold); border-bottom-color:var(--gold); }
 
 /* ═══════════════════════════════════════════════════
    ACADEMIC — horizontal scroll
