@@ -1420,3 +1420,290 @@ void main(){
   next.addEventListener('click', () => { idx = (idx + 1) % discourses.length; render(); });
   render();
 })();
+
+/* ── BORROMEAN 3D — three interlocked rings (WebGL2) ── */
+(function initBorromean3D(){
+  if(prefersReducedMotion || lowPerf) return;
+  const stage = document.getElementById('borr3d-stage');
+  if(!stage) return;
+
+  const canvas = document.createElement('canvas');
+  canvas.setAttribute('aria-hidden', 'true');
+  stage.appendChild(canvas);
+
+  const gl = canvas.getContext('webgl2', { antialias:true, premultipliedAlpha:false });
+  if(!gl){ stage.removeChild(canvas); return; }
+
+  const VERT = `#version 300 es
+in vec3 a_pos;
+in vec3 a_color;
+uniform mat4 u_view;
+uniform mat4 u_proj;
+uniform float u_size;
+uniform float u_dpr;
+out vec3 v_color;
+out float v_depth;
+void main(){
+  vec4 mv = u_view * vec4(a_pos, 1.0);
+  gl_Position = u_proj * mv;
+  gl_PointSize = u_size * u_dpr * (5.0 / max(0.1, -mv.z));
+  v_color = a_color;
+  v_depth = -mv.z;
+}`;
+
+  const FRAG = `#version 300 es
+precision highp float;
+in vec3 v_color;
+in float v_depth;
+out vec4 fragColor;
+void main(){
+  vec2 d = gl_PointCoord - 0.5;
+  float dist = length(d);
+  if(dist > 0.5) discard;
+  float alpha = smoothstep(0.5, 0.05, dist);
+  float fog = clamp(1.0 - (v_depth - 1.5) * 0.10, 0.7, 1.0);
+  fragColor = vec4(v_color * fog, alpha);
+}`;
+
+  function compile(t, s){
+    const sh = gl.createShader(t); gl.shaderSource(sh, s); gl.compileShader(sh);
+    if(!gl.getShaderParameter(sh, gl.COMPILE_STATUS)){
+      console.warn('borr3d shader:', gl.getShaderInfoLog(sh)); return null;
+    }
+    return sh;
+  }
+  const vs = compile(gl.VERTEX_SHADER, VERT);
+  const fs = compile(gl.FRAGMENT_SHADER, FRAG);
+  if(!vs || !fs) return;
+  const prog = gl.createProgram();
+  gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog, gl.LINK_STATUS)){
+    console.warn('borr3d link:', gl.getProgramInfoLog(prog)); return;
+  }
+  gl.useProgram(prog);
+
+  // Three rings, each tilted differently → Borromean configuration
+  const R = 0.92, r = 0.06;
+  const N_U = 220, N_V = 14;
+  const points  = N_U * N_V;
+  const totalPts = points * 3;
+  const positions = new Float32Array(totalPts * 3);
+  const colors    = new Float32Array(totalPts * 3);
+
+  const rings = [
+    { axis:'x', angle:  Math.PI/2.6, color: [0.80, 0.66, 0.34] }, // Réel (gold)
+    { axis:'y', angle:  Math.PI/2.6, color: [0.45, 0.55, 0.72] }, // Symbolique (slate)
+    { axis:'z', angle:  Math.PI/2.6, color: [0.61, 0.40, 0.50] }  // Imaginaire (mauve)
+  ];
+
+  function rotPoint(p, axis, a){
+    const c = Math.cos(a), s = Math.sin(a);
+    const x = p[0], y = p[1], z = p[2];
+    if(axis === 'x') return [x, c*y - s*z, s*y + c*z];
+    if(axis === 'y') return [c*x + s*z, y, -s*x + c*z];
+    return [c*x - s*y, s*x + c*y, z];
+  }
+
+  let idx = 0;
+  for(let ringIdx = 0; ringIdx < 3; ringIdx++){
+    const ring = rings[ringIdx];
+    const tilt = ringIdx * (Math.PI * 2 / 3);
+    for(let i = 0; i < N_U; i++){
+      const u = (i / N_U) * Math.PI * 2;
+      const cu = Math.cos(u), su = Math.sin(u);
+      for(let j = 0; j < N_V; j++){
+        const v = (j / N_V) * Math.PI * 2;
+        const cv = Math.cos(v), sv = Math.sin(v);
+        let x = (R + r * cv) * cu;
+        let y = (R + r * cv) * su;
+        let z = r * sv;
+        const cz = Math.cos(tilt), sz = Math.sin(tilt);
+        const x2 = cz * x - sz * y;
+        const y2 = sz * x + cz * y;
+        x = x2; y = y2;
+        const tilted = rotPoint([x, y, z], ring.axis, ring.angle);
+        positions[idx*3]     = tilted[0];
+        positions[idx*3 + 1] = tilted[1];
+        positions[idx*3 + 2] = tilted[2];
+        colors[idx*3]     = ring.color[0];
+        colors[idx*3 + 1] = ring.color[1];
+        colors[idx*3 + 2] = ring.color[2];
+        idx++;
+      }
+    }
+  }
+
+  const posBuf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, posBuf);
+  gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+  const aPos = gl.getAttribLocation(prog, 'a_pos');
+  gl.enableVertexAttribArray(aPos);
+  gl.vertexAttribPointer(aPos, 3, gl.FLOAT, false, 0, 0);
+
+  const colBuf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, colBuf);
+  gl.bufferData(gl.ARRAY_BUFFER, colors, gl.STATIC_DRAW);
+  const aCol = gl.getAttribLocation(prog, 'a_color');
+  gl.enableVertexAttribArray(aCol);
+  gl.vertexAttribPointer(aCol, 3, gl.FLOAT, false, 0, 0);
+
+  const uView  = gl.getUniformLocation(prog, 'u_view');
+  const uProj  = gl.getUniformLocation(prog, 'u_proj');
+  const uSize  = gl.getUniformLocation(prog, 'u_size');
+  const uDpr   = gl.getUniformLocation(prog, 'u_dpr');
+  gl.uniform1f(uSize, 3.6);
+
+  function mul(a, b){
+    const out = new Float32Array(16);
+    for(let i = 0; i < 4; i++)
+      for(let j = 0; j < 4; j++){
+        let s = 0;
+        for(let k = 0; k < 4; k++) s += a[k*4+i] * b[j*4+k];
+        out[j*4+i] = s;
+      }
+    return out;
+  }
+  const rotYm = a => { const c=Math.cos(a),s=Math.sin(a); return new Float32Array([c,0,-s,0, 0,1,0,0, s,0,c,0, 0,0,0,1]); };
+  const rotXm = a => { const c=Math.cos(a),s=Math.sin(a); return new Float32Array([1,0,0,0, 0,c,s,0, 0,-s,c,0, 0,0,0,1]); };
+  const trn   = (x,y,z) => new Float32Array([1,0,0,0, 0,1,0,0, 0,0,1,0, x,y,z,1]);
+  const persp = (fov, asp, n, f) => {
+    const F = 1/Math.tan(fov/2);
+    return new Float32Array([F/asp,0,0,0, 0,F,0,0, 0,0,(f+n)/(n-f),-1, 0,0,(2*f*n)/(n-f),0]);
+  };
+
+  let tx = 0.25, ty = 0.0, cx = 0.25, cy = 0.0;
+  let dragging = false, lastX = 0, lastY = 0;
+  function onDown(e){ dragging = true; const p = e.touches?e.touches[0]:e; lastX = p.clientX; lastY = p.clientY; if(e.preventDefault) e.preventDefault(); }
+  function onMove(e){ if(!dragging) return; const p = e.touches?e.touches[0]:e;
+    ty += (p.clientX - lastX) * 0.008;
+    tx = Math.max(-1.3, Math.min(1.3, tx + (p.clientY - lastY) * 0.008));
+    lastX = p.clientX; lastY = p.clientY;
+    if(e.preventDefault) e.preventDefault();
+  }
+  function onUp(){ dragging = false; }
+  canvas.addEventListener('pointerdown', onDown);
+  window.addEventListener('pointermove', onMove);
+  window.addEventListener('pointerup', onUp);
+  canvas.addEventListener('touchstart', onDown, {passive:false});
+  window.addEventListener('touchmove', onMove, {passive:false});
+  window.addEventListener('touchend', onUp);
+
+  let w = 0, h = 0, dpr = 1;
+  function resize(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    if(!w || !h) return;
+    canvas.width = Math.floor(w * dpr);
+    canvas.height = Math.floor(h * dpr);
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.uniform1f(uDpr, dpr);
+  }
+  resize();
+  window.addEventListener('resize', resize, {passive:true});
+
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+  gl.clearColor(0, 0, 0, 0);
+
+  let running = false, rafId = null, pageHidden = false;
+  function render(){
+    if(!running) return;
+    resize();
+    if(!w || !h){ rafId = requestAnimationFrame(render); return; }
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    if(!dragging) ty += 0.0025;
+    cx += (tx - cx) * 0.09;
+    cy += (ty - cy) * 0.09;
+    const view = mul(trn(0, 0, -2.8), mul(rotXm(cx), rotYm(cy)));
+    const proj = persp(Math.PI/3.4, w/h, 0.1, 100);
+    gl.uniformMatrix4fv(uView, false, view);
+    gl.uniformMatrix4fv(uProj, false, proj);
+    gl.drawArrays(gl.POINTS, 0, totalPts);
+    rafId = requestAnimationFrame(render);
+  }
+  function start(){ if(running || pageHidden) return; running = true; rafId = requestAnimationFrame(render); }
+  function stop(){ running = false; if(rafId){ cancelAnimationFrame(rafId); rafId = null; } }
+
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver(entries => {
+      for(const e of entries){ if(e.isIntersecting) start(); else stop(); }
+    }, { rootMargin: '80px' });
+    io.observe(canvas);
+  } else { start(); }
+  document.addEventListener('visibilitychange', () => {
+    pageHidden = document.hidden;
+    if(pageHidden) stop();
+  });
+})();
+
+/* ── LE GRAPHE DU DÉSIR — interactive node info ── */
+(function initGraphe(){
+  const symEl  = document.getElementById('graphe-symbol');
+  const nameEl = document.getElementById('graphe-name');
+  const defEl  = document.getElementById('graphe-def');
+  if(!symEl || !nameEl || !defEl) return;
+
+  const nodes = {
+    delta: {
+      symbol: 'Δ',
+      name: 'Delta — Mitik Özne',
+      def: 'Henüz dile düşmemiş, gösteren tarafından henüz kesilmemiş "ham" özne. Lacan\'ın kurgusal başlangıç noktası — gerçek bir an değil, retroaktif olarak varsayılan bir konum.'
+    },
+    A: {
+      symbol: 'A',
+      name: 'Le Grand Autre — Büyük Öteki',
+      def: 'Dilin, yasanın ve gösterenler dizgesinin yeri. Bir kişi değil, bir <em>konum</em>. Özne dilin bu hazinesine doğar; konuşurken oradan ödünç alır.'
+    },
+    sA: {
+      symbol: 's(A)',
+      name: 'Le Signifié — Öteki\'nin Gösterileni',
+      def: 'Gösterenler zincirinin retroaktif olarak ürettiği anlam etkisi. Söz tamamlandıktan sonra geriye dönüp "şimdi bu demekmiş" diyebildiğimiz nokta.'
+    },
+    dollar: {
+      symbol: '$',
+      name: 'Le Sujet Barré — Bölünmüş Özne',
+      def: 'Dile girmiş, gösteren tarafından kesilmiş özne. Söylediği ile demek istediği arasındaki yarık — <em>bilinçdışı tam burada konuşur</em>.'
+    },
+    m: {
+      symbol: 'm',
+      name: 'moi — Ben (Ego)',
+      def: 'İmgesel düzenin kurduğu "ben." Bir yanılsama yapısı — kişi kendini bütünleşmiş bir birim olarak tanır, oysa zaten bölünmüştür.'
+    },
+    ia: {
+      symbol: 'i(a)',
+      name: 'image — Aynadaki Öteki\'nin İmgesi',
+      def: 'Ayna evresinde özdeşleşilen küçük öteki imgesi. <em>m</em> ile <em>i(a)</em> arasındaki kısa devre = imgesel düzenin dolaşımı.'
+    },
+    IA: {
+      symbol: 'I(A)',
+      name: 'Idéal du moi — Ben İdeali',
+      def: 'Öteki\'nin (büyük A) öznede ürettiği gösteren konum. "Beni nasıl görmen gerektiğini söyle bana" — özne bu konumdan kendini değerlendirir.'
+    }
+  };
+
+  const groups = document.querySelectorAll('.gr-node');
+  let active = null;
+
+  function setActive(key){
+    const d = nodes[key];
+    if(!d) return;
+    symEl.textContent = d.symbol;
+    nameEl.textContent = d.name;
+    defEl.innerHTML = d.def;
+    groups.forEach(g => g.classList.toggle('active', g.dataset.node === key));
+    active = key;
+  }
+
+  groups.forEach(g => {
+    const key = g.dataset.node;
+    g.addEventListener('mouseenter', () => setActive(key));
+    g.addEventListener('focus',      () => setActive(key));
+    g.addEventListener('click',      () => setActive(key));
+    g.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); setActive(key); }
+    });
+  });
+
+  // İlk açılışta delta aktif
+  setActive('delta');
+})();

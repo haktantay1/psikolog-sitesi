@@ -411,8 +411,24 @@ section { position:relative; z-index:2; }
   display:grid; grid-template-columns:1fr 1fr;
   gap:7rem; align-items:center; margin-bottom:7rem;
 }
-.borr-c { display:flex; justify-content:center; align-items:center; }
-.borr-svg { width:320px; height:320px; }
+.borr-c {
+  display:flex; flex-direction:column; align-items:center; gap:1rem;
+  position:relative;
+}
+#borr3d-stage {
+  width:380px; height:380px; max-width:100%;
+  position:relative; overflow:hidden;
+  cursor:grab; touch-action:none;
+}
+#borr3d-stage:active { cursor:grabbing; }
+#borr3d-stage canvas { width:100%; height:100%; display:block; }
+.borr3d-hint {
+  font-size:.58rem; letter-spacing:.32em; text-transform:uppercase;
+  color:var(--dim);
+}
+@media (max-width:768px){
+  #borr3d-stage { width:300px; height:300px; }
+}
 
 .borr-info h3 {
   font-family:var(--serif); font-size:clamp(1.8rem,3vw,2.8rem);
@@ -1094,6 +1110,99 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
   .mesh-breath { height:26vh; min-height:220px; }
   .mesh-breath .mesh-blob { width:75vw; }
   .mesh-breath .mb3, .mesh-breath .mb4 { width:60vw; }
+}
+
+/* ═══════════════════════════════════════════════════
+   LE GRAPHE DU DÉSIR (Lacan's Graph of Desire)
+═══════════════════════════════════════════════════ */
+#graphe {
+  position:relative; overflow:hidden;
+  padding:7rem 2rem;
+  background:#070710;
+}
+#graphe::before, #graphe::after {
+  content:""; position:absolute; left:0; right:0; height:80px;
+  pointer-events:none; z-index:2;
+}
+#graphe::before { top:0;    background:linear-gradient(to bottom, var(--bg2) 0%, transparent 100%); }
+#graphe::after  { bottom:0; background:linear-gradient(to top,    var(--bg)  0%, transparent 100%); }
+
+#graphe .wrap { position:relative; z-index:3; }
+#graphe .sec-label { color:rgba(200,169,110,.85); }
+#graphe .sec-title { color:#F2E6CC; text-shadow: 0 2px 24px rgba(0,0,0,.4); }
+#graphe .sec-title em { color:#D4B777; font-style:italic; }
+.graphe-intro {
+  font-family:var(--serif); font-style:italic;
+  font-size:1.05rem; line-height:1.75;
+  color:rgba(242,230,204,.7);
+  max-width:680px; margin-bottom:4rem;
+}
+.graphe-intro em { color:#D4B777; font-style:italic; }
+
+.graphe-layout {
+  display:grid; grid-template-columns:1.4fr 1fr;
+  gap:3.5rem; align-items:center;
+}
+.graphe-stage {
+  position:relative;
+  background:radial-gradient(ellipse at 50% 50%, rgba(200,169,110,.06) 0%, transparent 70%);
+  padding:1.5rem;
+}
+.graphe-svg { width:100%; height:auto; display:block; }
+
+.gr-node { cursor:pointer; }
+.gr-hit  { fill:transparent; }
+.gr-dot  { fill:#c8a96e; transition: r .25s var(--ease), fill .25s; }
+.gr-label {
+  fill:#F2E6CC;
+  font-family:'Cormorant Garamond', serif;
+  font-size:18px; font-style:italic;
+  text-anchor:middle;
+  transition: fill .25s;
+}
+.gr-node:hover .gr-dot,
+.gr-node:focus-visible .gr-dot,
+.gr-node.active .gr-dot {
+  r:9; fill:#F2E6CC;
+  filter: drop-shadow(0 0 8px rgba(200,169,110,.9));
+}
+.gr-node:hover .gr-label,
+.gr-node:focus-visible .gr-label,
+.gr-node.active .gr-label {
+  fill:#D4B777;
+}
+.gr-node:focus-visible { outline:none; }
+
+.graphe-info {
+  background:rgba(200,169,110,.04);
+  border-left:2px solid rgba(200,169,110,.4);
+  padding:2.5rem 2.2rem;
+}
+.graphe-symbol {
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:clamp(2.8rem, 5vw, 4.2rem);
+  color:#D4B777; line-height:1;
+  margin-bottom:1rem;
+}
+.graphe-name {
+  font-size:.65rem; letter-spacing:.32em; text-transform:uppercase;
+  color:#F2E6CC; margin-bottom:1.6rem;
+}
+.graphe-def {
+  font-size:.96rem; line-height:1.75;
+  color:rgba(242,230,204,.75);
+  font-family:var(--sans); font-weight:300;
+}
+.graphe-def em { color:#D4B777; font-style:italic; }
+.graphe-hint {
+  margin-top:2rem;
+  font-size:.6rem; letter-spacing:.32em; text-transform:uppercase;
+  color:rgba(200,169,110,.45);
+}
+
+@media (max-width:960px){
+  .graphe-layout { grid-template-columns:1fr; gap:2.5rem; }
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1784,7 +1893,7 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
   }
   #smoke-canvas, #hero-canvas, #particle-canvas,
   #objeta-canvas, #tunnel-canvas, #sparkles-canvas,
-  #mobius-stage { display: none !important; }
+  #mobius-stage, #borr3d-stage { display: none !important; }
   .mesh-blob { animation: none !important; }
   #hero { background: var(--hero-bg) !important; }
   .hero-orb { display: none !important; }

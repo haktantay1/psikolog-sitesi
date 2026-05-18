@@ -270,31 +270,11 @@
       Görüşme bir çözüm sunmaz — bir alan açar. Konuşmanın, sessizliğin ve anlam kaymaların içinde özne kendi arzusunun izini sürer. Analitik dinleyiş söylemin ötesinde neyin söylendiğine kulak verir.
     </p>
 
-    <!-- Borromean -->
+    <!-- Borromean 3D (WebGL2) -->
     <div class="borr-grid">
       <div class="borr-c rv">
-        <svg class="borr-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-label="Borromean Düğümü — RSI">
-          <defs>
-            <filter id="gw">
-              <feGaussianBlur stdDeviation="4" result="b"/>
-              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-          <circle cx="150" cy="105" r="74" fill="none" stroke="#c8a96e" stroke-width="1.3" opacity=".85" filter="url(#gw)">
-            <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="24s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="105" cy="180" r="74" fill="none" stroke="#8b9dc3" stroke-width="1.3" opacity=".85" filter="url(#gw)">
-            <animateTransform attributeName="transform" type="rotate" from="360 150 150" to="0 150 150" dur="30s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="195" cy="180" r="74" fill="none" stroke="#9c7a8b" stroke-width="1.3" opacity=".85" filter="url(#gw)">
-            <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="38s" repeatCount="indefinite"/>
-          </circle>
-          <text x="150" y="50"  fill="#c8a96e" font-family="Cormorant Garamond,serif" font-size="11" text-anchor="middle" font-style="italic" opacity=".9">Réel</text>
-          <text x="46"  y="212" fill="#8b9dc3" font-family="Cormorant Garamond,serif" font-size="11" text-anchor="middle" font-style="italic" opacity=".9">Symbolique</text>
-          <text x="254" y="212" fill="#9c7a8b" font-family="Cormorant Garamond,serif" font-size="11" text-anchor="middle" font-style="italic" opacity=".9">Imaginaire</text>
-          <circle cx="150" cy="154" r="3.5" fill="#ede8e0" opacity=".45"/>
-          <circle cx="150" cy="154" r="8"   fill="none"   stroke="rgba(237,232,224,.1)" stroke-width="1"/>
-        </svg>
+        <div id="borr3d-stage" aria-label="Borromean Düğümü 3D — Réel · Symbolique · Imaginaire"></div>
+        <div class="borr3d-hint">Sürükle</div>
       </div>
       <div class="borr-info">
         <h3 class="rv">Borromean<br>Düğüm</h3>
@@ -568,6 +548,108 @@
           <span class="dw-counter" id="dw-counter">1 / 4</span>
           <button type="button" class="dw-btn" id="dw-next" aria-label="Sonraki söylem">›</button>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ LE GRAPHE DU DÉSIR ══════════ -->
+<section id="graphe" aria-label="Le Graphe du Désir">
+  <div class="wrap">
+    <p class="sec-label rv">Lacan · Écrits</p>
+    <h2 class="sec-title rv d1">Le Graphe du <em>Désir</em></h2>
+    <p class="graphe-intro rv d2"><em>"Subversion du sujet"</em> yazısında geliştirilen şema: öznenin söylem içindeki yolculuğu, gösteren zincirinin onu nasıl kestiği ve <em>$</em>'ın nasıl ortaya çıktığı. Bir düğümün üstüne gel.</p>
+
+    <div class="graphe-layout rv d3">
+      <div class="graphe-stage">
+        <svg class="graphe-svg" viewBox="0 0 740 460" aria-hidden="true">
+          <defs>
+            <marker id="grA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill="#c8a96e"/>
+            </marker>
+            <filter id="grGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="3" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- Signifier chain — sağdan sola (S' → S) -->
+          <path class="gr-chain" d="M 670 130 L 70 130"
+                stroke="#c8a96e" stroke-width="1.4" fill="none"
+                marker-end="url(#grA)" opacity=".75"/>
+          <text x="688" y="118" fill="#c8a96e" font-family="Cormorant Garamond,serif"
+                font-style="italic" font-size="13" text-anchor="start">S′</text>
+          <text x="56"  y="118" fill="#c8a96e" font-family="Cormorant Garamond,serif"
+                font-style="italic" font-size="13" text-anchor="end">S</text>
+
+          <!-- Subject's trajectory — sağdan başlayıp soldan çıkan at nalı -->
+          <path class="gr-horseshoe"
+                d="M 620 380 Q 600 250 480 130 Q 370 30 260 130 Q 160 240 120 380"
+                stroke="#c8a96e" stroke-width="1.6" fill="none"
+                opacity=".9" filter="url(#grGlow)"/>
+
+          <!-- Vector du désir — küçük ok aşağı doğru -->
+          <path class="gr-desire" d="M 370 60 L 370 100"
+                stroke="rgba(200,169,110,.5)" stroke-width="1" fill="none"
+                marker-end="url(#grA)" stroke-dasharray="3 3"/>
+          <text x="382" y="78" fill="rgba(200,169,110,.7)" font-family="Cormorant Garamond,serif"
+                font-style="italic" font-size="12">d</text>
+
+          <!-- Ego loop: i(a) ↔ m  -->
+          <line class="gr-loop" x1="300" y1="280" x2="420" y2="280"
+                stroke="rgba(200,169,110,.35)" stroke-width="1" stroke-dasharray="2 4"/>
+
+          <!-- ───── NODES ───── -->
+          <!-- Δ -->
+          <g class="gr-node" data-node="delta" tabindex="0" role="button" aria-label="Delta">
+            <circle cx="620" cy="380" r="22" class="gr-hit"/>
+            <circle cx="620" cy="380" r="6"  class="gr-dot"/>
+            <text   x="620"  y="412" class="gr-label">Δ</text>
+          </g>
+          <!-- A -->
+          <g class="gr-node" data-node="A" tabindex="0" role="button" aria-label="Big Other">
+            <circle cx="480" cy="130" r="22" class="gr-hit"/>
+            <circle cx="480" cy="130" r="6"  class="gr-dot"/>
+            <text   x="480"  y="100" class="gr-label">A</text>
+          </g>
+          <!-- s(A) -->
+          <g class="gr-node" data-node="sA" tabindex="0" role="button" aria-label="signified of A">
+            <circle cx="260" cy="130" r="22" class="gr-hit"/>
+            <circle cx="260" cy="130" r="6"  class="gr-dot"/>
+            <text   x="260"  y="100" class="gr-label">s(A)</text>
+          </g>
+          <!-- $ -->
+          <g class="gr-node" data-node="dollar" tabindex="0" role="button" aria-label="Barred Subject">
+            <circle cx="120" cy="380" r="22" class="gr-hit"/>
+            <circle cx="120" cy="380" r="6"  class="gr-dot"/>
+            <text   x="120"  y="412" class="gr-label">$</text>
+          </g>
+          <!-- m -->
+          <g class="gr-node" data-node="m" tabindex="0" role="button" aria-label="moi">
+            <circle cx="300" cy="280" r="18" class="gr-hit"/>
+            <circle cx="300" cy="280" r="5"  class="gr-dot"/>
+            <text   x="300"  y="310" class="gr-label">m</text>
+          </g>
+          <!-- i(a) -->
+          <g class="gr-node" data-node="ia" tabindex="0" role="button" aria-label="image of a">
+            <circle cx="420" cy="280" r="18" class="gr-hit"/>
+            <circle cx="420" cy="280" r="5"  class="gr-dot"/>
+            <text   x="420"  y="310" class="gr-label">i(a)</text>
+          </g>
+          <!-- I(A) — ego ideal, sol alt -->
+          <g class="gr-node" data-node="IA" tabindex="0" role="button" aria-label="ego ideal">
+            <circle cx="60"  cy="380" r="18" class="gr-hit"/>
+            <circle cx="60"  cy="380" r="5"  class="gr-dot"/>
+            <text   x="60"   y="412" class="gr-label">I(A)</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="graphe-info" id="graphe-info" aria-live="polite">
+        <div class="graphe-symbol" id="graphe-symbol">Δ</div>
+        <div class="graphe-name"   id="graphe-name">Delta — Mitik Özne</div>
+        <p class="graphe-def"      id="graphe-def">Henüz dile düşmemiş, gösteren tarafından henüz kesilmemiş "ham" özne. Lacan'ın kurgusal başlangıç noktası — gerçek bir an değil, retroaktif olarak varsayılan bir konum.</p>
+        <p class="graphe-hint">Bir düğüme tıkla · sürükle</p>
       </div>
     </div>
   </div>
