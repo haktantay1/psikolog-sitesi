@@ -1591,36 +1591,73 @@ void main(){
   setActive('delta');
 })();
 
-/* ── AYNA EVRESİ — mirror cursor inside .mirror-zone ── */
+/* ── AYNA EVRESİ — mirror cursor (mouse + touch) ── */
 (function initMirrorCursor(){
-  if(window.matchMedia('(hover:none), (pointer:coarse)').matches) return;
   const mirror = document.getElementById('cursor-mirror');
   const zone   = document.querySelector('.mirror-zone');
   if(!mirror || !zone) return;
+  const isTouch = window.matchMedia('(hover:none), (pointer:coarse)').matches;
   let tx = 0, ty = 0, cx = 0, cy = 0, inside = false;
 
-  zone.addEventListener('mouseenter', () => {
-    inside = true;
-    mirror.classList.add('show');
-  });
-  zone.addEventListener('mouseleave', () => {
-    inside = false;
-    mirror.classList.remove('show');
-  });
-  document.addEventListener('mousemove', e => {
-    if(!inside) return;
+  function show(){ inside = true;  mirror.classList.add('show'); }
+  function hide(){ inside = false; mirror.classList.remove('show'); }
+  function track(clientX, clientY){
     const r = zone.getBoundingClientRect();
     const axis = r.left + r.width / 2;
-    tx = 2 * axis - e.clientX;
-    ty = e.clientY;
+    tx = 2 * axis - clientX;
+    ty = clientY;
+  }
+
+  // Desktop: mouse hover + move
+  zone.addEventListener('mouseenter', show);
+  zone.addEventListener('mouseleave', hide);
+  document.addEventListener('mousemove', e => {
+    if(inside) track(e.clientX, e.clientY);
   }, { passive:true });
 
+  // Touch: parmak zone'a değdiğinde göster, hareketle takip et
+  function pointInZone(x, y){
+    const r = zone.getBoundingClientRect();
+    return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+  }
+  zone.addEventListener('touchstart', e => {
+    const t = e.touches[0];
+    if(pointInZone(t.clientX, t.clientY)){ show(); track(t.clientX, t.clientY); }
+  }, { passive:true });
+  zone.addEventListener('touchmove', e => {
+    const t = e.touches[0];
+    if(pointInZone(t.clientX, t.clientY)){
+      if(!inside) show();
+      track(t.clientX, t.clientY);
+    } else if(inside) hide();
+  }, { passive:true });
+  zone.addEventListener('touchend',  hide);
+  zone.addEventListener('touchcancel', hide);
+
+  // Touch'ta görünür ek bir ipucu: küçük otomatik salınım (boşken)
+  // → kullanıcı sayfayı kaydırırken bile bir hareket görsün
+  let autoT = 0;
   (function tick(){
     if(inside){
       cx += (tx - cx) * 0.18;
       cy += (ty - cy) * 0.18;
       mirror.style.left = cx + 'px';
       mirror.style.top  = cy + 'px';
+    } else if(isTouch){
+      // Boşta yumuşak salınım: zone'un kenarında ileri-geri
+      autoT += 0.012;
+      const r = zone.getBoundingClientRect();
+      if(r.bottom > 0 && r.top < window.innerHeight){
+        const axis = r.left + r.width / 2;
+        const offset = Math.sin(autoT) * (r.width * 0.18);
+        cx = axis + offset;
+        cy = r.top + r.height / 2;
+        mirror.style.left = cx + 'px';
+        mirror.style.top  = cy + 'px';
+        mirror.classList.add('show');
+      } else {
+        mirror.classList.remove('show');
+      }
     }
     requestAnimationFrame(tick);
   })();
