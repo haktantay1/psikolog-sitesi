@@ -1127,9 +1127,10 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
 }
 #cursor-mirror.show { opacity:.85; }
 
-/* Touch'ta hem psi-cursor hem mirror cursor kapalı zaten */
+/* Touch'ta sadece nokta görünümü — biraz daha küçük */
 @media (hover:none), (pointer:coarse) {
-  #cursor-mirror { display:none !important; }
+  #cursor-mirror { font-size:1.15rem; opacity:0; transition: opacity .4s var(--ease); }
+  #cursor-mirror.show { opacity:.78; }
 }
 
 /* ═══════════════════════════════════════════════════
