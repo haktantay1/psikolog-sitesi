@@ -1329,3 +1329,94 @@ void main(){
     }, 2300);
   });
 })();
+
+/* ── ÖZNENİN DOĞUŞU — scroll-driven 5-stage SVG ── */
+(function initSubjectBirth(){
+  if(prefersReducedMotion) return;
+  const stage = document.getElementById('sb-stage');
+  if(!stage) return;
+  let last = -1;
+  function update(){
+    const r = stage.getBoundingClientRect();
+    const vh = window.innerHeight;
+    // 0 ↔ 1 oranı: stage'in alt yarısı ekrana girdikçe 0 → 1
+    const passed = vh - r.top;
+    const total  = r.height + vh * 0.7;
+    const p = Math.max(0, Math.min(1, passed / total));
+    // 0 → 4 arası 5 sahne
+    let s = Math.floor(p * 4.5);
+    if(s > 4) s = 4;
+    if(s !== last){ stage.setAttribute('data-stage', String(s)); last = s; }
+  }
+  update();
+  window.addEventListener('scroll', update, { passive:true });
+  window.addEventListener('resize', update, { passive:true });
+})();
+
+/* ── DÖRT SÖYLEM — interactive matheme rotator ── */
+(function initDiscourses(){
+  const wheel = document.getElementById('dw-wheel');
+  if(!wheel) return;
+  const nameEl    = document.getElementById('dw-name');
+  const formulaEl = document.getElementById('dw-formula');
+  const descEl    = document.getElementById('dw-desc');
+  const counter   = document.getElementById('dw-counter');
+  const prev      = document.getElementById('dw-prev');
+  const next      = document.getElementById('dw-next');
+  const slots     = {
+    tl: wheel.querySelector('[data-slot="tl"]'),
+    tr: wheel.querySelector('[data-slot="tr"]'),
+    bl: wheel.querySelector('[data-slot="bl"]'),
+    br: wheel.querySelector('[data-slot="br"]')
+  };
+
+  // Lacan'ın 4 söylemi — pozisyon: TL=Etken, TR=Öteki, BL=Hakikat, BR=Üretim
+  const discourses = [
+    {
+      name: 'Efendi Söylemi',
+      formula: '<em>S<sub>1</sub> → S<sub>2</sub></em> &nbsp;·&nbsp; <em>$ / a</em>',
+      mathemes: { tl:'S<sub>1</sub>', tr:'S<sub>2</sub>', bl:'$', br:'a' },
+      desc: 'Egemen gösteren (S<sub>1</sub>) bilgiye (S<sub>2</sub>) buyurur; özne ($) hakikat olarak gizlenir, geriye <em>objet a</em> (artı-keyif) kalır. Tarihin söylemi.'
+    },
+    {
+      name: 'Üniversite Söylemi',
+      formula: '<em>S<sub>2</sub> → a</em> &nbsp;·&nbsp; <em>S<sub>1</sub> / $</em>',
+      mathemes: { tl:'S<sub>2</sub>', tr:'a', bl:'S<sub>1</sub>', br:'$' },
+      desc: 'Sistematik bilgi (S<sub>2</sub>) <em>objet a</em>’ya yönelir; ardındaki egemen gösteren (S<sub>1</sub>) gizlenir, ürünü bölünmüş öznedir. Tekno-bürokratik söylem.'
+    },
+    {
+      name: 'Histerik Söylemi',
+      formula: '<em>$ → S<sub>1</sub></em> &nbsp;·&nbsp; <em>a / S<sub>2</sub></em>',
+      mathemes: { tl:'$', tr:'S<sub>1</sub>', bl:'a', br:'S<sub>2</sub>' },
+      desc: 'Bölünmüş özne ($) efendiye (S<sub>1</sub>) soru sorar: "Sen bana ne diyorsun?" Hakikat <em>objet a</em>’dadır; bilgi (S<sub>2</sub>) sürecin üretimidir.'
+    },
+    {
+      name: 'Analist Söylemi',
+      formula: '<em>a → $</em> &nbsp;·&nbsp; <em>S<sub>2</sub> / S<sub>1</sub></em>',
+      mathemes: { tl:'a', tr:'$', bl:'S<sub>2</sub>', br:'S<sub>1</sub>' },
+      desc: 'Analist <em>objet a</em>’yı işgal eder; öznenin ($) yeni bir gösteren (S<sub>1</sub>) üretmesine zemin açar. Bilgi (S<sub>2</sub>) hakikat olarak konumlanır.'
+    }
+  ];
+
+  let idx = 0;
+  function render(){
+    const d = discourses[idx];
+    // Mathemleri yumuşak değiş
+    Object.keys(slots).forEach(k => {
+      const el = slots[k];
+      el.classList.add('fade');
+    });
+    setTimeout(() => {
+      Object.keys(slots).forEach(k => slots[k].innerHTML = d.mathemes[k]);
+      Object.keys(slots).forEach(k => slots[k].classList.remove('fade'));
+    }, 280);
+
+    nameEl.textContent  = d.name;
+    formulaEl.innerHTML = d.formula;
+    descEl.innerHTML    = d.desc;
+    counter.textContent = (idx + 1) + ' / ' + discourses.length;
+  }
+  prev.addEventListener('click', () => { idx = (idx - 1 + discourses.length) % discourses.length; render(); });
+  next.addEventListener('click', () => { idx = (idx + 1) % discourses.length; render(); });
+  render();
+})();
