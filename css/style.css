@@ -1097,6 +1097,162 @@ button.srail-item { cursor:pointer; padding:0; font:inherit; }
 }
 
 /* ═══════════════════════════════════════════════════
+   ÖZNENİN DOĞUŞU (subject birth)
+═══════════════════════════════════════════════════ */
+#subject-birth { background:var(--bg); }
+.sb-wrap {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:5rem; align-items:center;
+}
+.sb-text { max-width:520px; }
+.sb-steps {
+  list-style:none; padding:0; margin:3rem 0 0;
+  display:flex; flex-direction:column; gap:1.6rem;
+}
+.sb-step {
+  font-family:var(--serif); font-size:1.1rem; line-height:1.6;
+  color:var(--mid); display:flex; gap:1.2rem; align-items:baseline;
+}
+.sb-step em { color:var(--gold); font-style:italic; font-weight:500; }
+.sb-num {
+  font-size:.6rem; letter-spacing:.32em; color:var(--gold);
+  flex-shrink:0; padding-top:.2rem; min-width:1.8em;
+}
+.sb-stage {
+  position:relative;
+  aspect-ratio:1; max-width:440px; margin:0 auto;
+}
+.sb-svg { width:100%; height:100%; }
+
+.sb-dot,
+.sb-ring, .sb-ring-glow,
+.sb-bar, .sb-S, .sb-label-final {
+  opacity:0; transition: opacity .8s var(--ease), transform .8s var(--ease), stroke-dashoffset 1.4s var(--ease);
+  transform-origin: 180px 180px;
+}
+.sb-dot { transform: scale(0); }
+
+/* Stage 0: glow only */
+.sb-stage .sb-glow { opacity:.6; }
+/* Stage 1: dot */
+.sb-stage[data-stage="1"] .sb-dot,
+.sb-stage[data-stage="2"] .sb-dot,
+.sb-stage[data-stage="3"] .sb-dot,
+.sb-stage[data-stage="4"] .sb-dot { opacity:1; transform:scale(1); }
+/* Stage 2: ring drawn */
+.sb-stage[data-stage="2"] .sb-ring,
+.sb-stage[data-stage="3"] .sb-ring,
+.sb-stage[data-stage="4"] .sb-ring,
+.sb-stage[data-stage="2"] .sb-ring-glow,
+.sb-stage[data-stage="3"] .sb-ring-glow,
+.sb-stage[data-stage="4"] .sb-ring-glow {
+  opacity:1; stroke-dashoffset:0;
+}
+/* Stage 3: bar + S forming */
+.sb-stage[data-stage="3"] .sb-bar,
+.sb-stage[data-stage="4"] .sb-bar { opacity:1; }
+.sb-stage[data-stage="3"] .sb-S,
+.sb-stage[data-stage="4"] .sb-S { opacity:1; }
+.sb-stage[data-stage="3"] .sb-dot,
+.sb-stage[data-stage="4"] .sb-dot { opacity:0; transition-delay:.2s; }
+/* Stage 4: final label */
+.sb-stage[data-stage="4"] .sb-label-final { opacity:1; transition-delay:.4s; }
+
+@media (max-width:960px){
+  .sb-wrap { grid-template-columns:1fr; gap:3rem; }
+  .sb-stage { max-width:340px; }
+}
+
+/* ═══════════════════════════════════════════════════
+   DÖRT SÖYLEM (Four Discourses)
+═══════════════════════════════════════════════════ */
+#discourses { background:var(--bg2); }
+.dw-intro {
+  font-family:var(--serif); font-style:italic;
+  font-size:1.05rem; line-height:1.75; color:var(--mid);
+  max-width:640px; margin-bottom:4rem;
+}
+.dw-intro em { color:var(--gold); font-style:italic; }
+.dw-stage {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:5rem; align-items:center;
+}
+.dw-wheel {
+  position:relative;
+  aspect-ratio:1; max-width:420px; margin:0 auto;
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:0;
+  background:var(--bg);
+  border:1px solid rgba(138,100,40,.18);
+}
+.dw-corner {
+  position:absolute; font-size:.55rem; letter-spacing:.3em;
+  text-transform:uppercase; color:var(--gold);
+  z-index:2; pointer-events:none;
+}
+.dw-corner-tl { top:.8rem; left:.8rem; }
+.dw-corner-tr { top:.8rem; right:.8rem; }
+.dw-corner-bl { bottom:.8rem; left:.8rem; }
+.dw-corner-br { bottom:.8rem; right:.8rem; }
+.dw-slot {
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid rgba(138,100,40,.12);
+  position:relative;
+}
+.dw-matheme {
+  font-family:var(--serif); font-style:italic;
+  font-size:clamp(2rem, 4.5vw, 3.4rem);
+  color:var(--gold);
+  transition: opacity .4s var(--ease), transform .55s var(--ease);
+  display:inline-block;
+}
+.dw-matheme sub { font-size:.55em; vertical-align:baseline; position:relative; bottom:-.15em; }
+.dw-matheme.fade { opacity:0; transform: translateY(8px) scale(.9); }
+.dw-arrows {
+  position:absolute; inset:0; width:100%; height:100%;
+  pointer-events:none; z-index:1;
+}
+.dw-info { display:flex; flex-direction:column; gap:1.2rem; }
+.dw-name {
+  font-family:var(--serif); font-weight:300;
+  font-size:clamp(1.8rem, 3vw, 2.6rem);
+  color:var(--text); line-height:1.1;
+}
+.dw-formula {
+  font-family:var(--serif); color:var(--gold);
+  font-size:1.05rem;
+  padding:.6rem 0; border-top:1px solid rgba(138,100,40,.15);
+  border-bottom:1px solid rgba(138,100,40,.15);
+}
+.dw-formula em { font-style:italic; }
+.dw-formula sub { font-size:.65em; vertical-align:baseline; position:relative; bottom:-.15em; }
+.dw-desc {
+  font-size:.96rem; line-height:1.75; color:var(--mid);
+  font-family:var(--sans); font-weight:300;
+}
+.dw-desc em { color:var(--gold); font-style:italic; }
+.dw-controls {
+  display:flex; align-items:center; gap:1.4rem;
+  margin-top:1.2rem;
+}
+.dw-btn {
+  width:42px; height:42px; border-radius:50%;
+  border:1px solid rgba(138,100,40,.3);
+  background:transparent; color:var(--gold);
+  font-family:var(--serif); font-size:1.6rem; line-height:1;
+  cursor:pointer; padding:0;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+.dw-btn:hover { background:var(--gold); color:var(--bg); border-color:var(--gold); transform:scale(1.05); }
+.dw-counter {
+  font-size:.7rem; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--dim);
+}
+@media (max-width:900px){
+  .dw-stage { grid-template-columns:1fr; gap:3rem; }
+}
+
+/* ═══════════════════════════════════════════════════
    LAPSUS — Freud'un dil sürçmesi efekti
 ═══════════════════════════════════════════════════ */
 .lapsus { display:inline-block; position:relative; }
