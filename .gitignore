@@ -3,9 +3,10 @@
 Thumbs.db
 desktop.ini
 
-# Editor
+# Editor / tooling
 .vscode/
 .idea/
+.claude/
 
 # Temp
 *.log
