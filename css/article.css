@@ -43,11 +43,11 @@ a{color:inherit;}
 .article-lead{margin:0 0 2.4rem;font-size:1.32rem;line-height:1.5;color:var(--ink2);}
 
 /* Metin */
-.article-body{font-size:1.25rem;line-height:1.62;counter-reset:sec;hyphens:auto;-webkit-hyphens:auto;}
+.article-body{font-size:1.25rem;line-height:1.62;hyphens:auto;-webkit-hyphens:auto;}
 .article-body p{margin:0;}
 .article-body p + p{text-indent:1.5em;}
-.article-body h2{counter-increment:sec;margin:2.6em 0 .8em;font-size:1.4rem;font-weight:500;line-height:1.3;}
-.article-body h2::before{content:counter(sec) ".";display:inline-block;min-width:1.6em;color:var(--ink3);font-weight:400;}
+.article-body h2{margin:2.6em 0 .8em;font-size:1.4rem;font-weight:500;line-height:1.3;}
+.article-body h2.part{margin:2.8em 0 1.3em;text-align:center;font-size:1.15rem;font-weight:500;letter-spacing:.06em;color:var(--ink3);}
 .article-body h3{margin:2em 0 .6em;font-size:1.2rem;font-weight:400;font-style:italic;}
 .article-body em{font-style:italic;}
 .article-body strong{font-weight:600;}
@@ -119,3 +119,36 @@ a{color:inherit;}
 .article-cta{margin-top:3.2rem;padding:1.1rem 1.3rem;background:var(--paper2);font-size:1.1rem;line-height:1.5;color:var(--ink2);}
 .article-cta p{margin:0;}
 .article-cta a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em;}
+
+/* Deneme düzeni: epigraf, görsel, dipnot, video, yazar notu */
+.epigraphs{margin:0 0 2.8rem;}
+.article-body blockquote.epigraph{margin:0 0 1.4rem auto;max-width:28rem;text-align:right;font-size:1.08rem;line-height:1.5;color:var(--ink2);}
+.epigraph p{margin:0;text-indent:0 !important;}
+.epigraph cite{display:block;margin-top:.35rem;font-style:normal;font-size:.95rem;color:var(--ink3);}
+.article-body figure{margin:2.6em 0;}
+.article-body figure img{display:block;width:100%;height:auto;background:var(--paper2);}
+.article-body figure.portrait img{width:auto;max-width:100%;max-height:82vh;margin:0 auto;}
+.article-body figcaption{margin-top:.65rem;font-size:.95rem;line-height:1.45;color:var(--ink3);}
+.article-body figcaption a{color:inherit;text-decoration-color:var(--rule);}
+.article-body figure + p,.epigraphs + h2 + p,.article-body h2 + p{text-indent:0;}
+@media (min-width:960px){.article-body figure.wide{margin-left:-7rem;margin-right:-7rem;}}
+.article-body sup.fn{font-size:.66em;line-height:0;vertical-align:super;margin-left:.06em;}
+.article-body sup.fn a{text-decoration:none;color:var(--accent);padding:0 .08em;}
+.footnotes{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:1rem;line-height:1.5;color:var(--ink2);}
+.footnotes h3{margin:0 0 .9rem;font-size:1rem;font-style:normal;font-weight:500;color:var(--ink);}
+.footnotes ol{margin:0;padding-left:1.7em;}
+.footnotes li{margin:0 0 .75rem;padding-left:.2em;}
+.footnotes li:target{background:rgba(122,46,42,.07);}
+.footnotes a.fn-back{text-decoration:none;color:var(--accent);margin-left:.35em;}
+.footnotes em{font-style:italic;}
+.video-embed .yt{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;width:100%;aspect-ratio:16/9;padding:1rem;border:0;background:#161412;color:#ECE5D9;font:inherit;cursor:pointer;text-align:center;}
+.video-embed .yt:hover .yt-play,.video-embed .yt:focus-visible .yt-play{background:#7A2E2A;}
+.video-embed .yt-play{width:4.2rem;height:4.2rem;border-radius:50%;background:rgba(236,229,217,.14);display:flex;align-items:center;justify-content:center;transition:background .25s;}
+.video-embed .yt-play::after{content:"";margin-left:.3rem;border-style:solid;border-width:.8rem 0 .8rem 1.3rem;border-color:transparent transparent transparent #ECE5D9;}
+.video-embed .yt-title{font-size:1.25rem;}
+.video-embed .yt-note{font-size:.9rem;color:rgba(236,229,217,.65);}
+.video-embed .yt-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000;}
+.video-embed .yt-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.author-note{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:1.05rem;line-height:1.5;color:var(--ink2);}
+.author-note p{margin:0;}
+.author-note a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em;}
