@@ -1,0 +1,41 @@
+# Haktan Tay
+
+> Haktan Tay, Lacanyen psikanaliz yönelimli bir psikologdur. Türkiye genelinde online psikanalitik görüşme, süpervizyon ve akademik danışmanlık sunar. Bu site, psikanalitik çalışmaya dair Türkçe rehber yazılar ve Lacanyen kavramlar üzerine kuramsal okumalar içerir.
+
+- [Ana sayfa](https://haktantay.com/): Hizmetler, yaklaşım, akademik çalışmalar ve iletişim
+- [Tüm yazılar](https://haktantay.com/yazilar/): Yazıların kategorilere göre listesi
+
+## Klinik
+
+- [Kaygı: Aldatmayan Duygu](https://haktantay.com/yazilar/kaygi.html): Kaygı nedir, neden ortaya çıkar, panik atak ne anlatır? Freud'un sinyal kaygısı kuramından Lacan'ın "kaygı aldatmaz" tezine, kaygıya psikanalitik bir bakış.
+- [Neden Hep Aynı İlişkiyi Yaşıyorum?](https://haktantay.com/yazilar/tekrarlayan-iliski-oruntuleri.html): İlişkilerde aynı senaryonun tekrar etmesi tesadüf mü? Freud'un tekrar zorlantısı, nesne seçimi ve Lacan'ın fantazm kavramı üzerinden tekrarlayan ilişki örüntülerine psikanalitik bir bakış.
+- [Online Terapi İşe Yarar mı?](https://haktantay.com/yazilar/online-terapi.html): Online terapi yüz yüze terapi kadar etkili mi? Araştırma bulguları, psikanalitik çalışmada ekranın yeri, online görüşmeye nasıl hazırlanılacağı ve kimler için uygun olmayabileceği.
+- [Psikanalitik Terapi Ne Kadar Sürer?](https://haktantay.com/yazilar/psikanalitik-terapi-ne-kadar-surer.html): Psikanalitik terapi ne kadar sürer, haftada kaç seans yapılır, ne zaman biter? Süre, sıklık ve sonlanma üzerine araştırmalara ve klinik deneyime dayanan dürüst bir yanıt.
+- [Psikanaliz Nedir? Konuşmanın Dönüştüren Gücü](https://haktantay.com/yazilar/psikanaliz-nedir.html): Psikanaliz nedir, nasıl işler, kimler için uygundur? Bilinçdışı, serbest çağrışım, semptom ve aktarım kavramları üzerinden psikanalitik terapiye açık ve güvenilir bir giriş.
+
+## Kavramlar
+
+- [Aktarım: Bildiği Varsayılan Özne](https://haktantay.com/yazilar/aktarim.html): Psikanalizde aktarım nedir? Freud'un Dora vakasından aktarım aşkına, Lacan'ın Şölen okumasından "bildiği varsayılan özne" formülüne ve analistin arzusuna, aktarım kavramına kuramsal ve klinik bir bakış.
+- [Baba’nın Adı: Yasa, Eksiklik ve Psikoz](https://haktantay.com/yazilar/baba-nin-adi.html): Lacan'ın Baba'nın Adı (Nom-du-Père) kavramı: babalık metaforu, Ödipus'un yapısal okuması, ilga (forclusion), Schreber vakası ve geç Lacan'da babanın çoğullaşması.
+- [Büyük Başka: Dilin, Yasanın ve Arzunun Yeri](https://haktantay.com/yazilar/buyuk-baska.html): Lacan'ın Büyük Başka (grand Autre) kavramı: küçük başka ile ayrımı, L şeması, "bilinçdışı Başka'nın söylemidir", "Che vuoi?" sorusu ve Başka'nın eksikliği S(Ⱥ). Kuramsal ve klinik bir okuma.
+- [Fallus: Eksikliğin Göstereni](https://haktantay.com/yazilar/fallus.html): Lacan'da fallus bir organ değil, bir gösterendir. Freud'un fallik evresinden "Fallusun Anlamı"na, olmak ve sahip olmak diyalektiği, maskarad, hayali ve sembolik fallus üzerine kuramsal bir okuma.
+- [Gerçek, Sembolik, Hayali: Lacan’ın Üç Düzeni](https://haktantay.com/yazilar/gercek-sembolik-hayali.html): Lacan'ın üç düzeni Gerçek, Sembolik ve Hayali nedir? 1953'teki ilk formülasyondan Borromean düğümüne kadar her düzenin mantığı, birbirleriyle ilişkisi ve klinikteki karşılıkları.
+- [Semptom: Bilinçdışının Metaforu](https://haktantay.com/yazilar/semptom.html): Psikanalizde semptom nedir? Freud'un uzlaşma oluşumu ve hastalık kazancı kavramlarından Lacan'ın "semptom bir metafordur" tezine, jouissance ve sinthome'a, semptomun kuramsal ve klinik okuması.
+
+## Kuramsal
+
+- [Borromean Düğümü ve Sinthome: Joyce’un İmzası](https://haktantay.com/yazilar/borromean-dugum.html): Geç Lacan topolojisi: Borromean düğümü, üç düzen (Gerçek, Sembolik, Hayali) ve dördüncü halka olarak sinthome. Joyce'un yazısı bir klinik paradigma olarak.
+- [Cinsel Fark Formülleri: Pas-tout ve İki Jouissance](https://haktantay.com/yazilar/cinsel-fark-formulleri.html): Lacan'ın Seminer XX'deki cinsiyetlenme formülleri. Erkek ve dişil pozisyonun mantıksal yapısı, pas-tout (tüm-değil), iki jouissance ve la femme n'existe pas formülünün okunması.
+- [Dört Söylem: Efendi, Üniversite, Histerik, Analist](https://haktantay.com/yazilar/dort-soylem.html): Lacan'ın 1969-70 seminerinden dört söylemin yapısı: pozisyonlar, mathematik formüller ve klinikte söylemler arası geçişin önemi.
+- [Jouissance: Hazzın Ötesindeki Acı](https://haktantay.com/yazilar/jouissance.html): Lacan'ın jouissance kavramı üzerine kuramsal bir okuma. Hazzın ötesindeki acı, semptom ve öznenin paradoksal tatmin biçimi.
+- [Objet Petit a: Arzunun Neden-Nesnesi](https://haktantay.com/yazilar/objet-petit-a.html): Arzu nesnesi ne demek? Lacan'ın tek özgün buluşu olarak adlandırdığı kavram: objet petit a. Bakış, ses, meme, dışkı — arzunun nedeni olarak nesneler. Fantazm formülü, plus-de-jouir ve klinikte konumlandırma.
+
+## Deneme
+
+- [Ayna Evresinin Bir Daha Okunması](https://haktantay.com/yazilar/ayna-evresi.html): Lacan'ın ayna evresi kavramının klinik ve kuramsal bir yeniden okuması. Tanınma, yabancılaşma ve ben'in kuruluşu üzerine bir deneme.
+
+## Gizlilik
+
+- [KVKK](https://haktantay.com/kvkk.html)
+- [Aydınlatma Metni](https://haktantay.com/aydinlatma.html)
+- [Gizlilik Politikası](https://haktantay.com/gizlilik.html)
