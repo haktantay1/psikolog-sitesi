@@ -652,12 +652,18 @@ form.addEventListener('submit', e => {
 e.preventDefault();
 const name = document.getElementById('cf-name').value.trim();
 const email = document.getElementById('cf-email').value.trim();
+const phone = (document.getElementById('cf-phone')?.value || '').trim();
 const subject = (document.getElementById('cf-subject')?.value || '').trim();
 const date = (document.getElementById('cal-value')?.value || '').trim();
 const message = document.getElementById('cf-message').value.trim();
 const kvkk = document.getElementById('cf-kvkk');
-if(!name || !email || !message){
-show('Lütfen ad, e-posta ve mesaj alanlarını doldurun.', 'err');
+if(!name || !email || !phone || !message){
+show('Lütfen ad, e-posta, telefon ve mesaj alanlarını doldurun.', 'err');
+return;
+}
+const phoneDigits = phone.replace(/\D/g, '');
+if(phoneDigits.length < 10 || phoneDigits.length > 15){
+show('Lütfen geçerli bir telefon numarası girin.', 'err');
 return;
 }
 if(kvkk && !kvkk.checked){
@@ -671,7 +677,8 @@ const data = new FormData();
 data.append('entry.352433926', name); 
 data.append('entry.1721181518', email); 
 data.append('entry.653947926', subject); 
-data.append('entry.643986528', message); 
+// Google Form'da telefon sorusu olmadığı için numara mesajın başına eklenir
+data.append('entry.643986528', 'Telefon: ' + phone + '\n\n' + message); 
 
 if(date && /^\d{4}-\d{2}-\d{2}$/.test(date)){
 const [y, m, d] = date.split('-');
