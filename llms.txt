@@ -1,17 +1,24 @@
 # Haktan Tay
 
-> Haktan Tay, Lacanyen psikanaliz yönelimli bir psikologdur. Türkiye genelinde online psikanalitik görüşme, süpervizyon ve akademik danışmanlık sunar. Bu site, psikanalitik çalışmaya dair Türkçe rehber yazılar ve Lacanyen kavramlar üzerine kuramsal okumalar içerir.
+> Haktan Tay, Lacanyen psikanaliz yönelimli bir psikologdur. Türkiye genelinde online psikanalitik görüşme, süpervizyon ve akademik danışmanlık sunar. Bu site, psikanalitik çalışmaya dair Türkçe rehber yazılar, edebiyat ve dizi üzerine psikanalitik okumalar ve Lacanyen kavramlar üzerine kuramsal yazılar içerir.
 
 - [Ana sayfa](https://haktantay.com/): Hizmetler, yaklaşım, akademik çalışmalar ve iletişim
 - [Tüm yazılar](https://haktantay.com/yazilar/): Yazıların kategorilere göre listesi
 
 ## Klinik
 
-- [Kaygı: Aldatmayan Duygu](https://haktantay.com/yazilar/kaygi.html): Kaygı nedir, neden ortaya çıkar, panik atak ne anlatır? Freud'un sinyal kaygısı kuramından Lacan'ın "kaygı aldatmaz" tezine, kaygıya psikanalitik bir bakış.
-- [Neden Hep Aynı İlişkiyi Yaşıyorum?](https://haktantay.com/yazilar/tekrarlayan-iliski-oruntuleri.html): İlişkilerde aynı senaryonun tekrar etmesi tesadüf mü? Freud'un tekrar zorlantısı, nesne seçimi ve Lacan'ın fantazm kavramı üzerinden tekrarlayan ilişki örüntülerine psikanalitik bir bakış.
-- [Online Terapi İşe Yarar mı?](https://haktantay.com/yazilar/online-terapi.html): Online terapi yüz yüze terapi kadar etkili mi? Araştırma bulguları, psikanalitik çalışmada ekranın yeri, online görüşmeye nasıl hazırlanılacağı ve kimler için uygun olmayabileceği.
-- [Psikanalitik Terapi Ne Kadar Sürer?](https://haktantay.com/yazilar/psikanalitik-terapi-ne-kadar-surer.html): Psikanalitik terapi ne kadar sürer, haftada kaç seans yapılır, ne zaman biter? Süre, sıklık ve sonlanma üzerine araştırmalara ve klinik deneyime dayanan dürüst bir yanıt.
 - [Psikanaliz Nedir? Konuşmanın Dönüştüren Gücü](https://haktantay.com/yazilar/psikanaliz-nedir.html): Psikanaliz nedir, nasıl işler, kimler için uygundur? Bilinçdışı, serbest çağrışım, semptom ve aktarım kavramları üzerinden psikanalitik terapiye açık ve güvenilir bir giriş.
+- [Herkes Narsist mi? Narsisizm Üzerine Psikanalitik Bir Okuma](https://haktantay.com/yazilar/narsisizm.html): Narsist nedir, narsisistik kişilik bozukluğu ile gündelik "narsist" etiketi arasındaki fark ne? Ovidius'un Narkissos ve Ekho mitinden Freud'a, Lacan'a, Kohut ve Kernberg'e narsisizmin psikanalitik okuması.
+- [Kıskançlık: Aşkın Gölgesi](https://haktantay.com/yazilar/kiskanclik.html): Kıskançlık nedir, aşırı kıskançlık neden olur, kıskançlık sevgi kanıtı mıdır? Augustinus'tan Freud'un kıskançlığın üç katmanına, Melanie Klein'ın haset ayrımına, Proust ve Othello'ya kıskançlığın psikanalitik okuması.
+- [Neden Hep Aynı İlişkiyi Yaşıyorum?](https://haktantay.com/yazilar/tekrarlayan-iliski-oruntuleri.html): İlişkilerde aynı senaryonun tekrar etmesi tesadüf mü? Freud'un tekrar zorlantısı, nesne seçimi ve Lacan'ın fantazm kavramı üzerinden tekrarlayan ilişki örüntülerine psikanalitik bir bakış.
+- [Kaygı: Aldatmayan Duygu](https://haktantay.com/yazilar/kaygi.html): Kaygı nedir, neden ortaya çıkar, panik atak ne anlatır? Freud'un sinyal kaygısı kuramından Lacan'ın "kaygı aldatmaz" tezine, kaygıya psikanalitik bir bakış.
+- [Psikanalitik Terapi Ne Kadar Sürer?](https://haktantay.com/yazilar/psikanalitik-terapi-ne-kadar-surer.html): Psikanalitik terapi ne kadar sürer, haftada kaç seans yapılır, ne zaman biter? Süre, sıklık ve sonlanma üzerine araştırmalara ve klinik deneyime dayanan dürüst bir yanıt.
+- [Online Terapi İşe Yarar mı?](https://haktantay.com/yazilar/online-terapi.html): Online terapi yüz yüze terapi kadar etkili mi? Araştırma bulguları, psikanalitik çalışmada ekranın yeri, online görüşmeye nasıl hazırlanılacağı ve kimler için uygun olmayabileceği.
+
+## Kültür
+
+- [Masumiyet Müzesi: Kemal’in Koleksiyonu ve Arzunun Nesnesi](https://haktantay.com/yazilar/masumiyet-muzesi.html): Orhan Pamuk'un Masumiyet Müzesi'ne psikanalitik bir okuma: "Hayatımın en mutlu anıymış, bilmiyordum" cümlesindeki sonradanlık, Kemal'in koleksiyonu, yas ve fetiş, 4.213 izmarit, sekiz yıllık sofra ve "Herkes bilsin" cümlesinin kime seslendiği.
+- [Aşk-ı Memnu: Yasak Olan Neden Arzulanır?](https://haktantay.com/yazilar/ask-i-memnu.html): Aşk-ı Memnu'ya psikanalitik bir okuma: Bihter, Firdevs Hanım ve Nihal arasındaki tekrar, ayna sahnesi, Behlül'ün boşluğu ve yasanın arzuyu nasıl yarattığı. Halit Ziya'nın romanından efsane diziye bir yasak aşkın yapısı.
 
 ## Kavramlar
 
@@ -24,11 +31,11 @@
 
 ## Kuramsal
 
-- [Borromean Düğümü ve Sinthome: Joyce’un İmzası](https://haktantay.com/yazilar/borromean-dugum.html): Geç Lacan topolojisi: Borromean düğümü, üç düzen (Gerçek, Sembolik, Hayali) ve dördüncü halka olarak sinthome. Joyce'un yazısı bir klinik paradigma olarak.
 - [Cinsel Fark Formülleri: Pas-tout ve İki Jouissance](https://haktantay.com/yazilar/cinsel-fark-formulleri.html): Lacan'ın Seminer XX'deki cinsiyetlenme formülleri. Erkek ve dişil pozisyonun mantıksal yapısı, pas-tout (tüm-değil), iki jouissance ve la femme n'existe pas formülünün okunması.
+- [Borromean Düğümü ve Sinthome: Joyce’un İmzası](https://haktantay.com/yazilar/borromean-dugum.html): Geç Lacan topolojisi: Borromean düğümü, üç düzen (Gerçek, Sembolik, Hayali) ve dördüncü halka olarak sinthome. Joyce'un yazısı bir klinik paradigma olarak.
 - [Dört Söylem: Efendi, Üniversite, Histerik, Analist](https://haktantay.com/yazilar/dort-soylem.html): Lacan'ın 1969-70 seminerinden dört söylemin yapısı: pozisyonlar, mathematik formüller ve klinikte söylemler arası geçişin önemi.
-- [Jouissance: Hazzın Ötesindeki Acı](https://haktantay.com/yazilar/jouissance.html): Lacan'ın jouissance kavramı üzerine kuramsal bir okuma. Hazzın ötesindeki acı, semptom ve öznenin paradoksal tatmin biçimi.
 - [Objet Petit a: Arzunun Neden-Nesnesi](https://haktantay.com/yazilar/objet-petit-a.html): Arzu nesnesi ne demek? Lacan'ın tek özgün buluşu olarak adlandırdığı kavram: objet petit a. Bakış, ses, meme, dışkı — arzunun nedeni olarak nesneler. Fantazm formülü, plus-de-jouir ve klinikte konumlandırma.
+- [Jouissance: Hazzın Ötesindeki Acı](https://haktantay.com/yazilar/jouissance.html): Lacan'ın jouissance kavramı üzerine kuramsal bir okuma. Hazzın ötesindeki acı, semptom ve öznenin paradoksal tatmin biçimi.
 
 ## Deneme
 

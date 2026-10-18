@@ -4,9 +4,41 @@
     <title>Haktan Tay · Yazılar</title>
     <link>https://haktantay.com/yazilar/</link>
     <atom:link href="https://haktantay.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <description>Psikanalitik çalışmaya dair rehber yazılar, Lacanyen kavramlar ve kuramsal okumalar.</description>
+    <description>Psikanalitik çalışmaya dair rehber yazılar, kültür okumaları, Lacanyen kavramlar ve kuramsal okumalar.</description>
     <language>tr</language>
-    <lastBuildDate>Sun, 18 Oct 2026 12:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0300</lastBuildDate>
+    <item>
+      <title>Herkes Narsist mi? Narsisizm Üzerine Psikanalitik Bir Okuma</title>
+      <link>https://haktantay.com/yazilar/narsisizm.html</link>
+      <guid isPermaLink="true">https://haktantay.com/yazilar/narsisizm.html</guid>
+      <category>Klinik</category>
+      <description>Narsist nedir, narsisistik kişilik bozukluğu ile gündelik &quot;narsist&quot; etiketi arasındaki fark ne? Ovidius&#x27;un Narkissos ve Ekho mitinden Freud&#x27;a, Lacan&#x27;a, Kohut ve Kernberg&#x27;e narsisizmin psikanalitik okuması.</description>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0300</pubDate>
+    </item>
+    <item>
+      <title>Masumiyet Müzesi: Kemal’in Koleksiyonu ve Arzunun Nesnesi</title>
+      <link>https://haktantay.com/yazilar/masumiyet-muzesi.html</link>
+      <guid isPermaLink="true">https://haktantay.com/yazilar/masumiyet-muzesi.html</guid>
+      <category>Kültür</category>
+      <description>Orhan Pamuk&#x27;un Masumiyet Müzesi&#x27;ne psikanalitik bir okuma: &quot;Hayatımın en mutlu anıymış, bilmiyordum&quot; cümlesindeki sonradanlık, Kemal&#x27;in koleksiyonu, yas ve fetiş, 4.213 izmarit, sekiz yıllık sofra ve &quot;Herkes bilsin&quot; cümlesinin kime seslendiği.</description>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0300</pubDate>
+    </item>
+    <item>
+      <title>Kıskançlık: Aşkın Gölgesi</title>
+      <link>https://haktantay.com/yazilar/kiskanclik.html</link>
+      <guid isPermaLink="true">https://haktantay.com/yazilar/kiskanclik.html</guid>
+      <category>Klinik</category>
+      <description>Kıskançlık nedir, aşırı kıskançlık neden olur, kıskançlık sevgi kanıtı mıdır? Augustinus&#x27;tan Freud&#x27;un kıskançlığın üç katmanına, Melanie Klein&#x27;ın haset ayrımına, Proust ve Othello&#x27;ya kıskançlığın psikanalitik okuması.</description>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0300</pubDate>
+    </item>
+    <item>
+      <title>Aşk-ı Memnu: Yasak Olan Neden Arzulanır?</title>
+      <link>https://haktantay.com/yazilar/ask-i-memnu.html</link>
+      <guid isPermaLink="true">https://haktantay.com/yazilar/ask-i-memnu.html</guid>
+      <category>Kültür</category>
+      <description>Aşk-ı Memnu&#x27;ya psikanalitik bir okuma: Bihter, Firdevs Hanım ve Nihal arasındaki tekrar, ayna sahnesi, Behlül&#x27;ün boşluğu ve yasanın arzuyu nasıl yarattığı. Halit Ziya&#x27;nın romanından efsane diziye bir yasak aşkın yapısı.</description>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0300</pubDate>
+    </item>
     <item>
       <title>Neden Hep Aynı İlişkiyi Yaşıyorum?</title>
       <link>https://haktantay.com/yazilar/tekrarlayan-iliski-oruntuleri.html</link>
