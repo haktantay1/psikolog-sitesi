@@ -22,6 +22,10 @@
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/gurbet-ve-ana-dil.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/gurbet-ve-ana-dil.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/exile-and-the-mother-tongue.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/exil-et-langue-maternelle.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/gurbet-ve-ana-dil.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -78,18 +82,30 @@
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/psikanalitik-terapi-ne-kadar-surer.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/psikanalitik-terapi-ne-kadar-surer.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/how-long-does-analysis-last.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/combien-de-temps-dure-une-analyse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/psikanalitik-terapi-ne-kadar-surer.html"/>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/online-terapi.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/online-terapi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/online-psychoanalysis.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/psychanalyse-en-ligne.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/online-terapi.html"/>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/kaygi.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/kaygi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/anxiety.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/angoisse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/kaygi.html"/>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -470,6 +486,86 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/repeating-relationships.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/repetition-amoureuse.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/tekrarlayan-iliski-oruntuleri.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/anxiety.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/kaygi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/anxiety.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/angoisse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/kaygi.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/how-long-does-analysis-last.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/psikanalitik-terapi-ne-kadar-surer.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/how-long-does-analysis-last.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/combien-de-temps-dure-une-analyse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/psikanalitik-terapi-ne-kadar-surer.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/online-psychoanalysis.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/online-terapi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/online-psychoanalysis.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/psychanalyse-en-ligne.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/online-terapi.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/exile-and-the-mother-tongue.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/gurbet-ve-ana-dil.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/exile-and-the-mother-tongue.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/exil-et-langue-maternelle.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/gurbet-ve-ana-dil.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/angoisse.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/kaygi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/anxiety.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/angoisse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/kaygi.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/combien-de-temps-dure-une-analyse.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/psikanalitik-terapi-ne-kadar-surer.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/how-long-does-analysis-last.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/combien-de-temps-dure-une-analyse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/psikanalitik-terapi-ne-kadar-surer.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/psychanalyse-en-ligne.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/online-terapi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/online-psychoanalysis.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/psychanalyse-en-ligne.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/online-terapi.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/exil-et-langue-maternelle.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/gurbet-ve-ana-dil.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/exile-and-the-mother-tongue.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/exil-et-langue-maternelle.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/gurbet-ve-ana-dil.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
