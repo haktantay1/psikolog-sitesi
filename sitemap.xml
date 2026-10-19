@@ -122,18 +122,30 @@
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/buyuk-baska.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/buyuk-baska.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/the-big-other.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-grand-autre.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/buyuk-baska.html"/>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/baba-nin-adi.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/baba-nin-adi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/the-name-of-the-father.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-nom-du-pere.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/baba-nin-adi.html"/>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/fallus.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/fallus.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/the-phallus.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-phallus.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/fallus.html"/>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -566,6 +578,66 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/exile-and-the-mother-tongue.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/exil-et-langue-maternelle.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/gurbet-ve-ana-dil.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/the-big-other.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/buyuk-baska.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/the-big-other.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-grand-autre.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/buyuk-baska.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/the-name-of-the-father.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/baba-nin-adi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/the-name-of-the-father.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-nom-du-pere.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/baba-nin-adi.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/the-phallus.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/fallus.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/the-phallus.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-phallus.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/fallus.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/le-grand-autre.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/buyuk-baska.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/the-big-other.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-grand-autre.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/buyuk-baska.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/le-nom-du-pere.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/baba-nin-adi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/the-name-of-the-father.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-nom-du-pere.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/baba-nin-adi.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/le-phallus.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/fallus.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/the-phallus.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-phallus.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/fallus.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
