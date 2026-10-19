@@ -154,3 +154,5 @@ a{color:inherit;}
 .author-note a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em;}
 .article-body figure.small img{width:auto;max-width:min(100%,340px);margin:0 auto;}
 .article-body figure.small figcaption{max-width:30rem;margin-left:auto;margin-right:auto;text-align:center;}
+.article-body figcaption .fig-src{display:block;margin-top:.35rem;font-size:.8rem;line-height:1.5;color:var(--ink3);overflow-wrap:anywhere;}
+.article-body figcaption .fig-src em{font-style:italic;}
