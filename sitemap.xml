@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://haktantay.com/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/"/>
     <lastmod>2026-10-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -13,6 +17,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://haktantay.com/yazilar/gurbet-ve-ana-dil.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://haktantay.com/yazilar/narsisizm.html</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
@@ -20,6 +30,10 @@
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/masumiyet-muzesi.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/masumiyet-muzesi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/museum-of-innocence.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/musee-de-l-innocence.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/masumiyet-muzesi.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -32,6 +46,10 @@
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/ask-i-memnu.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/ask-i-memnu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/ask-i-memnu.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/ask-i-memnu.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/ask-i-memnu.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -155,5 +173,113 @@
     <lastmod>2026-05-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/museum-of-innocence.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/masumiyet-muzesi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/museum-of-innocence.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/musee-de-l-innocence.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/masumiyet-muzesi.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/ask-i-memnu.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/ask-i-memnu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/ask-i-memnu.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/ask-i-memnu.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/ask-i-memnu.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/musee-de-l-innocence.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/masumiyet-muzesi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/museum-of-innocence.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/musee-de-l-innocence.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/masumiyet-muzesi.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/ask-i-memnu.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/ask-i-memnu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/ask-i-memnu.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/ask-i-memnu.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/ask-i-memnu.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/yurt-disi/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/yurt-disi/almanya.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/yurt-disi/hollanda.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/yurt-disi/belcika.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/yurt-disi/avusturya.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/yurt-disi/fransa.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/yurt-disi/isvicre.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/yurt-disi/ingiltere.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

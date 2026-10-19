@@ -1,9 +1,11 @@
 # Haktan Tay
 
-> Haktan Tay, Lacanyen psikanaliz yönelimli bir psikologdur. Türkiye genelinde online psikanalitik görüşme, süpervizyon ve akademik danışmanlık sunar. Bu site, psikanalitik çalışmaya dair Türkçe rehber yazılar, edebiyat ve dizi üzerine psikanalitik okumalar ve Lacanyen kavramlar üzerine kuramsal yazılar içerir.
+> Haktan Tay, Lacanyen psikanaliz yönelimli bir psikologdur. Türkiye'de ve yurt dışında yaşayanlarla Türkçe, İngilizce ve Fransızca online psikanalitik görüşme, süpervizyon ve akademik danışmanlık yürütür; ilk görüşme ücretsizdir. Bu site, psikanalitik çalışmaya dair Türkçe rehber yazılar, edebiyat ve dizi üzerine psikanalitik okumalar, Lacanyen kavramlar üzerine kuramsal yazılar, bazı yazıların İngilizce ve Fransızca çevirileri ve yurt dışında yaşayanlar için ülke sayfaları içerir.
 
 - [Ana sayfa](https://haktantay.com/): Hizmetler, yaklaşım, akademik çalışmalar ve iletişim
 - [Tüm yazılar](https://haktantay.com/yazilar/): Yazıların kategorilere göre listesi
+- [English](https://haktantay.com/en/): Online psychoanalytic sessions in English, French and Turkish; essays in English
+- [Français](https://haktantay.com/fr/): Séances psychanalytiques en ligne en français, en anglais et en turc ; essais en français
 
 ## Klinik
 
@@ -14,6 +16,7 @@
 - [Kaygı: Aldatmayan Duygu Üzerine Psikanalitik Bir Deneme](https://haktantay.com/yazilar/kaygi.html): Kaygı nedir, panik atak ne anlatır? Kierkegaard'ın "özgürlüğün baş dönmesi"nden Heidegger'e, Freud'un iki kaygı kuramından Küçük Hans vakasına ve Lacan'ın kaygıyı "aldatmayan" duygu olarak tanımladığı onuncu seminerine kaygı üzerine psikanalitik bir deneme.
 - [Psikanalitik Terapi Ne Kadar Sürer? Sonlu ve Sonsuz Analiz Üzerine](https://haktantay.com/yazilar/psikanalitik-terapi-ne-kadar-surer.html): Psikanalitik terapi ne kadar sürer, haftada kaç seans yapılır, ne zaman biter? Freud'un satranç benzetmesinden Mahler'le Leiden'daki yürüyüşüne, Kurt Adam'a koyduğu süre sınırından "Sonlu ve Sonsuz Analiz"e, Lacan'ın mantıksal zamanından güncel araştırmalara, psikanalizin zamanı üzerine bir deneme.
 - [Online Terapi ve Psikanaliz: Uzaktan Konuşmanın Tarihi ve Çerçevesi](https://haktantay.com/yazilar/online-terapi.html): Online terapi işe yarar mı, psikanaliz ekran üzerinden yapılabilir mi? Freud'un Fliess'e yazdığı mektuplardan Küçük Hans'ın babası aracılığıyla yürütülen analizine, Freud'un telefon benzetmesinden Bleger'in çerçeve kuramına, ses ve bakışın yerinden güncel araştırmalara, uzaktan konuşmanın psikanalitik tarihi ve bugünkü çerçevesi.
+- [Gurbet ve Ana Dil: Göçün Psikanalizi Üzerine Bir Deneme](https://haktantay.com/yazilar/gurbet-ve-ana-dil.html): Gurbet, göç ve ana dil üzerine psikanalitik bir deneme: "gurbet" ile "garb" kelimelerinin ortak kökü, Yunus Emre'nin garibi, Freud'un 1938'deki sürgünü, Grinberg'lerin göç ve yas kuramı, Derrida, Canetti ve Özdamar'da dil, iki dilli öznenin bilinçdışı ve yurt dışında yaşayanlar için ana dilde konuşmanın anlamı.
 
 ## Kültür
 
@@ -40,6 +43,27 @@
 ## Deneme
 
 - [Ayna Evresi: Aynadaki Yabancının Bir Daha Okunması](https://haktantay.com/yazilar/ayna-evresi.html): Lacan'ın ayna evresi üzerine psikanalitik bir deneme: 1936 Marienbad kongresinde on dakikada kesilen konuşmadan 1949 Zürih metnine, Darwin'in ve Wallon'un ayna gözlemlerinden parçalanmış bedene ve Bosch'a, ters çevrilmiş buket deneyinden Winnicott'un annenin yüzüne, Parmigianino'nun dışbükey aynasından Las Meninas'a ve ön kameranın çağına uzanan bir yeniden okuma.
+
+## Yurt dışında yaşayanlar
+
+- [Yurt dışında yaşayanlar için Türkçe online psikanalitik görüşme](https://haktantay.com/yurt-disi/): Almanya, Hollanda, Belçika, Avusturya, Fransa, İsviçre, İngiltere ve dünyanın başka yerlerinde yaşayanlar için Türkçe, İngilizce ve Fransızca online psikanalitik görüşme. Saat farkları, sigorta, acil durum hatları ve görüşmelerin işleyişi. İlk görüşme ücretsizdir.
+- [Almanya’da yaşayanlar için Türkçe online psikanalitik görüşme](https://haktantay.com/yurt-disi/almanya.html): Almanya'da yaşayan Türkiyeliler için Türkçe, İngilizce ve Fransızca online psikanalitik görüşme: 1961 işgücü anlaşmasından üçüncü kuşağa gurbet ve dil, saat farkı, Krankenkasse ve TelefonSeelsorge gibi pratik bilgiler. İlk görüşme ücretsizdir.
+- [Hollanda’da yaşayanlar için Türkçe online psikanalitik görüşme](https://haktantay.com/yurt-disi/hollanda.html): Hollanda'da yaşayan Türkiyeliler için Türkçe, İngilizce ve Fransızca online psikanalitik görüşme: 1964 işgücü anlaşmasından bugüne gurbet, iki dil arasında büyümek, saat farkı, huisarts ve sigorta, 113 Zelfmoordpreventie gibi pratik bilgiler. İlk görüşme ücretsizdir.
+- [Belçika’da yaşayanlar için Türkçe ve Fransızca online psikanalitik görüşme](https://haktantay.com/yurt-disi/belcika.html): Belçika'da yaşayan Türkiyeliler için Türkçe, Fransızca ve İngilizce online psikanalitik görüşme: 1964 anlaşması, Limburg madenleri ve Emirdağ'dan Brüksel'e uzanan gurbet, iki dilli bir ülkede yaşamak, saat farkı ve Zelfmoordlijn 1813 gibi pratik bilgiler. İlk görüşme ücretsizdir.
+- [Avusturya’da yaşayanlar için Türkçe online psikanalitik görüşme](https://haktantay.com/yurt-disi/avusturya.html): Avusturya'da yaşayan Türkiyeliler için Türkçe, İngilizce ve Fransızca online psikanalitik görüşme: 1964 işgücü anlaşması, Freud'un Viyana'sı ve Berggasse 19, göçmen bir ailenin çocuğu olarak Freud, saat farkı, sigorta ve Telefonseelsorge 142 gibi pratik bilgiler. İlk görüşme ücretsizdir.
+- [Fransa’da yaşayanlar için Türkçe ve Fransızca online psikanalitik görüşme](https://haktantay.com/yurt-disi/fransa.html): Fransa'da yaşayan Türkiyeliler için Türkçe, Fransızca ve İngilizce online psikanalitik görüşme: 1965 işgücü anlaşması, Lacan'ın Paris'i ve 5 rue de Lille, Kristeva'nın yabancılık üzerine düşünceleri, saat farkı, Mon soutien psy ve 3114 gibi pratik bilgiler. İlk görüşme ücretsizdir.
+- [İsviçre’de yaşayanlar için Türkçe ve Fransızca online psikanalitik görüşme](https://haktantay.com/yurt-disi/isvicre.html): İsviçre'de yaşayan Türkiyeliler için Türkçe, Fransızca ve İngilizce online psikanalitik görüşme: Max Frisch'in “İşgücü çağırdık, insanlar geldi” cümlesi, Zürih ve psikanalizin tarihi, dört dilli bir ülkede yaşamak, saat farkı, sigorta ve 143 gibi pratik bilgiler. İlk görüşme ücretsizdir.
+- [Birleşik Krallık’ta yaşayanlar için Türkçe online psikanalitik görüşme](https://haktantay.com/yurt-disi/ingiltere.html): İngiltere ve Birleşik Krallık'ta yaşayan Türkiyeliler için Türkçe, İngilizce ve Fransızca online psikanalitik görüşme: Freud'un Londra'daki son yılı, Kuzey Londra'nın Türkiyeli ve Kıbrıslı Türk toplulukları, saat farkı, NHS ve Samaritans 116 123 gibi pratik bilgiler. İlk görüşme ücretsizdir.
+
+## English
+
+- [Happiness After the Fact: Mourning, Collecting and Desire in The Museum of Innocence](https://haktantay.com/en/museum-of-innocence.html): A psychoanalytic essay on Orhan Pamuk's The Museum of Innocence: Freud's Nachträglichkeit in the Turkish suffix of the novel's first sentence, mourning, fetishism and melancholia in Kemal's collection, the 4,213 cigarette stubs and Lacan's theory of sublimation, eight years at a family dinner table, and the grammar of the novel's last line.
+- [Forbidden Love: Desire, the Law and the Mirror in Halit Ziya’s Aşk-ı Memnu](https://haktantay.com/en/ask-i-memnu.html): A psychoanalytic reading of Halit Ziya Uşaklıgil's Aşk-ı Memnu (1900), the classic Ottoman novel of forbidden love known abroad through the television series Forbidden Love: how the prohibition in its title creates desire, the repetition passed down from Firdevs to Bihter to Nihal, the mirror scene, Behlül's emptiness and Bihter's impossible position.
+
+## Français
+
+- [Le bonheur après coup : deuil, collection et désir dans Le Musée de l’Innocence](https://haktantay.com/fr/musee-de-l-innocence.html): Un essai psychanalytique sur Le Musée de l'Innocence d'Orhan Pamuk : la Nachträglichkeit freudienne dans un suffixe turc de la première phrase, deuil, fétiche et mélancolie dans la collection de Kemal, les 4 213 mégots et la théorie lacanienne de la sublimation, huit ans de dîners en famille et la grammaire de la dernière phrase.
+- [L’amour défendu : désir, loi et miroir dans Aşk-ı Memnu de Halit Ziya](https://haktantay.com/fr/ask-i-memnu.html): Une lecture psychanalytique d'Aşk-ı Memnu (1900) de Halit Ziya Uşaklıgil, le grand roman ottoman de l'amour défendu, connu à l'étranger par la série Forbidden Love : comment l'interdit du titre crée le désir, la répétition transmise de Firdevs à Bihter puis à Nihal, la scène du miroir, le vide de Behlül et la position impossible de Bihter.
 
 ## Gizlilik
 
