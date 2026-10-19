@@ -28,6 +28,10 @@
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/narsisizm.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/narsisizm.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/narcissism.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/narcissisme.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/narsisizm.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -44,6 +48,10 @@
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/kiskanclik.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/kiskanclik.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/jealousy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/jalousie.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/kiskanclik.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -60,6 +68,10 @@
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/psikanaliz-nedir.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/psikanaliz-nedir.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/what-is-psychoanalysis.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/qu-est-ce-que-la-psychanalyse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/psikanaliz-nedir.html"/>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -84,6 +96,10 @@
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/tekrarlayan-iliski-oruntuleri.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/tekrarlayan-iliski-oruntuleri.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/repeating-relationships.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/repetition-amoureuse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/tekrarlayan-iliski-oruntuleri.html"/>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -377,5 +393,85 @@
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/what-is-psychoanalysis.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/psikanaliz-nedir.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/what-is-psychoanalysis.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/qu-est-ce-que-la-psychanalyse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/psikanaliz-nedir.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/narcissism.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/narsisizm.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/narcissism.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/narcissisme.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/narsisizm.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/jealousy.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/kiskanclik.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/jealousy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/jalousie.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/kiskanclik.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/repeating-relationships.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/tekrarlayan-iliski-oruntuleri.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/repeating-relationships.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/repetition-amoureuse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/tekrarlayan-iliski-oruntuleri.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/qu-est-ce-que-la-psychanalyse.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/psikanaliz-nedir.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/what-is-psychoanalysis.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/qu-est-ce-que-la-psychanalyse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/psikanaliz-nedir.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/narcissisme.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/narsisizm.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/narcissism.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/narcissisme.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/narsisizm.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/jalousie.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/kiskanclik.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/jealousy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/jalousie.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/kiskanclik.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/repetition-amoureuse.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/tekrarlayan-iliski-oruntuleri.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/repeating-relationships.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/repetition-amoureuse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/tekrarlayan-iliski-oruntuleri.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
