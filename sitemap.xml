@@ -152,18 +152,30 @@
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/aktarim.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/aktarim.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/transference.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-transfert.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/aktarim.html"/>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/semptom.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/semptom.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/the-symptom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-symptome.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/semptom.html"/>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/gercek-sembolik-hayali.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/gercek-sembolik-hayali.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/real-symbolic-imaginary.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/reel-symbolique-imaginaire.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/gercek-sembolik-hayali.html"/>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -638,6 +650,66 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/the-phallus.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-phallus.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/fallus.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/transference.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/aktarim.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/transference.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-transfert.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/aktarim.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/the-symptom.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/semptom.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/the-symptom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-symptome.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/semptom.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/real-symbolic-imaginary.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/gercek-sembolik-hayali.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/real-symbolic-imaginary.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/reel-symbolique-imaginaire.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/gercek-sembolik-hayali.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/le-transfert.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/aktarim.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/transference.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-transfert.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/aktarim.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/le-symptome.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/semptom.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/the-symptom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-symptome.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/semptom.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/reel-symbolique-imaginaire.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/gercek-sembolik-hayali.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/real-symbolic-imaginary.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/reel-symbolique-imaginaire.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/gercek-sembolik-hayali.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
