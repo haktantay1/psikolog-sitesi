@@ -1,4 +1,67 @@
-﻿const prefersReducedMotion = window.matchMedia &&
+﻿const LANG = ((document.documentElement.getAttribute('lang') || 'tr').slice(0, 2));
+const I18N = {
+en: {
+words: ['Desire','Unconscious','Jouissance','Objet a','Discourse','Real'],
+months: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+noDate: 'No date selected',
+errFields: 'Please fill in your name, email, phone and message.',
+errPhone: 'Please enter a valid phone number.',
+errConsent: 'Please confirm that you have read the privacy notice.',
+sending: 'Sending…',
+sent: 'Your message has been received. I will reply as soon as possible.',
+errSend: 'Something went wrong, please try again.',
+cookieLabel: 'Cookie policy',
+cookieBody: 'This site keeps only basic session information. Your data is processed as described in the <a href="kvkk.html">data protection statement</a> and the <a href="privacy-notice.html">privacy notice</a>.',
+accept: 'Accept', reject: 'Decline',
+discourses: [
+{name: 'Discourse of the Master', desc: 'The master signifier (S<sub>1</sub>) commands knowledge (S<sub>2</sub>); the subject ($) is hidden as truth, and what remains is <em>objet a</em> (surplus-jouissance). The discourse of history.'},
+{name: 'Discourse of the University', desc: 'Systematic knowledge (S<sub>2</sub>) addresses <em>objet a</em>; the master signifier (S<sub>1</sub>) behind it is concealed, and its product is the divided subject. The techno-bureaucratic discourse.'},
+{name: 'Discourse of the Hysteric', desc: 'The divided subject ($) questions the master (S<sub>1</sub>): "What are you telling me?" The truth lies in <em>objet a</em>; knowledge (S<sub>2</sub>) is what the process produces.'},
+{name: 'Discourse of the Analyst', desc: 'The analyst occupies the place of <em>objet a</em> and makes room for the subject ($) to produce a new signifier (S<sub>1</sub>). Knowledge (S<sub>2</sub>) is placed in the position of truth.'}
+],
+nodes: {
+delta: {name: 'Delta — the mythical subject', def: 'The "raw" subject, not yet fallen into language, not yet cut by the signifier. Lacan\'s fictional starting point — not a real moment, but a position assumed retroactively.'},
+A: {name: 'Le Grand Autre — the big Other', def: 'The place of language, of law and of the system of signifiers. Not a person but a <em>place</em>. The subject is born into this treasury of language and borrows from it whenever it speaks.'},
+sA: {name: 'Le Signifié — the signified of the Other', def: 'The effect of meaning produced retroactively by the chain of signifiers. The point where, once speech is complete, we can look back and say "so that is what it meant".'},
+dollar: {name: 'Le Sujet Barré — the divided subject', def: 'The subject who has entered language, cut by the signifier. The gap between what one says and what one means — <em>this is exactly where the unconscious speaks</em>.'},
+m: {name: 'moi — the ego', def: 'The "I" constituted by the imaginary order. A structure of illusion — one recognises oneself as a unified whole, while already divided.'},
+ia: {name: 'image — the image of the other in the mirror', def: 'The image of the little other with which one identifies in the mirror stage. The short circuit between <em>m</em> and <em>i(a)</em> = the circulation of the imaginary order.'},
+IA: {name: 'Idéal du moi — the ego ideal', def: 'The signifying position produced in the subject by the Other (big A). "Tell me how you ought to see me" — from this position the subject judges itself.'}
+}
+},
+fr: {
+words: ['Désir','Inconscient','Jouissance','Objet a','Discours','Réel'],
+months: ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'],
+noDate: 'Aucune date choisie',
+errFields: 'Merci de renseigner votre nom, votre courriel, votre téléphone et votre message.',
+errPhone: 'Merci d\'indiquer un numéro de téléphone valide.',
+errConsent: 'Merci de confirmer que vous avez lu la notice d\'information.',
+sending: 'Envoi en cours…',
+sent: 'Votre message a bien été reçu. Je vous répondrai dans les meilleurs délais.',
+errSend: 'Une erreur s\'est produite, merci de réessayer.',
+cookieLabel: 'Politique relative aux cookies',
+cookieBody: 'Ce site ne conserve que des informations de session de base. Vos données sont traitées conformément à la <a href="kvkk.html">déclaration sur la protection des données</a> et à la <a href="notice-d-information.html">notice d\'information</a>.',
+accept: 'Accepter', reject: 'Refuser',
+discourses: [
+{name: 'Discours du maître', desc: 'Le signifiant maître (S<sub>1</sub>) commande au savoir (S<sub>2</sub>) ; le sujet ($) se cache comme vérité, et il reste l\'<em>objet a</em> (plus-de-jouir). Le discours de l\'histoire.'},
+{name: 'Discours de l\'université', desc: 'Le savoir systématique (S<sub>2</sub>) s\'adresse à l\'<em>objet a</em> ; le signifiant maître (S<sub>1</sub>) qui le soutient est dissimulé, et son produit est le sujet divisé. Le discours techno-bureaucratique.'},
+{name: 'Discours de l\'hystérique', desc: 'Le sujet divisé ($) interroge le maître (S<sub>1</sub>) : « Que me dis-tu ? » La vérité est dans l\'<em>objet a</em> ; le savoir (S<sub>2</sub>) est ce que le processus produit.'},
+{name: 'Discours de l\'analyste', desc: 'L\'analyste occupe la place de l\'<em>objet a</em> et ouvre au sujet ($) la possibilité de produire un signifiant nouveau (S<sub>1</sub>). Le savoir (S<sub>2</sub>) vient en position de vérité.'}
+],
+nodes: {
+delta: {name: 'Delta — le sujet mythique', def: 'Le sujet « brut », pas encore tombé dans le langage, pas encore coupé par le signifiant. Le point de départ fictif de Lacan — non un moment réel, mais une position supposée rétroactivement.'},
+A: {name: 'Le Grand Autre', def: 'Le lieu du langage, de la loi et du système des signifiants. Non une personne, mais un <em>lieu</em>. Le sujet naît dans ce trésor du langage et y puise chaque fois qu\'il parle.'},
+sA: {name: 'Le signifié de l\'Autre', def: 'L\'effet de sens produit rétroactivement par la chaîne signifiante. Le point où, une fois la parole achevée, on peut se retourner et dire « c\'était donc cela ».'},
+dollar: {name: 'Le sujet barré', def: 'Le sujet entré dans le langage, coupé par le signifiant. La fente entre ce qu\'il dit et ce qu\'il veut dire — <em>c\'est là précisément que parle l\'inconscient</em>.'},
+m: {name: 'Le moi', def: 'Le « je » constitué par l\'ordre imaginaire. Une structure d\'illusion — on se reconnaît comme une unité, alors qu\'on est déjà divisé.'},
+ia: {name: 'L\'image de l\'autre au miroir', def: 'L\'image du petit autre à laquelle on s\'identifie au stade du miroir. Le court-circuit entre <em>m</em> et <em>i(a)</em> = la circulation de l\'ordre imaginaire.'},
+IA: {name: 'L\'idéal du moi', def: 'La position signifiante que l\'Autre (grand A) produit dans le sujet. « Dis-moi comment tu dois me voir » — c\'est depuis cette position que le sujet se juge.'}
+}
+}
+};
+const L = I18N[LANG] || null;
+const tx = (key, tr) => (L && L[key] !== undefined) ? L[key] : tr;
+const prefersReducedMotion = window.matchMedia &&
 window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const _conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
 const lowPerf = !!(_conn && (_conn.saveData ||
@@ -438,7 +501,7 @@ if(pageHidden) stop();
 const t1=document.getElementById('gt1');
 const t2=document.getElementById('gt2');
 if(!t1||!t2) return;
-const words=['Arzu','Bilinçdışı','Jouissance','Objet a','Söylem','Gerçek'];
+const words=tx('words',['Arzu','Bilinçdışı','Jouissance','Objet a','Söylem','Gerçek']);
 const morphTime=1.0, coolTime=2.5;
 let idx=0, morph=0, cool=coolTime, prev=Date.now();
 t1.textContent=words[words.length-1];
@@ -595,7 +658,7 @@ const title = document.getElementById('cal-title');
 const display = document.getElementById('cal-display');
 const hiddenInput = document.getElementById('cal-value');
 if(!grid) return;
-const TR_MONTHS = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+const TR_MONTHS = tx('months',['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık']);
 let cur = new Date(); cur.setDate(1);
 let selected = null;
 const today = new Date();
@@ -658,19 +721,19 @@ const date = (document.getElementById('cal-value')?.value || '').trim();
 const message = document.getElementById('cf-message').value.trim();
 const kvkk = document.getElementById('cf-kvkk');
 if(!name || !email || !phone || !message){
-show('Lütfen ad, e-posta, telefon ve mesaj alanlarını doldurun.', 'err');
+show(tx('errFields','Lütfen ad, e-posta, telefon ve mesaj alanlarını doldurun.'), 'err');
 return;
 }
 const phoneDigits = phone.replace(/\D/g, '');
 if(phoneDigits.length < 10 || phoneDigits.length > 15){
-show('Lütfen geçerli bir telefon numarası girin.', 'err');
+show(tx('errPhone','Lütfen geçerli bir telefon numarası girin.'), 'err');
 return;
 }
 if(kvkk && !kvkk.checked){
-show('Devam etmek için aydınlatma metnini onaylayın.', 'err');
+show(tx('errConsent','Devam etmek için aydınlatma metnini onaylayın.'), 'err');
 return;
 }
-show('Gönderiliyor…', '');
+show(tx('sending','Gönderiliyor…'), '');
 if(btn) btn.disabled = true;
 const GFORM = 'https://docs.google.com/forms/d/e/1FAIpQLSevkdxVaWHnYinJFRdNLUoLzXkMtbN48IoEOALzF44mUjbFzQ/formResponse';
 const data = new FormData();
@@ -688,14 +751,14 @@ data.append('entry.416434751_day', d);
 }
 fetch(GFORM, { method:'POST', mode:'no-cors', body:data })
 .then(() => {
-show('Mesajınız alındı. En kısa sürede dönüş yapacağım.', 'ok');
+show(tx('sent','Mesajınız alındı. En kısa sürede dönüş yapacağım.'), 'ok');
 form.reset();
 const disp = document.getElementById('cal-display');
 const hv = document.getElementById('cal-value');
-if(disp) disp.textContent = 'Tarih seçilmedi';
+if(disp) disp.textContent = tx('noDate','Tarih seçilmedi');
 if(hv) hv.value = '';
 })
-.catch(() => show('Bir hata oluştu, lütfen tekrar deneyin.', 'err'))
+.catch(() => show(tx('errSend','Bir hata oluştu, lütfen tekrar deneyin.'), 'err'))
 .finally(() => { if(btn) btn.disabled = false; });
 });
 })();
@@ -704,14 +767,14 @@ if(localStorage.getItem('kvkk_consent')) return;
 const banner = document.createElement('div');
 banner.className = 'kvkk-banner';
 banner.setAttribute('role','dialog');
-banner.setAttribute('aria-label','Çerez Politikası');
+banner.setAttribute('aria-label',tx('cookieLabel','Çerez Politikası'));
 banner.innerHTML = `
 <div class="kvkk-psi" aria-hidden="true">ψ</div>
-<h4 class="kvkk-title">Çerez Politikası</h4>
-<p class="kvkk-body">Bu site yalnızca temel oturum bilgilerini tutar. Veri işleme süreciniz <a href="kvkk.html">KVKK</a> ve <a href="aydinlatma.html">Aydınlatma Metni</a> kapsamındadır.</p>
+<h4 class="kvkk-title">${tx('cookieLabel','Çerez Politikası')}</h4>
+<p class="kvkk-body">${tx('cookieBody','Bu site yalnızca temel oturum bilgilerini tutar. Veri işleme süreciniz <a href="kvkk.html">KVKK</a> ve <a href="aydinlatma.html">Aydınlatma Metni</a> kapsamındadır.')}</p>
 <div class="kvkk-actions">
-<button type="button" class="kvkk-btn kvkk-accept">Kabul Et</button>
-<button type="button" class="kvkk-btn kvkk-reject">Reddet</button>
+<button type="button" class="kvkk-btn kvkk-accept">${tx('accept','Kabul Et')}</button>
+<button type="button" class="kvkk-btn kvkk-reject">${tx('reject','Reddet')}</button>
 </div>`;
 document.body.appendChild(banner);
 requestAnimationFrame(()=>banner.classList.add('show'));
@@ -1130,6 +1193,7 @@ mathemes: { tl:'a', tr:'$', bl:'S<sub>2</sub>', br:'S<sub>1</sub>' },
 desc: 'Analist <em>objet a</em>’yı işgal eder; öznenin ($) yeni bir gösteren (S<sub>1</sub>) üretmesine zemin açar. Bilgi (S<sub>2</sub>) hakikat olarak konumlanır.'
 }
 ];
+if(L && L.discourses) L.discourses.forEach((x, k) => Object.assign(discourses[k], x));
 let idx = 0;
 function render(){
 const d = discourses[idx];
@@ -1390,6 +1454,7 @@ name: 'Idéal du moi — Ben İdeali',
 def: 'Başka\'nin (büyük A) öznede ürettiği gösteren konum. "Beni nasıl görmen gerektiğini söyle bana" — özne bu konumdan kendini değerlendirir.'
 }
 };
+if(L && L.nodes) Object.keys(L.nodes).forEach(k => Object.assign(nodes[k], L.nodes[k]));
 const groups = document.querySelectorAll('.gr-node');
 let active = null;
 function setActive(key){

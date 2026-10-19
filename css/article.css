@@ -218,3 +218,7 @@ details.faq summary:hover{color:var(--accent);}
   .article-body table{font-size:.98rem;}
   .lines{font-size:1rem;}
 }
+
+/* Yazılar dizini: henüz çevrilmemiş yazılar */
+.hub-list li.tr-only a{color:var(--ink2);}
+.hub-list li.tr-only p{font-style:italic;color:var(--ink3);}
