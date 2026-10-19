@@ -182,18 +182,30 @@
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/ayna-evresi.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/ayna-evresi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/the-mirror-stage.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-stade-du-miroir.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/ayna-evresi.html"/>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/jouissance.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/jouissance.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/jouissance.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/jouissance.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/jouissance.html"/>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/objet-petit-a.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/objet-petit-a.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/objet-petit-a.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/objet-petit-a.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/objet-petit-a.html"/>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -710,6 +722,66 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/real-symbolic-imaginary.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/reel-symbolique-imaginaire.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/gercek-sembolik-hayali.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/the-mirror-stage.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/ayna-evresi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/the-mirror-stage.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-stade-du-miroir.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/ayna-evresi.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/jouissance.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/jouissance.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/jouissance.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/jouissance.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/jouissance.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/objet-petit-a.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/objet-petit-a.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/objet-petit-a.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/objet-petit-a.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/objet-petit-a.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/le-stade-du-miroir.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/ayna-evresi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/the-mirror-stage.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/le-stade-du-miroir.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/ayna-evresi.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/jouissance.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/jouissance.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/jouissance.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/jouissance.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/jouissance.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/objet-petit-a.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/objet-petit-a.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/objet-petit-a.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/objet-petit-a.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/objet-petit-a.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
