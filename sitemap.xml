@@ -332,48 +332,80 @@
   </url>
   <url>
     <loc>https://haktantay.com/yurt-disi/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yurt-disi/almanya.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/almanya.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/germany.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/allemagne.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/almanya.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yurt-disi/hollanda.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/hollanda.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/netherlands.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/pays-bas.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/hollanda.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yurt-disi/belcika.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/belcika.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/belgium.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/belgique.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/belcika.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yurt-disi/avusturya.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/avusturya.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/austria.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/autriche.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/avusturya.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yurt-disi/fransa.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/fransa.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/france.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/france.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/fransa.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yurt-disi/isvicre.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/isvicre.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/switzerland.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/suisse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/isvicre.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yurt-disi/ingiltere.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/ingiltere.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/united-kingdom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/royaume-uni.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/ingiltere.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -854,6 +886,166 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/formulas-of-sexuation.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/formules-de-la-sexuation.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/cinsel-fark-formulleri.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/living-abroad/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/vivre-a-l-etranger/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/living-abroad/germany.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/almanya.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/germany.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/allemagne.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/almanya.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/vivre-a-l-etranger/allemagne.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/almanya.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/germany.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/allemagne.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/almanya.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/living-abroad/netherlands.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/hollanda.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/netherlands.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/pays-bas.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/hollanda.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/vivre-a-l-etranger/pays-bas.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/hollanda.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/netherlands.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/pays-bas.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/hollanda.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/living-abroad/belgium.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/belcika.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/belgium.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/belgique.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/belcika.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/vivre-a-l-etranger/belgique.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/belcika.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/belgium.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/belgique.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/belcika.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/living-abroad/austria.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/avusturya.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/austria.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/autriche.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/avusturya.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/vivre-a-l-etranger/autriche.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/avusturya.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/austria.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/autriche.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/avusturya.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/living-abroad/france.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/fransa.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/france.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/france.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/fransa.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/vivre-a-l-etranger/france.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/fransa.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/france.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/france.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/fransa.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/living-abroad/switzerland.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/isvicre.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/switzerland.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/suisse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/isvicre.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/vivre-a-l-etranger/suisse.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/isvicre.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/switzerland.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/suisse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/isvicre.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/living-abroad/united-kingdom.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/ingiltere.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/united-kingdom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/royaume-uni.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/ingiltere.html"/>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/vivre-a-l-etranger/royaume-uni.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yurt-disi/ingiltere.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/living-abroad/united-kingdom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/vivre-a-l-etranger/royaume-uni.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yurt-disi/ingiltere.html"/>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
