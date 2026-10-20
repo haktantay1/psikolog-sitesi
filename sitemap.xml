@@ -1410,4 +1410,184 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://haktantay.com/modeller/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/models/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/modeles/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/modeller/borromean-dugumu.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/borromean-dugumu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/borromean-knot.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/noeud-borromeen.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/borromean-dugumu.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/models/borromean-knot.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/borromean-dugumu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/borromean-knot.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/noeud-borromeen.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/borromean-dugumu.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/modeles/noeud-borromeen.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/borromean-dugumu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/borromean-knot.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/noeud-borromeen.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/borromean-dugumu.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/modeller/mobius-seridi.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/mobius-seridi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/mobius-strip.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/ruban-de-mobius.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/mobius-seridi.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/models/mobius-strip.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/mobius-seridi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/mobius-strip.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/ruban-de-mobius.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/mobius-seridi.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/modeles/ruban-de-mobius.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/mobius-seridi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/mobius-strip.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/ruban-de-mobius.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/mobius-seridi.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/modeller/talep-ve-arzu-torusu.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/talep-ve-arzu-torusu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/torus-of-demand-and-desire.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/tore-de-la-demande.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/talep-ve-arzu-torusu.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/models/torus-of-demand-and-desire.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/talep-ve-arzu-torusu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/torus-of-demand-and-desire.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/tore-de-la-demande.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/talep-ve-arzu-torusu.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/modeles/tore-de-la-demande.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/talep-ve-arzu-torusu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/torus-of-demand-and-desire.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/tore-de-la-demande.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/talep-ve-arzu-torusu.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/modeller/capraz-baslik.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/capraz-baslik.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/cross-cap.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/cross-cap.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/capraz-baslik.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/models/cross-cap.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/capraz-baslik.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/cross-cap.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/cross-cap.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/capraz-baslik.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/modeles/cross-cap.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/capraz-baslik.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/cross-cap.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/cross-cap.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/capraz-baslik.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/modeller/las-meninas-perspektif.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/las-meninas-perspektif.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/las-meninas-perspective.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/perspective-des-menines.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/las-meninas-perspektif.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/models/las-meninas-perspective.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/las-meninas-perspektif.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/las-meninas-perspective.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/perspective-des-menines.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/las-meninas-perspektif.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/modeles/perspective-des-menines.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/modeller/las-meninas-perspektif.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/models/las-meninas-perspective.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/modeles/perspective-des-menines.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/modeller/las-meninas-perspektif.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
