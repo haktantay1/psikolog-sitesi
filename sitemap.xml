@@ -22,30 +22,50 @@
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/ruyalar-ne-anlatir.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/ruyalar-ne-anlatir.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/what-do-dreams-mean.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/que-disent-les-reves.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/ruyalar-ne-anlatir.html"/>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/ghosting.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/ghosting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/ghosting.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/ghosting.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/ghosting.html"/>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/erteleme.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/erteleme.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/why-do-i-procrastinate.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/pourquoi-je-procrastine.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/erteleme.html"/>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/anne-kiz-iliskisi.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/anne-kiz-iliskisi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/mother-daughter-relationship.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/relation-mere-fille.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/anne-kiz-iliskisi.html"/>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://haktantay.com/yazilar/aldatma.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/aldatma.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/why-do-people-cheat.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/pourquoi-trompe-t-on.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/aldatma.html"/>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1286,6 +1306,106 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/lacan-seminars-guide.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/guide-des-seminaires.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/lacan-seminerleri-rehberi.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/what-do-dreams-mean.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/ruyalar-ne-anlatir.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/what-do-dreams-mean.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/que-disent-les-reves.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/ruyalar-ne-anlatir.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/why-do-i-procrastinate.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/erteleme.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/why-do-i-procrastinate.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/pourquoi-je-procrastine.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/erteleme.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/why-do-people-cheat.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/aldatma.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/why-do-people-cheat.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/pourquoi-trompe-t-on.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/aldatma.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/ghosting.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/ghosting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/ghosting.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/ghosting.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/ghosting.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/en/mother-daughter-relationship.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/anne-kiz-iliskisi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/mother-daughter-relationship.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/relation-mere-fille.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/anne-kiz-iliskisi.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/que-disent-les-reves.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/ruyalar-ne-anlatir.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/what-do-dreams-mean.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/que-disent-les-reves.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/ruyalar-ne-anlatir.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/pourquoi-je-procrastine.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/erteleme.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/why-do-i-procrastinate.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/pourquoi-je-procrastine.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/erteleme.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/pourquoi-trompe-t-on.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/aldatma.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/why-do-people-cheat.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/pourquoi-trompe-t-on.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/aldatma.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/ghosting.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/ghosting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/ghosting.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/ghosting.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/ghosting.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haktantay.com/fr/relation-mere-fille.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://haktantay.com/yazilar/anne-kiz-iliskisi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haktantay.com/en/mother-daughter-relationship.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://haktantay.com/fr/relation-mere-fille.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haktantay.com/yazilar/anne-kiz-iliskisi.html"/>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
